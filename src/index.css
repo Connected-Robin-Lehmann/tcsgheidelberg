@@ -81,47 +81,57 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Playfair Display', serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     @apply font-semibold;
   }
+
+  p, span, a, button {
+    font-family: 'Playfair Display', serif;
+  }
 }
 
 @layer components {
   /* Hero Button Styles */
   .btn-hero {
-    @apply bg-tennis-yellow text-tennis-black font-semibold px-8 py-4 rounded-lg hover:bg-tennis-yellow-light transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-tennis-yellow text-tennis-black font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-tennis-yellow-light transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    font-family: 'Playfair Display', serif;
   }
 
   .btn-hero-outline {
-    @apply border-2 border-tennis-yellow text-tennis-yellow font-semibold px-8 py-4 rounded-lg hover:bg-tennis-yellow hover:text-tennis-black transition-all duration-300 transform hover:scale-105;
+    @apply border-2 border-tennis-yellow text-tennis-yellow font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-tennis-yellow hover:text-tennis-black transition-all duration-300 transform hover:scale-105;
+    font-family: 'Playfair Display', serif;
   }
 
   /* Navigation Styles */
   .nav-link {
     @apply text-foreground hover:text-tennis-yellow transition-colors duration-300 font-medium;
+    font-family: 'Playfair Display', serif;
   }
 
   .nav-link-active {
     @apply text-tennis-yellow font-semibold;
+    font-family: 'Playfair Display', serif;
   }
 
   /* Card Styles */
   .card-tennis {
-    @apply bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1;
+    @apply bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1;
   }
 
   /* Statistics Counter */
   .stat-counter {
-    @apply text-4xl font-bold text-tennis-yellow mb-2;
+    @apply text-2xl md:text-4xl font-bold text-tennis-yellow mb-2;
+    font-family: 'Playfair Display', serif;
   }
 
   .stat-label {
-    @apply text-sm text-muted-foreground font-medium;
+    @apply text-xs md:text-sm text-muted-foreground font-medium;
+    font-family: 'Playfair Display', serif;
   }
 
   /* Video Container */
@@ -132,5 +142,12 @@
   /* Sponsor Logo */
   .sponsor-logo {
     @apply grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110;
+  }
+
+  /* Mobile Responsive Utilities */
+  @media (max-width: 640px) {
+    .container {
+      @apply px-4;
+    }
   }
 }

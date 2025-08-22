@@ -13,61 +13,74 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center text-white animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          {/* Logo Integration */}
+          <div className="mb-8">
+            <img 
+              src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
+              alt="TC Schwarz-Gelb Heidelberg e.V." 
+              className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-6"
+            />
+          </div>
+          
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight font-serif">
             Willkommen im
             <span className="block text-tennis-yellow mt-2">
               TC Schwarz-Gelb
             </span>
-            <span className="block text-3xl md:text-4xl mt-2 font-light">
+            <span className="block text-xl md:text-3xl lg:text-4xl mt-2 font-light font-serif">
               Heidelberg e.V.
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up font-serif">
             Tradition trifft Moderne - Ihr Tennisverein im Herzen Heidelbergs seit vielen Jahren
           </p>
 
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12 animate-slide-up">
-            <Button className="btn-hero text-lg px-8 py-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up">
+            <Button className="btn-hero text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto font-serif">
               Club entdecken
             </Button>
-            <Button variant="outline" className="btn-hero-outline text-lg px-8 py-4">
-              Mitglied werden
+            <Button 
+              variant="outline" 
+              className="btn-hero-outline text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto font-serif"
+              onClick={() => window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank')}
+            >
+              Platz reservieren
             </Button>
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mt-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto mt-16">
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <div className="flex items-center justify-center mb-2">
-                <Users className="h-8 w-8 text-tennis-yellow mr-2" />
-                <span className="stat-counter">612</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
+                <Users className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
+                <span className="stat-counter text-2xl md:text-4xl font-serif">612</span>
               </div>
-              <p className="stat-label text-white">Mitglieder</p>
+              <p className="stat-label text-white text-xs md:text-sm font-serif">Mitglieder</p>
             </div>
             
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <div className="flex items-center justify-center mb-2">
-                <MapPin className="h-8 w-8 text-tennis-yellow mr-2" />
-                <span className="stat-counter">10</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
+                <MapPin className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
+                <span className="stat-counter text-2xl md:text-4xl font-serif">10</span>
               </div>
-              <p className="stat-label text-white">Außenplätze</p>
+              <p className="stat-label text-white text-xs md:text-sm font-serif">Außenplätze</p>
             </div>
             
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <div className="flex items-center justify-center mb-2">
-                <Award className="h-8 w-8 text-tennis-yellow mr-2" />
-                <span className="stat-counter">30</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
+                <Award className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
+                <span className="stat-counter text-2xl md:text-4xl font-serif">30</span>
               </div>
-              <p className="stat-label text-white">Mannschaften</p>
+              <p className="stat-label text-white text-xs md:text-sm font-serif">Mannschaften</p>
             </div>
             
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.8s' }}>
-              <div className="flex items-center justify-center mb-2">
-                <Calendar className="h-8 w-8 text-tennis-yellow mr-2" />
-                <span className="stat-counter">35%</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
+                <Calendar className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
+                <span className="stat-counter text-2xl md:text-4xl font-serif">35%</span>
               </div>
-              <p className="stat-label text-white">Jugendanteil</p>
+              <p className="stat-label text-white text-xs md:text-sm font-serif">Jugendanteil</p>
             </div>
           </div>
         </div>

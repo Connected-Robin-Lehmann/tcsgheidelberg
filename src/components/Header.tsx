@@ -24,21 +24,21 @@ const Header = () => {
           <div className="flex flex-col md:flex-row items-center space-y-1 md:space-y-0 md:space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>Restaurant: 0174-6808685 | Vereinshotline: 06221-4337096</span>
+              <span className="text-xs md:text-sm">Restaurant: 0174-6808685 | Vereinshotline: 06221-4337096</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>tennis@schwarzgelb-heidelberg.de</span>
+              <span className="text-xs md:text-sm">tennis@schwarzgelb-heidelberg.de</span>
             </div>
           </div>
           <div className="flex space-x-4 mt-2 md:mt-0">
-            <a href="https://www.facebook.com/tc.schwarzgelb.3" className="hover:text-tennis-yellow transition-colors">
+            <a href="https://www.facebook.com/tc.schwarzgelb.3" className="hover:text-tennis-yellow transition-colors text-xs md:text-sm">
               Facebook
             </a>
-            <a href="https://twitter.com/sgheidelberg" className="hover:text-tennis-yellow transition-colors">
+            <a href="https://twitter.com/sgheidelberg" className="hover:text-tennis-yellow transition-colors text-xs md:text-sm">
               Twitter
             </a>
-            <a href="https://www.instagram.com/tc_schwarzgelb_heidelberg/" className="hover:text-tennis-yellow transition-colors">
+            <a href="https://www.instagram.com/tc_schwarzgelb_heidelberg/" className="hover:text-tennis-yellow transition-colors text-xs md:text-sm">
               Instagram
             </a>
           </div>
@@ -49,23 +49,23 @@ const Header = () => {
       <header className="bg-white shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
+            {/* Logo - Zentraler und größer */}
+            <div className="flex items-center justify-center flex-1 lg:flex-none lg:justify-start space-x-3">
               <img 
                 src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
                 alt="TC Schwarz-Gelb Heidelberg e.V." 
-                className="h-12 w-auto"
+                className="h-16 md:h-20 w-auto"
               />
-              <div className="hidden md:block">
-                <h1 className="text-xl font-bold text-tennis-black">TC Schwarz-Gelb</h1>
-                <p className="text-sm text-muted-foreground">Heidelberg e.V.</p>
+              <div className="hidden sm:block">
+                <h1 className="text-xl md:text-2xl font-bold text-tennis-black font-serif">TC Schwarz-Gelb</h1>
+                <p className="text-sm md:text-base text-muted-foreground font-serif">Heidelberg e.V.</p>
               </div>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex space-x-8">
+            <nav className="hidden lg:flex space-x-6 xl:space-x-8">
               {navItems.map((item) => (
-                <a key={item.name} href={item.href} className="nav-link">
+                <a key={item.name} href={item.href} className="nav-link text-sm xl:text-base font-serif">
                   {item.name}
                 </a>
               ))}
@@ -73,14 +73,18 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button variant="default" className="btn-hero">
+              <Button 
+                variant="default" 
+                className="btn-hero text-sm xl:text-base font-serif"
+                onClick={() => window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank')}
+              >
                 Platz reservieren
               </Button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2"
+              className="lg:hidden p-2 absolute right-4"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -95,13 +99,20 @@ const Header = () => {
                   <a 
                     key={item.name} 
                     href={item.href} 
-                    className="nav-link py-2"
+                    className="nav-link py-2 font-serif"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
                   </a>
                 ))}
-                <Button variant="default" className="btn-hero w-full mt-4">
+                <Button 
+                  variant="default" 
+                  className="btn-hero w-full mt-4 font-serif"
+                  onClick={() => {
+                    window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank');
+                    setIsMenuOpen(false);
+                  }}
+                >
                   Platz reservieren
                 </Button>
               </nav>
