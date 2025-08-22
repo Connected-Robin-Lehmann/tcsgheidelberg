@@ -57,15 +57,15 @@ const Header = () => {
                 className="h-16 md:h-20 w-auto"
               />
               <div className="hidden sm:block">
-                <h1 className="text-xl md:text-2xl font-bold text-tennis-black font-serif">TC Schwarz-Gelb</h1>
-                <p className="text-sm md:text-base text-muted-foreground font-serif">Heidelberg e.V.</p>
+                <h1 className="text-xl md:text-2xl font-bold text-tennis-black" style={{ fontFamily: 'Arial, sans-serif' }}>TC Schwarz-Gelb</h1>
+                <p className="text-sm md:text-base text-muted-foreground" style={{ fontFamily: 'Arial, sans-serif' }}>Heidelberg e.V.</p>
               </div>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex space-x-6 xl:space-x-8">
               {navItems.map((item) => (
-                <a key={item.name} href={item.href} className="nav-link text-sm xl:text-base font-serif">
+                <a key={item.name} href={item.href} className="nav-link text-sm xl:text-base" style={{ fontFamily: 'Arial, sans-serif' }}>
                   {item.name}
                 </a>
               ))}
@@ -75,7 +75,8 @@ const Header = () => {
             <div className="hidden md:block">
               <Button 
                 variant="default" 
-                className="btn-hero text-sm xl:text-base font-serif"
+                className="btn-hero text-sm xl:text-base"
+                style={{ fontFamily: 'Arial, sans-serif' }}
                 onClick={() => window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank')}
               >
                 Platz reservieren
@@ -99,7 +100,8 @@ const Header = () => {
                   <a 
                     key={item.name} 
                     href={item.href} 
-                    className="nav-link py-2 font-serif"
+                    className="nav-link py-2"
+                    style={{ fontFamily: 'Arial, sans-serif' }}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -107,7 +109,8 @@ const Header = () => {
                 ))}
                 <Button 
                   variant="default" 
-                  className="btn-hero w-full mt-4 font-serif"
+                  className="btn-hero w-full mt-4"
+                  style={{ fontFamily: 'Arial, sans-serif' }}
                   onClick={() => {
                     window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank');
                     setIsMenuOpen(false);

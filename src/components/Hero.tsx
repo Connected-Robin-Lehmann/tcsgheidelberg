@@ -22,27 +22,28 @@ const Hero = () => {
             />
           </div>
           
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight font-serif">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight" style={{ fontFamily: 'Arial, sans-serif' }}>
             Willkommen im
             <span className="block text-tennis-yellow mt-2">
               TC Schwarz-Gelb
             </span>
-            <span className="block text-xl md:text-3xl lg:text-4xl mt-2 font-light font-serif">
+            <span className="block text-xl md:text-3xl lg:text-4xl mt-2 font-light" style={{ fontFamily: 'Arial, sans-serif' }}>
               Heidelberg e.V.
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up font-serif">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up" style={{ fontFamily: 'Arial, sans-serif' }}>
             Tradition trifft Moderne - Ihr Tennisverein im Herzen Heidelbergs seit vielen Jahren
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up">
-            <Button className="btn-hero text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto font-serif">
+            <Button className="btn-hero text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto" style={{ fontFamily: 'Arial, sans-serif' }}>
               Club entdecken
             </Button>
             <Button 
               variant="outline" 
-              className="btn-hero-outline text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto font-serif"
+              className="btn-hero-outline text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto"
+              style={{ fontFamily: 'Arial, sans-serif' }}
               onClick={() => window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank')}
             >
               Platz reservieren
@@ -54,33 +55,33 @@ const Hero = () => {
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
                 <Users className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
-                <span className="stat-counter text-2xl md:text-4xl font-serif">612</span>
+                <span className="stat-counter text-2xl md:text-4xl" style={{ fontFamily: 'Arial, sans-serif' }}>612</span>
               </div>
-              <p className="stat-label text-white text-xs md:text-sm font-serif">Mitglieder</p>
+              <p className="stat-label text-white text-xs md:text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Mitglieder</p>
             </div>
             
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
                 <MapPin className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
-                <span className="stat-counter text-2xl md:text-4xl font-serif">10</span>
+                <span className="stat-counter text-2xl md:text-4xl" style={{ fontFamily: 'Arial, sans-serif' }}>10</span>
               </div>
-              <p className="stat-label text-white text-xs md:text-sm font-serif">Außenplätze</p>
+              <p className="stat-label text-white text-xs md:text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Außenplätze</p>
             </div>
             
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.6s' }}>
               <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
                 <Award className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
-                <span className="stat-counter text-2xl md:text-4xl font-serif">30</span>
+                <span className="stat-counter text-2xl md:text-4xl" style={{ fontFamily: 'Arial, sans-serif' }}>30</span>
               </div>
-              <p className="stat-label text-white text-xs md:text-sm font-serif">Mannschaften</p>
+              <p className="stat-label text-white text-xs md:text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Mannschaften</p>
             </div>
             
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.8s' }}>
               <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
                 <Calendar className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
-                <span className="stat-counter text-2xl md:text-4xl font-serif">35%</span>
+                <span className="stat-counter text-2xl md:text-4xl" style={{ fontFamily: 'Arial, sans-serif' }}>35%</span>
               </div>
-              <p className="stat-label text-white text-xs md:text-sm font-serif">Jugendanteil</p>
+              <p className="stat-label text-white text-xs md:text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Jugendanteil</p>
             </div>
           </div>
         </div>

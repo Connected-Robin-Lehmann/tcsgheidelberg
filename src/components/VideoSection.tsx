@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Play, Pause } from 'lucide-react';
 
@@ -13,10 +12,10 @@ const VideoSection = () => {
     <section className="py-20 bg-tennis-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
             Unser Vereinsfilm
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto" style={{ fontFamily: 'Arial, sans-serif' }}>
             Erleben Sie die Atmosphäre und den Geist unseres Tennisclubs in unserem offiziellen Vereinsfilm
           </p>
         </div>
@@ -51,7 +50,7 @@ const VideoSection = () => {
           </div>
           
           <div className="text-center mt-8">
-            <p className="text-gray-300 text-lg">
+            <p className="text-gray-300 text-lg" style={{ fontFamily: 'Arial, sans-serif' }}>
               Entdecken Sie unsere Anlage, unsere Gemeinschaft und unsere Leidenschaft für den Tennissport
             </p>
           </div>
