@@ -50,16 +50,12 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             {/* Logo - Zentraler und größer */}
-            <div className="flex items-center justify-center flex-1 lg:flex-none lg:justify-start space-x-3">
+            <div className="flex items-center justify-center flex-1 lg:flex-none lg:justify-start">
               <img 
                 src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
                 alt="TC Schwarz-Gelb Heidelberg e.V." 
                 className="h-16 md:h-20 w-auto"
               />
-              <div className="hidden sm:block">
-                <h1 className="text-xl md:text-2xl font-bold text-tennis-black" style={{ fontFamily: 'Arial, sans-serif' }}>TC Schwarz-Gelb</h1>
-                <p className="text-sm md:text-base text-muted-foreground" style={{ fontFamily: 'Arial, sans-serif' }}>Heidelberg e.V.</p>
-              </div>
             </div>
 
             {/* Desktop Navigation */}
