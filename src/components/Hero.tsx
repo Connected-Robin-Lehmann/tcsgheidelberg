@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Calendar, Users, Award, MapPin } from 'lucide-react';
@@ -12,18 +13,26 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center text-white animate-fade-in">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight font-arial">
+          {/* Logo Integration */}
+          <div className="mb-8">
+            <img 
+              src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
+              alt="TC Schwarz-Gelb Heidelberg e.V." 
+              className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-6"
+            />
+          </div>
+          
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight" style={{ fontFamily: 'Arial, sans-serif' }}>
             Willkommen im
-            <div className="flex justify-center items-center my-6">
-              <img 
-                src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
-                alt="TC Schwarz-Gelb Heidelberg e.V." 
-                className="h-20 md:h-32 lg:h-40 w-auto"
-              />
-            </div>
+            <span className="block text-tennis-yellow mt-2">
+              TC Schwarz-Gelb
+            </span>
+            <span className="block text-xl md:text-3xl lg:text-4xl mt-2 font-light" style={{ fontFamily: 'Arial, sans-serif' }}>
+              Heidelberg e.V.
+            </span>
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up font-arial">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up" style={{ fontFamily: 'Arial, sans-serif' }}>
             Tradition trifft Moderne - Ihr Tennisverein im Herzen Heidelbergs seit vielen Jahren
           </p>
 
