@@ -1,18 +1,95 @@
+
 import React, { useState } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Startseite', href: '#home' },
-    { name: 'Der Club', href: '#club' },
-    { name: 'Aktuelles', href: '#news' },
-    { name: 'Mannschaften', href: '#teams' },
-    { name: 'Turniere', href: '#tournaments' },
-    { name: 'Training', href: '#training' },
-    { name: 'Gastronomie', href: '#gastronomy' }
+    { 
+      name: 'Startseite', 
+      href: '/' 
+    },
+    { 
+      name: 'Der Club', 
+      href: '/der-club',
+      submenu: [
+        { name: 'Vorstand', href: '/der-club/vorstand' },
+        { name: 'Tradition', href: '/der-club/tradition' },
+        { name: 'Tennisplätze', href: '/der-club/tennisplaetze' },
+        { name: 'Mitgliedschaft', href: '/der-club/mitgliedschaft' },
+        { name: 'Beitragsordnung', href: '/der-club/beitragsordnung' },
+        { name: 'Satzung', href: '/der-club/satzung' },
+        { name: 'Sponsoring', href: '/der-club/sponsoring' },
+        { name: 'Unser Förderverein', href: '/der-club/foerderverein' },
+        { name: 'Platzordnung', href: '/der-club/platzordnung' }
+      ]
+    },
+    { 
+      name: 'FAQ', 
+      href: '/faq' 
+    },
+    { 
+      name: 'Aktuelles', 
+      href: '/aktuelles',
+      submenu: [
+        { name: 'Veranstaltungen', href: '/aktuelles/veranstaltungen' },
+        { name: 'Crowdfunding', href: '/aktuelles/crowdfunding' },
+        { name: 'Projekte', href: '/aktuelles/projekte' },
+        { name: 'Tiebreaking News', href: '/aktuelles/tiebreaking-news' },
+        { name: 'Pressemeldungen', href: '/aktuelles/pressemeldungen' },
+        { name: 'Tennis-Info Heft', href: '/aktuelles/tennis-info-heft' },
+        { name: 'Ansprechpartner', href: '/aktuelles/ansprechpartner' }
+      ]
+    },
+    { 
+      name: 'Mannschaften', 
+      href: '/mannschaften',
+      submenu: [
+        { name: 'Jugend', href: '/mannschaften/jugend' },
+        { name: 'Damen', href: '/mannschaften/damen' },
+        { name: 'Herren', href: '/mannschaften/herren' },
+        { name: 'Senioren', href: '/mannschaften/senioren' },
+        { name: 'Regelwerk', href: '/mannschaften/regelwerk' }
+      ]
+    },
+    { 
+      name: 'Turniere', 
+      href: '/turniere',
+      submenu: [
+        { name: 'Schwarz-Gelb-Cup', href: '/turniere/schwarz-gelb-cup' },
+        { name: 'Rhein-Neckar Open', href: '/turniere/rhein-neckar-open' },
+        { name: 'Anmeldung', href: '/turniere/anmeldung' }
+      ]
+    },
+    { 
+      name: 'Training', 
+      href: '/training',
+      submenu: [
+        { name: 'Unsere Trainer', href: '/training/unsere-trainer' },
+        { name: 'Tennisschule PTS Kukaras', href: '/training/tennisschule-pts-kukaras' },
+        { name: 'Tennisschule Seibold', href: '/training/tennisschule-seibold' }
+      ]
+    },
+    { 
+      name: 'Gastronomie', 
+      href: '/gastronomie' 
+    }
   ];
 
   return (
@@ -52,24 +129,68 @@ const Header = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center justify-center flex-1 lg:flex-none lg:justify-start">
-              <img 
-                src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
-                alt="TC Schwarz-Gelb Heidelberg e.V." 
-                className="h-12 sm:h-16 md:h-20 w-auto"
-              />
+              <a href="/">
+                <img 
+                  src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
+                  alt="TC Schwarz-Gelb Heidelberg e.V." 
+                  className="h-12 sm:h-16 md:h-20 w-auto"
+                />
+              </a>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex space-x-6 xl:space-x-8">
-              {navItems.map((item) => (
-                <a key={item.name} href={item.href} className="nav-link text-sm xl:text-base" style={{ fontFamily: 'Arial, sans-serif' }}>
-                  {item.name}
-                </a>
-              ))}
-            </nav>
+            <NavigationMenu className="hidden lg:flex">
+              <NavigationMenuList>
+                {navItems.map((item) => (
+                  <NavigationMenuItem key={item.name}>
+                    {item.submenu ? (
+                      <>
+                        <NavigationMenuTrigger className="nav-link text-sm xl:text-base bg-transparent hover:bg-accent hover:text-accent-foreground" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          {item.name}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <div className="grid w-[300px] gap-3 p-4 bg-white">
+                            <NavigationMenuLink asChild>
+                              <a
+                                href={item.href}
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium"
+                                style={{ fontFamily: 'Arial, sans-serif' }}
+                              >
+                                {item.name} Übersicht
+                              </a>
+                            </NavigationMenuLink>
+                            {item.submenu.map((subItem) => (
+                              <NavigationMenuLink key={subItem.name} asChild>
+                                <a
+                                  href={subItem.href}
+                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                  style={{ fontFamily: 'Arial, sans-serif' }}
+                                >
+                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                </a>
+                              </NavigationMenuLink>
+                            ))}
+                          </div>
+                        </NavigationMenuContent>
+                      </>
+                    ) : (
+                      <NavigationMenuLink asChild>
+                        <a 
+                          href={item.href} 
+                          className="nav-link text-sm xl:text-base inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                          style={{ fontFamily: 'Arial, sans-serif' }}
+                        >
+                          {item.name}
+                        </a>
+                      </NavigationMenuLink>
+                    )}
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
 
             {/* CTA Button - Hidden when mobile menu is available */}
-            <div className="hidden lg:block">
+            <div className="hidden xl:block">
               <Button 
                 variant="default" 
                 className="btn-hero text-sm xl:text-base"
@@ -80,7 +201,7 @@ const Header = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button - Positioned to avoid overlap */}
+            {/* Mobile Menu Button */}
             <div className="lg:hidden">
               <button
                 className="p-2"
@@ -94,17 +215,56 @@ const Header = () => {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="lg:hidden py-4 border-t border-border">
-              <nav className="flex flex-col space-y-4">
+              <nav className="flex flex-col space-y-2">
                 {navItems.map((item) => (
-                  <a 
-                    key={item.name} 
-                    href={item.href} 
-                    className="nav-link py-2"
-                    style={{ fontFamily: 'Arial, sans-serif' }}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
+                  <div key={item.name}>
+                    {item.submenu ? (
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <button 
+                            className="nav-link py-2 w-full text-left flex items-center justify-between"
+                            style={{ fontFamily: 'Arial, sans-serif' }}
+                          >
+                            {item.name}
+                            <ChevronDown className="h-4 w-4" />
+                          </button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-56 bg-white">
+                          <DropdownMenuItem asChild>
+                            <a 
+                              href={item.href}
+                              className="w-full"
+                              style={{ fontFamily: 'Arial, sans-serif' }}
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {item.name} Übersicht
+                            </a>
+                          </DropdownMenuItem>
+                          {item.submenu.map((subItem) => (
+                            <DropdownMenuItem key={subItem.name} asChild>
+                              <a 
+                                href={subItem.href}
+                                className="w-full"
+                                style={{ fontFamily: 'Arial, sans-serif' }}
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {subItem.name}
+                              </a>
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    ) : (
+                      <a 
+                        href={item.href} 
+                        className="nav-link py-2 block"
+                        style={{ fontFamily: 'Arial, sans-serif' }}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    )}
+                  </div>
                 ))}
                 <Button 
                   variant="default" 
