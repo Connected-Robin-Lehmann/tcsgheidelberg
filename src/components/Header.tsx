@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -69,8 +68,8 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* CTA Button - Hidden on small tablets to prevent overlap */}
-            <div className="hidden xl:block">
+            {/* CTA Button - Hidden when mobile menu is available */}
+            <div className="hidden lg:block">
               <Button 
                 variant="default" 
                 className="btn-hero text-sm xl:text-base"
