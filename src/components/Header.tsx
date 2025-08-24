@@ -1,7 +1,6 @@
-
-import React, { useState } from 'react';
-import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React, { useState } from "react";
+import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,87 +8,93 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
+} from "@/components/ui/navigation-menu";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { 
-      name: 'Startseite', 
-      href: '/' 
+    {
+      name: "Startseite",
+      href: "/",
     },
-    { 
-      name: 'Der Club', 
-      href: '/der-club',
+    {
+      name: "Der Club",
+      href: "/der-club",
       submenu: [
-        { name: 'Vorstand', href: '/der-club/vorstand' },
-        { name: 'Tradition', href: '/der-club/tradition' },
-        { name: 'Tennisplätze', href: '/der-club/tennisplaetze' },
-        { name: 'Mitgliedschaft', href: '/der-club/mitgliedschaft' },
-        { name: 'Beitragsordnung', href: '/der-club/beitragsordnung' },
-        { name: 'Satzung', href: '/der-club/satzung' },
-        { name: 'Sponsoring', href: '/der-club/sponsoring' },
-        { name: 'Unser Förderverein', href: '/der-club/foerderverein' },
-        { name: 'Platzordnung', href: '/der-club/platzordnung' }
-      ]
+        { name: "Vorstand", href: "/der-club/vorstand" },
+        { name: "Tradition", href: "/der-club/tradition" },
+        { name: "Tennisplätze", href: "/der-club/tennisplaetze" },
+        { name: "Mitgliedschaft", href: "/der-club/mitgliedschaft" },
+        { name: "Beitragsordnung", href: "/der-club/beitragsordnung" },
+        { name: "Satzung", href: "/der-club/satzung" },
+        { name: "Sponsoring", href: "/der-club/sponsoring" },
+        { name: "Unser Förderverein", href: "/der-club/foerderverein" },
+        { name: "Platzordnung", href: "/der-club/platzordnung" },
+      ],
     },
-    { 
-      name: 'FAQ', 
-      href: '/faq' 
+    {
+      name: "FAQ",
+      href: "/faq",
     },
-    { 
-      name: 'Aktuelles', 
-      href: '/aktuelles',
+    {
+      name: "Aktuelles",
+      href: "/aktuelles",
       submenu: [
-        { name: 'Veranstaltungen', href: '/aktuelles/veranstaltungen' },
-        { name: 'Crowdfunding', href: '/aktuelles/crowdfunding' },
-        { name: 'Projekte', href: '/aktuelles/projekte' },
-        { name: 'Tiebreaking News', href: '/aktuelles/tiebreaking-news' },
-        { name: 'Pressemeldungen', href: '/aktuelles/pressemeldungen' },
-        { name: 'Tennis-Info Heft', href: '/aktuelles/tennis-info-heft' },
-        { name: 'Ansprechpartner', href: '/aktuelles/ansprechpartner' }
-      ]
+        { name: "Veranstaltungen", href: "/aktuelles/veranstaltungen" },
+        { name: "Crowdfunding", href: "/aktuelles/crowdfunding" },
+        { name: "Projekte", href: "/aktuelles/projekte" },
+        { name: "Tiebreaking News", href: "/aktuelles/tiebreaking-news" },
+        { name: "Pressemeldungen", href: "/aktuelles/pressemeldungen" },
+        { name: "Tennis-Info Heft", href: "/aktuelles/tennis-info-heft" },
+        { name: "Ansprechpartner", href: "/aktuelles/ansprechpartner" },
+      ],
     },
-    { 
-      name: 'Mannschaften', 
-      href: '/mannschaften',
+    {
+      name: "Mannschaften",
+      href: "/mannschaften",
       submenu: [
-        { name: 'Jugend', href: '/mannschaften/jugend' },
-        { name: 'Damen', href: '/mannschaften/damen' },
-        { name: 'Herren', href: '/mannschaften/herren' },
-        { name: 'Senioren', href: '/mannschaften/senioren' },
-        { name: 'Regelwerk', href: '/mannschaften/regelwerk' }
-      ]
+        { name: "Jugend", href: "/mannschaften/jugend" },
+        { name: "Damen", href: "/mannschaften/damen" },
+        { name: "Herren", href: "/mannschaften/herren" },
+        { name: "Senioren", href: "/mannschaften/senioren" },
+        { name: "Regelwerk", href: "/mannschaften/regelwerk" },
+      ],
     },
-    { 
-      name: 'Turniere', 
-      href: '/turniere',
+    {
+      name: "Turniere",
+      href: "/turniere",
       submenu: [
-        { name: 'Schwarz-Gelb-Cup', href: '/turniere/schwarz-gelb-cup' },
-        { name: 'Rhein-Neckar Open', href: '/turniere/rhein-neckar-open' },
-        { name: 'Anmeldung', href: '/turniere/anmeldung' }
-      ]
+        { name: "Schwarz-Gelb-Cup", href: "/turniere/schwarz-gelb-cup" },
+        { name: "Rhein-Neckar Open", href: "/turniere/rhein-neckar-open" },
+        { name: "Anmeldung", href: "/turniere/anmeldung" },
+      ],
     },
-    { 
-      name: 'Training', 
-      href: '/training',
+    {
+      name: "Training",
+      href: "/training",
       submenu: [
-        { name: 'Unsere Trainer', href: '/training/unsere-trainer' },
-        { name: 'Tennisschule PTS Kukaras', href: '/training/tennisschule-pts-kukaras' },
-        { name: 'Tennisschule Seibold', href: '/training/tennisschule-seibold' }
-      ]
+        { name: "Unsere Trainer", href: "/training/unsere-trainer" },
+        {
+          name: "Tennisschule PTS Kukaras",
+          href: "/training/tennisschule-pts-kukaras",
+        },
+        {
+          name: "Tennisschule Seibold",
+          href: "/training/tennisschule-seibold",
+        },
+      ],
     },
-    { 
-      name: 'Gastronomie', 
-      href: '/gastronomie' 
-    }
+    {
+      name: "Gastronomie",
+      href: "/gastronomie",
+    },
   ];
 
   return (
@@ -101,21 +106,34 @@ const Header = () => {
             <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4 lg:space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="text-xs sm:text-sm text-center">Restaurant: 0174-6808685 | Vereinshotline: 06221-4337096</span>
+                <span className="text-xs sm:text-sm text-center">
+                  Restaurant: 0174-6808685 | Vereinshotline: 06221-4337096
+                </span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="text-xs sm:text-sm">tennis@schwarzgelb-heidelberg.de</span>
+                <span className="text-xs sm:text-sm">
+                  tennis@schwarzgelb-heidelberg.de
+                </span>
               </div>
             </div>
             <div className="flex space-x-3 sm:space-x-4">
-              <a href="https://www.facebook.com/tc.schwarzgelb.3" className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm">
+              <a
+                href="https://www.facebook.com/tc.schwarzgelb.3"
+                className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm"
+              >
                 Facebook
               </a>
-              <a href="https://twitter.com/sgheidelberg" className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm">
+              <a
+                href="https://twitter.com/sgheidelberg"
+                className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm"
+              >
                 Twitter
               </a>
-              <a href="https://www.instagram.com/tc_schwarzgelb_heidelberg/" className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm">
+              <a
+                href="https://www.instagram.com/tc_schwarzgelb_heidelberg/"
+                className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm"
+              >
                 Instagram
               </a>
             </div>
@@ -130,9 +148,9 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center justify-center flex-1 lg:flex-none lg:justify-start">
               <a href="/">
-                <img 
-                  src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
-                  alt="TC Schwarz-Gelb Heidelberg e.V." 
+                <img
+                  src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg"
+                  alt="TC Schwarz-Gelb Heidelberg e.V."
                   className="h-12 sm:h-16 md:h-20 w-auto"
                 />
               </a>
@@ -145,7 +163,10 @@ const Header = () => {
                   <NavigationMenuItem key={item.name}>
                     {item.submenu ? (
                       <>
-                        <NavigationMenuTrigger className="nav-link text-sm xl:text-base bg-transparent hover:bg-accent hover:text-accent-foreground" style={{ fontFamily: 'Arial, sans-serif' }}>
+                        <NavigationMenuTrigger
+                          className="nav-link text-sm xl:text-base bg-transparent hover:bg-accent hover:text-accent-foreground"
+                          style={{ fontFamily: "Arial, sans-serif" }}
+                        >
                           {item.name}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="z-[60]">
@@ -154,7 +175,7 @@ const Header = () => {
                               <a
                                 href={item.href}
                                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium"
-                                style={{ fontFamily: 'Arial, sans-serif' }}
+                                style={{ fontFamily: "Arial, sans-serif" }}
                               >
                                 {item.name} Übersicht
                               </a>
@@ -164,9 +185,11 @@ const Header = () => {
                                 <a
                                   href={subItem.href}
                                   className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                  style={{ fontFamily: 'Arial, sans-serif' }}
+                                  style={{ fontFamily: "Arial, sans-serif" }}
                                 >
-                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                  <div className="text-sm font-medium leading-none">
+                                    {subItem.name}
+                                  </div>
                                 </a>
                               </NavigationMenuLink>
                             ))}
@@ -175,10 +198,10 @@ const Header = () => {
                       </>
                     ) : (
                       <NavigationMenuLink asChild>
-                        <a 
-                          href={item.href} 
+                        <a
+                          href={item.href}
                           className="nav-link text-sm xl:text-base inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                          style={{ fontFamily: 'Arial, sans-serif' }}
+                          style={{ fontFamily: "Arial, sans-serif" }}
                         >
                           {item.name}
                         </a>
@@ -191,11 +214,16 @@ const Header = () => {
 
             {/* CTA Button - Hidden when mobile menu is available */}
             <div className="hidden xl:block">
-              <Button 
-                variant="default" 
+              <Button
+                variant="default"
                 className="btn-hero text-sm xl:text-base"
-                style={{ fontFamily: 'Arial, sans-serif' }}
-                onClick={() => window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank')}
+                style={{ fontFamily: "Arial, sans-serif" }}
+                onClick={() =>
+                  window.open(
+                    "https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//",
+                    "_blank"
+                  )
+                }
               >
                 Platz reservieren
               </Button>
@@ -207,7 +235,11 @@ const Header = () => {
                 className="p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </button>
             </div>
           </div>
@@ -221,9 +253,9 @@ const Header = () => {
                     {item.submenu ? (
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <button 
+                          <button
                             className="nav-link py-3 w-full text-left flex items-center justify-between text-base font-medium"
-                            style={{ fontFamily: 'Arial, sans-serif' }}
+                            style={{ fontFamily: "Arial, sans-serif" }}
                           >
                             {item.name}
                             <ChevronDown className="h-5 w-5" />
@@ -231,10 +263,10 @@ const Header = () => {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-72 bg-white shadow-lg border z-[60] max-h-96 overflow-y-auto">
                           <DropdownMenuItem asChild>
-                            <a 
+                            <a
                               href={item.href}
                               className="w-full py-3 px-4 text-base font-medium"
-                              style={{ fontFamily: 'Arial, sans-serif' }}
+                              style={{ fontFamily: "Arial, sans-serif" }}
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {item.name} Übersicht
@@ -242,10 +274,10 @@ const Header = () => {
                           </DropdownMenuItem>
                           {item.submenu.map((subItem) => (
                             <DropdownMenuItem key={subItem.name} asChild>
-                              <a 
+                              <a
                                 href={subItem.href}
                                 className="w-full py-3 px-4 text-base"
-                                style={{ fontFamily: 'Arial, sans-serif' }}
+                                style={{ fontFamily: "Arial, sans-serif" }}
                                 onClick={() => setIsMenuOpen(false)}
                               >
                                 {subItem.name}
@@ -255,10 +287,10 @@ const Header = () => {
                         </DropdownMenuContent>
                       </DropdownMenu>
                     ) : (
-                      <a 
-                        href={item.href} 
+                      <a
+                        href={item.href}
                         className="nav-link py-3 block text-base font-medium"
-                        style={{ fontFamily: 'Arial, sans-serif' }}
+                        style={{ fontFamily: "Arial, sans-serif" }}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.name}
@@ -266,12 +298,15 @@ const Header = () => {
                     )}
                   </div>
                 ))}
-                <Button 
-                  variant="default" 
+                <Button
+                  variant="default"
                   className="btn-hero w-full mt-4 py-3 text-base"
-                  style={{ fontFamily: 'Arial, sans-serif' }}
+                  style={{ fontFamily: "Arial, sans-serif" }}
                   onClick={() => {
-                    window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank');
+                    window.open(
+                      "https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//",
+                      "_blank"
+                    );
                     setIsMenuOpen(false);
                   }}
                 >
