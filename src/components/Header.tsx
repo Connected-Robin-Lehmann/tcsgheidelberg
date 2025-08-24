@@ -20,27 +20,29 @@ const Header = () => {
     <>
       {/* Top Bar */}
       <div className="bg-tennis-black text-white py-2 px-4 text-sm">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-col md:flex-row items-center space-y-1 md:space-y-0 md:space-x-6">
-            <div className="flex items-center space-x-2">
-              <Phone className="h-4 w-4" />
-              <span className="text-xs md:text-sm">Restaurant: 0174-6808685 | Vereinshotline: 06221-4337096</span>
+        <div className="container mx-auto">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-2 lg:space-y-0">
+            <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4 lg:space-x-6">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
+                <span className="text-xs sm:text-sm text-center">Restaurant: 0174-6808685 | Vereinshotline: 06221-4337096</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
+                <span className="text-xs sm:text-sm">tennis@schwarzgelb-heidelberg.de</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="h-4 w-4" />
-              <span className="text-xs md:text-sm">tennis@schwarzgelb-heidelberg.de</span>
+            <div className="flex space-x-3 sm:space-x-4">
+              <a href="https://www.facebook.com/tc.schwarzgelb.3" className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm">
+                Facebook
+              </a>
+              <a href="https://twitter.com/sgheidelberg" className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm">
+                Twitter
+              </a>
+              <a href="https://www.instagram.com/tc_schwarzgelb_heidelberg/" className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm">
+                Instagram
+              </a>
             </div>
-          </div>
-          <div className="flex space-x-4 mt-2 md:mt-0">
-            <a href="https://www.facebook.com/tc.schwarzgelb.3" className="hover:text-tennis-yellow transition-colors text-xs md:text-sm">
-              Facebook
-            </a>
-            <a href="https://twitter.com/sgheidelberg" className="hover:text-tennis-yellow transition-colors text-xs md:text-sm">
-              Twitter
-            </a>
-            <a href="https://www.instagram.com/tc_schwarzgelb_heidelberg/" className="hover:text-tennis-yellow transition-colors text-xs md:text-sm">
-              Instagram
-            </a>
           </div>
         </div>
       </div>
@@ -49,12 +51,12 @@ const Header = () => {
       <header className="bg-white shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            {/* Logo - Zentraler und größer */}
+            {/* Logo */}
             <div className="flex items-center justify-center flex-1 lg:flex-none lg:justify-start">
               <img 
                 src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg" 
                 alt="TC Schwarz-Gelb Heidelberg e.V." 
-                className="h-16 md:h-20 w-auto"
+                className="h-12 sm:h-16 md:h-20 w-auto"
               />
             </div>
 
@@ -67,8 +69,8 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* CTA Button - Hidden on small tablets to prevent overlap */}
+            <div className="hidden xl:block">
               <Button 
                 variant="default" 
                 className="btn-hero text-sm xl:text-base"
@@ -79,13 +81,15 @@ const Header = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 absolute right-4"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            {/* Mobile Menu Button - Positioned to avoid overlap */}
+            <div className="lg:hidden">
+              <button
+                className="p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
