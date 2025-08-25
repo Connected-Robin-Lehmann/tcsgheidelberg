@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -170,11 +171,11 @@ const Header = () => {
                           {item.name}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="z-[60]">
-                          <div className="grid w-[300px] gap-3 p-4 bg-white shadow-lg border">
+                          <div className="grid w-[280px] gap-2 p-4 bg-white shadow-lg border">
                             <NavigationMenuLink asChild>
                               <a
                                 href={item.href}
-                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium"
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium border-b border-gray-200"
                                 style={{ fontFamily: "Arial, sans-serif" }}
                               >
                                 {item.name} Übersicht
@@ -184,7 +185,7 @@ const Header = () => {
                               <NavigationMenuLink key={subItem.name} asChild>
                                 <a
                                   href={subItem.href}
-                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                  className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                                   style={{ fontFamily: "Arial, sans-serif" }}
                                 >
                                   <div className="text-sm font-medium leading-none">
@@ -254,18 +255,21 @@ const Header = () => {
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <button
-                            className="nav-link py-3 w-full text-left flex items-center justify-between text-base font-medium"
+                            className="nav-link py-4 w-full text-left flex items-center justify-between text-lg font-medium"
                             style={{ fontFamily: "Arial, sans-serif" }}
                           >
                             {item.name}
                             <ChevronDown className="h-5 w-5" />
                           </button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-72 bg-white shadow-lg border z-[60] max-h-96 overflow-y-auto">
+                        <DropdownMenuContent 
+                          className="w-80 bg-white shadow-lg border z-[60] max-h-96 overflow-y-auto"
+                          align="start"
+                        >
                           <DropdownMenuItem asChild>
                             <a
                               href={item.href}
-                              className="w-full py-3 px-4 text-base font-medium"
+                              className="w-full py-4 px-6 text-lg font-medium border-b border-gray-200"
                               style={{ fontFamily: "Arial, sans-serif" }}
                               onClick={() => setIsMenuOpen(false)}
                             >
@@ -276,7 +280,7 @@ const Header = () => {
                             <DropdownMenuItem key={subItem.name} asChild>
                               <a
                                 href={subItem.href}
-                                className="w-full py-3 px-4 text-base"
+                                className="w-full py-3 px-6 text-base"
                                 style={{ fontFamily: "Arial, sans-serif" }}
                                 onClick={() => setIsMenuOpen(false)}
                               >
@@ -289,7 +293,7 @@ const Header = () => {
                     ) : (
                       <a
                         href={item.href}
-                        className="nav-link py-3 block text-base font-medium"
+                        className="nav-link py-4 block text-lg font-medium"
                         style={{ fontFamily: "Arial, sans-serif" }}
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -300,7 +304,7 @@ const Header = () => {
                 ))}
                 <Button
                   variant="default"
-                  className="btn-hero w-full mt-4 py-3 text-base"
+                  className="btn-hero w-full mt-4 py-4 text-lg"
                   style={{ fontFamily: "Arial, sans-serif" }}
                   onClick={() => {
                     window.open(
