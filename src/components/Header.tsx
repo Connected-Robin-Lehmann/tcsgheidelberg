@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const navItems = [
     {
@@ -84,6 +85,14 @@ const Header = () => {
     },
   ];
 
+  const handleDropdownToggle = (itemName: string) => {
+    setOpenDropdown(openDropdown === itemName ? null : itemName);
+  };
+
+  const closeDropdowns = () => {
+    setOpenDropdown(null);
+  };
+
   return (
     <>
       {/* Top Bar */}
@@ -134,7 +143,7 @@ const Header = () => {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center justify-center flex-1 lg:flex-none lg:justify-start">
-              <a href="/">
+              <a href="/" onClick={closeDropdowns}>
                 <img
                   src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg"
                   alt="TC Schwarz-Gelb Heidelberg e.V."
@@ -147,19 +156,19 @@ const Header = () => {
             <nav className="hidden lg:flex">
               <ul className="flex items-center space-x-1">
                 {navItems.map((item) => (
-                  <li key={item.name} className="relative group">
+                  <li key={item.name} className="relative">
                     {item.submenu ? (
-                      <>
+                      <div className="group">
                         <a
                           href={item.href}
-                          className="flex items-center space-x-1 px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black/5 transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
+                          className="flex items-center space-x-1 px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
                           style={{ fontFamily: "Arial, sans-serif" }}
                         >
                           <span>{item.name}</span>
                           <ChevronDown className="h-4 w-4 transform group-hover:rotate-180 transition-transform duration-200" />
                         </a>
-                        {/* Dropdown Menu */}
-                        <div className="absolute top-full left-0 mt-1 w-64 bg-white border-2 border-tennis-yellow shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-60">
+                        {/* Desktop Dropdown Menu */}
+                        <div className="absolute top-full left-0 mt-1 w-64 bg-white border-2 border-tennis-yellow shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
                           <div className="p-2">
                             <a
                               href={item.href}
@@ -180,11 +189,11 @@ const Header = () => {
                             ))}
                           </div>
                         </div>
-                      </>
+                      </div>
                     ) : (
                       <a
                         href={item.href}
-                        className="block px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black/5 transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
+                        className="block px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
                         style={{ fontFamily: "Arial, sans-serif" }}
                       >
                         {item.name}
@@ -215,7 +224,10 @@ const Header = () => {
             <div className="lg:hidden">
               <button
                 className="p-2 text-tennis-black hover:text-tennis-yellow transition-colors"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => {
+                  setIsMenuOpen(!isMenuOpen);
+                  setOpenDropdown(null);
+                }}
               >
                 {isMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -233,13 +245,16 @@ const Header = () => {
                 {navItems.map((item) => (
                   <div key={item.name}>
                     {item.submenu ? (
-                      <div className="group">
+                      <div>
                         <div className="flex items-center justify-between">
                           <a
                             href={item.href}
                             className="flex-1 py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
                             style={{ fontFamily: "Arial, sans-serif" }}
-                            onClick={() => setIsMenuOpen(false)}
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              setOpenDropdown(null);
+                            }}
                           >
                             {item.name} Übersicht
                           </a>
@@ -247,35 +262,45 @@ const Header = () => {
                             className="p-4 text-tennis-black hover:text-tennis-yellow transition-colors"
                             onClick={(e) => {
                               e.preventDefault();
-                              const submenu = e.currentTarget.nextElementSibling;
-                              if (submenu) {
-                                submenu.classList.toggle('hidden');
-                              }
+                              handleDropdownToggle(item.name);
                             }}
                           >
-                            <ChevronDown className="h-5 w-5" />
+                            <ChevronDown 
+                              className={`h-5 w-5 transform transition-transform duration-200 ${
+                                openDropdown === item.name ? 'rotate-180' : ''
+                              }`} 
+                            />
                           </button>
                         </div>
-                        <div className="hidden bg-tennis-yellow/10 rounded-md ml-4 mr-4 mb-2">
-                          {item.submenu.map((subItem) => (
-                            <a
-                              key={subItem.name}
-                              href={subItem.href}
-                              className="block py-3 px-6 text-tennis-black/80 hover:bg-tennis-yellow hover:text-tennis-black text-base transition-colors rounded-md"
-                              style={{ fontFamily: "Arial, sans-serif" }}
-                              onClick={() => setIsMenuOpen(false)}
-                            >
-                              {subItem.name}
-                            </a>
-                          ))}
-                        </div>
+                        {/* Mobile Dropdown */}
+                        {openDropdown === item.name && (
+                          <div className="bg-tennis-yellow/10 rounded-md ml-4 mr-4 mb-2 border border-tennis-yellow/30">
+                            {item.submenu.map((subItem) => (
+                              <a
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block py-4 px-6 text-tennis-black/80 hover:bg-tennis-yellow hover:text-tennis-black text-lg transition-colors rounded-md border-b border-tennis-yellow/20 last:border-b-0"
+                                style={{ fontFamily: "Arial, sans-serif" }}
+                                onClick={() => {
+                                  setIsMenuOpen(false);
+                                  setOpenDropdown(null);
+                                }}
+                              >
+                                {subItem.name}
+                              </a>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ) : (
                       <a
                         href={item.href}
                         className="block py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
                         style={{ fontFamily: "Arial, sans-serif" }}
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setOpenDropdown(null);
+                        }}
                       >
                         {item.name}
                       </a>
@@ -291,6 +316,7 @@ const Header = () => {
                       "_blank"
                     );
                     setIsMenuOpen(false);
+                    setOpenDropdown(null);
                   }}
                 >
                   Platz reservieren
