@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -240,7 +239,7 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t-2 border-tennis-yellow bg-tennis-black/5">
+            <div className="lg:hidden py-4 border-t-2 border-tennis-yellow bg-tennis-black/5 max-h-[70vh] overflow-y-auto">
               <nav className="flex flex-col space-y-1">
                 {navItems.map((item) => (
                   <div key={item.name}>
@@ -265,10 +264,10 @@ const Header = () => {
                               handleDropdownToggle(item.name);
                             }}
                           >
-                            <ChevronDown 
+                            <ChevronDown
                               className={`h-5 w-5 transform transition-transform duration-200 ${
-                                openDropdown === item.name ? 'rotate-180' : ''
-                              }`} 
+                                openDropdown === item.name ? "rotate-180" : ""
+                              }`}
                             />
                           </button>
                         </div>
