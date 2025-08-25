@@ -2,20 +2,6 @@
 import React, { useState } from "react";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,7 +87,7 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-tennis-black text-white py-2 px-4 text-sm">
+      <div className="bg-tennis-black text-tennis-yellow py-2 px-4 text-sm border-b border-tennis-yellow/20">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-2 lg:space-y-0">
             <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4 lg:space-x-6">
@@ -121,19 +107,19 @@ const Header = () => {
             <div className="flex space-x-3 sm:space-x-4">
               <a
                 href="https://www.facebook.com/tc.schwarzgelb.3"
-                className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm"
+                className="hover:text-white transition-colors text-xs sm:text-sm"
               >
                 Facebook
               </a>
               <a
                 href="https://twitter.com/sgheidelberg"
-                className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm"
+                className="hover:text-white transition-colors text-xs sm:text-sm"
               >
                 Twitter
               </a>
               <a
                 href="https://www.instagram.com/tc_schwarzgelb_heidelberg/"
-                className="hover:text-tennis-yellow transition-colors text-xs sm:text-sm"
+                className="hover:text-white transition-colors text-xs sm:text-sm"
               >
                 Instagram
               </a>
@@ -143,7 +129,7 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
+      <header className="bg-white shadow-lg sticky top-0 z-50 border-b-4 border-tennis-yellow">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -158,66 +144,61 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <NavigationMenu className="hidden lg:flex">
-              <NavigationMenuList>
+            <nav className="hidden lg:flex">
+              <ul className="flex items-center space-x-1">
                 {navItems.map((item) => (
-                  <NavigationMenuItem key={item.name}>
+                  <li key={item.name} className="relative group">
                     {item.submenu ? (
                       <>
-                        <NavigationMenuTrigger
-                          className="nav-link text-sm xl:text-base bg-transparent hover:bg-accent hover:text-accent-foreground"
-                          style={{ fontFamily: "Arial, sans-serif" }}
-                        >
-                          {item.name}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent className="z-[60]">
-                          <div className="grid w-[280px] gap-2 p-4 bg-white shadow-lg border">
-                            <NavigationMenuLink asChild>
-                              <a
-                                href={item.href}
-                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium border-b border-gray-200"
-                                style={{ fontFamily: "Arial, sans-serif" }}
-                              >
-                                {item.name} Übersicht
-                              </a>
-                            </NavigationMenuLink>
-                            {item.submenu.map((subItem) => (
-                              <NavigationMenuLink key={subItem.name} asChild>
-                                <a
-                                  href={subItem.href}
-                                  className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                  style={{ fontFamily: "Arial, sans-serif" }}
-                                >
-                                  <div className="text-sm font-medium leading-none">
-                                    {subItem.name}
-                                  </div>
-                                </a>
-                              </NavigationMenuLink>
-                            ))}
-                          </div>
-                        </NavigationMenuContent>
-                      </>
-                    ) : (
-                      <NavigationMenuLink asChild>
                         <a
                           href={item.href}
-                          className="nav-link text-sm xl:text-base inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                          className="flex items-center space-x-1 px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black/5 transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
                           style={{ fontFamily: "Arial, sans-serif" }}
                         >
-                          {item.name}
+                          <span>{item.name}</span>
+                          <ChevronDown className="h-4 w-4 transform group-hover:rotate-180 transition-transform duration-200" />
                         </a>
-                      </NavigationMenuLink>
+                        {/* Dropdown Menu */}
+                        <div className="absolute top-full left-0 mt-1 w-64 bg-white border-2 border-tennis-yellow shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-60">
+                          <div className="p-2">
+                            <a
+                              href={item.href}
+                              className="block px-4 py-3 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold border-b border-tennis-yellow/20 mb-2 rounded-md transition-colors duration-200"
+                              style={{ fontFamily: "Arial, sans-serif" }}
+                            >
+                              {item.name} Übersicht
+                            </a>
+                            {item.submenu.map((subItem) => (
+                              <a
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block px-4 py-2 text-tennis-black/80 hover:bg-tennis-yellow/20 hover:text-tennis-black rounded-md text-sm transition-colors duration-200"
+                                style={{ fontFamily: "Arial, sans-serif" }}
+                              >
+                                {subItem.name}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className="block px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black/5 transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
+                        style={{ fontFamily: "Arial, sans-serif" }}
+                      >
+                        {item.name}
+                      </a>
                     )}
-                  </NavigationMenuItem>
+                  </li>
                 ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+              </ul>
+            </nav>
 
-            {/* CTA Button - Hidden when mobile menu is available */}
+            {/* CTA Button */}
             <div className="hidden xl:block">
               <Button
-                variant="default"
-                className="btn-hero text-sm xl:text-base"
+                className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-6 py-3 text-sm xl:text-base transition-all duration-300"
                 style={{ fontFamily: "Arial, sans-serif" }}
                 onClick={() =>
                   window.open(
@@ -233,7 +214,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <div className="lg:hidden">
               <button
-                className="p-2"
+                className="p-2 text-tennis-black hover:text-tennis-yellow transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 {isMenuOpen ? (
@@ -247,53 +228,52 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-border">
-              <nav className="flex flex-col space-y-2">
+            <div className="lg:hidden py-4 border-t-2 border-tennis-yellow bg-tennis-black/5">
+              <nav className="flex flex-col space-y-1">
                 {navItems.map((item) => (
                   <div key={item.name}>
                     {item.submenu ? (
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <button
-                            className="nav-link py-4 w-full text-left flex items-center justify-between text-lg font-medium"
+                      <div className="group">
+                        <div className="flex items-center justify-between">
+                          <a
+                            href={item.href}
+                            className="flex-1 py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
                             style={{ fontFamily: "Arial, sans-serif" }}
+                            onClick={() => setIsMenuOpen(false)}
                           >
-                            {item.name}
+                            {item.name} Übersicht
+                          </a>
+                          <button
+                            className="p-4 text-tennis-black hover:text-tennis-yellow transition-colors"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              const submenu = e.currentTarget.nextElementSibling;
+                              if (submenu) {
+                                submenu.classList.toggle('hidden');
+                              }
+                            }}
+                          >
                             <ChevronDown className="h-5 w-5" />
                           </button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent 
-                          className="w-80 bg-white shadow-lg border z-[60] max-h-96 overflow-y-auto"
-                          align="start"
-                        >
-                          <DropdownMenuItem asChild>
+                        </div>
+                        <div className="hidden bg-tennis-yellow/10 rounded-md ml-4 mr-4 mb-2">
+                          {item.submenu.map((subItem) => (
                             <a
-                              href={item.href}
-                              className="w-full py-4 px-6 text-lg font-medium border-b border-gray-200"
+                              key={subItem.name}
+                              href={subItem.href}
+                              className="block py-3 px-6 text-tennis-black/80 hover:bg-tennis-yellow hover:text-tennis-black text-base transition-colors rounded-md"
                               style={{ fontFamily: "Arial, sans-serif" }}
                               onClick={() => setIsMenuOpen(false)}
                             >
-                              {item.name} Übersicht
+                              {subItem.name}
                             </a>
-                          </DropdownMenuItem>
-                          {item.submenu.map((subItem) => (
-                            <DropdownMenuItem key={subItem.name} asChild>
-                              <a
-                                href={subItem.href}
-                                className="w-full py-3 px-6 text-base"
-                                style={{ fontFamily: "Arial, sans-serif" }}
-                                onClick={() => setIsMenuOpen(false)}
-                              >
-                                {subItem.name}
-                              </a>
-                            </DropdownMenuItem>
                           ))}
-                        </DropdownMenuContent>
-                      </DropdownMenu>
+                        </div>
+                      </div>
                     ) : (
                       <a
                         href={item.href}
-                        className="nav-link py-4 block text-lg font-medium"
+                        className="block py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
                         style={{ fontFamily: "Arial, sans-serif" }}
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -303,8 +283,7 @@ const Header = () => {
                   </div>
                 ))}
                 <Button
-                  variant="default"
-                  className="btn-hero w-full mt-4 py-4 text-lg"
+                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold w-full mt-4 py-4 text-lg transition-all duration-300"
                   style={{ fontFamily: "Arial, sans-serif" }}
                   onClick={() => {
                     window.open(
