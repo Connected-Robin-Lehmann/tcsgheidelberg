@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -137,7 +138,7 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <header className="bg-tennis-black shadow-lg sticky top-0 z-50 border-b-4 border-tennis-yellow">
+      <header className="bg-white shadow-lg sticky top-0 z-50 border-b-4 border-tennis-yellow">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -155,41 +156,48 @@ const Header = () => {
             <nav className="hidden lg:flex">
               <ul className="flex items-center space-x-1">
                 {navItems.map((item) => (
-                  <li key={item.name} className="relative group">
-                    <a
-                      href={item.href}
-                      className="flex items-center space-x-1 px-4 py-3 text-tennis-yellow hover:text-tennis-black hover:bg-tennis-yellow transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
-                      style={{ fontFamily: "Arial, sans-serif" }}
-                    >
-                      <span>{item.name}</span>
-                      {item.submenu && (
-                        <ChevronDown className="h-4 w-4 transform group-hover:rotate-180 transition-transform duration-200" />
-                      )}
-                    </a>
-
-                    {/* Desktop Dropdown Menu */}
-                    {item.submenu && (
-                      <div className="absolute left-0 top-full mt-1 w-64 bg-tennis-black border-2 border-tennis-yellow shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
-                        <div className="p-2">
-                          <a
-                            href={item.href}
-                            className="block px-4 py-3 text-tennis-yellow hover:bg-tennis-yellow hover:text-tennis-black font-semibold border-b border-tennis-yellow/20 mb-2 rounded-md transition-colors duration-200"
-                            style={{ fontFamily: "Arial, sans-serif" }}
-                          >
-                            {item.name} Übersicht
-                          </a>
-                          {item.submenu.map((subItem) => (
+                  <li key={item.name} className="relative">
+                    {item.submenu ? (
+                      <div className="group">
+                        <a
+                          href={item.href}
+                          className="flex items-center space-x-1 px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
+                          style={{ fontFamily: "Arial, sans-serif" }}
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown className="h-4 w-4 transform group-hover:rotate-180 transition-transform duration-200" />
+                        </a>
+                        {/* Desktop Dropdown Menu */}
+                        <div className="absolute top-full left-0 mt-1 w-64 bg-white border-2 border-tennis-yellow shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
+                          <div className="p-2">
                             <a
-                              key={subItem.name}
-                              href={subItem.href}
-                              className="block px-4 py-2 text-tennis-yellow/80 hover:bg-tennis-yellow/20 hover:text-tennis-yellow rounded-md text-sm transition-colors duration-200"
+                              href={item.href}
+                              className="block px-4 py-3 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold border-b border-tennis-yellow/20 mb-2 rounded-md transition-colors duration-200"
                               style={{ fontFamily: "Arial, sans-serif" }}
                             >
-                              {subItem.name}
+                              {item.name} Übersicht
                             </a>
-                          ))}
+                            {item.submenu.map((subItem) => (
+                              <a
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block px-4 py-2 text-tennis-black/80 hover:bg-tennis-yellow/20 hover:text-tennis-black rounded-md text-sm transition-colors duration-200"
+                                style={{ fontFamily: "Arial, sans-serif" }}
+                              >
+                                {subItem.name}
+                              </a>
+                            ))}
+                          </div>
                         </div>
                       </div>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className="block px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
+                        style={{ fontFamily: "Arial, sans-serif" }}
+                      >
+                        {item.name}
+                      </a>
                     )}
                   </li>
                 ))}
@@ -215,7 +223,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <div className="lg:hidden">
               <button
-                className="p-2 text-tennis-yellow hover:text-tennis-black hover:bg-tennis-yellow rounded transition-colors"
+                className="p-2 text-tennis-black hover:text-tennis-yellow transition-colors"
                 onClick={() => {
                   setIsMenuOpen(!isMenuOpen);
                   setOpenDropdown(null);
@@ -232,8 +240,8 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden fixed left-0 right-0 top-full bg-tennis-black border-t-2 border-tennis-yellow z-50 max-h-[calc(100vh-120px)] overflow-y-auto">
-              <nav className="flex flex-col space-y-1 p-4">
+            <div className="lg:hidden py-4 border-t-2 border-tennis-yellow bg-tennis-black/5">
+              <nav className="flex flex-col space-y-1">
                 {navItems.map((item) => (
                   <div key={item.name}>
                     {item.submenu ? (
@@ -241,7 +249,7 @@ const Header = () => {
                         <div className="flex items-center justify-between">
                           <a
                             href={item.href}
-                            className="flex-1 py-4 px-4 text-tennis-yellow hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
+                            className="flex-1 py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
                             style={{ fontFamily: "Arial, sans-serif" }}
                             onClick={() => {
                               setIsMenuOpen(false);
@@ -251,7 +259,7 @@ const Header = () => {
                             {item.name} Übersicht
                           </a>
                           <button
-                            className="p-4 text-tennis-yellow hover:text-tennis-black hover:bg-tennis-yellow rounded transition-colors"
+                            className="p-4 text-tennis-black hover:text-tennis-yellow transition-colors"
                             onClick={(e) => {
                               e.preventDefault();
                               handleDropdownToggle(item.name);
@@ -271,7 +279,7 @@ const Header = () => {
                               <a
                                 key={subItem.name}
                                 href={subItem.href}
-                                className="block py-4 px-6 text-tennis-yellow/80 hover:bg-tennis-yellow hover:text-tennis-black text-lg transition-colors rounded-md border-b border-tennis-yellow/20 last:border-b-0"
+                                className="block py-4 px-6 text-tennis-black/80 hover:bg-tennis-yellow hover:text-tennis-black text-lg transition-colors rounded-md border-b border-tennis-yellow/20 last:border-b-0"
                                 style={{ fontFamily: "Arial, sans-serif" }}
                                 onClick={() => {
                                   setIsMenuOpen(false);
@@ -287,7 +295,7 @@ const Header = () => {
                     ) : (
                       <a
                         href={item.href}
-                        className="block py-4 px-4 text-tennis-yellow hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
+                        className="block py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
                         style={{ fontFamily: "Arial, sans-serif" }}
                         onClick={() => {
                           setIsMenuOpen(false);
