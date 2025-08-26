@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   MapPin,
@@ -79,7 +80,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/faq"
                   className="text-gray-300 hover:text-tennis-yellow transition-colors"
                 >
                   FAQ
@@ -87,7 +88,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/der-club/mitgliedschaft"
                   className="text-gray-300 hover:text-tennis-yellow transition-colors"
                 >
                   Mitgliedschaft
@@ -157,13 +158,13 @@ const Footer = () => {
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a
-                href="#"
+                href="/impressum"
                 className="text-gray-400 hover:text-tennis-yellow text-sm transition-colors"
               >
                 Impressum
               </a>
               <a
-                href="#"
+                href="/datenschutz"
                 className="text-gray-400 hover:text-tennis-yellow text-sm transition-colors"
               >
                 Datenschutz
