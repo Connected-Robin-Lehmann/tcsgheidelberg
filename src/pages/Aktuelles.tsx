@@ -6,54 +6,55 @@ import { Calendar, Mail, ExternalLink, Users, MapPin, Clock } from 'lucide-react
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-const Aktuelles = () => {
-  const upcomingEvents = [
-    {
-      date: '08.09.-12.09.2025',
-      title: 'Sommerferien Tenniscamp',
-      description: 'Anmeldung und Info bei A. Kukaras',
-      contact: 'tennis@kukaras.de',
-      type: 'training'
-    },
-    {
-      date: '12.09.-14.09.2025',
-      title: 'Traglufthallenaufbau',
-      description: 'Aufbau der Winterhalle',
-      type: 'maintenance'
-    },
-    {
-      date: '13.09.-14.09.2025',
-      title: 'Badische Mannschaftsmeisterschaften U12w',
-      description: 'Nachwuchsturnier',
-      type: 'tournament'
-    },
-    {
-      date: '22.09.2025',
-      title: 'Beginn Wintertraining',
-      description: 'Anmeldung über Sportision',
-      link: 'https://www.sportision.de/club/kukaras-professional-tennis-1',
-      type: 'training'
-    },
-    {
-      date: '12.10.2025',
-      title: 'Mitgliederversammlung',
-      description: '17:00 Uhr',
-      type: 'meeting'
-    },
-    {
-      date: '18.10.2025',
-      title: 'Putzete',
-      description: 'ab 10:00 Uhr',
-      type: 'maintenance'
-    },
-    {
-      date: '21.11.2025',
-      title: 'Thanksgiving – Truthahnessen',
-      description: 'ab 19:00 Uhr in der Rose (Kirchheim)',
-      type: 'social'
-    }
-  ];
+// Events Array - hier können einfach neue Termine hinzugefügt/entfernt/bearbeitet werden
+const upcomingEvents = [
+  {
+    date: '08.09.-12.09.2025',
+    title: 'Sommerferien Tenniscamp',
+    description: 'Anmeldung und Info bei A. Kukaras',
+    contact: 'tennis@kukaras.de',
+    type: 'training'
+  },
+  {
+    date: '12.09.-14.09.2025',
+    title: 'Traglufthallenaufbau',
+    description: 'Aufbau der Winterhalle',
+    type: 'maintenance'
+  },
+  {
+    date: '13.09.-14.09.2025',
+    title: 'Badische Mannschaftsmeisterschaften U12w',
+    description: 'Nachwuchsturnier',
+    type: 'tournament'
+  },
+  {
+    date: '22.09.2025',
+    title: 'Beginn Wintertraining',
+    description: 'Anmeldung über Sportision',
+    link: 'https://www.sportision.de/club/kukaras-professional-tennis-1',
+    type: 'training'
+  },
+  {
+    date: '12.10.2025',
+    title: 'Mitgliederversammlung',
+    description: '17:00 Uhr',
+    type: 'meeting'
+  },
+  {
+    date: '18.10.2025',
+    title: 'Putzete',
+    description: 'ab 10:00 Uhr',
+    type: 'maintenance'
+  },
+  {
+    date: '21.11.2025',
+    title: 'Thanksgiving – Truthahnessen',
+    description: 'ab 19:00 Uhr in der Rose (Kirchheim)',
+    type: 'social'
+  }
+];
 
+const Aktuelles = () => {
   const getEventIcon = (type: string) => {
     switch (type) {
       case 'training': return <Users className="h-5 w-5" />;
