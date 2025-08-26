@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { Card } from '@/components/ui/card';
-import { Calendar, Clock, MapPin, Users } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Card } from "@/components/ui/card";
+import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const EventSection = () => {
   return (
@@ -13,7 +12,8 @@ const EventSection = () => {
             Aktuelle Termine & Informationen
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Bleiben Sie auf dem Laufenden mit unseren neuesten Veranstaltungen und wichtigen Vereinsinformationen
+            Bleiben Sie auf dem Laufenden mit unseren neuesten Veranstaltungen
+            und wichtigen Vereinsinformationen
           </p>
         </div>
 
@@ -26,7 +26,7 @@ const EventSection = () => {
                 Mitgliederversammlung & Sommerfest
               </h3>
             </div>
-            
+
             <div className="space-y-3 mb-6">
               <div className="flex items-center text-gray-700">
                 <Clock className="h-5 w-5 mr-2" />
@@ -43,13 +43,12 @@ const EventSection = () => {
             </div>
 
             <p className="text-gray-700 mb-6">
-              Unsere jährliche Mitgliederversammlung mit anschließendem legendären Sommerfest. 
-              Freuen Sie sich auf einen geselligen Abend mit tollem Programm!
+              Unsere jährliche Mitgliederversammlung mit anschließendem
+              legendären Sommerfest. Freuen Sie sich auf einen geselligen Abend
+              mit tollem Programm!
             </p>
 
-            <Button className="btn-hero w-full">
-              Mehr Informationen
-            </Button>
+            <Button className="btn-hero w-full">Mehr Informationen</Button>
           </Card>
 
           {/* Tagesordnung */}
@@ -60,21 +59,33 @@ const EventSection = () => {
                 Tagesordnungspunkte 2025
               </h3>
             </div>
-            
+
             <div className="space-y-4 mb-6">
               <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-tennis-black mb-2">🗳️ Vorstandswahl</h4>
-                <p className="text-sm text-gray-600">Neuwahl des Vereinsvorstands</p>
+                <h4 className="font-semibold text-tennis-black mb-2">
+                  🗳️ Vorstandswahl
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Neuwahl des Vereinsvorstands
+                </p>
               </div>
-              
+
               <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-tennis-black mb-2">💰 Beitragsordnung</h4>
-                <p className="text-sm text-gray-600">Anpassung der Mitgliedsbeiträge</p>
+                <h4 className="font-semibold text-tennis-black mb-2">
+                  💰 Beitragsordnung
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Anpassung der Mitgliedsbeiträge
+                </p>
               </div>
-              
+
               <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-tennis-black mb-2">📋 Satzungsanpassung</h4>
-                <p className="text-sm text-gray-600">Modernisierung der Vereinssatzung</p>
+                <h4 className="font-semibold text-tennis-black mb-2">
+                  📋 Satzungsanpassung
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Modernisierung der Vereinssatzung
+                </p>
               </div>
             </div>
 
@@ -87,15 +98,9 @@ const EventSection = () => {
         {/* Quick Actions */}
         <div className="text-center">
           <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Button className="btn-hero">
-              Club entdecken
-            </Button>
-            <Button className="btn-hero-outline">
-              FAQ für Neulinge
-            </Button>
-            <Button className="btn-hero">
-              Mitglieder-Infos
-            </Button>
+            <Button className="btn-hero">Club entdecken</Button>
+            <Button className="btn-hero-outline">FAQ für Neulinge</Button>
+            <Button className="btn-hero">Mitglieder-Infos</Button>
           </div>
         </div>
       </div>
