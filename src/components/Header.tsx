@@ -161,7 +161,6 @@ const Header = () => {
                         <a
                           href={item.href}
                           className="flex items-center space-x-1 px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
-                          style={{ fontFamily: "Arial, sans-serif" }}
                         >
                           <span>{item.name}</span>
                           <ChevronDown className="h-4 w-4 transform group-hover:rotate-180 transition-transform duration-200" />
@@ -172,7 +171,6 @@ const Header = () => {
                             <a
                               href={item.href}
                               className="block px-4 py-3 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold border-b border-tennis-yellow/20 mb-2 rounded-md transition-colors duration-200"
-                              style={{ fontFamily: "Arial, sans-serif" }}
                             >
                               {item.name} Übersicht
                             </a>
@@ -181,7 +179,6 @@ const Header = () => {
                                 key={subItem.name}
                                 href={subItem.href}
                                 className="block px-4 py-2 text-tennis-black/80 hover:bg-tennis-yellow/20 hover:text-tennis-black rounded-md text-sm transition-colors duration-200"
-                                style={{ fontFamily: "Arial, sans-serif" }}
                               >
                                 {subItem.name}
                               </a>
@@ -190,11 +187,10 @@ const Header = () => {
                         </div>
                       </div>
                     ) : (
-                      <a
-                        href={item.href}
-                        className="block px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
-                        style={{ fontFamily: "Arial, sans-serif" }}
-                      >
+                        <a
+                          href={item.href}
+                          className="block px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
+                        >
                         {item.name}
                       </a>
                     )}
@@ -207,7 +203,6 @@ const Header = () => {
             <div className="hidden xl:block">
               <Button
                 className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-6 py-3 text-sm xl:text-base transition-all duration-300"
-                style={{ fontFamily: "Arial, sans-serif" }}
                 onClick={() =>
                   window.open(
                     "https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//",
@@ -249,7 +244,6 @@ const Header = () => {
                           <a
                             href={item.href}
                             className="flex-1 py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
-                            style={{ fontFamily: "Arial, sans-serif" }}
                             onClick={() => {
                               setIsMenuOpen(false);
                               setOpenDropdown(null);
@@ -279,7 +273,6 @@ const Header = () => {
                                 key={subItem.name}
                                 href={subItem.href}
                                 className="block py-4 px-6 text-tennis-black/80 hover:bg-tennis-yellow hover:text-tennis-black text-lg transition-colors rounded-md border-b border-tennis-yellow/20 last:border-b-0"
-                                style={{ fontFamily: "Arial, sans-serif" }}
                                 onClick={() => {
                                   setIsMenuOpen(false);
                                   setOpenDropdown(null);
@@ -292,15 +285,14 @@ const Header = () => {
                         )}
                       </div>
                     ) : (
-                      <a
-                        href={item.href}
-                        className="block py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
-                        style={{ fontFamily: "Arial, sans-serif" }}
-                        onClick={() => {
-                          setIsMenuOpen(false);
-                          setOpenDropdown(null);
-                        }}
-                      >
+                        <a
+                          href={item.href}
+                          className="block py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setOpenDropdown(null);
+                          }}
+                        >
                         {item.name}
                       </a>
                     )}
@@ -308,7 +300,6 @@ const Header = () => {
                 ))}
                 <Button
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold w-full mt-4 py-4 text-lg transition-all duration-300"
-                  style={{ fontFamily: "Arial, sans-serif" }}
                   onClick={() => {
                     window.open(
                       "https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//",
