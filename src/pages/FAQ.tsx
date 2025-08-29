@@ -1,74 +1,92 @@
-
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { MessageCircle, Users, Calendar, MapPin, Download, ExternalLink, Instagram } from 'lucide-react';
+import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import {
+  MessageCircle,
+  Users,
+  Calendar,
+  MapPin,
+  Download,
+  ExternalLink,
+  Instagram,
+} from "lucide-react";
 
 const FAQ = () => {
   const faqs = [
     {
       icon: <Users className="h-6 w-6 text-tennis-yellow" />,
       question: "Wie kann ich im TC Schwarz-Gelb Mitglied werden?",
-      answer: "Du hast Lust auf Tennis in toller Atmosphäre mitten in Heidelberg? Du möchtest selbst den Schläger erstmals oder nach vielen Jahren der Pause wieder in die Hand nehmen, um Ball und Gegner über den Platz zu treiben? Dann freuen wir uns auf dich als neues Mitglied in unserem Traditionsverein – Mitgliedsantrag ausfüllen und abschicken, schon bist du dabei! Freue dich auf Spaß am Spiel und neue Freunde – mit unseren vielen, unterschiedlich starken und ambitionierten Spielern stehen Dir in jedem Fall viele nette Menschen zur Seite, die den Tennissport genauso lieben wie Du! Für Familien, Jugendliche und Studenten haben wir ermäßigte Tarife. Auch bieten wir im ersten Jahr der Aufnahme bei Eintritt nach dem 15.07. ermäßigte Beträge bis zum Jahresende.",
+      answer:
+        "Du hast Lust auf Tennis in toller Atmosphäre mitten in Heidelberg? Du möchtest selbst den Schläger erstmals oder nach vielen Jahren der Pause wieder in die Hand nehmen, um Ball und Gegner über den Platz zu treiben? Dann freuen wir uns auf dich als neues Mitglied in unserem Traditionsverein – Mitgliedsantrag ausfüllen und abschicken, schon bist du dabei! Freue dich auf Spaß am Spiel und neue Freunde – mit unseren vielen, unterschiedlich starken und ambitionierten Spielern stehen Dir in jedem Fall viele nette Menschen zur Seite, die den Tennissport genauso lieben wie Du! Für Familien, Jugendliche und Studenten haben wir ermäßigte Tarife. Auch bieten wir im ersten Jahr der Aufnahme bei Eintritt nach dem 15.07. ermäßigte Beträge bis zum Jahresende.",
       links: [
         {
           text: "Mitgliedsantrag (PDF)",
-          url: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2023/01/Aufnahmeantrag-komplett-ab-2023.pdf"
+          url: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2023/01/Aufnahmeantrag-komplett-ab-2023.pdf",
         },
         {
           text: "Beitragsordnung",
-          url: "/der-club/beitragsordnung"
-        }
-      ]
+          url: "/der-club/beitragsordnung",
+        },
+      ],
     },
     {
       icon: <MessageCircle className="h-6 w-6 text-tennis-yellow" />,
       question: "Gibt es ein Probe-/Schnuppertraining?",
-      answer: "Ansprechpartner zu Schnupperstunde, Trainingskosten und der sonstigen Organisation der Trainings, Mannschaften usw. ist Alex Kukaras (tennis@kukaras.de). Zum Training & Spielen ist eine aktive Mitgliedschaft (ganzjährlich) im Verein erforderlich (egal ob Kinder, Jugendliche, Erwachsener, Anfänger oder Fortgeschrittener). Gruppen- und auch Einzel-Trainings müssten dann nach dem Beitritt zum Verein direkt mit der Tennisschule vereinbart werden. Trainings werden dann direkt mit der Tennisschule abgerechnet. Die Preise für das Training können bei der Tennisschule erfragt werden."
+      answer:
+        "Ansprechpartner zu Schnupperstunde, Trainingskosten und der sonstigen Organisation der Trainings, Mannschaften usw. ist Alex Kukaras (tennis@kukaras.de). Zum Training & Spielen ist eine aktive Mitgliedschaft (ganzjährlich) im Verein erforderlich (egal ob Kinder, Jugendliche, Erwachsener, Anfänger oder Fortgeschrittener). Gruppen- und auch Einzel-Trainings müssten dann nach dem Beitritt zum Verein direkt mit der Tennisschule vereinbart werden. Trainings werden dann direkt mit der Tennisschule abgerechnet. Die Preise für das Training können bei der Tennisschule erfragt werden.",
     },
     {
       icon: <MapPin className="h-6 w-6 text-tennis-yellow" />,
-      question: "Wo finde ich Informationen zu den Tennisplätzen/Spielmöglichkeiten im Sommer und Winter?",
-      answer: "Im Sommer stehen dem Verein 10 Sandplätze zur Verfügung, im Winter eine Traglufthalle mit zwei Plätzen, eine Teppichhalle sowie 2 weitere Plätze beim USC.",
+      question:
+        "Wo finde ich Informationen zu den Tennisplätzen/Spielmöglichkeiten im Sommer und Winter?",
+      answer:
+        "Im Sommer stehen dem Verein 10 Sandplätze zur Verfügung, im Winter eine Traglufthalle mit zwei Plätzen, eine Teppichhalle sowie 2 weitere Plätze beim USC.",
       links: [
         {
           text: "Tennisplätze",
-          url: "/der-club/tennisplaetze"
-        }
-      ]
+          url: "/der-club/tennisplaetze",
+        },
+      ],
     },
     {
       icon: <Calendar className="h-6 w-6 text-tennis-yellow" />,
       question: "Wie funktioniert die Platzreservierung?",
-      answer: "Der Zugang zum Buchungssystem erfolgt von der Club-Webseite www.schwarzgelb-heidelberg.de oder direkt über den Link https://ssl.forumedia.eu/schwarzgelb-heidelberg.net. Hier können mit jedem internetfähigen Gerät Reservierungen vorgenommen und die aktuelle Belegung eingesehen werden. Reservierungen können zusätzlich auch vor Ort am Clubhaus an einem Touchdisplay vorgenommen werden. Das System steht selbstverständlich allen Mitgliedern kostenfrei zur Verfügung (es ist also nicht erforderlich die im System integrierte Guthabenfunktion zu nutzen). Online und auf dem Display am Clubhaus wird „real-time" die aktuelle Belegung und Buchungssituation inklusive der Namen der Spieler angezeigt.",
+      answer: `Der Zugang zum Buchungssystem erfolgt von der Club-Webseite www.schwarzgelb-heidelberg.de 
+  oder direkt über den Link https://ssl.forumedia.eu/schwarzgelb-heidelberg.net. Hier können mit jedem 
+  internetfähigen Gerät Reservierungen vorgenommen und die aktuelle Belegung eingesehen werden. 
+  Reservierungen können zusätzlich auch vor Ort am Clubhaus an einem Touchdisplay vorgenommen werden. 
+  Das System steht selbstverständlich allen Mitgliedern kostenfrei zur Verfügung (es ist also nicht erforderlich, 
+  die im System integrierte Guthabenfunktion zu nutzen). Online und auf dem Display am Clubhaus wird "real-time" 
+  die aktuelle Belegung und Buchungssituation inklusive der Namen der Spieler angezeigt.`,
       details: [
         "Die Plätze BERK, 1 bis 4 und 6 bis 10 können im Sommer, sofern kein Training stattfindet, online von 8:00 Uhr bis 22:00 Uhr für freies Spielen gebucht werden",
         "Nach 18:00 Uhr stehen die Plätze vorzugsweise erwachsenen Mitgliedern zum Spiel miteinander oder mit ihren Kindern zur Verfügung",
         "Eine Platzbuchung nach 18:00 Uhr muss mindestens einen Erwachsenen oder einen Jugendlichen ab 16 Jahre umfassen",
         "Pro Spieler kann nur ein Slot pro Tag gebucht werden und auch immer nur für den aktuellen Tag",
         "Die Slots betragen immer pro Spieler 30 Minuten, beginnend jeweils zur vollen Stunde",
-        "Externe Spieler, die nicht aktives Mitglied unseres Vereins sind, können keine Plätze buchen"
+        "Externe Spieler, die nicht aktives Mitglied unseres Vereins sind, können keine Plätze buchen",
       ],
       accessInfo: {
         title: "Wie komme ich rein?",
         steps: [
           "Mitgliedsnummer (4-stellig) eingeben, z.B.: 001234 (00 und Mitgliedsnummer)",
           "Geburtsdatum ohne Punkte in acht Zahlen eingeben, z.B.: 12101985 (wenn Sie am 12.10.1985 geboren sind)",
-          "Links auf das X gehen, Buchung auswählen, entsprechenden Platz auswählen und gewünschte Uhrzeit reservieren"
-        ]
-      }
+          "Links auf das X gehen, Buchung auswählen, entsprechenden Platz auswählen und gewünschte Uhrzeit reservieren",
+        ],
+      },
     },
     {
       icon: <ExternalLink className="h-6 w-6 text-tennis-yellow" />,
       question: "Wo finde ich die Spieltage der einzelnen Mannschaften?",
-      answer: "Die Vereinsinfo sowie alles rund um die einzelnen Begegnungen, Namentliche Meldungen der VereinsspielerInnen, die einzelnen Mannschaften und die LK-Vereinsübersicht findet sich unter dem Badischen Tennisverband auf NuLiga.",
+      answer:
+        "Die Vereinsinfo sowie alles rund um die einzelnen Begegnungen, Namentliche Meldungen der VereinsspielerInnen, die einzelnen Mannschaften und die LK-Vereinsübersicht findet sich unter dem Badischen Tennisverband auf NuLiga.",
       links: [
         {
           text: "NuLiga - TC Schwarz-Gelb",
-          url: "https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/clubInfoDisplay?club=33129"
-        }
-      ]
-    }
+          url: "https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/clubInfoDisplay?club=33129",
+        },
+      ],
+    },
   ];
 
   return (
@@ -88,7 +106,8 @@ const FAQ = () => {
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hier finden Sie Antworten auf die häufigsten Fragen rund um unseren Tennisclub
+              Hier finden Sie Antworten auf die häufigsten Fragen rund um
+              unseren Tennisclub
             </p>
           </div>
 
@@ -124,17 +143,18 @@ const FAQ = () => {
           {/* FAQ Items */}
           <div className="space-y-8">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
+              <div
+                key={index}
+                className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20"
+              >
                 <div className="p-8 md:p-12">
                   <div className="flex items-start mb-6">
-                    <div className="flex-shrink-0 mr-4 mt-1">
-                      {faq.icon}
-                    </div>
+                    <div className="flex-shrink-0 mr-4 mt-1">{faq.icon}</div>
                     <h3 className="text-2xl font-bold text-tennis-black">
                       {faq.question}
                     </h3>
                   </div>
-                  
+
                   <div className="ml-10">
                     <p className="text-gray-700 leading-relaxed mb-6">
                       {faq.answer}
@@ -142,7 +162,9 @@ const FAQ = () => {
 
                     {faq.details && (
                       <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-tennis-black mb-4">Details:</h4>
+                        <h4 className="text-lg font-semibold text-tennis-black mb-4">
+                          Details:
+                        </h4>
                         <ul className="space-y-2">
                           {faq.details.map((detail, idx) => (
                             <li key={idx} className="flex items-start">
@@ -178,8 +200,14 @@ const FAQ = () => {
                           <a
                             key={idx}
                             href={link.url}
-                            target={link.url.startsWith('http') ? '_blank' : '_self'}
-                            rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
+                            target={
+                              link.url.startsWith("http") ? "_blank" : "_self"
+                            }
+                            rel={
+                              link.url.startsWith("http")
+                                ? "noopener noreferrer"
+                                : ""
+                            }
                             className="inline-flex items-center bg-tennis-black text-tennis-yellow px-6 py-2 rounded-full font-semibold hover:bg-gray-800 transition-colors"
                           >
                             <Download className="h-4 w-4 mr-2" />

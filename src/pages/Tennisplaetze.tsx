@@ -1,48 +1,59 @@
-
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { MapPin, Calendar, Users, Info } from 'lucide-react';
+import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { MapPin, Calendar, Users, Info } from "lucide-react";
 
 const Tennisplaetze = () => {
   const facilities = [
     {
       title: "Hauptanlage Schwindstrasse",
-      description: "Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Restaurant durch eine Hecke getrennt der zentrale Center-Court „Max BERK" anschließt. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
-      features: ["10 Sandplätze", "Center-Court Max-BERK", "Kinder- und Jugendbereich"]
+      description:
+        "Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Restaurant durch eine Hecke getrennt der zentrale Center-Court 'Max BERK' anschließt. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.",
+      image:
+        "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
+      features: [
+        "10 Sandplätze",
+        "Center-Court Max-BERK",
+        "Kinder- und Jugendbereich",
+      ],
     },
     {
       title: "Traglufthalle (Winter)",
-      description: "Auf den Plätzen 7 und 8 wird für die Wintersaison eine beheizte Traglufthalle aufgebaut. So können unsere Mitglieder auch im Winter auf einem Sandplatz trainieren und frei spielen.",
+      description:
+        "Auf den Plätzen 7 und 8 wird für die Wintersaison eine beheizte Traglufthalle aufgebaut. So können unsere Mitglieder auch im Winter auf einem Sandplatz trainieren und frei spielen.",
       image: "/placeholder.svg",
-      features: ["2 Sandplätze", "Beheizt", "Oktober bis April"]
+      features: ["2 Sandplätze", "Beheizt", "Oktober bis April"],
     },
     {
       title: "Historische Tennis(teppich)halle",
-      description: "Insbesondere in der Wintersaison steht uns in Absprache mit dem Eigentümer ebenfalls auch die historische Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.",
+      description:
+        "Insbesondere in der Wintersaison steht uns in Absprache mit dem Eigentümer ebenfalls auch die historische Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.",
       image: "/placeholder.svg",
-      features: ["Teppichboden", "Ganzjährig verfügbar", "Historisches Ambiente"]
-    }
+      features: [
+        "Teppichboden",
+        "Ganzjährig verfügbar",
+        "Historisches Ambiente",
+      ],
+    },
   ];
 
   const galleryImages = [
     {
       src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
-      alt: "Hauptanlage Tennisplätze"
+      alt: "Hauptanlage Tennisplätze",
     },
     {
       src: "/placeholder.svg",
-      alt: "Center Court Max BERK"
+      alt: "Center Court Max BERK",
     },
     {
       src: "/placeholder.svg",
-      alt: "Jugendplätze"
+      alt: "Jugendplätze",
     },
     {
       src: "/placeholder.svg",
-      alt: "Traglufthalle"
-    }
+      alt: "Traglufthalle",
+    },
   ];
 
   return (
@@ -62,7 +73,8 @@ const Tennisplaetze = () => {
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Unser Club besitzt 10 Sandplätze an unserem Stammsitz. Mehr Infos finden Sie weiter unten auf dieser Seite.
+              Unser Club besitzt 10 Sandplätze an unserem Stammsitz. Mehr Infos
+              finden Sie weiter unten auf dieser Seite.
             </p>
           </div>
 
@@ -73,19 +85,29 @@ const Tennisplaetze = () => {
               Wichtiger Hinweis
             </h3>
             <p className="text-white text-lg">
-              Zum Spielen bei uns im Verein ist eine offizielle („aktive") Mitgliedschaft notwendig.<br />
-              Ein Mieten der Tennisplätze durch Nicht-Mitglieder ist nicht möglich, wir bitten um Verständnis.
+              Zum Spielen bei uns im Verein ist eine offizielle („aktive")
+              Mitgliedschaft notwendig.
+              <br />
+              Ein Mieten der Tennisplätze durch Nicht-Mitglieder ist nicht
+              möglich, wir bitten um Verständnis.
             </p>
           </div>
 
           {/* Facilities */}
           <div className="space-y-16 mb-16">
             {facilities.map((facility, index) => (
-              <div key={index} className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
-                <div className={`grid md:grid-cols-2 gap-0 ${index % 2 === 1 ? 'md:grid-flow-col-dense' : ''}`}>
-                  <div className={`${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
-                    <img 
-                      src={facility.image} 
+              <div
+                key={index}
+                className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20"
+              >
+                <div
+                  className={`grid md:grid-cols-2 gap-0 ${
+                    index % 2 === 1 ? "md:grid-flow-col-dense" : ""
+                  }`}
+                >
+                  <div className={`${index % 2 === 1 ? "md:col-start-2" : ""}`}>
+                    <img
+                      src={facility.image}
                       alt={facility.title}
                       className="w-full h-64 md:h-full object-cover"
                     />
@@ -118,11 +140,13 @@ const Tennisplaetze = () => {
                 Platz 10 - Der Besondere
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Der Platz 10 ist direkt vom Parkplatz in Schwindstraße aus zugänglich. Er liegt direkt hinter der 
-                historischen Tennishalle und ist über viele Jahre hinweg durch Hecken schön eingewachsen.
+                Der Platz 10 ist direkt vom Parkplatz in Schwindstraße aus
+                zugänglich. Er liegt direkt hinter der historischen Tennishalle
+                und ist über viele Jahre hinweg durch Hecken schön eingewachsen.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Für weitere Impressionen einfach rechts auf ein Bild und durch die komplette Bildergalerie klicken.
+                Für weitere Impressionen einfach rechts auf ein Bild und durch
+                die komplette Bildergalerie klicken.
               </p>
             </div>
           </div>
@@ -168,7 +192,8 @@ const Tennisplaetze = () => {
                 Besuchen Sie unsere Anlage
               </h3>
               <p className="text-white mb-6">
-                Überzeugen Sie sich selbst von unseren erstklassigen Tennisplätzen
+                Überzeugen Sie sich selbst von unseren erstklassigen
+                Tennisplätzen
               </p>
               <a
                 href="/der-club/mitgliedschaft"
