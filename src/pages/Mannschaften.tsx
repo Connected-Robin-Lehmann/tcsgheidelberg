@@ -40,7 +40,7 @@ const Mannschaften = () => {
                   </p>
                 </div>
               </Card>
-              
+
               <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <div className="p-8 text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow rounded-full mb-4">
@@ -127,7 +127,7 @@ const Mannschaften = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <a
-                  href="/jugend"
+                  href="/mannschaften/jugend"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
@@ -144,16 +144,14 @@ const Mannschaften = () => {
                 </a>
 
                 <a
-                  href="/damen"
+                  href="/mannschaften/damen"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow/20 group-hover:bg-tennis-yellow rounded-full mb-4 transition-colors">
                       <Target className="w-8 h-8 text-tennis-black" />
                     </div>
-                    <h4 className="text-xl font-bold text-foreground">
-                      Damen
-                    </h4>
+                    <h4 className="text-xl font-bold text-foreground">Damen</h4>
                     <p className="text-sm text-muted-foreground mt-2">
                       Mehrere Teams
                     </p>
@@ -161,7 +159,7 @@ const Mannschaften = () => {
                 </a>
 
                 <a
-                  href="/herren"
+                  href="/mannschaften/herren"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
@@ -178,7 +176,7 @@ const Mannschaften = () => {
                 </a>
 
                 <a
-                  href="/senioren"
+                  href="/mannschaften/senioren"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
