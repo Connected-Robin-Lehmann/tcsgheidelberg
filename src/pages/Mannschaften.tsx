@@ -2,6 +2,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
+import { Users, Trophy, Target, Heart } from "lucide-react";
 
 const Mannschaften = () => {
   return (
@@ -24,54 +25,50 @@ const Mannschaften = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Main Content */}
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Statistics Card */}
-            <div className="flex max-w-full justify-evenly">
-              <Card
-                className={`border-tennis-yellow border-4 hover:shadow-lg transition-all duration-300`}
-              >
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex items-center text-tennis-black">
-                      <span className="ml-2 text-sm font-medium text-gray-600">
-                        Mannschaften insgesamt
-                      </span>
-                    </div>
+            {/* Statistics Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="p-8 text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow rounded-full mb-4">
+                    <Users className="w-8 h-8 text-tennis-black" />
                   </div>
-
                   <h3 className="text-6xl font-bold text-tennis-black mb-2">
                     28
                   </h3>
+                  <p className="text-lg font-medium text-foreground">
+                    Mannschaften insgesamt
+                  </p>
                 </div>
               </Card>
-              <Card
-                className={`border-tennis-yellow border-4 hover:shadow-lg transition-all duration-300`}
-              >
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex items-center text-tennis-black">
-                      <span className="ml-2 text-sm font-medium text-gray-600">
-                        Jugend-Mannschaften
-                      </span>
-                    </div>
+              
+              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="p-8 text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow rounded-full mb-4">
+                    <Trophy className="w-8 h-8 text-tennis-black" />
                   </div>
-
                   <h3 className="text-6xl font-bold text-tennis-black mb-2">
                     16
                   </h3>
+                  <p className="text-lg font-medium text-foreground">
+                    Jugend-Mannschaften
+                  </p>
                 </div>
               </Card>
             </div>
 
             {/* Description */}
-            <div className="bg-card p-8 rounded-lg shadow-lg border border-border">
+            <Card className="p-8 border-tennis-yellow border-2">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
+                Unsere Mannschaften 2024
+              </h2>
               <p className="text-lg leading-relaxed text-foreground mb-6">
                 Auch in 2024 schicken wir als TC Schwarz-Gelb Heidelberg e.V.
                 insgesamt{" "}
-                <span className="font-semibold text-primary">
+                <span className="font-semibold text-tennis-black">
                   28 Mannschaften
                 </span>{" "}
                 in die Sommersaison, davon{" "}
-                <span className="font-semibold text-accent">
+                <span className="font-semibold text-tennis-black">
                   16 Jugend-Mannschaften
                 </span>
                 , um sich mit den anderen Teams zu messen. Wir bieten also auch
@@ -79,7 +76,7 @@ const Mannschaften = () => {
                 Mannschaftssport in zahlreichen Leistungs- und Altersklassen.
               </p>
 
-              <p className="text-lg leading-relaxed text-foreground mb-6">
+              <p className="text-lg leading-relaxed text-foreground mb-8">
                 Somit findet bei uns jeder Tennisspieler schnell seine passende
                 Mannschaft. Die regelmäßig stattfindenden internen
                 Mannschaftstrainings sind für die gute Stimmung und
@@ -102,7 +99,7 @@ const Mannschaften = () => {
                   href="https://baden.liga.nu/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  className="inline-flex items-center bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                 >
                   Baden Tennis Verband
                   <svg
@@ -120,60 +117,84 @@ const Mannschaften = () => {
                   </svg>
                 </a>
               </div>
-            </div>
+            </Card>
 
             {/* Team Categories */}
-            <div className="bg-card p-8 rounded-lg shadow-lg border border-border">
+            <Card className="p-8 border-tennis-yellow border-2">
               <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
-                Mannschaften
+                Unsere Mannschaftskategorien
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <a
                   href="/jugend"
-                  className="group p-6 rounded-lg border-4 border-tennis-yellow/25 hover:border-tennis-yellow/40 transition-all hover:shadow-lg items-center flex justify-center"
+                  className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
-                    <h4 className="text-xl font-bold text-foreground transition-colors">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow/20 group-hover:bg-tennis-yellow rounded-full mb-4 transition-colors">
+                      <Trophy className="w-8 h-8 text-tennis-black" />
+                    </div>
+                    <h4 className="text-xl font-bold text-foreground">
                       Jugend
                     </h4>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      16 Teams
+                    </p>
                   </div>
                 </a>
 
                 <a
                   href="/damen"
-                  className="group p-6 rounded-lg border-4 border-tennis-yellow/25 hover:border-tennis-yellow/40 transition-all hover:shadow-lg items-center flex justify-center"
+                  className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
-                    <h4 className="text-xl font-bold text-foreground transition-colors">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow/20 group-hover:bg-tennis-yellow rounded-full mb-4 transition-colors">
+                      <Target className="w-8 h-8 text-tennis-black" />
+                    </div>
+                    <h4 className="text-xl font-bold text-foreground">
                       Damen
                     </h4>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Mehrere Teams
+                    </p>
                   </div>
                 </a>
 
                 <a
                   href="/herren"
-                  className="group p-6 rounded-lg border-4 border-tennis-yellow/25 hover:border-tennis-yellow/40 transition-all hover:shadow-lg items-center flex justify-center"
+                  className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
-                    <h4 className="text-xl font-bold text-foreground transition-colors">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow/20 group-hover:bg-tennis-yellow rounded-full mb-4 transition-colors">
+                      <Users className="w-8 h-8 text-tennis-black" />
+                    </div>
+                    <h4 className="text-xl font-bold text-foreground">
                       Herren
                     </h4>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Mehrere Teams
+                    </p>
                   </div>
                 </a>
 
                 <a
                   href="/senioren"
-                  className="group p-6 rounded-lg border-4 border-tennis-yellow/25 hover:border-tennis-yellow/40 transition-all hover:shadow-lg items-center flex justify-center"
+                  className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
-                    <h4 className="text-xl font-bold text-foreground transition-colors">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow/20 group-hover:bg-tennis-yellow rounded-full mb-4 transition-colors">
+                      <Heart className="w-8 h-8 text-tennis-black" />
+                    </div>
+                    <h4 className="text-xl font-bold text-foreground">
                       Senioren
                     </h4>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Mehrere Teams
+                    </p>
                   </div>
                 </a>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </main>
