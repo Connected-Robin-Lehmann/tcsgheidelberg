@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const EventSection = () => {
   return (
@@ -97,10 +98,9 @@ const EventSection = () => {
 
         {/* Quick Actions */}
         <div className="text-center">
-          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Button className="btn-hero">Club entdecken</Button>
-            <Button className="btn-hero-outline">FAQ für Neulinge</Button>
-            <Button className="btn-hero">Mitglieder-Infos</Button>
+          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <Link to="/der-club" className="btn-hero">Club entdecken</Link>
+            <Link to="/faq" className="btn-hero-outline">FAQ für Neulinge</Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Users, Award, MapPin, Calendar, Trophy, Target } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const StatsSection = () => {
   const stats = [
@@ -48,12 +49,12 @@ const StatsSection = () => {
             Werden Sie Teil unserer großen Tennisfamilie
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="btn-hero">
+            <Link to="/mitgliedschaft" className="btn-hero">
               Mitglied werden
-            </button>
-            <button className="btn-hero-outline">
+            </Link>
+            <Link to="/mitgliedschaft" className="btn-hero-outline">
               Probetraining vereinbaren
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 // Events Array - hier können einfach neue Termine hinzugefügt/entfernt/bearbeitet werden
 const upcomingEvents = [
@@ -180,10 +181,10 @@ const Aktuelles = () => {
               <p className="text-gray-600 mb-4">
                 Alle weiteren Termine finden Sie unter:
               </p>
-              <Button className="btn-hero">
+              <Link to="/veranstaltungen" className="btn-hero inline-flex items-center">
                 <Calendar className="h-4 w-4 mr-2" />
                 Alle Veranstaltungen
-              </Button>
+              </Link>
             </div>
           </section>
 

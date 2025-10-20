@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SponsorsSection = () => {
   const mainSponsors = [
@@ -97,9 +97,9 @@ const SponsorsSection = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Interesse an einer Partnerschaft?
           </p>
-          <button className="btn-hero">
+          <Link to="/sponsoring" className="btn-hero">
             Sponsoring-Möglichkeiten
-          </button>
+          </Link>
         </div>
       </div>
     </section>
