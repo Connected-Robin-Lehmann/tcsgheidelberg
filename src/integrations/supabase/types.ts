@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admin_users: {
+        Row: {
+          created_at: string | null
+          id: string
+          password_hash: string
+          username: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          password_hash: string
+          username: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          password_hash?: string
+          username?: string
+        }
+        Relationships: []
+      }
+      modal_settings: {
+        Row: {
+          content: string
+          created_at: string | null
+          id: string
+          is_active: boolean
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          id?: string
+          is_active?: boolean
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          id?: string
+          is_active?: boolean
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

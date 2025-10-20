@@ -41,6 +41,8 @@ import TennisschuleSeibold from "./pages/TennisschuleSeibold";
 import Gastronomie from "./pages/Gastronomie";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -104,6 +106,10 @@ const App = () => (
           {/* Legal Routes */}
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
