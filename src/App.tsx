@@ -5,44 +5,67 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import DerClub from "./pages/DerClub";
-import Vorstand from "./pages/Vorstand";
-import Tradition from "./pages/Tradition";
-import Tennisplaetze from "./pages/Tennisplaetze";
-import Mitgliedschaft from "./pages/Mitgliedschaft";
-import Beitragsordnung from "./pages/Beitragsordnung";
-import Satzung from "./pages/Satzung";
-import Sponsoring from "./pages/Sponsoring";
-import Foerderverein from "./pages/Foerderverein";
-import Platzordnung from "./pages/Platzordnung";
-import FAQ from "./pages/FAQ";
-import Aktuelles from "./pages/Aktuelles";
-import Veranstaltungen from "./pages/Veranstaltungen";
-import Crowdfunding from "./pages/Crowdfunding";
-import Projekte from "./pages/Projekte";
-import TiebreakingNews from "./pages/TiebreakingNews";
-import Pressemeldungen from "./pages/Pressemeldungen";
-import TennisInfoHeft from "./pages/TennisInfoHeft";
-import Ansprechpartner from "./pages/Ansprechpartner";
-import Mannschaften from "./pages/Mannschaften";
-import Jugend from "./pages/Jugend";
-import Damen from "./pages/Damen";
-import Herren from "./pages/Herren";
-import Senioren from "./pages/Senioren";
-import Regelwerk from "./pages/Regelwerk";
-import Turniere from "./pages/Turniere";
-import SchwarzGelbCup from "./pages/SchwarzGelbCup";
-import RheinNeckarOpen from "./pages/RheinNeckarOpen";
-import TurnierAnmeldung from "./pages/TurnierAnmeldung";
-import Training from "./pages/Training";
-import UnsereTrainer from "./pages/UnsereTrainer";
-import TennisschulePTSKukaras from "./pages/TennisschulePTSKukaras";
-import TennisschuleSeibold from "./pages/TennisschuleSeibold";
-import Gastronomie from "./pages/Gastronomie";
-import Impressum from "./pages/Impressum";
-import Datenschutz from "./pages/Datenschutz";
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
+// Club pages
+import DerClub from "./pages/club/DerClub";
+import Vorstand from "./pages/club/Vorstand";
+import Tradition from "./pages/club/Tradition";
+import Ansprechpartner from "./pages/club/Ansprechpartner";
+import Foerderverein from "./pages/club/Foerderverein";
+
+// Membership pages
+import Mitgliedschaft from "./pages/membership/Mitgliedschaft";
+import Beitragsordnung from "./pages/membership/Beitragsordnung";
+import Satzung from "./pages/membership/Satzung";
+import Regelwerk from "./pages/membership/Regelwerk";
+import Platzordnung from "./pages/membership/Platzordnung";
+
+// Teams pages
+import Mannschaften from "./pages/teams/Mannschaften";
+import Herren from "./pages/teams/Herren";
+import Damen from "./pages/teams/Damen";
+import Jugend from "./pages/teams/Jugend";
+import Senioren from "./pages/teams/Senioren";
+
+// Training pages
+import Training from "./pages/training/Training";
+import UnsereTrainer from "./pages/training/UnsereTrainer";
+import TennisschulePTSKukaras from "./pages/training/TennisschulePTSKukaras";
+import TennisschuleSeibold from "./pages/training/TennisschuleSeibold";
+
+// Facilities pages
+import Tennisplaetze from "./pages/facilities/Tennisplaetze";
+import Gastronomie from "./pages/facilities/Gastronomie";
+
+// Events pages
+import Veranstaltungen from "./pages/events/Veranstaltungen";
+import Turniere from "./pages/events/Turniere";
+import TurnierAnmeldung from "./pages/events/TurnierAnmeldung";
+import RheinNeckarOpen from "./pages/events/RheinNeckarOpen";
+import SchwarzGelbCup from "./pages/events/SchwarzGelbCup";
+
+// News pages
+import Aktuelles from "./pages/news/Aktuelles";
+import TiebreakingNews from "./pages/news/TiebreakingNews";
+import Pressemeldungen from "./pages/news/Pressemeldungen";
+
+// Projects pages
+import Projekte from "./pages/projects/Projekte";
+import Crowdfunding from "./pages/projects/Crowdfunding";
+
+// Sponsors pages
+import Sponsoring from "./pages/sponsors/Sponsoring";
+
+// Info pages
+import TennisInfoHeft from "./pages/info/TennisInfoHeft";
+import FAQ from "./pages/info/FAQ";
+
+// Legal pages
+import Impressum from "./pages/legal/Impressum";
+import Datenschutz from "./pages/legal/Datenschutz";
+
+// Admin pages
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
