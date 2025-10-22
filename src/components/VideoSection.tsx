@@ -25,6 +25,7 @@ const VideoSection = () => {
             <video 
               className="w-full h-full object-cover"
               controls
+              preload="metadata"
               poster="/placeholder-tennis-court.jpg"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
