@@ -21,10 +21,7 @@ import Platzordnung from "./pages/membership/Platzordnung";
 
 // Teams pages
 import Mannschaften from "./pages/teams/Mannschaften";
-import Herren from "./pages/teams/Herren";
-import Damen from "./pages/teams/Damen";
 import Jugend from "./pages/teams/Jugend";
-import Senioren from "./pages/teams/Senioren";
 
 // Training pages
 import Training from "./pages/training/Training";
@@ -108,9 +105,6 @@ const App = () => (
           {/* Mannschaften Routes */}
           <Route path="/mannschaften" element={<Mannschaften />} />
           <Route path="/mannschaften/jugend" element={<Jugend />} />
-          <Route path="/mannschaften/damen" element={<Damen />} />
-          <Route path="/mannschaften/herren" element={<Herren />} />
-          <Route path="/mannschaften/senioren" element={<Senioren />} />
           <Route path="/mannschaften/regelwerk" element={<Regelwerk />} />
           
           {/* Turniere Routes */}

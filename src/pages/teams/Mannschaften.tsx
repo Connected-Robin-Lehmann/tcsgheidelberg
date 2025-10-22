@@ -144,7 +144,9 @@ const Mannschaften = () => {
                 </a>
 
                 <a
-                  href="/mannschaften/damen"
+                  href="https://baden.liga.nu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
@@ -159,7 +161,9 @@ const Mannschaften = () => {
                 </a>
 
                 <a
-                  href="/mannschaften/herren"
+                  href="https://baden.liga.nu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
@@ -176,7 +180,9 @@ const Mannschaften = () => {
                 </a>
 
                 <a
-                  href="/mannschaften/senioren"
+                  href="https://baden.liga.nu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">

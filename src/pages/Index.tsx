@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import EventSection from "@/components/EventSection";
 import VideoSection from "@/components/VideoSection";
-import StatsSection from "@/components/StatsSection";
+import NewsHighlight from "@/components/NewsHighlight";
 import SponsorsSection from "@/components/SponsorsSection";
 import Footer from "@/components/Footer";
 import {
@@ -57,7 +57,7 @@ const Index = () => {
       <Header />
       <Hero />
       <EventSection />
-      <StatsSection />
+      <NewsHighlight />
       <VideoSection />
       <SponsorsSection />
       <Footer />
