@@ -15,7 +15,7 @@ const Hero = () => {
             
           </div>
           
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-12 leading-tight">
             Willkommen im
             <span className="block text-tennis-yellow mt-2">
               TC Schwarz-Gelb
@@ -24,19 +24,6 @@ const Hero = () => {
               Heidelberg e.V.
             </span>
           </h1>
-          
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up">
-            Tradition trifft Moderne - Ihr Tennisverein im Herzen Heidelbergs seit vielen Jahren
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up">
-            <Button className="btn-hero text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto">
-              Club entdecken
-            </Button>
-            <Button variant="outline" className="btn-hero-outline text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto" onClick={() => window.open('https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//', '_blank')}>
-              Platz reservieren
-            </Button>
-          </div>
 
           {/* News Highlight */}
           <div className="max-w-3xl mx-auto mt-16 animate-slide-up">
