@@ -38,46 +38,31 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto mt-16">
-            <div className="text-center animate-slide-up" style={{
-            animationDelay: '0.2s'
-          }}>
-              <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
-                <Users className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
-                <span className="stat-counter text-2xl md:text-4xl">612</span>
+          {/* News Highlight */}
+          <div className="max-w-3xl mx-auto mt-16 animate-slide-up">
+            <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow/50 rounded-2xl p-6 md:p-8 hover:bg-white/15 transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="bg-tennis-yellow rounded-full p-3 flex-shrink-0">
+                  <Calendar className="w-6 h-6 text-tennis-black" />
+                </div>
+                <div className="text-left flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-tennis-yellow mb-2">
+                    Aktuelle Nachricht
+                  </h3>
+                  <p className="text-white/90 text-sm md:text-base mb-4">
+                    Bleiben Sie auf dem Laufenden mit den neuesten Informationen aus unserem Verein.
+                  </p>
+                  <a 
+                    href="/aktuelles"
+                    className="inline-flex items-center text-tennis-yellow hover:text-yellow-300 font-semibold transition-colors"
+                  >
+                    Mehr erfahren
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <p className="stat-label text-white text-xs md:text-sm">Mitglieder</p>
-            </div>
-            
-            <div className="text-center animate-slide-up" style={{
-            animationDelay: '0.4s'
-          }}>
-              <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
-                <MapPin className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
-                <span className="stat-counter text-2xl md:text-4xl">10</span>
-              </div>
-              <p className="stat-label text-white text-xs md:text-sm">Außenplätze</p>
-            </div>
-            
-            <div className="text-center animate-slide-up" style={{
-            animationDelay: '0.6s'
-          }}>
-              <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
-                <Award className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
-                <span className="stat-counter text-2xl md:text-4xl">30</span>
-              </div>
-              <p className="stat-label text-white text-xs md:text-sm">Mannschaften</p>
-            </div>
-            
-            <div className="text-center animate-slide-up" style={{
-            animationDelay: '0.8s'
-          }}>
-              <div className="flex flex-col sm:flex-row items-center justify-center mb-2">
-                <Calendar className="h-6 w-6 md:h-8 md:w-8 text-tennis-yellow mb-1 sm:mb-0 sm:mr-2" />
-                <span className="stat-counter text-2xl md:text-4xl">35%</span>
-              </div>
-              <p className="stat-label text-white text-xs md:text-sm">Jugendanteil</p>
             </div>
           </div>
         </div>
