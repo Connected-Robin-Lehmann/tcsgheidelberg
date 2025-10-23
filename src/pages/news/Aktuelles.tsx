@@ -235,6 +235,24 @@ const Aktuelles = () => {
 
             {/* Quick Links */}
             <div className="space-y-6">
+              {/* Nachrichten */}
+              <Card className="card-tennis border-l-4 border-l-tennis-yellow">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-tennis-black mb-3">
+                    Nachrichten
+                  </h3>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                    Berichte von Turnieren, Spielen und weitere Nachrichten aus dem Vereinsleben. 
+                    Durchsuchen Sie unsere Nachrichtensammlung nach Monat und Kategorie.
+                  </p>
+                  <Link to="/aktuelles/nachrichten">
+                    <Button variant="outline" className="btn-hero-outline w-full">
+                      Zu den Nachrichten
+                    </Button>
+                  </Link>
+                </div>
+              </Card>
+
               {/* Crowdfunding */}
               <Card className="card-tennis border-l-4 border-l-tennis-yellow">
                 <div className="p-6">

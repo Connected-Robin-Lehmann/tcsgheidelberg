@@ -42,6 +42,7 @@ import SchwarzGelbCup from "./pages/events/SchwarzGelbCup";
 
 // News pages
 import Aktuelles from "./pages/news/Aktuelles";
+import Nachrichten from "./pages/news/Nachrichten";
 import TiebreakingNews from "./pages/news/TiebreakingNews";
 import Pressemeldungen from "./pages/news/Pressemeldungen";
 
@@ -94,6 +95,7 @@ const App = () => (
           
           {/* Aktuelles Routes */}
           <Route path="/aktuelles" element={<Aktuelles />} />
+          <Route path="/aktuelles/nachrichten" element={<Nachrichten />} />
           <Route path="/aktuelles/veranstaltungen" element={<Veranstaltungen />} />
           <Route path="/aktuelles/crowdfunding" element={<Crowdfunding />} />
           <Route path="/aktuelles/projekte" element={<Projekte />} />
