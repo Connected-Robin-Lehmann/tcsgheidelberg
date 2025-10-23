@@ -48,26 +48,26 @@ const Header = () => {
       href: "/mannschaften",
       submenu: [
         { name: "Jugend", href: "/mannschaften/jugend" },
-        { name: "Damen", href: "/mannschaften/damen" },
-        { name: "Herren", href: "/mannschaften/herren" },
-        { name: "Senioren", href: "/mannschaften/senioren" },
+        // { name: "Damen", href: "/mannschaften/damen" },
+        // { name: "Herren", href: "/mannschaften/herren" },
+        // { name: "Senioren", href: "/mannschaften/senioren" },
         { name: "Regelwerk", href: "/mannschaften/regelwerk" },
       ],
     },
     {
       name: "Turniere",
       href: "/turniere",
-      submenu: [
-        { name: "Schwarz-Gelb-Cup", href: "/turniere/schwarz-gelb-cup" },
-        { name: "Rhein-Neckar Open", href: "/turniere/rhein-neckar-open" },
-        { name: "Anmeldung", href: "/turniere/anmeldung" },
-      ],
+      // submenu: [
+      //   { name: "Schwarz-Gelb-Cup", href: "/turniere/schwarz-gelb-cup" },
+      //   { name: "Rhein-Neckar Open", href: "/turniere/rhein-neckar-open" },
+      //   { name: "Anmeldung", href: "/turniere/anmeldung" },
+      // ],
     },
     {
       name: "Training",
       href: "/training",
       submenu: [
-        { name: "Unsere Trainer", href: "/training/unsere-trainer" },
+        // { name: "Unsere Trainer", href: "/training/unsere-trainer" },
         {
           name: "Tennisschule PTS Kukaras",
           href: "/training/tennisschule-pts-kukaras",
@@ -187,10 +187,10 @@ const Header = () => {
                         </div>
                       </div>
                     ) : (
-                        <a
-                          href={item.href}
-                          className="block px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
-                        >
+                      <a
+                        href={item.href}
+                        className="block px-4 py-3 text-tennis-black hover:text-tennis-yellow hover:bg-tennis-black transition-all duration-200 font-medium text-sm xl:text-base rounded-md"
+                      >
                         {item.name}
                       </a>
                     )}
@@ -285,14 +285,14 @@ const Header = () => {
                         )}
                       </div>
                     ) : (
-                        <a
-                          href={item.href}
-                          className="block py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
-                          onClick={() => {
-                            setIsMenuOpen(false);
-                            setOpenDropdown(null);
-                          }}
-                        >
+                      <a
+                        href={item.href}
+                        className="block py-4 px-4 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold text-lg transition-colors rounded-md"
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setOpenDropdown(null);
+                        }}
+                      >
                         {item.name}
                       </a>
                     )}

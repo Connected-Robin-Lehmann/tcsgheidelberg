@@ -1,8 +1,12 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Calendar, Users, Award, MapPin } from 'lucide-react';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Calendar, Users, Award, MapPin } from "lucide-react";
 const Hero = () => {
-  return <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-tennis-black via-gray-900 to-tennis-court overflow-hidden">
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-tennis-black via-gray-900 to-tennis-court overflow-hidden"
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] bg-repeat"></div>
@@ -11,10 +15,8 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center text-white animate-fade-in">
           {/* Logo Integration */}
-          <div className="mb-8">
-            
-          </div>
-          
+          <div className="mb-8"></div>
+
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-12 leading-tight">
             Willkommen im
             <span className="block text-tennis-yellow mt-2">
@@ -37,15 +39,26 @@ const Hero = () => {
                     Aktuelle Nachricht
                   </h3>
                   <p className="text-white/90 text-sm md:text-base mb-4">
-                    Bleiben Sie auf dem Laufenden mit den neuesten Informationen aus unserem Verein.
+                    Bleiben Sie auf dem Laufenden mit den neuesten Informationen
+                    aus unserem Verein.
                   </p>
-                  <a 
+                  <a
                     href="/aktuelles"
                     className="inline-flex items-center text-tennis-yellow hover:text-yellow-300 font-semibold transition-colors"
                   >
                     Mehr erfahren
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -61,6 +74,7 @@ const Hero = () => {
           <div className="w-1 h-3 bg-tennis-yellow rounded-full mt-2"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Hero;
