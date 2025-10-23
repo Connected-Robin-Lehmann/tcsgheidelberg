@@ -34,6 +34,7 @@ const Header = () => {
       name: "Aktuelles",
       href: "/aktuelles",
       submenu: [
+        { name: "Nachrichten", href: "/aktuelles/nachrichten" },
         { name: "Veranstaltungen", href: "/aktuelles/veranstaltungen" },
         { name: "Crowdfunding", href: "/aktuelles/crowdfunding" },
         { name: "Projekte", href: "/aktuelles/projekte" },

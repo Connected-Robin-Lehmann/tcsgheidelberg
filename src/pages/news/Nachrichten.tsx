@@ -1,10 +1,23 @@
 import { useState, useMemo } from "react";
 import { Calendar, Trophy, Newspaper, Users, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
+import Header from "@/components/Header";
 
 interface NewsItem {
   id: string;
@@ -23,36 +36,42 @@ const newsItems: NewsItem[] = [
     title: "Erfolgreicher Auftakt beim Rhein-Neckar-Open 2025",
     date: new Date(2025, 4, 15),
     category: "tournament",
-    excerpt: "Unser Turnier war ein voller Erfolg mit über 100 Teilnehmern aus der Region.",
-    content: "Das diesjährige Rhein-Neckar-Open bot spannende Matches und faire Wettkämpfe...",
-    author: "Turnierleitung"
+    excerpt:
+      "Unser Turnier war ein voller Erfolg mit über 100 Teilnehmern aus der Region.",
+    content:
+      "Das diesjährige Rhein-Neckar-Open bot spannende Matches und faire Wettkämpfe...",
+    author: "Turnierleitung",
   },
   {
     id: "2",
     title: "Herren 1 steigt in die Regionalliga auf",
     date: new Date(2025, 4, 10),
     category: "match",
-    excerpt: "Nach einem spannenden Finale gegen TC Mannheim sichern sich unsere Herren den Aufstieg.",
+    excerpt:
+      "Nach einem spannenden Finale gegen TC Mannheim sichern sich unsere Herren den Aufstieg.",
     content: "Mit einem 6:3 Sieg im entscheidenden Match...",
-    author: "Mannschaftsführer"
+    author: "Mannschaftsführer",
   },
   {
     id: "3",
     title: "Neue Clubanlage feierlich eröffnet",
     date: new Date(2025, 3, 20),
     category: "club",
-    excerpt: "Die modernisierten Tennisplätze wurden im Beisein von Oberbürgermeister Dr. Würzner eingeweiht.",
-    content: "Nach monatelanger Renovierung erstrahlen unsere Plätze in neuem Glanz...",
-    author: "Vorstand"
+    excerpt:
+      "Die modernisierten Tennisplätze wurden im Beisein von Oberbürgermeister Dr. Würzner eingeweiht.",
+    content:
+      "Nach monatelanger Renovierung erstrahlen unsere Plätze in neuem Glanz...",
+    author: "Vorstand",
   },
   {
     id: "4",
     title: "Jugendcamp in den Sommerferien",
     date: new Date(2025, 3, 5),
     category: "general",
-    excerpt: "Anmeldungen für unser beliebtes Tenniscamp sind ab sofort möglich.",
+    excerpt:
+      "Anmeldungen für unser beliebtes Tenniscamp sind ab sofort möglich.",
     content: "Vom 1. bis 5. August bieten wir wieder unser Jugendcamp an...",
-    author: "Jugendwart"
+    author: "Jugendwart",
   },
   {
     id: "5",
@@ -61,7 +80,7 @@ const newsItems: NewsItem[] = [
     category: "tournament",
     excerpt: "Heimsieg beim traditionellen Vereinsturnier.",
     content: "In einem packenden Finale setzten sich unsere Damen durch...",
-    author: "Turnierleitung"
+    author: "Turnierleitung",
   },
   {
     id: "6",
@@ -69,8 +88,9 @@ const newsItems: NewsItem[] = [
     date: new Date(2025, 2, 15),
     category: "club",
     excerpt: "Einladung zur ordentlichen Mitgliederversammlung am 20. April.",
-    content: "Liebe Mitglieder, wir laden herzlich zur diesjährigen Mitgliederversammlung ein...",
-    author: "Vorstand"
+    content:
+      "Liebe Mitglieder, wir laden herzlich zur diesjährigen Mitgliederversammlung ein...",
+    author: "Vorstand",
   },
 ];
 
@@ -95,7 +115,7 @@ export default function Nachrichten() {
   // Extrahiere verfügbare Monate
   const availableMonths = useMemo(() => {
     const months = new Set<string>();
-    newsItems.forEach(item => {
+    newsItems.forEach((item) => {
       const monthKey = format(item.date, "yyyy-MM");
       months.add(monthKey);
     });
@@ -104,9 +124,12 @@ export default function Nachrichten() {
 
   // Filtere Nachrichten
   const filteredNews = useMemo(() => {
-    return newsItems.filter(item => {
-      const monthMatch = selectedMonth === "all" || format(item.date, "yyyy-MM") === selectedMonth;
-      const categoryMatch = selectedCategory === "all" || item.category === selectedCategory;
+    return newsItems.filter((item) => {
+      const monthMatch =
+        selectedMonth === "all" ||
+        format(item.date, "yyyy-MM") === selectedMonth;
+      const categoryMatch =
+        selectedCategory === "all" || item.category === selectedCategory;
       return monthMatch && categoryMatch;
     });
   }, [selectedMonth, selectedCategory]);
@@ -128,6 +151,8 @@ export default function Nachrichten() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-primary/5 to-background py-20">
         <div className="container mx-auto px-4">
@@ -148,29 +173,36 @@ export default function Nachrichten() {
               <Filter className="h-5 w-5 text-muted-foreground" />
               <span className="text-sm font-medium">Filtern nach:</span>
             </div>
-            
+
             <Select value={selectedMonth} onValueChange={setSelectedMonth}>
               <SelectTrigger className="w-[200px]">
                 <SelectValue placeholder="Monat wählen" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Alle Monate</SelectItem>
-                {availableMonths.map(month => (
+                {availableMonths.map((month) => (
                   <SelectItem key={month} value={month}>
-                    {format(new Date(month + "-01"), "MMMM yyyy", { locale: de })}
+                    {format(new Date(month + "-01"), "MMMM yyyy", {
+                      locale: de,
+                    })}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
 
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <Select
+              value={selectedCategory}
+              onValueChange={setSelectedCategory}
+            >
               <SelectTrigger className="w-[200px]">
                 <SelectValue placeholder="Kategorie wählen" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Alle Kategorien</SelectItem>
                 {Object.entries(categoryLabels).map(([key, label]) => (
-                  <SelectItem key={key} value={key}>{label}</SelectItem>
+                  <SelectItem key={key} value={key}>
+                    {label}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -196,7 +228,9 @@ export default function Nachrichten() {
           {filteredNews.length === 0 ? (
             <div className="text-center py-12">
               <Newspaper className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-              <h3 className="text-xl font-semibold mb-2">Keine Nachrichten gefunden</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Keine Nachrichten gefunden
+              </h3>
               <p className="text-muted-foreground">
                 Versuchen Sie, die Filter anzupassen.
               </p>
@@ -206,10 +240,17 @@ export default function Nachrichten() {
               {filteredNews.map((item) => {
                 const Icon = categoryIcons[item.category];
                 return (
-                  <Card key={item.id} className="hover:shadow-lg transition-shadow">
+                  <Card
+                    key={item.id}
+                    className="hover:shadow-lg transition-shadow"
+                  >
                     <CardHeader>
                       <div className="flex items-start justify-between mb-2">
-                        <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(item.category)}`}>
+                        <span
+                          className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                            item.category
+                          )}`}
+                        >
                           <Icon className="h-3 w-3" />
                           {categoryLabels[item.category]}
                         </span>
@@ -225,7 +266,9 @@ export default function Nachrichten() {
                       )}
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground mb-4">{item.excerpt}</p>
+                      <p className="text-muted-foreground mb-4">
+                        {item.excerpt}
+                      </p>
                       <Button variant="outline" className="w-full">
                         Weiterlesen
                       </Button>
