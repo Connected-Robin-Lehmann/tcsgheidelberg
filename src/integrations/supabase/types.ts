@@ -62,6 +62,68 @@ export type Database = {
         }
         Relationships: []
       }
+      news_items: {
+        Row: {
+          category: string
+          content: string
+          created_at: string
+          date: string
+          id: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          content: string
+          created_at?: string
+          date?: string
+          id?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          content?: string
+          created_at?: string
+          date?: string
+          id?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      news_media: {
+        Row: {
+          created_at: string
+          file_path: string
+          file_type: string
+          id: string
+          news_item_id: string
+        }
+        Insert: {
+          created_at?: string
+          file_path: string
+          file_type: string
+          id?: string
+          news_item_id: string
+        }
+        Update: {
+          created_at?: string
+          file_path?: string
+          file_type?: string
+          id?: string
+          news_item_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "news_media_news_item_id_fkey"
+            columns: ["news_item_id"]
+            isOneToOne: false
+            referencedRelation: "news_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

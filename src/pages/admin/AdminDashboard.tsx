@@ -6,7 +6,8 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
-import { LogOut, Save } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { LogOut, Save, Newspaper } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
@@ -138,7 +139,7 @@ const AdminDashboard = () => {
                 Admin Dashboard
               </h1>
               <p className="text-muted-foreground mt-2">
-                Modal-Einstellungen verwalten
+                Verwaltung der Website-Inhalte
               </p>
             </div>
             <Button
@@ -151,72 +152,84 @@ const AdminDashboard = () => {
             </Button>
           </div>
 
-          <Card className="p-8">
-            <div className="space-y-6">
-              {/* Modal Activation Toggle */}
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <div>
-                  <Label htmlFor="modal-active" className="text-lg font-semibold">
-                    Modal aktivieren
-                  </Label>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Zeigt das Modal auf der Startseite an
-                  </p>
+          <Tabs defaultValue="modal" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 mb-8">
+              <TabsTrigger value="modal">Modal-Einstellungen</TabsTrigger>
+              <TabsTrigger value="news" onClick={() => navigate('/admin/news')}>
+                <Newspaper className="w-4 h-4 mr-2" />
+                Nachrichten
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="modal">
+              <Card className="p-8">
+                <div className="space-y-6">
+                  {/* Modal Activation Toggle */}
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div>
+                      <Label htmlFor="modal-active" className="text-lg font-semibold">
+                        Modal aktivieren
+                      </Label>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Zeigt das Modal auf der Startseite an
+                      </p>
+                    </div>
+                    <Switch
+                      id="modal-active"
+                      checked={isActive}
+                      onCheckedChange={setIsActive}
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <div>
+                    <Label htmlFor="title">Titel</Label>
+                    <Input
+                      id="title"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                      className="mt-2"
+                      placeholder="Modal-Titel"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div>
+                    <Label htmlFor="content">Inhalt (HTML)</Label>
+                    <Textarea
+                      id="content"
+                      value={content}
+                      onChange={(e) => setContent(e.target.value)}
+                      className="mt-2 min-h-[300px] font-mono text-sm"
+                      placeholder="Modal-Inhalt (HTML)"
+                    />
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Sie können HTML-Tags verwenden: &lt;p&gt;, &lt;strong&gt;, &lt;a&gt;, etc.
+                    </p>
+                  </div>
+
+                  {/* Preview */}
+                  <div>
+                    <Label>Vorschau</Label>
+                    <div 
+                      className="mt-2 p-4 bg-white border rounded-lg prose prose-sm max-w-none"
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    />
+                  </div>
+
+                  {/* Save Button */}
+                  <Button
+                    onClick={handleSave}
+                    disabled={isSaving}
+                    className="w-full btn-hero"
+                  >
+                    <Save className="w-4 h-4 mr-2" />
+                    {isSaving ? 'Speichert...' : 'Änderungen speichern'}
+                  </Button>
                 </div>
-                <Switch
-                  id="modal-active"
-                  checked={isActive}
-                  onCheckedChange={setIsActive}
-                />
-              </div>
-
-              {/* Title */}
-              <div>
-                <Label htmlFor="title">Titel</Label>
-                <Input
-                  id="title"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  className="mt-2"
-                  placeholder="Modal-Titel"
-                />
-              </div>
-
-              {/* Content */}
-              <div>
-                <Label htmlFor="content">Inhalt (HTML)</Label>
-                <Textarea
-                  id="content"
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
-                  className="mt-2 min-h-[300px] font-mono text-sm"
-                  placeholder="Modal-Inhalt (HTML)"
-                />
-                <p className="text-sm text-muted-foreground mt-2">
-                  Sie können HTML-Tags verwenden: &lt;p&gt;, &lt;strong&gt;, &lt;a&gt;, etc.
-                </p>
-              </div>
-
-              {/* Preview */}
-              <div>
-                <Label>Vorschau</Label>
-                <div 
-                  className="mt-2 p-4 bg-white border rounded-lg prose prose-sm max-w-none"
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-              </div>
-
-              {/* Save Button */}
-              <Button
-                onClick={handleSave}
-                disabled={isSaving}
-                className="w-full btn-hero"
-              >
-                <Save className="w-4 h-4 mr-2" />
-                {isSaving ? 'Speichert...' : 'Änderungen speichern'}
-              </Button>
-            </div>
-          </Card>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
 

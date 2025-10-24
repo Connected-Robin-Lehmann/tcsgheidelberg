@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Calendar, Trophy, Newspaper, Users, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,137 +17,113 @@ import {
 } from "@/components/ui/select";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 interface NewsItem {
   id: string;
   title: string;
-  date: Date;
-  category: "tournament" | "match" | "club" | "general";
-  excerpt: string;
+  date: string;
+  category: string;
   content: string;
-  author?: string;
+  created_at: string;
 }
 
-// Beispiel-Nachrichten
-const newsItems: NewsItem[] = [
-  {
-    id: "1",
-    title: "Erfolgreicher Auftakt beim Rhein-Neckar-Open 2025",
-    date: new Date(2025, 4, 15),
-    category: "tournament",
-    excerpt:
-      "Unser Turnier war ein voller Erfolg mit über 100 Teilnehmern aus der Region.",
-    content:
-      "Das diesjährige Rhein-Neckar-Open bot spannende Matches und faire Wettkämpfe...",
-    author: "Turnierleitung",
-  },
-  {
-    id: "2",
-    title: "Herren 1 steigt in die Regionalliga auf",
-    date: new Date(2025, 4, 10),
-    category: "match",
-    excerpt:
-      "Nach einem spannenden Finale gegen TC Mannheim sichern sich unsere Herren den Aufstieg.",
-    content: "Mit einem 6:3 Sieg im entscheidenden Match...",
-    author: "Mannschaftsführer",
-  },
-  {
-    id: "3",
-    title: "Neue Clubanlage feierlich eröffnet",
-    date: new Date(2025, 3, 20),
-    category: "club",
-    excerpt:
-      "Die modernisierten Tennisplätze wurden im Beisein von Oberbürgermeister Dr. Würzner eingeweiht.",
-    content:
-      "Nach monatelanger Renovierung erstrahlen unsere Plätze in neuem Glanz...",
-    author: "Vorstand",
-  },
-  {
-    id: "4",
-    title: "Jugendcamp in den Sommerferien",
-    date: new Date(2025, 3, 5),
-    category: "general",
-    excerpt:
-      "Anmeldungen für unser beliebtes Tenniscamp sind ab sofort möglich.",
-    content: "Vom 1. bis 5. August bieten wir wieder unser Jugendcamp an...",
-    author: "Jugendwart",
-  },
-  {
-    id: "5",
-    title: "Damen 1 gewinnen Schwarz-Gelb-Cup",
-    date: new Date(2025, 2, 28),
-    category: "tournament",
-    excerpt: "Heimsieg beim traditionellen Vereinsturnier.",
-    content: "In einem packenden Finale setzten sich unsere Damen durch...",
-    author: "Turnierleitung",
-  },
-  {
-    id: "6",
-    title: "Mitgliederversammlung 2025",
-    date: new Date(2025, 2, 15),
-    category: "club",
-    excerpt: "Einladung zur ordentlichen Mitgliederversammlung am 20. April.",
-    content:
-      "Liebe Mitglieder, wir laden herzlich zur diesjährigen Mitgliederversammlung ein...",
-    author: "Vorstand",
-  },
-];
-
-const categoryLabels = {
-  tournament: "Turniere",
-  match: "Spielberichte",
-  club: "Vereinsnachrichten",
-  general: "Allgemeines",
+const categoryLabels: Record<string, string> = {
+  Turnier: "Turniere",
+  Spiel: "Spielberichte",
+  Veranstaltung: "Veranstaltungen",
+  Allgemein: "Allgemeines",
 };
 
-const categoryIcons = {
-  tournament: Trophy,
-  match: Users,
-  club: Newspaper,
-  general: Calendar,
+const categoryIcons: Record<string, any> = {
+  Turnier: Trophy,
+  Spiel: Users,
+  Veranstaltung: Calendar,
+  Allgemein: Newspaper,
 };
 
 export default function Nachrichten() {
   const [selectedMonth, setSelectedMonth] = useState<string>("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    loadNewsItems();
+  }, []);
+
+  const loadNewsItems = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('news_items')
+        .select('*')
+        .order('date', { ascending: false });
+
+      if (error) throw error;
+      setNewsItems(data || []);
+    } catch (error: any) {
+      toast({
+        title: 'Fehler beim Laden',
+        description: error.message,
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   // Extrahiere verfügbare Monate
   const availableMonths = useMemo(() => {
     const months = new Set<string>();
     newsItems.forEach((item) => {
-      const monthKey = format(item.date, "yyyy-MM");
+      const monthKey = format(new Date(item.date), "yyyy-MM");
       months.add(monthKey);
     });
     return Array.from(months).sort().reverse();
-  }, []);
+  }, [newsItems]);
 
   // Filtere Nachrichten
   const filteredNews = useMemo(() => {
     return newsItems.filter((item) => {
       const monthMatch =
         selectedMonth === "all" ||
-        format(item.date, "yyyy-MM") === selectedMonth;
+        format(new Date(item.date), "yyyy-MM") === selectedMonth;
       const categoryMatch =
         selectedCategory === "all" || item.category === selectedCategory;
       return monthMatch && categoryMatch;
     });
-  }, [selectedMonth, selectedCategory]);
+  }, [selectedMonth, selectedCategory, newsItems]);
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "tournament":
+      case "Turnier":
         return "bg-yellow-500/10 text-yellow-700 dark:text-yellow-300";
-      case "match":
+      case "Spiel":
         return "bg-blue-500/10 text-blue-700 dark:text-blue-300";
-      case "club":
+      case "Veranstaltung":
         return "bg-green-500/10 text-green-700 dark:text-green-300";
-      case "general":
+      case "Allgemein":
         return "bg-purple-500/10 text-purple-700 dark:text-purple-300";
       default:
         return "bg-muted text-muted-foreground";
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="flex items-center justify-center py-20">
+          <p className="text-lg text-muted-foreground">Lädt Nachrichten...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -199,9 +175,9 @@ export default function Nachrichten() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Alle Kategorien</SelectItem>
-                {Object.entries(categoryLabels).map(([key, label]) => (
+                {Object.keys(categoryLabels).map((key) => (
                   <SelectItem key={key} value={key}>
-                    {label}
+                    {categoryLabels[key]}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -238,7 +214,7 @@ export default function Nachrichten() {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredNews.map((item) => {
-                const Icon = categoryIcons[item.category];
+                const Icon = categoryIcons[item.category] || Newspaper;
                 return (
                   <Card
                     key={item.id}
@@ -252,22 +228,17 @@ export default function Nachrichten() {
                           )}`}
                         >
                           <Icon className="h-3 w-3" />
-                          {categoryLabels[item.category]}
+                          {categoryLabels[item.category] || item.category}
                         </span>
                         <time className="text-sm text-muted-foreground">
-                          {format(item.date, "dd. MMM yyyy", { locale: de })}
+                          {format(new Date(item.date), "dd. MMM yyyy", { locale: de })}
                         </time>
                       </div>
                       <CardTitle className="text-xl">{item.title}</CardTitle>
-                      {item.author && (
-                        <CardDescription className="text-xs">
-                          von {item.author}
-                        </CardDescription>
-                      )}
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground mb-4">
-                        {item.excerpt}
+                      <p className="text-muted-foreground mb-4 line-clamp-3">
+                        {item.content}
                       </p>
                       <Button variant="outline" className="w-full">
                         Weiterlesen
@@ -280,6 +251,8 @@ export default function Nachrichten() {
           )}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
