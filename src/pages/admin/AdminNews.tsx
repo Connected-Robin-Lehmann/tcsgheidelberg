@@ -90,27 +90,24 @@ const AdminNews = () => {
     }
   };
 
-  const uploadFiles = async (newsItemId: string) => {
-    if (uploadedFiles.length === 0) return;
-
-    for (const file of uploadedFiles) {
-      const fileExt = file.name.split(".").pop();
-      const fileName = `${newsItemId}/${Math.random()}.${fileExt}`;
-
-      const { error: uploadError } = await supabase.storage
-        .from("news-media")
-        .upload(fileName, file);
-
-      if (uploadError) throw uploadError;
-
-      const { error: insertError } = await supabase.from("news_media").insert({
-        news_item_id: newsItemId,
-        file_path: fileName,
-        file_type: file.type,
-      });
-
-      if (insertError) throw insertError;
-    }
+  const convertFilesToBase64 = async (files: File[]) => {
+    return Promise.all(
+      files.map(async (file) => {
+        return new Promise<{ name: string; type: string; base64: string }>(
+          (resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+              resolve({
+                name: file.name,
+                type: file.type,
+                base64: reader.result as string,
+              });
+            };
+            reader.readAsDataURL(file);
+          }
+        );
+      })
+    );
   };
 
   const handleSave = async () => {
@@ -125,6 +122,12 @@ const AdminNews = () => {
       }
 
       const token = sessionStorage.getItem("adminToken");
+
+      // Convert any uploaded files to base64
+      const base64Files =
+        uploadedFiles.length > 0
+          ? await convertFilesToBase64(uploadedFiles)
+          : [];
 
       if (editingItem) {
         const response = await fetch(
@@ -141,6 +144,7 @@ const AdminNews = () => {
               action: "update",
               newsId: editingItem.id,
               newsItem: formData,
+              files: base64Files,
               token,
             }),
           }
@@ -148,8 +152,6 @@ const AdminNews = () => {
 
         const result = await response.json();
         if (!response.ok) throw new Error(result.error);
-
-        await uploadFiles(editingItem.id);
 
         toast({
           title: "Erfolgreich aktualisiert",
@@ -169,6 +171,7 @@ const AdminNews = () => {
             body: JSON.stringify({
               action: "create",
               newsItem: formData,
+              files: base64Files,
               token,
             }),
           }
@@ -176,8 +179,6 @@ const AdminNews = () => {
 
         const result = await response.json();
         if (!response.ok) throw new Error(result.error);
-
-        await uploadFiles(result.data.id);
 
         toast({
           title: "Erfolgreich erstellt",
