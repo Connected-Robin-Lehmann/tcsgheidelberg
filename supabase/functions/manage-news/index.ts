@@ -12,7 +12,7 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { action, token, newsItem, newsId } = await req.json();
+    const { action, token, newsItem, newsId, files } = await req.json();
 
     // Verify token (similar to manage-modal)
     if (!token) {
@@ -46,6 +46,40 @@ Deno.serve(async (req) => {
 
         if (createError) throw createError;
 
+        // Upload files if provided
+        if (files && files.length > 0) {
+          for (const file of files) {
+            // Convert base64 back to binary
+            const base64Data = file.base64.split(',')[1];
+            const binaryData = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
+            
+            // Create unique filename
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${createdItem.id}/${crypto.randomUUID()}.${fileExt}`;
+            
+            // Upload to storage
+            const { error: uploadError } = await supabase.storage
+              .from('news-media')
+              .upload(fileName, binaryData, {
+                contentType: file.type,
+                upsert: false
+              });
+            
+            if (uploadError) throw uploadError;
+            
+            // Create media record
+            const { error: mediaError } = await supabase
+              .from('news_media')
+              .insert({
+                news_item_id: createdItem.id,
+                file_path: fileName,
+                file_type: file.type
+              });
+            
+            if (mediaError) throw mediaError;
+          }
+        }
+
         return new Response(
           JSON.stringify({ success: true, data: createdItem }),
           {
@@ -74,6 +108,40 @@ Deno.serve(async (req) => {
 
         if (updateError) throw updateError;
 
+        // Upload files if provided
+        if (files && files.length > 0) {
+          for (const file of files) {
+            // Convert base64 back to binary
+            const base64Data = file.base64.split(',')[1];
+            const binaryData = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
+            
+            // Create unique filename
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${newsId}/${crypto.randomUUID()}.${fileExt}`;
+            
+            // Upload to storage
+            const { error: uploadError } = await supabase.storage
+              .from('news-media')
+              .upload(fileName, binaryData, {
+                contentType: file.type,
+                upsert: false
+              });
+            
+            if (uploadError) throw uploadError;
+            
+            // Create media record
+            const { error: mediaError } = await supabase
+              .from('news_media')
+              .insert({
+                news_item_id: newsId,
+                file_path: fileName,
+                file_type: file.type
+              });
+            
+            if (mediaError) throw mediaError;
+          }
+        }
+
         return new Response(
           JSON.stringify({ success: true, data: updatedItem }),
           {
@@ -93,6 +161,26 @@ Deno.serve(async (req) => {
           );
         }
 
+        // First delete all media files from storage
+        const { data: mediaFiles } = await supabase
+          .from("news_media")
+          .select("file_path")
+          .eq("news_item_id", newsId);
+
+        if (mediaFiles && mediaFiles.length > 0) {
+          const filePaths = mediaFiles.map(m => m.file_path);
+          await supabase.storage
+            .from("news-media")
+            .remove(filePaths);
+        }
+
+        // Delete media records
+        await supabase
+          .from("news_media")
+          .delete()
+          .eq("news_item_id", newsId);
+
+        // Delete news item
         const { error: deleteError } = await supabase
           .from("news_items")
           .delete()
