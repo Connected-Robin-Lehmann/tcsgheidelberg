@@ -15,6 +15,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
 import { useToast } from "@/hooks/use-toast";
@@ -29,6 +35,13 @@ interface NewsItem {
   category: string;
   content: string;
   created_at: string;
+}
+
+interface NewsMedia {
+  id: string;
+  news_item_id: string;
+  file_path: string;
+  file_type: string;
 }
 
 const categoryLabels: Record<string, string> = {
@@ -49,7 +62,10 @@ export default function Nachrichten() {
   const [selectedMonth, setSelectedMonth] = useState<string>("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [newsMedia, setNewsMedia] = useState<Record<string, NewsMedia[]>>({});
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -65,6 +81,27 @@ export default function Nachrichten() {
 
       if (error) throw error;
       setNewsItems(data || []);
+
+      // Load media for all news items
+      if (data && data.length > 0) {
+        const { data: mediaData, error: mediaError } = await supabase
+          .from('news_media')
+          .select('*')
+          .in('news_item_id', data.map(item => item.id));
+
+        if (mediaError) throw mediaError;
+
+        // Group media by news_item_id
+        const mediaByNewsItem: Record<string, NewsMedia[]> = {};
+        mediaData?.forEach((media) => {
+          if (!mediaByNewsItem[media.news_item_id]) {
+            mediaByNewsItem[media.news_item_id] = [];
+          }
+          mediaByNewsItem[media.news_item_id].push(media);
+        });
+
+        setNewsMedia(mediaByNewsItem);
+      }
     } catch (error: any) {
       toast({
         title: 'Fehler beim Laden',
@@ -111,6 +148,16 @@ export default function Nachrichten() {
       default:
         return "bg-muted text-muted-foreground";
     }
+  };
+
+  const getMediaUrl = (filePath: string) => {
+    const { data } = supabase.storage.from('news-media').getPublicUrl(filePath);
+    return data.publicUrl;
+  };
+
+  const openNewsDialog = (item: NewsItem) => {
+    setSelectedNews(item);
+    setIsDialogOpen(true);
   };
 
   if (isLoading) {
@@ -212,37 +259,56 @@ export default function Nachrichten() {
               </p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="space-y-6">
               {filteredNews.map((item) => {
                 const Icon = categoryIcons[item.category] || Newspaper;
+                const media = newsMedia[item.id] || [];
+                const firstImage = media.find(m => m.file_type.startsWith('image/'));
+                
                 return (
                   <Card
                     key={item.id}
                     className="hover:shadow-lg transition-shadow"
                   >
-                    <CardHeader>
-                      <div className="flex items-start justify-between mb-2">
-                        <span
-                          className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
-                            item.category
-                          )}`}
-                        >
-                          <Icon className="h-3 w-3" />
-                          {categoryLabels[item.category] || item.category}
-                        </span>
-                        <time className="text-sm text-muted-foreground">
-                          {format(new Date(item.date), "dd. MMM yyyy", { locale: de })}
-                        </time>
+                    <CardContent className="p-6">
+                      <div className="flex gap-6">
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between mb-3">
+                            <span
+                              className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                                item.category
+                              )}`}
+                            >
+                              <Icon className="h-3 w-3" />
+                              {categoryLabels[item.category] || item.category}
+                            </span>
+                            <time className="text-sm text-muted-foreground">
+                              {format(new Date(item.date), "dd. MMM yyyy", { locale: de })}
+                            </time>
+                          </div>
+                          <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
+                          <p className="text-muted-foreground mb-4">
+                            {item.content.length > 150
+                              ? `${item.content.substring(0, 150)}...`
+                              : item.content}
+                          </p>
+                          <Button 
+                            variant="outline" 
+                            onClick={() => openNewsDialog(item)}
+                          >
+                            Weiterlesen
+                          </Button>
+                        </div>
+                        {firstImage && (
+                          <div className="w-32 h-32 flex-shrink-0">
+                            <img
+                              src={getMediaUrl(firstImage.file_path)}
+                              alt={item.title}
+                              className="w-full h-full object-cover rounded-lg"
+                            />
+                          </div>
+                        )}
                       </div>
-                      <CardTitle className="text-xl">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground mb-4 line-clamp-3">
-                        {item.content}
-                      </p>
-                      <Button variant="outline" className="w-full">
-                        Weiterlesen
-                      </Button>
                     </CardContent>
                   </Card>
                 );
@@ -251,6 +317,78 @@ export default function Nachrichten() {
           )}
         </div>
       </section>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          {selectedNews && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <span
+                    className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                      selectedNews.category
+                    )}`}
+                  >
+                    {categoryIcons[selectedNews.category] && (
+                      (() => {
+                        const Icon = categoryIcons[selectedNews.category];
+                        return <Icon className="h-3 w-3" />;
+                      })()
+                    )}
+                    {categoryLabels[selectedNews.category] || selectedNews.category}
+                  </span>
+                  <time className="text-sm text-muted-foreground">
+                    {format(new Date(selectedNews.date), "dd. MMMM yyyy", { locale: de })}
+                  </time>
+                </div>
+                <DialogTitle className="text-3xl font-bold">
+                  {selectedNews.title}
+                </DialogTitle>
+              </DialogHeader>
+
+              <div className="mt-6 space-y-6">
+                <p className="text-foreground whitespace-pre-wrap leading-relaxed">
+                  {selectedNews.content}
+                </p>
+
+                {newsMedia[selectedNews.id] && newsMedia[selectedNews.id].length > 0 && (
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-lg">Bilder und Dateien</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {newsMedia[selectedNews.id].map((media) => {
+                        if (media.file_type.startsWith('image/')) {
+                          return (
+                            <div key={media.id} className="rounded-lg overflow-hidden">
+                              <img
+                                src={getMediaUrl(media.file_path)}
+                                alt="News media"
+                                className="w-full h-auto object-cover"
+                              />
+                            </div>
+                          );
+                        } else {
+                          return (
+                            <div key={media.id} className="p-4 border rounded-lg">
+                              <a
+                                href={getMediaUrl(media.file_path)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:underline"
+                              >
+                                Datei herunterladen
+                              </a>
+                            </div>
+                          );
+                        }
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>
