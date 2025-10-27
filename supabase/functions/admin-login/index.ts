@@ -1,89 +1,74 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
-const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+};
 
-const server = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+Deno.serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders });
+  }
 
-export default async (req: Request) => {
   try {
-    if (req.method !== "POST")
-      return new Response("Method not allowed", { status: 405 });
+    const { username, password } = await req.json();
 
-    const body = await req.json();
-    const { action, token, data } = body;
-
-    if (!token)
-      return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401,
-      });
-
-    // Prüfe Token in admins-Tabelle
-    const { data: admin, error: adminErr } = await server
-      .from("admins")
-      .select("*")
-      .eq("token", token)
-      .limit(1)
-      .maybeSingle();
-
-    if (adminErr || !admin) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401,
-      });
+    if (!username || !password) {
+      return new Response(
+        JSON.stringify({ error: 'Username and password are required' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
-    if (action === "create") {
-      const { category, date, title, content } = data;
-      const { data: inserted, error } = await server
-        .from("news_items")
-        .insert([{ category, date, title, content }])
-        .select()
-        .single();
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-      if (error)
-        return new Response(JSON.stringify({ error: error.message }), {
-          status: 500,
-        });
-      return new Response(JSON.stringify({ success: true, item: inserted }), {
-        status: 200,
-      });
+    // Get admin user
+    const { data: adminUser, error: fetchError } = await supabase
+      .from('admin_users')
+      .select('*')
+      .eq('username', username)
+      .single();
+
+    if (fetchError || !adminUser) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid credentials' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
-    if (action === "update") {
-      const { id, category, date, title, content } = data;
-      const { data: updated, error } = await server
-        .from("news_items")
-        .update({ category, date, title, content })
-        .eq("id", id)
-        .select()
-        .single();
+    // Simple password comparison (in production, use proper hashing)
+    // For now, we'll use a simple comparison
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashedPassword = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
-      if (error)
-        return new Response(JSON.stringify({ error: error.message }), {
-          status: 500,
-        });
-      return new Response(JSON.stringify({ success: true, item: updated }), {
-        status: 200,
-      });
+    if (hashedPassword !== adminUser.password_hash) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid credentials' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
-    if (action === "delete") {
-      const { id } = data;
-      const { error } = await server.from("news_items").delete().eq("id", id);
-      if (error)
-        return new Response(JSON.stringify({ error: error.message }), {
-          status: 500,
-        });
-      return new Response(JSON.stringify({ success: true }), { status: 200 });
-    }
+    // Generate a simple session token
+    const sessionToken = crypto.randomUUID();
 
-    return new Response(JSON.stringify({ error: "Unknown action" }), {
-      status: 400,
-    });
-  } catch (err: any) {
     return new Response(
-      JSON.stringify({ error: err.message || "Server error" }),
-      { status: 500 }
+      JSON.stringify({ 
+        success: true, 
+        token: sessionToken,
+        username: adminUser.username 
+      }),
+      { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'An error occurred';
+    return new Response(
+      JSON.stringify({ error: message }),
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
-};
+});

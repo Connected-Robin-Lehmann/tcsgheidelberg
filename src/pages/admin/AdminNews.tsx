@@ -1,29 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Plus, Pencil, Trash2, Upload } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Plus, Pencil, Trash2, Upload } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 interface NewsItem {
   id: string;
@@ -46,19 +34,19 @@ const AdminNews = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<NewsItem | null>(null);
   const [formData, setFormData] = useState({
-    category: "Turnier",
-    date: new Date().toISOString().split("T")[0],
-    title: "",
-    content: "",
+    category: 'Turnier',
+    date: new Date().toISOString().split('T')[0],
+    title: '',
+    content: '',
   });
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const navigate = useNavigate();
   const { toast } = useToast();
 
   useEffect(() => {
-    const token = sessionStorage.getItem("adminToken");
+    const token = sessionStorage.getItem('adminToken');
     if (!token) {
-      navigate("/admin/login");
+      navigate('/admin/login');
       return;
     }
     loadNewsItems();
@@ -67,17 +55,17 @@ const AdminNews = () => {
   const loadNewsItems = async () => {
     try {
       const { data, error } = await supabase
-        .from("news_items")
-        .select("*")
-        .order("date", { ascending: false });
+        .from('news_items')
+        .select('*')
+        .order('date', { ascending: false });
 
       if (error) throw error;
       setNewsItems(data || []);
     } catch (error: any) {
       toast({
-        title: "Fehler beim Laden",
+        title: 'Fehler beim Laden',
         description: error.message,
-        variant: "destructive",
+        variant: 'destructive',
       });
     } finally {
       setIsLoading(false);
@@ -94,20 +82,22 @@ const AdminNews = () => {
     if (uploadedFiles.length === 0) return;
 
     for (const file of uploadedFiles) {
-      const fileExt = file.name.split(".").pop();
+      const fileExt = file.name.split('.').pop();
       const fileName = `${newsItemId}/${Math.random()}.${fileExt}`;
 
       const { error: uploadError } = await supabase.storage
-        .from("news-media")
+        .from('news-media')
         .upload(fileName, file);
 
       if (uploadError) throw uploadError;
 
-      const { error: insertError } = await supabase.from("news_media").insert({
-        news_item_id: newsItemId,
-        file_path: fileName,
-        file_type: file.type,
-      });
+      const { error: insertError } = await supabase
+        .from('news_media')
+        .insert({
+          news_item_id: newsItemId,
+          file_path: fileName,
+          file_type: file.type,
+        });
 
       if (insertError) throw insertError;
     }
@@ -115,91 +105,89 @@ const AdminNews = () => {
 
   const handleSave = async () => {
     try {
-      const token = sessionStorage.getItem("adminToken");
-      if (!token) throw new Error("Nicht authentifiziert");
+      if (!formData.title || !formData.content) {
+        toast({
+          title: 'Fehler',
+          description: 'Bitte füllen Sie alle Pflichtfelder aus',
+          variant: 'destructive',
+        });
+        return;
+      }
 
-      const payload = {
-        action: editingItem ? "update" : "create",
-        token,
-        data: editingItem
-          ? { id: editingItem.id, ...formData }
-          : { ...formData },
-      };
+      if (editingItem) {
+        const { error } = await supabase
+          .from('news_items')
+          .update(formData)
+          .eq('id', editingItem.id);
 
-      const res = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/admin-news`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${
-              import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
-            }`,
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+        if (error) throw error;
 
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error || "Fehler beim Speichern");
+        await uploadFiles(editingItem.id);
 
-      await loadNewsItems();
-      toast({ title: "Gespeichert", description: "Nachricht gespeichert" });
+        toast({
+          title: 'Erfolgreich aktualisiert',
+          description: 'Die Nachricht wurde aktualisiert',
+        });
+      } else {
+        const { data, error } = await supabase
+          .from('news_items')
+          .insert(formData)
+          .select()
+          .single();
+
+        if (error) throw error;
+
+        await uploadFiles(data.id);
+
+        toast({
+          title: 'Erfolgreich erstellt',
+          description: 'Die Nachricht wurde erstellt',
+        });
+      }
+
       setIsDialogOpen(false);
       resetForm();
+      loadNewsItems();
     } catch (error: any) {
       toast({
-        title: "Fehler",
+        title: 'Fehler',
         description: error.message,
-        variant: "destructive",
+        variant: 'destructive',
       });
     }
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Möchten Sie diese Nachricht wirklich löschen?")) return;
+    if (!confirm('Möchten Sie diese Nachricht wirklich löschen?')) return;
+
     try {
-      const token = sessionStorage.getItem("adminToken");
-      if (!token) throw new Error("Nicht authentifiziert");
+      const { error } = await supabase
+        .from('news_items')
+        .delete()
+        .eq('id', id);
 
-      const res = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/admin-news`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${
-              import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
-            }`,
-          },
-          body: JSON.stringify({
-            action: "delete",
-            token,
-            data: { id },
-          }),
-        }
-      );
+      if (error) throw error;
 
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error || "Fehler beim Löschen");
-
-      await loadNewsItems();
-      toast({ title: "Gelöscht", description: "Nachricht wurde gelöscht" });
+      toast({
+        title: 'Erfolgreich gelöscht',
+        description: 'Die Nachricht wurde gelöscht',
+      });
+      loadNewsItems();
     } catch (error: any) {
       toast({
-        title: "Fehler",
+        title: 'Fehler',
         description: error.message,
-        variant: "destructive",
+        variant: 'destructive',
       });
     }
   };
 
   const resetForm = () => {
     setFormData({
-      category: "Turnier",
-      date: new Date().toISOString().split("T")[0],
-      title: "",
-      content: "",
+      category: 'Turnier',
+      date: new Date().toISOString().split('T')[0],
+      title: '',
+      content: '',
     });
     setUploadedFiles([]);
     setEditingItem(null);
@@ -236,7 +224,7 @@ const AdminNews = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-
+      
       <main className="py-12">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex justify-between items-center mb-8">
@@ -258,10 +246,10 @@ const AdminNews = () => {
               <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle>
-                    {editingItem ? "Nachricht bearbeiten" : "Neue Nachricht"}
+                    {editingItem ? 'Nachricht bearbeiten' : 'Neue Nachricht'}
                   </DialogTitle>
                 </DialogHeader>
-
+                
                 <div className="space-y-4 mt-4">
                   <div>
                     <Label htmlFor="category">Kategorie</Label>
@@ -277,9 +265,7 @@ const AdminNews = () => {
                       <SelectContent>
                         <SelectItem value="Turnier">Turnier</SelectItem>
                         <SelectItem value="Spiel">Spiel</SelectItem>
-                        <SelectItem value="Veranstaltung">
-                          Veranstaltung
-                        </SelectItem>
+                        <SelectItem value="Veranstaltung">Veranstaltung</SelectItem>
                         <SelectItem value="Allgemein">Allgemein</SelectItem>
                       </SelectContent>
                     </Select>
@@ -342,7 +328,7 @@ const AdminNews = () => {
                   </div>
 
                   <Button onClick={handleSave} className="w-full btn-hero">
-                    {editingItem ? "Aktualisieren" : "Erstellen"}
+                    {editingItem ? 'Aktualisieren' : 'Erstellen'}
                   </Button>
                 </div>
               </DialogContent>
@@ -359,7 +345,7 @@ const AdminNews = () => {
                         {item.category}
                       </span>
                       <span className="text-sm text-muted-foreground">
-                        {new Date(item.date).toLocaleDateString("de-DE")}
+                        {new Date(item.date).toLocaleDateString('de-DE')}
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-tennis-black mb-2">
