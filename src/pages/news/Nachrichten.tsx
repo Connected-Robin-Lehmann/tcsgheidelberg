@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { Calendar, Trophy, Newspaper, Users, Filter } from "lucide-react";
+import { Calendar, Trophy, Newspaper, Users, Filter, FileText, File, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -158,6 +158,16 @@ export default function Nachrichten() {
   const openNewsDialog = (item: NewsItem) => {
     setSelectedNews(item);
     setIsDialogOpen(true);
+  };
+
+  const getFileIcon = (fileType: string) => {
+    if (fileType.includes('pdf')) return FileText;
+    if (fileType.includes('word') || fileType.includes('document')) return FileText;
+    return File;
+  };
+
+  const getFileName = (filePath: string) => {
+    return filePath.split('/').pop() || 'Datei';
   };
 
   if (isLoading) {
@@ -367,17 +377,30 @@ export default function Nachrichten() {
                             </div>
                           );
                         } else {
+                          const FileIcon = getFileIcon(media.file_type);
+                          const fileName = getFileName(media.file_path);
+                          
                           return (
-                            <div key={media.id} className="p-4 border rounded-lg">
-                              <a
-                                href={getMediaUrl(media.file_path)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary hover:underline"
-                              >
-                                Datei herunterladen
-                              </a>
-                            </div>
+                            <a
+                              key={media.id}
+                              href={getMediaUrl(media.file_path)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-4 p-4 border rounded-lg hover:bg-accent transition-colors group"
+                            >
+                              <div className="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg flex-shrink-0">
+                                <FileIcon className="h-8 w-8 text-primary" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="font-medium truncate group-hover:text-primary transition-colors">
+                                  {fileName}
+                                </p>
+                                <p className="text-sm text-muted-foreground">
+                                  {media.file_type.split('/')[1]?.toUpperCase() || 'Datei'}
+                                </p>
+                              </div>
+                              <Download className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                            </a>
                           );
                         }
                       })}
