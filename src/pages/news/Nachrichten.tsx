@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { Calendar, Trophy, Newspaper, Users, Filter, FileText, File, Download } from "lucide-react";
+import { Calendar, Trophy, Newspaper, Users, Filter, FileText, File, Download, LayoutGrid, LayoutList } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DOMPurify from "dompurify";
 import {
@@ -67,6 +67,7 @@ export default function Nachrichten() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<"list" | "grid">("list");
   const { toast } = useToast();
 
   useEffect(() => {
@@ -201,11 +202,12 @@ export default function Nachrichten() {
       <section className="py-8 bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-              <div className="flex items-center gap-2">
-                <Filter className="h-5 w-5 text-tennis-yellow" />
-                <span className="text-sm font-medium text-tennis-black">Filtern nach:</span>
-              </div>
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+              <div className="flex flex-col md:flex-row gap-4 items-center">
+                <div className="flex items-center gap-2">
+                  <Filter className="h-5 w-5 text-tennis-yellow" />
+                  <span className="text-sm font-medium text-tennis-black">Filtern nach:</span>
+                </div>
 
               <Select value={selectedMonth} onValueChange={setSelectedMonth}>
                 <SelectTrigger className="w-[200px]">
@@ -240,17 +242,38 @@ export default function Nachrichten() {
                 </SelectContent>
               </Select>
 
-              {(selectedMonth !== "all" || selectedCategory !== "all") && (
+                {(selectedMonth !== "all" || selectedCategory !== "all") && (
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      setSelectedMonth("all");
+                      setSelectedCategory("all");
+                    }}
+                  >
+                    Filter zurücksetzen
+                  </Button>
+                )}
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-medium text-tennis-black">Ansicht:</span>
                 <Button
-                  variant="ghost"
-                  onClick={() => {
-                    setSelectedMonth("all");
-                    setSelectedCategory("all");
-                  }}
+                  variant={viewMode === "list" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setViewMode("list")}
+                  className={viewMode === "list" ? "bg-tennis-yellow text-tennis-black hover:bg-tennis-yellow-light" : ""}
                 >
-                  Filter zurücksetzen
+                  <LayoutList className="h-4 w-4" />
                 </Button>
-              )}
+                <Button
+                  variant={viewMode === "grid" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setViewMode("grid")}
+                  className={viewMode === "grid" ? "bg-tennis-yellow text-tennis-black hover:bg-tennis-yellow-light" : ""}
+                >
+                  <LayoutGrid className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -273,11 +296,62 @@ export default function Nachrichten() {
                 </div>
               </Card>
             ) : (
-              <div className="space-y-6">
+              <div className={viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" : "space-y-6"}>
                 {filteredNews.map((item) => {
                   const Icon = categoryIcons[item.category] || Newspaper;
                   const media = newsMedia[item.id] || [];
                   const firstImage = media.find(m => m.file_type.startsWith('image/'));
+                  
+                  if (viewMode === "grid") {
+                    return (
+                      <Card
+                        key={item.id}
+                        className="card-tennis border-t-4 border-t-tennis-yellow flex flex-col h-full"
+                      >
+                        {firstImage && (
+                          <div className="w-full h-48">
+                            <img
+                              src={getMediaUrl(firstImage.file_path)}
+                              alt={item.title}
+                              className="w-full h-full object-cover rounded-t-lg"
+                            />
+                          </div>
+                        )}
+                        <div className="p-4 flex flex-col flex-1">
+                          <div className="flex items-start justify-between mb-3">
+                            <span
+                              className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                                item.category
+                              )}`}
+                            >
+                              <Icon className="h-3 w-3" />
+                              {categoryLabels[item.category] || item.category}
+                            </span>
+                          </div>
+                          <time className="text-xs text-gray-600 mb-2">
+                            {format(new Date(item.date), "dd. MMM yyyy", { locale: de })}
+                          </time>
+                          <h3 className="text-lg font-bold mb-2 text-tennis-black line-clamp-2">{item.title}</h3>
+                          <div 
+                            className="text-sm text-gray-700 mb-4 line-clamp-3 flex-1"
+                            dangerouslySetInnerHTML={{ 
+                              __html: DOMPurify.sanitize(
+                                item.content.length > 100
+                                  ? `${item.content.substring(0, 100)}...`
+                                  : item.content
+                              ) 
+                            }}
+                          />
+                          <Button 
+                            className="bg-tennis-yellow text-tennis-black hover:bg-tennis-yellow-light font-semibold w-full"
+                            onClick={() => openNewsDialog(item)}
+                          >
+                            Weiterlesen
+                          </Button>
+                        </div>
+                      </Card>
+                    );
+                  }
                   
                   return (
                     <Card
