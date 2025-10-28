@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -19,11 +18,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Plus, Pencil, Trash2, Upload } from "lucide-react";
+import { Plus, Pencil, Trash2, X, FileText, Image as ImageIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 interface NewsItem {
   id: string;
@@ -52,8 +53,21 @@ const AdminNews = () => {
     content: "",
   });
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [existingMedia, setExistingMedia] = useState<NewsMedia[]>([]);
+  const [filePreviewUrls, setFilePreviewUrls] = useState<string[]>([]);
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ["bold", "italic", "underline", "strike"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ align: [] }],
+      ["link"],
+      ["clean"],
+    ],
+  };
 
   useEffect(() => {
     const token = sessionStorage.getItem("adminToken");
@@ -86,8 +100,44 @@ const AdminNews = () => {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setUploadedFiles(Array.from(e.target.files));
+      const files = Array.from(e.target.files);
+      setUploadedFiles(files);
+      
+      // Create preview URLs for images
+      const urls = files.map(file => {
+        if (file.type.startsWith('image/')) {
+          return URL.createObjectURL(file);
+        }
+        return '';
+      });
+      setFilePreviewUrls(urls);
     }
+  };
+
+  const removeUploadedFile = (index: number) => {
+    const newFiles = uploadedFiles.filter((_, i) => i !== index);
+    const newUrls = filePreviewUrls.filter((_, i) => i !== index);
+    setUploadedFiles(newFiles);
+    setFilePreviewUrls(newUrls);
+  };
+
+  const loadExistingMedia = async (newsItemId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from("news_media")
+        .select("*")
+        .eq("news_item_id", newsItemId);
+
+      if (error) throw error;
+      setExistingMedia(data || []);
+    } catch (error: any) {
+      console.error("Error loading media:", error);
+    }
+  };
+
+  const getMediaUrl = (filePath: string) => {
+    const { data } = supabase.storage.from("news-media").getPublicUrl(filePath);
+    return data.publicUrl;
   };
 
   const convertFilesToBase64 = async (files: File[]) => {
@@ -246,10 +296,12 @@ const AdminNews = () => {
       content: "",
     });
     setUploadedFiles([]);
+    setFilePreviewUrls([]);
+    setExistingMedia([]);
     setEditingItem(null);
   };
 
-  const openEditDialog = (item: NewsItem) => {
+  const openEditDialog = async (item: NewsItem) => {
     setEditingItem(item);
     setFormData({
       category: item.category,
@@ -257,6 +309,7 @@ const AdminNews = () => {
       title: item.title,
       content: item.content,
     });
+    await loadExistingMedia(item.id);
     setIsDialogOpen(true);
   };
 
@@ -357,19 +410,51 @@ const AdminNews = () => {
 
                   <div>
                     <Label htmlFor="content">Inhalt</Label>
-                    <Textarea
-                      id="content"
-                      value={formData.content}
-                      onChange={(e) =>
-                        setFormData({ ...formData, content: e.target.value })
-                      }
-                      className="mt-2 min-h-[200px]"
-                      placeholder="Nachrichteninhalt"
-                    />
+                    <div className="mt-2 border rounded-md">
+                      <ReactQuill
+                        theme="snow"
+                        value={formData.content}
+                        onChange={(value) =>
+                          setFormData({ ...formData, content: value })
+                        }
+                        modules={modules}
+                        className="bg-background"
+                        placeholder="Nachrichteninhalt eingeben..."
+                      />
+                    </div>
                   </div>
 
+                  {existingMedia.length > 0 && (
+                    <div>
+                      <Label>Vorhandene Medien</Label>
+                      <div className="grid grid-cols-2 gap-3 mt-2">
+                        {existingMedia.map((media) => (
+                          <div
+                            key={media.id}
+                            className="relative border rounded-lg p-3 bg-accent/50"
+                          >
+                            {media.file_type.startsWith('image/') ? (
+                              <img
+                                src={getMediaUrl(media.file_path)}
+                                alt="Media"
+                                className="w-full h-24 object-cover rounded"
+                              />
+                            ) : (
+                              <div className="flex items-center gap-2 h-24">
+                                <FileText className="h-8 w-8 text-primary" />
+                                <span className="text-sm truncate">
+                                  {media.file_path.split('/').pop()}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <div>
-                    <Label htmlFor="files">Bilder/Dateien</Label>
+                    <Label htmlFor="files">Neue Bilder/Dateien hinzufügen</Label>
                     <Input
                       id="files"
                       type="file"
@@ -379,9 +464,40 @@ const AdminNews = () => {
                       className="mt-2"
                     />
                     {uploadedFiles.length > 0 && (
-                      <p className="text-sm text-muted-foreground mt-2">
-                        {uploadedFiles.length} Datei(en) ausgewählt
-                      </p>
+                      <div className="grid grid-cols-2 gap-3 mt-3">
+                        {uploadedFiles.map((file, index) => (
+                          <div
+                            key={index}
+                            className="relative border rounded-lg p-3 bg-accent/50"
+                          >
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="absolute top-1 right-1 h-6 w-6"
+                              onClick={() => removeUploadedFile(index)}
+                            >
+                              <X className="h-4 w-4" />
+                            </Button>
+                            {file.type.startsWith('image/') ? (
+                              <>
+                                <img
+                                  src={filePreviewUrls[index]}
+                                  alt={file.name}
+                                  className="w-full h-24 object-cover rounded"
+                                />
+                                <p className="text-xs text-muted-foreground mt-1 truncate">
+                                  {file.name}
+                                </p>
+                              </>
+                            ) : (
+                              <div className="flex items-center gap-2 h-24">
+                                <FileText className="h-8 w-8 text-primary" />
+                                <span className="text-sm truncate">{file.name}</span>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
                     )}
                   </div>
 
