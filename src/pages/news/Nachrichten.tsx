@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { Calendar, Trophy, Newspaper, Users, Filter, FileText, File, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DOMPurify from "dompurify";
 import {
   Card,
   CardContent,
@@ -297,11 +298,16 @@ export default function Nachrichten() {
                             </time>
                           </div>
                           <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                          <p className="text-muted-foreground mb-4">
-                            {item.content.length > 150
-                              ? `${item.content.substring(0, 150)}...`
-                              : item.content}
-                          </p>
+                          <div 
+                            className="text-muted-foreground mb-4 line-clamp-3"
+                            dangerouslySetInnerHTML={{ 
+                              __html: DOMPurify.sanitize(
+                                item.content.length > 150
+                                  ? `${item.content.substring(0, 150)}...`
+                                  : item.content
+                              ) 
+                            }}
+                          />
                           <Button 
                             variant="outline" 
                             onClick={() => openNewsDialog(item)}
@@ -357,9 +363,12 @@ export default function Nachrichten() {
               </DialogHeader>
 
               <div className="mt-6 space-y-6">
-                <p className="text-foreground whitespace-pre-wrap leading-relaxed">
-                  {selectedNews.content}
-                </p>
+                <div 
+                  className="prose prose-sm max-w-none text-foreground leading-relaxed"
+                  dangerouslySetInnerHTML={{ 
+                    __html: DOMPurify.sanitize(selectedNews.content) 
+                  }}
+                />
 
                 {newsMedia[selectedNews.id] && newsMedia[selectedNews.id].length > 0 && (
                   <div className="space-y-4">
