@@ -139,15 +139,15 @@ export default function Nachrichten() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "Turnier":
-        return "bg-yellow-500/10 text-yellow-700 dark:text-yellow-300";
+        return "bg-yellow-100 text-yellow-800 border border-yellow-200";
       case "Spiel":
-        return "bg-blue-500/10 text-blue-700 dark:text-blue-300";
+        return "bg-blue-100 text-blue-800 border border-blue-200";
       case "Veranstaltung":
-        return "bg-green-500/10 text-green-700 dark:text-green-300";
+        return "bg-green-100 text-green-800 border border-green-200";
       case "Allgemein":
-        return "bg-purple-500/10 text-purple-700 dark:text-purple-300";
+        return "bg-purple-100 text-purple-800 border border-purple-200";
       default:
-        return "bg-muted text-muted-foreground";
+        return "bg-gray-100 text-gray-800 border border-gray-200";
     }
   };
 
@@ -184,153 +184,157 @@ export default function Nachrichten() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-primary/5 to-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Nachrichten</h1>
-            <p className="text-xl text-muted-foreground">
-              Aktuelle Berichte von Turnieren, Spielen und Vereinsgeschehen
-            </p>
-          </div>
+      <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Nachrichten</h1>
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+            Aktuelle Berichte von Turnieren, Spielen und Vereinsgeschehen
+          </p>
         </div>
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 border-b">
+      <section className="py-8 bg-white border-b">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-            <div className="flex items-center gap-2">
-              <Filter className="h-5 w-5 text-muted-foreground" />
-              <span className="text-sm font-medium">Filtern nach:</span>
-            </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
+              <div className="flex items-center gap-2">
+                <Filter className="h-5 w-5 text-tennis-yellow" />
+                <span className="text-sm font-medium text-tennis-black">Filtern nach:</span>
+              </div>
 
-            <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-              <SelectTrigger className="w-[200px]">
-                <SelectValue placeholder="Monat wählen" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle Monate</SelectItem>
-                {availableMonths.map((month) => (
-                  <SelectItem key={month} value={month}>
-                    {format(new Date(month + "-01"), "MMMM yyyy", {
-                      locale: de,
-                    })}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              <Select value={selectedMonth} onValueChange={setSelectedMonth}>
+                <SelectTrigger className="w-[200px]">
+                  <SelectValue placeholder="Monat wählen" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Alle Monate</SelectItem>
+                  {availableMonths.map((month) => (
+                    <SelectItem key={month} value={month}>
+                      {format(new Date(month + "-01"), "MMMM yyyy", {
+                        locale: de,
+                      })}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
-            <Select
-              value={selectedCategory}
-              onValueChange={setSelectedCategory}
-            >
-              <SelectTrigger className="w-[200px]">
-                <SelectValue placeholder="Kategorie wählen" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle Kategorien</SelectItem>
-                {Object.keys(categoryLabels).map((key) => (
-                  <SelectItem key={key} value={key}>
-                    {categoryLabels[key]}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            {(selectedMonth !== "all" || selectedCategory !== "all") && (
-              <Button
-                variant="ghost"
-                onClick={() => {
-                  setSelectedMonth("all");
-                  setSelectedCategory("all");
-                }}
+              <Select
+                value={selectedCategory}
+                onValueChange={setSelectedCategory}
               >
-                Filter zurücksetzen
-              </Button>
-            )}
+                <SelectTrigger className="w-[200px]">
+                  <SelectValue placeholder="Kategorie wählen" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Alle Kategorien</SelectItem>
+                  {Object.keys(categoryLabels).map((key) => (
+                    <SelectItem key={key} value={key}>
+                      {categoryLabels[key]}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {(selectedMonth !== "all" || selectedCategory !== "all") && (
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    setSelectedMonth("all");
+                    setSelectedCategory("all");
+                  }}
+                >
+                  Filter zurücksetzen
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
       {/* News Grid */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          {filteredNews.length === 0 ? (
-            <div className="text-center py-12">
-              <Newspaper className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-              <h3 className="text-xl font-semibold mb-2">
-                Keine Nachrichten gefunden
-              </h3>
-              <p className="text-muted-foreground">
-                Versuchen Sie, die Filter anzupassen.
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-6">
-              {filteredNews.map((item) => {
-                const Icon = categoryIcons[item.category] || Newspaper;
-                const media = newsMedia[item.id] || [];
-                const firstImage = media.find(m => m.file_type.startsWith('image/'));
-                
-                return (
-                  <Card
-                    key={item.id}
-                    className="hover:shadow-lg transition-shadow"
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex gap-6">
-                        <div className="flex-1">
-                          <div className="flex items-start justify-between mb-3">
-                            <span
-                              className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
-                                item.category
-                              )}`}
-                            >
-                              <Icon className="h-3 w-3" />
-                              {categoryLabels[item.category] || item.category}
-                            </span>
-                            <time className="text-sm text-muted-foreground">
-                              {format(new Date(item.date), "dd. MMM yyyy", { locale: de })}
-                            </time>
-                          </div>
-                          <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                          <div 
-                            className="text-muted-foreground mb-4 line-clamp-3"
-                            dangerouslySetInnerHTML={{ 
-                              __html: DOMPurify.sanitize(
-                                item.content.length > 150
-                                  ? `${item.content.substring(0, 150)}...`
-                                  : item.content
-                              ) 
-                            }}
-                          />
-                          <Button 
-                            variant="outline" 
-                            onClick={() => openNewsDialog(item)}
-                          >
-                            Weiterlesen
-                          </Button>
-                        </div>
-                        {firstImage && (
-                          <div className="w-32 h-32 flex-shrink-0">
-                            <img
-                              src={getMediaUrl(firstImage.file_path)}
-                              alt={item.title}
-                              className="w-full h-full object-cover rounded-lg"
+          <div className="max-w-6xl mx-auto">
+            {filteredNews.length === 0 ? (
+              <Card className="card-tennis">
+                <div className="text-center py-12">
+                  <Newspaper className="h-12 w-12 mx-auto mb-4 text-tennis-yellow" />
+                  <h3 className="text-xl font-semibold mb-2 text-tennis-black">
+                    Keine Nachrichten gefunden
+                  </h3>
+                  <p className="text-gray-600">
+                    Versuchen Sie, die Filter anzupassen.
+                  </p>
+                </div>
+              </Card>
+            ) : (
+              <div className="space-y-6">
+                {filteredNews.map((item) => {
+                  const Icon = categoryIcons[item.category] || Newspaper;
+                  const media = newsMedia[item.id] || [];
+                  const firstImage = media.find(m => m.file_type.startsWith('image/'));
+                  
+                  return (
+                    <Card
+                      key={item.id}
+                      className="card-tennis border-l-4 border-l-tennis-yellow"
+                    >
+                      <div className="p-6">
+                        <div className="flex gap-6">
+                          <div className="flex-1">
+                            <div className="flex items-start justify-between mb-3">
+                              <span
+                                className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                                  item.category
+                                )}`}
+                              >
+                                <Icon className="h-3 w-3" />
+                                {categoryLabels[item.category] || item.category}
+                              </span>
+                              <time className="text-sm text-gray-600">
+                                {format(new Date(item.date), "dd. MMM yyyy", { locale: de })}
+                              </time>
+                            </div>
+                            <h3 className="text-2xl font-bold mb-3 text-tennis-black">{item.title}</h3>
+                            <div 
+                              className="text-gray-700 mb-4 line-clamp-3"
+                              dangerouslySetInnerHTML={{ 
+                                __html: DOMPurify.sanitize(
+                                  item.content.length > 150
+                                    ? `${item.content.substring(0, 150)}...`
+                                    : item.content
+                                ) 
+                              }}
                             />
+                            <Button 
+                              className="bg-tennis-yellow text-tennis-black hover:bg-tennis-yellow-light font-semibold"
+                              onClick={() => openNewsDialog(item)}
+                            >
+                              Weiterlesen
+                            </Button>
                           </div>
-                        )}
+                          {firstImage && (
+                            <div className="w-40 h-40 flex-shrink-0">
+                              <img
+                                src={getMediaUrl(firstImage.file_path)}
+                                alt={item.title}
+                                className="w-full h-full object-cover rounded-lg shadow-md"
+                              />
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          )}
+                    </Card>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
