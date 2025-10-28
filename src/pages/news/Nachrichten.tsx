@@ -67,7 +67,7 @@ export default function Nachrichten() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [viewMode, setViewMode] = useState<"list" | "grid">("list");
+  const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const { toast } = useToast();
 
   useEffect(() => {
