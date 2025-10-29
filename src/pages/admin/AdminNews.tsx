@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -18,18 +18,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Plus, Pencil, Trash2, X, FileText, Image as ImageIcon } from "lucide-react";
+import { Plus, Pencil, Trash2, X, FileText, Image as ImageIcon, Table } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ReactQuill, { Quill } from "react-quill";
+import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import QuillBetterTable from "quill-better-table";
-import "quill-better-table/dist/quill-better-table.css";
-
-// Register the table module
-Quill.register("modules/better-table", QuillBetterTable);
 
 interface NewsItem {
   id: string;
@@ -113,7 +108,48 @@ const AdminNews = () => {
     };
   };
 
-  const modules = {
+  // Table handler for inserting tables
+  const insertTable = () => {
+    const quill = quillRef.current?.getEditor();
+    if (quill) {
+      const range = quill.getSelection() || { index: 0, length: 0 };
+      const tableHTML = `
+        <table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+          <thead>
+            <tr>
+              <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">Spalte 1</th>
+              <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">Spalte 2</th>
+              <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">Spalte 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 1</td>
+              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 2</td>
+              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 3</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 4</td>
+              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 5</td>
+              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 6</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><br></p>
+      `;
+      
+      const delta = quill.clipboard.convert(tableHTML);
+      quill.updateContents(delta, 'user');
+      quill.setSelection({ index: range.index + delta.length(), length: 0 });
+      
+      toast({
+        title: "Tabelle eingefügt",
+        description: "Sie können die Tabelle im HTML-Modus bearbeiten",
+      });
+    }
+  };
+
+  const modules = useMemo(() => ({
     toolbar: {
       container: [
         [{ header: [1, 2, 3, false] }],
@@ -123,31 +159,12 @@ const AdminNews = () => {
         [{ color: [] }, { background: [] }],
         ["link", "image"],
         ["clean"],
-        [{ table: "TD" }],
       ],
       handlers: {
         image: imageHandler,
       },
     },
-    "better-table": {
-      operationMenu: {
-        items: {
-          insertColumnRight: { text: "Spalte rechts einfügen" },
-          insertColumnLeft: { text: "Spalte links einfügen" },
-          insertRowUp: { text: "Zeile oben einfügen" },
-          insertRowDown: { text: "Zeile unten einfügen" },
-          mergeCells: { text: "Zellen verbinden" },
-          unmergeCells: { text: "Zellen trennen" },
-          deleteColumn: { text: "Spalte löschen" },
-          deleteRow: { text: "Zeile löschen" },
-          deleteTable: { text: "Tabelle löschen" },
-        },
-      },
-    },
-    keyboard: {
-      bindings: QuillBetterTable.keyboardBindings,
-    },
-  };
+  }), []);
 
   useEffect(() => {
     const token = sessionStorage.getItem("adminToken");
@@ -490,9 +507,21 @@ const AdminNews = () => {
 
                   <div>
                     <Label htmlFor="content">Inhalt</Label>
-                    <p className="text-xs text-muted-foreground mt-1 mb-2">
-                      Nutzen Sie die Toolbar-Buttons für Bilder und Tabellen. Bilder werden direkt hochgeladen.
-                    </p>
+                    <div className="flex items-center gap-2 mt-1 mb-2">
+                      <p className="text-xs text-muted-foreground flex-1">
+                        Nutzen Sie das Bild-Icon für Bilder. Für Tabellen nutzen Sie den Button rechts.
+                      </p>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={insertTable}
+                        className="flex items-center gap-1"
+                      >
+                        <Table className="w-4 h-4" />
+                        Tabelle einfügen
+                      </Button>
+                    </div>
                     <div className="mt-2 border rounded-md">
                       <ReactQuill
                         ref={quillRef}
