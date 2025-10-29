@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,8 +23,13 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import QuillBetterTable from "quill-better-table";
+import "quill-better-table/dist/quill-better-table.css";
+
+// Register the table module
+Quill.register("modules/better-table", QuillBetterTable);
 
 interface NewsItem {
   id: string;
@@ -55,18 +60,93 @@ const AdminNews = () => {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [existingMedia, setExistingMedia] = useState<NewsMedia[]>([]);
   const [filePreviewUrls, setFilePreviewUrls] = useState<string[]>([]);
+  const quillRef = useRef<ReactQuill>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  // Image handler for uploading images directly in the editor
+  const imageHandler = async () => {
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("accept", "image/*");
+    input.click();
+
+    input.onchange = async () => {
+      const file = input.files?.[0];
+      if (!file) return;
+
+      try {
+        // Upload to Supabase Storage
+        const fileExt = file.name.split(".").pop();
+        const fileName = `${Math.random()}.${fileExt}`;
+        const filePath = `editor-images/${fileName}`;
+
+        const { error: uploadError } = await supabase.storage
+          .from("news-media")
+          .upload(filePath, file);
+
+        if (uploadError) throw uploadError;
+
+        // Get public URL
+        const { data } = supabase.storage
+          .from("news-media")
+          .getPublicUrl(filePath);
+
+        // Insert image into editor
+        const quill = quillRef.current?.getEditor();
+        if (quill) {
+          const range = quill.getSelection();
+          quill.insertEmbed(range?.index || 0, "image", data.publicUrl);
+        }
+
+        toast({
+          title: "Bild hochgeladen",
+          description: "Das Bild wurde erfolgreich eingefügt",
+        });
+      } catch (error: any) {
+        toast({
+          title: "Fehler beim Hochladen",
+          description: error.message,
+          variant: "destructive",
+        });
+      }
+    };
+  };
+
   const modules = {
-    toolbar: [
-      [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      [{ align: [] }],
-      ["link"],
-      ["clean"],
-    ],
+    toolbar: {
+      container: [
+        [{ header: [1, 2, 3, false] }],
+        ["bold", "italic", "underline", "strike"],
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ align: [] }],
+        [{ color: [] }, { background: [] }],
+        ["link", "image"],
+        ["clean"],
+        [{ table: "TD" }],
+      ],
+      handlers: {
+        image: imageHandler,
+      },
+    },
+    "better-table": {
+      operationMenu: {
+        items: {
+          insertColumnRight: { text: "Spalte rechts einfügen" },
+          insertColumnLeft: { text: "Spalte links einfügen" },
+          insertRowUp: { text: "Zeile oben einfügen" },
+          insertRowDown: { text: "Zeile unten einfügen" },
+          mergeCells: { text: "Zellen verbinden" },
+          unmergeCells: { text: "Zellen trennen" },
+          deleteColumn: { text: "Spalte löschen" },
+          deleteRow: { text: "Zeile löschen" },
+          deleteTable: { text: "Tabelle löschen" },
+        },
+      },
+    },
+    keyboard: {
+      bindings: QuillBetterTable.keyboardBindings,
+    },
   };
 
   useEffect(() => {
@@ -410,8 +490,12 @@ const AdminNews = () => {
 
                   <div>
                     <Label htmlFor="content">Inhalt</Label>
+                    <p className="text-xs text-muted-foreground mt-1 mb-2">
+                      Nutzen Sie die Toolbar-Buttons für Bilder und Tabellen. Bilder werden direkt hochgeladen.
+                    </p>
                     <div className="mt-2 border rounded-md">
                       <ReactQuill
+                        ref={quillRef}
                         theme="snow"
                         value={formData.content}
                         onChange={(value) =>
