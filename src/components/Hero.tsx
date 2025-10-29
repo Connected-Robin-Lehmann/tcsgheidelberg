@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Users, Award, MapPin } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { format } from "date-fns";
+import { de } from "date-fns/locale";
+
+interface NewsItem {
+  id: string;
+  title: string;
+  content: string;
+  date: string;
+  category: string;
+}
+
 const Hero = () => {
+  const [latestNews, setLatestNews] = useState<NewsItem | null>(null);
+
+  useEffect(() => {
+    const fetchLatestNews = async () => {
+      const { data, error } = await supabase
+        .from("news_items")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (data && !error) {
+        setLatestNews(data);
+      }
+    };
+
+    fetchLatestNews();
+  }, []);
   return (
     <section
       id="home"
@@ -28,43 +58,51 @@ const Hero = () => {
           </h1>
 
           {/* News Highlight */}
-          <div className="max-w-3xl mx-auto mt-16 animate-slide-up">
-            <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow/50 rounded-2xl p-6 md:p-8 hover:bg-white/15 transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="bg-tennis-yellow rounded-full p-3 flex-shrink-0">
-                  <Calendar className="w-6 h-6 text-tennis-black" />
-                </div>
-                <div className="text-left flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-tennis-yellow mb-2">
-                    Aktuelle Nachricht
-                  </h3>
-                  <p className="text-white/90 text-sm md:text-base mb-4">
-                    Bleiben Sie auf dem Laufenden mit den neuesten Informationen
-                    aus unserem Verein.
-                  </p>
-                  <a
-                    href="/aktuelles"
-                    className="inline-flex items-center text-tennis-yellow hover:text-yellow-300 font-semibold transition-colors"
-                  >
-                    Mehr erfahren
-                    <svg
-                      className="w-4 h-4 ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+          {latestNews && (
+            <div className="max-w-3xl mx-auto mt-16 animate-slide-up">
+              <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow/50 rounded-2xl p-6 md:p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="bg-tennis-yellow rounded-full p-3 flex-shrink-0">
+                    <Calendar className="w-6 h-6 text-tennis-black" />
+                  </div>
+                  <div className="text-left flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="text-xl md:text-2xl font-bold text-tennis-yellow">
+                        {latestNews.title}
+                      </h3>
+                    </div>
+                    <p className="text-white/70 text-xs md:text-sm mb-2">
+                      {format(new Date(latestNews.date), "d. MMMM yyyy", {
+                        locale: de,
+                      })}
+                    </p>
+                    <p className="text-white/90 text-sm md:text-base mb-4 line-clamp-2">
+                      {latestNews.content.replace(/<[^>]*>/g, "").substring(0, 150)}...
+                    </p>
+                    <a
+                      href="/aktuelles/nachrichten"
+                      className="inline-flex items-center text-tennis-yellow hover:text-yellow-300 font-semibold transition-colors"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </a>
+                      Mehr erfahren
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
