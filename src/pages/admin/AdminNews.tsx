@@ -14,6 +14,8 @@ import {
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -23,8 +25,13 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import DOMPurify from "dompurify";
+import ImageResize from "quill-image-resize-module-react";
+
+// Register image resize module
+Quill.register("modules/imageResize", ImageResize);
 
 interface NewsItem {
   id: string;
@@ -55,6 +62,9 @@ const AdminNews = () => {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [existingMedia, setExistingMedia] = useState<NewsMedia[]>([]);
   const [filePreviewUrls, setFilePreviewUrls] = useState<string[]>([]);
+  const [isTableDialogOpen, setIsTableDialogOpen] = useState(false);
+  const [tableRows, setTableRows] = useState(3);
+  const [tableCols, setTableCols] = useState(3);
   const quillRef = useRef<ReactQuill>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -108,43 +118,44 @@ const AdminNews = () => {
     };
   };
 
-  // Table handler for inserting tables
+  // Table handler for inserting tables with dialog
   const insertTable = () => {
+    setIsTableDialogOpen(true);
+  };
+
+  const createTable = () => {
     const quill = quillRef.current?.getEditor();
     if (quill) {
       const range = quill.getSelection() || { index: 0, length: 0 };
-      const tableHTML = `
-        <table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
-          <thead>
-            <tr>
-              <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">Spalte 1</th>
-              <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">Spalte 2</th>
-              <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">Spalte 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 1</td>
-              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 2</td>
-              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 3</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 4</td>
-              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 5</td>
-              <td style="border: 1px solid #ddd; padding: 8px;">Zelle 6</td>
-            </tr>
-          </tbody>
-        </table>
-        <p><br></p>
-      `;
+      
+      // Generate table HTML
+      let tableHTML = `<table style="border-collapse: collapse; width: 100%; margin: 10px 0;"><tbody>`;
+      
+      for (let i = 0; i < tableRows; i++) {
+        tableHTML += `<tr>`;
+        for (let j = 0; j < tableCols; j++) {
+          const cellStyle = i === 0 
+            ? `border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; font-weight: bold;`
+            : `border: 1px solid #ddd; padding: 8px;`;
+          const cellContent = i === 0 ? `Spalte ${j + 1}` : `Zelle ${i}-${j + 1}`;
+          tableHTML += `<td style="${cellStyle}">${cellContent}</td>`;
+        }
+        tableHTML += `</tr>`;
+      }
+      
+      tableHTML += `</tbody></table><p><br></p>`;
       
       const delta = quill.clipboard.convert(tableHTML);
       quill.updateContents(delta, 'user');
       quill.setSelection({ index: range.index + delta.length(), length: 0 });
       
+      setIsTableDialogOpen(false);
+      setTableRows(3);
+      setTableCols(3);
+      
       toast({
         title: "Tabelle eingefügt",
-        description: "Sie können die Tabelle im HTML-Modus bearbeiten",
+        description: `${tableRows}x${tableCols} Tabelle wurde eingefügt`,
       });
     }
   };
@@ -163,6 +174,10 @@ const AdminNews = () => {
       handlers: {
         image: imageHandler,
       },
+    },
+    imageResize: {
+      parchment: Quill.import("parchment"),
+      modules: ["Resize", "DisplaySize", "Toolbar"],
     },
   }), []);
 
@@ -618,6 +633,50 @@ const AdminNews = () => {
                     {editingItem ? "Aktualisieren" : "Erstellen"}
                   </Button>
                 </div>
+              </DialogContent>
+            </Dialog>
+
+            {/* Table Configuration Dialog */}
+            <Dialog open={isTableDialogOpen} onOpenChange={setIsTableDialogOpen}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Tabelle einfügen</DialogTitle>
+                  <DialogDescription>
+                    Wählen Sie die Anzahl der Zeilen und Spalten für Ihre Tabelle
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4 py-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="rows">Anzahl Zeilen</Label>
+                    <Input
+                      id="rows"
+                      type="number"
+                      min="1"
+                      max="20"
+                      value={tableRows}
+                      onChange={(e) => setTableRows(parseInt(e.target.value) || 1)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="cols">Anzahl Spalten</Label>
+                    <Input
+                      id="cols"
+                      type="number"
+                      min="1"
+                      max="10"
+                      value={tableCols}
+                      onChange={(e) => setTableCols(parseInt(e.target.value) || 1)}
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => setIsTableDialogOpen(false)}>
+                    Abbrechen
+                  </Button>
+                  <Button onClick={createTable} className="btn-hero">
+                    Tabelle erstellen
+                  </Button>
+                </DialogFooter>
               </DialogContent>
             </Dialog>
           </div>
