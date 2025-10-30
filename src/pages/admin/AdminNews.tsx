@@ -29,9 +29,12 @@ import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 import ImageResize from "quill-image-resize-module-react";
+import QuillBetterTable from "quill-better-table";
+import "quill-better-table/dist/quill-better-table.css";
 
-// Register image resize module
+// Register modules
 Quill.register("modules/imageResize", ImageResize);
+Quill.register("modules/better-table", QuillBetterTable);
 
 interface NewsItem {
   id: string;
@@ -125,38 +128,20 @@ const AdminNews = () => {
 
   const createTable = () => {
     const quill = quillRef.current?.getEditor();
-    if (quill) {
-      const range = quill.getSelection() || { index: 0, length: 0 };
-      
-      // Generate table HTML
-      let tableHTML = `<table style="border-collapse: collapse; width: 100%; margin: 10px 0;"><tbody>`;
-      
-      for (let i = 0; i < tableRows; i++) {
-        tableHTML += `<tr>`;
-        for (let j = 0; j < tableCols; j++) {
-          const cellStyle = i === 0 
-            ? `border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; font-weight: bold;`
-            : `border: 1px solid #ddd; padding: 8px;`;
-          const cellContent = i === 0 ? `Spalte ${j + 1}` : `Zelle ${i}-${j + 1}`;
-          tableHTML += `<td style="${cellStyle}">${cellContent}</td>`;
-        }
-        tableHTML += `</tr>`;
+    if (quill && quill.getModule) {
+      const tableModule = quill.getModule('better-table');
+      if (tableModule) {
+        tableModule.insertTable(tableRows, tableCols);
+        
+        setIsTableDialogOpen(false);
+        setTableRows(3);
+        setTableCols(3);
+        
+        toast({
+          title: "Tabelle eingefügt",
+          description: `${tableRows}x${tableCols} Tabelle wurde erfolgreich eingefügt`,
+        });
       }
-      
-      tableHTML += `</tbody></table><p><br></p>`;
-      
-      const delta = quill.clipboard.convert(tableHTML);
-      quill.updateContents(delta, 'user');
-      quill.setSelection({ index: range.index + delta.length(), length: 0 });
-      
-      setIsTableDialogOpen(false);
-      setTableRows(3);
-      setTableCols(3);
-      
-      toast({
-        title: "Tabelle eingefügt",
-        description: `${tableRows}x${tableCols} Tabelle wurde eingefügt`,
-      });
     }
   };
 
@@ -179,6 +164,42 @@ const AdminNews = () => {
       parchment: Quill.import("parchment"),
       modules: ["Resize", "DisplaySize", "Toolbar"],
     },
+    "better-table": {
+      operationMenu: {
+        items: {
+          unmergeCells: {
+            text: "Zellen trennen"
+          },
+          insertColumnRight: {
+            text: "Spalte rechts einfügen"
+          },
+          insertColumnLeft: {
+            text: "Spalte links einfügen"
+          },
+          insertRowUp: {
+            text: "Zeile oberhalb einfügen"
+          },
+          insertRowDown: {
+            text: "Zeile unterhalb einfügen"
+          },
+          mergeCells: {
+            text: "Zellen verbinden"
+          },
+          deleteColumn: {
+            text: "Spalte löschen"
+          },
+          deleteRow: {
+            text: "Zeile löschen"
+          },
+          deleteTable: {
+            text: "Tabelle löschen"
+          }
+        }
+      }
+    },
+    keyboard: {
+      bindings: QuillBetterTable.keyboardBindings
+    }
   }), []);
 
   useEffect(() => {
