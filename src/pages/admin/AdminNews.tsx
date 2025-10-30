@@ -436,7 +436,7 @@ const AdminNews = () => {
                     </p>
                     <div className="mt-2 border rounded-md">
                       <Editor
-                        apiKey="no-api-key"
+                        apiKey="6j0hkorivdcdctxl5qbwyuvn7n3z8no6yvrbwf4kyqkjg6vd"
                         onInit={(_evt, editor) => editorRef.current = editor}
                         value={formData.content}
                         onEditorChange={(content) => 
