@@ -20,13 +20,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Plus, Pencil, Trash2, X, FileText, Image as ImageIcon } from "lucide-react";
+import { Plus, Pencil, Trash2, X, FileText, Image as ImageIcon, Table } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Editor } from '@tinymce/tinymce-react';
+import ReactQuill, { Quill } from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
+import ImageResize from "quill-image-resize-module-react";
+
+// Register image resize module
+Quill.register("modules/imageResize", ImageResize);
 
 interface NewsItem {
   id: string;
@@ -57,38 +62,124 @@ const AdminNews = () => {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [existingMedia, setExistingMedia] = useState<NewsMedia[]>([]);
   const [filePreviewUrls, setFilePreviewUrls] = useState<string[]>([]);
-  const editorRef = useRef<any>(null);
+  const [isTableDialogOpen, setIsTableDialogOpen] = useState(false);
+  const [tableRows, setTableRows] = useState(3);
+  const [tableCols, setTableCols] = useState(3);
+  const quillRef = useRef<ReactQuill>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  // Custom image upload handler for TinyMCE
-  const handleImageUpload = async (blobInfo: any): Promise<string> => {
-    try {
-      const file = blobInfo.blob();
-      const fileExt = file.type.split('/')[1];
-      const fileName = `${Math.random()}.${fileExt}`;
-      const filePath = `editor-images/${fileName}`;
+  // Image handler for uploading images directly in the editor
+  const imageHandler = async () => {
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("accept", "image/*");
+    input.click();
 
-      const { error: uploadError } = await supabase.storage
-        .from("news-media")
-        .upload(filePath, file);
+    input.onchange = async () => {
+      const file = input.files?.[0];
+      if (!file) return;
 
-      if (uploadError) throw uploadError;
+      try {
+        // Upload to Supabase Storage
+        const fileExt = file.name.split(".").pop();
+        const fileName = `${Math.random()}.${fileExt}`;
+        const filePath = `editor-images/${fileName}`;
 
-      const { data } = supabase.storage
-        .from("news-media")
-        .getPublicUrl(filePath);
+        const { error: uploadError } = await supabase.storage
+          .from("news-media")
+          .upload(filePath, file);
 
-      return data.publicUrl;
-    } catch (error: any) {
+        if (uploadError) throw uploadError;
+
+        // Get public URL
+        const { data } = supabase.storage
+          .from("news-media")
+          .getPublicUrl(filePath);
+
+        // Insert image into editor
+        const quill = quillRef.current?.getEditor();
+        if (quill) {
+          const range = quill.getSelection();
+          quill.insertEmbed(range?.index || 0, "image", data.publicUrl);
+        }
+
+        toast({
+          title: "Bild hochgeladen",
+          description: "Das Bild wurde erfolgreich eingefügt",
+        });
+      } catch (error: any) {
+        toast({
+          title: "Fehler beim Hochladen",
+          description: error.message,
+          variant: "destructive",
+        });
+      }
+    };
+  };
+
+  // Table handler for inserting tables with dialog
+  const insertTable = () => {
+    setIsTableDialogOpen(true);
+  };
+
+  const createTable = () => {
+    const quill = quillRef.current?.getEditor();
+    if (quill) {
+      const range = quill.getSelection() || { index: 0, length: 0 };
+      
+      // Generate table HTML
+      let tableHTML = `<table style="border-collapse: collapse; width: 100%; margin: 10px 0;"><tbody>`;
+      
+      for (let i = 0; i < tableRows; i++) {
+        tableHTML += `<tr>`;
+        for (let j = 0; j < tableCols; j++) {
+          const cellStyle = i === 0 
+            ? `border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; font-weight: bold;`
+            : `border: 1px solid #ddd; padding: 8px;`;
+          const cellContent = i === 0 ? `Spalte ${j + 1}` : `Zelle ${i}-${j + 1}`;
+          tableHTML += `<td style="${cellStyle}">${cellContent}</td>`;
+        }
+        tableHTML += `</tr>`;
+      }
+      
+      tableHTML += `</tbody></table><p><br></p>`;
+      
+      const delta = quill.clipboard.convert(tableHTML);
+      quill.updateContents(delta, 'user');
+      quill.setSelection({ index: range.index + delta.length(), length: 0 });
+      
+      setIsTableDialogOpen(false);
+      setTableRows(3);
+      setTableCols(3);
+      
       toast({
-        title: "Fehler beim Hochladen",
-        description: error.message,
-        variant: "destructive",
+        title: "Tabelle eingefügt",
+        description: `${tableRows}x${tableCols} Tabelle wurde eingefügt`,
       });
-      throw error;
     }
   };
+
+  const modules = useMemo(() => ({
+    toolbar: {
+      container: [
+        [{ header: [1, 2, 3, false] }],
+        ["bold", "italic", "underline", "strike"],
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ align: [] }],
+        [{ color: [] }, { background: [] }],
+        ["link", "image"],
+        ["clean"],
+      ],
+      handlers: {
+        image: imageHandler,
+      },
+    },
+    imageResize: {
+      parchment: Quill.import("parchment"),
+      modules: ["Resize", "DisplaySize", "Toolbar"],
+    },
+  }), []);
 
   useEffect(() => {
     const token = sessionStorage.getItem("adminToken");
@@ -431,39 +522,32 @@ const AdminNews = () => {
 
                   <div>
                     <Label htmlFor="content">Inhalt</Label>
-                    <p className="text-xs text-muted-foreground mt-1 mb-2">
-                      Nutzen Sie die Toolbar für Formatierung, Bilder und Tabellen. Tabellen können Sie über das Menü einfügen und bearbeiten.
-                    </p>
+                    <div className="flex items-center gap-2 mt-1 mb-2">
+                      <p className="text-xs text-muted-foreground flex-1">
+                        Nutzen Sie das Bild-Icon für Bilder. Für Tabellen nutzen Sie den Button rechts.
+                      </p>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={insertTable}
+                        className="flex items-center gap-1"
+                      >
+                        <Table className="w-4 h-4" />
+                        Tabelle einfügen
+                      </Button>
+                    </div>
                     <div className="mt-2 border rounded-md">
-                      <Editor
-                        apiKey="6j0hkorivdcdctxl5qbwyuvn7n3z8no6yvrbwf4kyqkjg6vd"
-                        onInit={(_evt, editor) => editorRef.current = editor}
+                      <ReactQuill
+                        ref={quillRef}
+                        theme="snow"
                         value={formData.content}
-                        onEditorChange={(content) => 
-                          setFormData({ ...formData, content })
+                        onChange={(value) =>
+                          setFormData({ ...formData, content: value })
                         }
-                        init={{
-                          height: 400,
-                          menubar: false,
-                          plugins: [
-                            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-                            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                            'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
-                          ],
-                          toolbar: 'undo redo | blocks | ' +
-                            'bold italic forecolor | alignleft aligncenter ' +
-                            'alignright alignjustify | bullist numlist outdent indent | ' +
-                            'table image link | removeformat | help',
-                          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-                          images_upload_handler: handleImageUpload,
-                          automatic_uploads: true,
-                          file_picker_types: 'image',
-                          table_toolbar: 'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
-                          table_class_list: [
-                            {title: 'Standard', value: 'table'},
-                            {title: 'Mit Rahmen', value: 'table-bordered'},
-                          ],
-                        }}
+                        modules={modules}
+                        className="bg-background"
+                        placeholder="Nachrichteninhalt eingeben..."
                       />
                     </div>
                   </div>
@@ -549,6 +633,50 @@ const AdminNews = () => {
                     {editingItem ? "Aktualisieren" : "Erstellen"}
                   </Button>
                 </div>
+              </DialogContent>
+            </Dialog>
+
+            {/* Table Configuration Dialog */}
+            <Dialog open={isTableDialogOpen} onOpenChange={setIsTableDialogOpen}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Tabelle einfügen</DialogTitle>
+                  <DialogDescription>
+                    Wählen Sie die Anzahl der Zeilen und Spalten für Ihre Tabelle
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4 py-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="rows">Anzahl Zeilen</Label>
+                    <Input
+                      id="rows"
+                      type="number"
+                      min="1"
+                      max="20"
+                      value={tableRows}
+                      onChange={(e) => setTableRows(parseInt(e.target.value) || 1)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="cols">Anzahl Spalten</Label>
+                    <Input
+                      id="cols"
+                      type="number"
+                      min="1"
+                      max="10"
+                      value={tableCols}
+                      onChange={(e) => setTableCols(parseInt(e.target.value) || 1)}
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => setIsTableDialogOpen(false)}>
+                    Abbrechen
+                  </Button>
+                  <Button onClick={createTable} className="btn-hero">
+                    Tabelle erstellen
+                  </Button>
+                </DialogFooter>
               </DialogContent>
             </Dialog>
           </div>
