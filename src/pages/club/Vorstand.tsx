@@ -1,10 +1,12 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Mail } from 'lucide-react';
 
 const Vorstand = () => {
+  const { t } = useTranslation();
   const boardMembers = [
     {
       name: "Aleksandar Kukaras",
@@ -93,10 +95,10 @@ const Vorstand = () => {
       <section className="bg-tennis-black text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-tennis-yellow">
-            Vorstand
+            {t('board.title')}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Das Führungsteam des TC Schwarz-Gelb Heidelberg e.V.
+            {t('board.subtitle')}
           </p>
         </div>
       </section>
@@ -119,7 +121,7 @@ const Vorstand = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-tennis-black mb-8 text-center">
-              Unser neuer Vorstand - hier gleich nach der Wahl am 24.09.2023
+              {t('board.photoTitle')}
             </h2>
             
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">

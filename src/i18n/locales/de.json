@@ -87,6 +87,145 @@
     "cancel": "Abbrechen",
     "delete": "Löschen",
     "edit": "Bearbeiten",
-    "close": "Schließen"
+    "close": "Schließen",
+    "contact": "Kontakt",
+    "learnMore": "Mehr erfahren",
+    "becomeMember": "Mitglied werden",
+    "downloadPDF": "PDF herunterladen"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Seite nicht gefunden",
+    "returnHome": "Zurück zur Startseite"
+  },
+  "club": {
+    "title": "Der Club",
+    "traditionSince": "Tradition seit 1928",
+    "subtitle": "Der sympathische Tennisclub in Heidelberg vereint einzigartig Tradition und Moderne",
+    "photoGallery": "Fotogalerie",
+    "interestedTitle": "Interesse geweckt?",
+    "interestedText": "Werden Sie Teil unserer Tennisfamilie!",
+    "contactNow": "Jetzt Kontakt aufnehmen"
+  },
+  "board": {
+    "title": "Vorstand",
+    "subtitle": "Das Führungsteam des TC Schwarz-Gelb Heidelberg e.V.",
+    "photoTitle": "Unser neuer Vorstand - hier gleich nach der Wahl am 24.09.2023"
+  },
+  "tradition": {
+    "title": "Tradition & Geschichte",
+    "subtitle": "Von 1928 bis heute - Eine stolze Vereinsgeschichte",
+    "since1928": "Seit 1928",
+    "eraMaxBerk": "Die Ära Max Berk",
+    "borisBecker": "Boris Becker bei Schwarz-Gelb",
+    "youthPromotion": "Tradition der Jugendförderung",
+    "modernSuccess": "Moderne Erfolge",
+    "growingClub": "Ein wachsender Verein",
+    "historicalGallery": "Historische Bildergalerie",
+    "historyLesson": "Ein kleiner Geschichtsunterricht über unseren Verein in frühen Jahren"
+  },
+  "contacts": {
+    "title": "Ansprechpartner",
+    "subtitle": "Kompetente Betreuung für alle Ihre Fragen rund um unseren Verein",
+    "yourDirectLine": "Ihr direkter Draht",
+    "interestedInTennis": "Interesse am Tennis?",
+    "forMembers": "Für unsere Mitglieder",
+    "readyToStart": "Bereit für den Einstieg?"
+  },
+  "supportingAssociation": {
+    "title": "Unser Förderverein",
+    "subtitle": "Wenn Unterstützung noch viel weiter geht...",
+    "nonProfit": "Gemeinnütziger Verein",
+    "aboutUs": "WIR ÜBER UNS",
+    "workAreas": "Unsere Arbeitsschwerpunkte",
+    "supportAs": "UNTERSTÜTZEN KÖNNEN SIE UNS ALS:",
+    "contact": "KONTAKTAUFNAHME",
+    "bankDetails": "Bankverbindung"
+  },
+  "facilities": {
+    "tennisCourts": {
+      "title": "Unsere Tennisplätze",
+      "subtitle": "Unser Club besitzt 10 Sandplätze an unserem Stammsitz. Mehr Infos finden Sie weiter unten auf dieser Seite.",
+      "importantNotice": "Wichtiger Hinweis",
+      "mainFacility": "Hauptanlage Schwindstrasse",
+      "indoorHall": "Traglufthalle (Winter)",
+      "historicHall": "Historische Tennis(teppich)halle",
+      "court10": "Platz 10 - Der Besondere",
+      "impressions": "Impressionen unserer Anlage",
+      "visitFacility": "Besuchen Sie unsere Anlage"
+    },
+    "gastronomy": {
+      "title": "Clubgastronomie \"La Trattoria\"",
+      "subtitle": "Italienisches Flair mit Biergarten - Herzliche Gastfreundschaft und authentische Küche",
+      "currentHours": "Aktuelle Öffnungszeiten (Sommer 2025)",
+      "officialOpening": "Offizielle Eröffnung",
+      "closed": "Geschlossen",
+      "location": "Lage & Anfahrt für Lieferanten",
+      "postAddress": "Postadresse & Gästeparkplatz"
+    }
+  },
+  "membership": {
+    "title": "Mitgliedschaft",
+    "subtitle": "Werden Sie Teil unserer Tennisfamilie im TC Schwarz-Gelb Heidelberg e.V.",
+    "joinNow": "Jetzt beitreten",
+    "community": "Gemeinschaft",
+    "atmosphere": "Tolle Atmosphäre",
+    "variety": "Vielfältiges Angebot",
+    "interestedInTennis": "Lust auf Tennis in toller Atmosphäre?",
+    "feeInfo": "Beitragsinformationen",
+    "paymentInfo": "Zahlungsmodalitäten",
+    "infrastructureFee": "Hinweis zur Infrastrukturabgabe",
+    "alreadyMember": "Sie sind bereits Mitglied?",
+    "becomeMemberNow": "Jetzt Mitglied werden"
+  },
+  "teams": {
+    "title": "Unsere Mannschaften 2024",
+    "totalTeams": "Mannschaften insgesamt",
+    "youthTeams": "Jugend-Mannschaften",
+    "categories": "Unsere Mannschaftskategorien",
+    "women": "Damen",
+    "men": "Herren",
+    "seniors": "Senioren",
+    "youth": "Jugend",
+    "multipleTeams": "Mehrere Teams",
+    "teams": "Teams"
+  },
+  "training": {
+    "title": "Training",
+    "subtitle": "Trainingsmöglichkeiten für jeden Anspruch - von Anfängern bis zu ambitionierten Leistungssportlern",
+    "professional": "Professionelles Training",
+    "opportunities": "Trainingsmöglichkeiten im Club",
+    "ourOffer": "Unser Trainingsangebot",
+    "philosophy": "Unsere Philosophie",
+    "allAges": "Für alle Altersgruppen",
+    "ourGoal": "Unser Ziel",
+    "interestedInTraining": "Interesse am Training?"
+  },
+  "tournaments": {
+    "title": "Turniere",
+    "placeholder": "Placeholder für Turniere Seite"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Hier finden Sie Antworten auf die häufigsten Fragen rund um unseren Tennisclub",
+    "frequentQuestions": "Häufige Fragen",
+    "currentInfo": "Aktuelle Informationen",
+    "furtherQuestions": "Weitere Fragen?",
+    "contactUs": "Haben Sie weitere Fragen? Kontaktieren Sie uns gerne!",
+    "getInTouch": "Kontakt aufnehmen"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "manageContent": "Verwaltung der Website-Inhalte",
+    "logout": "Abmelden",
+    "modalSettings": "Modal-Einstellungen",
+    "news": "Nachrichten",
+    "activateModal": "Modal aktivieren",
+    "title": "Titel",
+    "content": "Inhalt (HTML)",
+    "preview": "Vorschau",
+    "saveChanges": "Änderungen speichern",
+    "saving": "Speichert...",
+    "loading": "Lädt..."
   }
 }

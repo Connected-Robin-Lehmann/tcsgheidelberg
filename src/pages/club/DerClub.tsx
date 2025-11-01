@@ -1,8 +1,10 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const DerClub = () => {
+  const { t } = useTranslation();
   const galleryImages = [
     {
       src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
@@ -31,11 +33,11 @@ const DerClub = () => {
           <div className="text-center mb-16">
             <div className="inline-block bg-tennis-yellow px-6 py-2 rounded-full mb-6">
               <span className="text-tennis-black font-bold text-sm uppercase tracking-wider">
-                Tradition seit 1928
+                {t('club.traditionSince')}
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tennis-black mb-6">
-              Der Club
+              {t('club.title')}
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto"></div>
           </div>
@@ -44,8 +46,7 @@ const DerClub = () => {
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
             <div className="p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-8 leading-tight">
-                Der sympathische Tennisclub in Heidelberg vereint einzigartig
-                Tradition und Moderne
+                {t('club.subtitle')}
               </h3>
 
               <div className="prose prose-lg max-w-none mb-12">
@@ -135,16 +136,16 @@ const DerClub = () => {
               {/* Contact CTA */}
               <div className="bg-gradient-to-r from-tennis-black to-gray-800 rounded-2xl p-8 text-center">
                 <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
-                  Interesse geweckt?
+                  {t('club.interestedTitle')}
                 </h3>
                 <p className="text-white mb-6">
-                  Werden Sie Teil unserer Tennisfamilie!
+                  {t('club.interestedText')}
                 </p>
                 <a
                   href="mailto:mitgliederservice@schwarzgelb-heidelberg.de"
                   className="inline-block bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                 >
-                  Jetzt Kontakt aufnehmen
+                  {t('club.contactNow')}
                 </a>
               </div>
             </div>
@@ -154,7 +155,7 @@ const DerClub = () => {
           <div className="mt-16">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-tennis-black mb-4">
-                Fotogalerie
+                {t('club.photoGallery')}
               </h2>
               <div className="w-24 h-1 bg-tennis-yellow mx-auto"></div>
             </div>
