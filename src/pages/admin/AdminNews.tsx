@@ -20,7 +20,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Plus, Pencil, Trash2, X, FileText, Image as ImageIcon, Table } from "lucide-react";
+import {
+  Plus,
+  Pencil,
+  Trash2,
+  X,
+  FileText,
+  Image as ImageIcon,
+  Table,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
@@ -127,32 +135,34 @@ const AdminNews = () => {
     const quill = quillRef.current?.getEditor();
     if (quill) {
       const range = quill.getSelection() || { index: 0, length: 0 };
-      
+
       // Generate table HTML
       let tableHTML = `<table style="border-collapse: collapse; width: 100%; margin: 10px 0;"><tbody>`;
-      
+
       for (let i = 0; i < tableRows; i++) {
         tableHTML += `<tr>`;
         for (let j = 0; j < tableCols; j++) {
-          const cellStyle = i === 0 
-            ? `border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; font-weight: bold;`
-            : `border: 1px solid #ddd; padding: 8px;`;
-          const cellContent = i === 0 ? `Spalte ${j + 1}` : `Zelle ${i}-${j + 1}`;
+          const cellStyle =
+            i === 0
+              ? `border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; font-weight: bold;`
+              : `border: 1px solid #ddd; padding: 8px;`;
+          const cellContent =
+            i === 0 ? `Spalte ${j + 1}` : `Zelle ${i}-${j + 1}`;
           tableHTML += `<td style="${cellStyle}">${cellContent}</td>`;
         }
         tableHTML += `</tr>`;
       }
-      
+
       tableHTML += `</tbody></table><p><br></p>`;
-      
+
       const delta = quill.clipboard.convert(tableHTML);
-      quill.updateContents(delta, 'user');
+      quill.updateContents(delta, "user");
       quill.setSelection({ index: range.index + delta.length(), length: 0 });
-      
+
       setIsTableDialogOpen(false);
       setTableRows(3);
       setTableCols(3);
-      
+
       toast({
         title: "Tabelle eingefügt",
         description: `${tableRows}x${tableCols} Tabelle wurde eingefügt`,
@@ -160,26 +170,29 @@ const AdminNews = () => {
     }
   };
 
-  const modules = useMemo(() => ({
-    toolbar: {
-      container: [
-        [{ header: [1, 2, 3, false] }],
-        ["bold", "italic", "underline", "strike"],
-        [{ list: "ordered" }, { list: "bullet" }],
-        [{ align: [] }],
-        [{ color: [] }, { background: [] }],
-        ["link", "image"],
-        ["clean"],
-      ],
-      handlers: {
-        image: imageHandler,
+  const modules = useMemo(
+    () => ({
+      toolbar: {
+        container: [
+          [{ header: [1, 2, 3, false] }],
+          ["bold", "italic", "underline", "strike"],
+          [{ list: "ordered" }, { list: "bullet" }],
+          [{ align: [] }],
+          [{ color: [] }, { background: [] }],
+          ["link", "image"],
+          ["clean"],
+        ],
+        handlers: {
+          image: imageHandler,
+        },
       },
-    },
-    imageResize: {
-      parchment: Quill.import("parchment"),
-      modules: ["Resize", "DisplaySize", "Toolbar"],
-    },
-  }), []);
+      imageResize: {
+        parchment: Quill.import("parchment"),
+        modules: ["Resize", "DisplaySize", "Toolbar"],
+      },
+    }),
+    []
+  );
 
   useEffect(() => {
     const token = sessionStorage.getItem("adminToken");
@@ -214,13 +227,13 @@ const AdminNews = () => {
     if (e.target.files) {
       const files = Array.from(e.target.files);
       setUploadedFiles(files);
-      
+
       // Create preview URLs for images
-      const urls = files.map(file => {
-        if (file.type.startsWith('image/')) {
+      const urls = files.map((file) => {
+        if (file.type.startsWith("image/")) {
           return URL.createObjectURL(file);
         }
-        return '';
+        return "";
       });
       setFilePreviewUrls(urls);
     }
@@ -524,7 +537,8 @@ const AdminNews = () => {
                     <Label htmlFor="content">Inhalt</Label>
                     <div className="flex items-center gap-2 mt-1 mb-2">
                       <p className="text-xs text-muted-foreground flex-1">
-                        Nutzen Sie das Bild-Icon für Bilder. Für Tabellen nutzen Sie den Button rechts.
+                        Nutzen Sie das Bild-Icon für Bilder. Für Tabellen nutzen
+                        Sie den Button rechts.
                       </p>
                       <Button
                         type="button"
@@ -561,7 +575,7 @@ const AdminNews = () => {
                             key={media.id}
                             className="relative border rounded-lg p-3 bg-accent/50"
                           >
-                            {media.file_type.startsWith('image/') ? (
+                            {media.file_type.startsWith("image/") ? (
                               <img
                                 src={getMediaUrl(media.file_path)}
                                 alt="Media"
@@ -571,7 +585,7 @@ const AdminNews = () => {
                               <div className="flex items-center gap-2 h-24">
                                 <FileText className="h-8 w-8 text-primary" />
                                 <span className="text-sm truncate">
-                                  {media.file_path.split('/').pop()}
+                                  {media.file_path.split("/").pop()}
                                 </span>
                               </div>
                             )}
@@ -582,7 +596,9 @@ const AdminNews = () => {
                   )}
 
                   <div>
-                    <Label htmlFor="files">Neue Bilder/Dateien hinzufügen</Label>
+                    <Label htmlFor="files">
+                      Neue Bilder/Dateien hinzufügen
+                    </Label>
                     <Input
                       id="files"
                       type="file"
@@ -606,7 +622,7 @@ const AdminNews = () => {
                             >
                               <X className="h-4 w-4" />
                             </Button>
-                            {file.type.startsWith('image/') ? (
+                            {file.type.startsWith("image/") ? (
                               <>
                                 <img
                                   src={filePreviewUrls[index]}
@@ -620,7 +636,9 @@ const AdminNews = () => {
                             ) : (
                               <div className="flex items-center gap-2 h-24">
                                 <FileText className="h-8 w-8 text-primary" />
-                                <span className="text-sm truncate">{file.name}</span>
+                                <span className="text-sm truncate">
+                                  {file.name}
+                                </span>
                               </div>
                             )}
                           </div>
@@ -637,12 +655,16 @@ const AdminNews = () => {
             </Dialog>
 
             {/* Table Configuration Dialog */}
-            <Dialog open={isTableDialogOpen} onOpenChange={setIsTableDialogOpen}>
+            <Dialog
+              open={isTableDialogOpen}
+              onOpenChange={setIsTableDialogOpen}
+            >
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Tabelle einfügen</DialogTitle>
                   <DialogDescription>
-                    Wählen Sie die Anzahl der Zeilen und Spalten für Ihre Tabelle
+                    Wählen Sie die Anzahl der Zeilen und Spalten für Ihre
+                    Tabelle
                   </DialogDescription>
                 </DialogHeader>
                 <div className="space-y-4 py-4">
@@ -654,7 +676,9 @@ const AdminNews = () => {
                       min="1"
                       max="20"
                       value={tableRows}
-                      onChange={(e) => setTableRows(parseInt(e.target.value) || 1)}
+                      onChange={(e) =>
+                        setTableRows(parseInt(e.target.value) || 1)
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -665,12 +689,17 @@ const AdminNews = () => {
                       min="1"
                       max="10"
                       value={tableCols}
-                      onChange={(e) => setTableCols(parseInt(e.target.value) || 1)}
+                      onChange={(e) =>
+                        setTableCols(parseInt(e.target.value) || 1)
+                      }
                     />
                   </div>
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={() => setIsTableDialogOpen(false)}>
+                  <Button
+                    variant="outline"
+                    onClick={() => setIsTableDialogOpen(false)}
+                  >
                     Abbrechen
                   </Button>
                   <Button onClick={createTable} className="btn-hero">
