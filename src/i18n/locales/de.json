@@ -110,7 +110,26 @@
   "board": {
     "title": "Vorstand",
     "subtitle": "Das Führungsteam des TC Schwarz-Gelb Heidelberg e.V.",
-    "photoTitle": "Unser neuer Vorstand - hier gleich nach der Wahl am 24.09.2023"
+    "photoTitle": "Unser neuer Vorstand - hier gleich nach der Wahl am 24.09.2023",
+    "intro": {
+      "paragraph1": "Wer sich für ein Ehrenamt im Sport - so auch im Tennisverein - entscheidet, möchte die Ziele des Vereins neu definieren und sie im Sinne der Vereinsmitglieder erfolgreich umsetzen. Dies erfordert vor allem auch ein hohes Maß an Engagement aller Vorstandsmitglieder.",
+      "paragraph2": "Der aktuelle Vorstand unseres Tennis-Vereins wurde gemäß unserer Satzung in der Mitgliederversammlung am 24.09.2023 für zwei Jahre wiedergewählt und widmet sich weiterhin mit großer Energie der kontinuierlichen Erneuerung, Modernisierung und weiteren Verbesserung unseres geschichtsträchtigen Traditionsvereins TC Schwarz-Gelb Heidelberg e.V. mitten in unserer schönen und weltbekannten Stadt.",
+      "paragraph3": "Wir als Vorstand freuen uns über jeden, der unseren Club ebenfalls mitgestalten möchte. Gern können deshalb auch eigene Projekte vorgeschlagen werden, die dann auch gemeinsam umgesetzt werden können. Mitglieder und Interessierte können uns gern jederzeit ansprechen oder anschreiben unter",
+      "closing": "Die folgende Übersicht zeigt unsere aktuellen Vorstandsmitglieder mit ihrem Zuständigkeitsbereich."
+    },
+    "members": {
+      "aleksandar": "Alex ist das Gesicht unseres Traditionsvereins. Er verantwortet die Vereinsleitung, dessen Gesamtkoordination und repräsentiert unseren Club nach außen wie nach innen. Er organisiert Vorstandssitzungen und Mitgliederversammlungen, steht in regelmäßigem Kontakt zu Verbänden und ist auch intensiv in die Trainings-, Turnier- und Jugendarbeit involviert.",
+      "frank": "Frank ist für die Finanzen, die Mitgliederverwaltung und die allgemeine Administration in unserem Verein verantwortlich. Ohne ihn geht finanziell nichts, denn zu seinem Ressort zählen die Vermögensverwaltung, die Buchführung, die Jahresbilanz, der Haushaltsplan, die Steuererklärung und Versicherungen, ferner auch das Einziehen der Mitgliederbeiträge und die Erstellung der Spendenbescheinigungen.",
+      "marvin": "Marvin ist unser Sportwart Aktive und zudem B-Lizenz-Trainer (Tennis Akademie Alex Kukaras). Er kümmert sich im Erwachsenen-Sportbetrieb (Mannschaftssport) insbesondere um die Mannschafts-meldungen der aktiven Herrenmannschaften bei den Medenrunden sowie den reibungslosen Ablauf der einzelnen Begegnungen und ist damit wichtiges Bindeglied zwischen dem Vorstand und unseren Herren-Mannschaften.",
+      "marc": "Marc ist Sportwart für die Senioren-Mannschaften und kümmert sich im Sportbetrieb um die Meldungen der derzeit 6 Mannschaften (D40.1, H50.1, D50.1, H40, D40.2 und H55.1) bei den Medenrunden, den reibungslosen Ablauf der einzelnen Begegnungen und fungiert als deren Interessenvertretung im Vorstand.",
+      "karolin": "Karo hat als Jugendwart den besten Draht zu unserem Nachwuchs. Sie ist für alle Vereinsmitglieder bis 18 Jahre zuständig. Sie hilft bei der Planung der Jugendtrainings und organisiert Jugendturniere. Zu ihren weiteren Aufgaben zählen die Talentförderung, das Gewinnen von Kids und Jugendlichen für den Verein und das Vertreten deren Interessen im Vorstand.",
+      "tanya": "Tanya ist unsere Protokollantin und eine große Stütze für die allgemeine Vorstandsarbeit.",
+      "manfred": "Manfred ist verantwortlich für alles, was mit unserer Tennisanlage zu tun hat. Er arbeitet in vielen Fällen Hand in Hand mit unserem Platzwart Sharif. Sein Ziel ist es, unsere Vereinsanlage im bestmöglichen Zustand zu halten und sie nach Möglichkeit noch zu verbessern. Alle anfallenden Reparaturen obliegen daher seiner Obhut.",
+      "terezie": "Terezie ist unsere Vergnügungswartin, doch hinter ihr steckt ein ganzes Team, das sich gemeinsam um den gesellige Teil im Vereinsleben kümmert und immer wieder tolle Ideen für gemeinsame Veranstaltungen hat. So ist u.a. eine 80er/90er-Jahre-Party geplant, ebenso wie eine Nuit Blanche neben dem bereits traditionellen Blümchenturnier und dem Doppel-Turnier zum Saison-Abschluss. Wir dürfen gespannt bleiben.",
+      "katharina": "Kati ist nur in der offiziellen Vorstandsbetitelung 'Beisitzerin' – sie ist de Facto Sportwartin für die aktiven Damenmannschaften, spielt in der 1. Damenmannschaft und ist B-Lizenz-Trainerin (Tennis Akademie Alex Kukaras). Sie sich um die Mannschaftsmeldungen der aktiven Damenmannschaften bei den Medenrunden sowie den reibungslosen Ablauf der einzelnen Begegnungen und ist damit ebenso wichtiges Bindeglied zwischen dem Vorstand und den Damenmannschaften.",
+      "sonja": "Sonja unterstützt als Beisitzerin Presse den Verein.",
+      "britta": "Britta unterstützt als Beisitzer den Verein beim Aktualisieren der Homepage und bei der Erstellung der TennisInfo."
+    }
   },
   "tradition": {
     "title": "Tradition & Geschichte",

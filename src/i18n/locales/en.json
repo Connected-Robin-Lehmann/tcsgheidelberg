@@ -110,7 +110,26 @@
   "board": {
     "title": "Board",
     "subtitle": "The leadership team of TC Schwarz-Gelb Heidelberg e.V.",
-    "photoTitle": "Our new board - right after the election on September 24, 2023"
+    "photoTitle": "Our new board - right after the election on September 24, 2023",
+    "intro": {
+      "paragraph1": "Those who decide to volunteer in sports - including tennis clubs - want to redefine the club's goals and successfully implement them in the interest of the club members. This requires above all a high level of commitment from all board members.",
+      "paragraph2": "The current board of our tennis club was re-elected for two years at the general meeting on September 24, 2023, in accordance with our statutes, and continues to devote itself with great energy to the continuous renewal, modernization and further improvement of our historic traditional club TC Schwarz-Gelb Heidelberg e.V. in the heart of our beautiful and world-famous city.",
+      "paragraph3": "As a board, we are happy about everyone who would like to help shape our club. Members and interested parties are therefore welcome to suggest their own projects, which can then be implemented together. Members and interested parties are welcome to contact us at any time at",
+      "closing": "The following overview shows our current board members with their area of responsibility."
+    },
+    "members": {
+      "aleksandar": "Alex is the face of our traditional club. He is responsible for club management, its overall coordination and represents our club both externally and internally. He organizes board meetings and general assemblies, maintains regular contact with associations and is also intensively involved in training, tournament and youth work.",
+      "frank": "Frank is responsible for finances, membership administration and general administration in our club. Nothing works financially without him, as his responsibilities include asset management, bookkeeping, annual balance sheet, budget plan, tax returns and insurance, as well as collecting membership fees and issuing donation receipts.",
+      "marvin": "Marvin is our active sports director and also a B-licensed trainer (Tennis Academy Alex Kukaras). In adult competitive sports (team sports), he takes care of the team registrations of the active men's teams in the league rounds as well as the smooth running of the individual matches and is thus an important link between the board and our men's teams.",
+      "marc": "Marc is the sports director for the senior teams and takes care of the registrations of the currently 6 teams (W40.1, M50.1, W50.1, M40, W40.2 and M55.1) in the league rounds, the smooth running of the individual matches and acts as their representative on the board.",
+      "karolin": "Karo, as youth director, has the best connection to our young talents. She is responsible for all club members up to 18 years old. She helps plan youth training and organizes youth tournaments. Her other tasks include talent promotion, attracting kids and young people to the club and representing their interests on the board.",
+      "tanya": "Tanya is our secretary and a great support for general board work.",
+      "manfred": "Manfred is responsible for everything related to our tennis facility. He works hand in hand with our groundskeeper Sharif in many cases. His goal is to keep our club facility in the best possible condition and to improve it whenever possible. All necessary repairs are therefore under his care.",
+      "terezie": "Terezie is our social events coordinator, but behind her is a whole team that takes care of the social side of club life and always has great ideas for joint events. Among other things, an 80s/90s party is planned, as well as a Nuit Blanche in addition to the traditional flower tournament and the doubles tournament at the end of the season. We can look forward to it.",
+      "katharina": "Kati is only an 'assistant' in the official board title - she is de facto the sports director for the active women's teams, plays in the 1st women's team and is a B-licensed trainer (Tennis Academy Alex Kukaras). She takes care of the team registrations of the active women's teams in the league rounds as well as the smooth running of the individual matches and is thus an equally important link between the board and the women's teams.",
+      "sonja": "Sonja supports the club as assistant for press relations.",
+      "britta": "Britta supports the club as assistant in updating the website and creating the Tennis Info."
+    }
   },
   "tradition": {
     "title": "Tradition & History",
