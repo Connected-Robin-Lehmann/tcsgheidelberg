@@ -12,6 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import type { Session } from '@supabase/supabase-js';
 
 const AdminDashboard = () => {
   const [isActive, setIsActive] = useState(true);
@@ -19,20 +20,56 @@ const AdminDashboard = () => {
   const [content, setContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [session, setSession] = useState<Session | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
   useEffect(() => {
-    // Check if user is authenticated
-    const token = sessionStorage.getItem('adminToken');
-    if (!token) {
-      navigate('/admin/login');
-      return;
-    }
+    // Check authentication and admin role
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        navigate('/admin/login');
+        return;
+      }
 
-    // Load current modal settings
-    loadModalSettings();
-  }, [navigate]);
+      // Verify admin role
+      const { data: roleData, error: roleError } = await supabase
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', session.user.id)
+        .eq('role', 'admin')
+        .single();
+
+      if (roleError || !roleData) {
+        toast({
+          title: 'Zugriff verweigert',
+          description: 'Sie haben keine Admin-Berechtigung',
+          variant: 'destructive',
+        });
+        await supabase.auth.signOut();
+        navigate('/admin/login');
+        return;
+      }
+
+      setSession(session);
+      loadModalSettings();
+    };
+
+    checkAuth();
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!session) {
+        navigate('/admin/login');
+      } else {
+        setSession(session);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [navigate, toast]);
 
   const loadModalSettings = async () => {
     setIsLoading(true);
@@ -62,33 +99,20 @@ const AdminDashboard = () => {
   };
 
   const handleSave = async () => {
+    if (!session) return;
+
     setIsSaving(true);
-    const token = sessionStorage.getItem('adminToken');
-
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/manage-modal`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-          },
-          body: JSON.stringify({
-            action: 'update',
-            isActive,
-            title,
-            content,
-            token,
-          }),
-        }
-      );
+      const { data, error } = await supabase.functions.invoke('manage-modal', {
+        body: {
+          action: 'update',
+          isActive,
+          title,
+          content,
+        },
+      });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Fehler beim Speichern');
-      }
+      if (error) throw error;
 
       toast({
         title: 'Erfolgreich gespeichert',
@@ -105,9 +129,8 @@ const AdminDashboard = () => {
     }
   };
 
-  const handleLogout = () => {
-    sessionStorage.removeItem('adminToken');
-    sessionStorage.removeItem('adminUsername');
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
     toast({
       title: 'Abgemeldet',
       description: 'Sie wurden erfolgreich abgemeldet',

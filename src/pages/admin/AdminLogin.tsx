@@ -1,54 +1,82 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { Lock, User } from 'lucide-react';
+import { Lock, User, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const AdminLogin = () => {
-  const [username, setUsername] = useState('');
+  const [isLogin, setIsLogin] = useState(true);
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  useEffect(() => {
+    // Check if user is already logged in
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        navigate('/admin/dashboard');
+      }
+    });
+  }, [navigate]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/admin-login`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-          },
-          body: JSON.stringify({ username, password }),
+      if (isLogin) {
+        // Sign in existing admin
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+
+        if (error) throw error;
+
+        // Check if user has admin role
+        const { data: roleData, error: roleError } = await supabase
+          .from('user_roles')
+          .select('role')
+          .eq('user_id', data.user.id)
+          .eq('role', 'admin')
+          .single();
+
+        if (roleError || !roleData) {
+          await supabase.auth.signOut();
+          throw new Error('Sie haben keine Admin-Berechtigung');
         }
-      );
 
-      const data = await response.json();
+        toast({
+          title: 'Erfolgreich angemeldet',
+          description: 'Willkommen im Admin-Bereich',
+        });
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Login fehlgeschlagen');
+        navigate('/admin/dashboard');
+      } else {
+        // Sign up new admin (restricted - would need additional validation)
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            emailRedirectTo: `${window.location.origin}/admin/dashboard`,
+          },
+        });
+
+        if (error) throw error;
+
+        toast({
+          title: 'Registrierung erfolgreich',
+          description: 'Bitte warten Sie auf die Admin-Berechtigung',
+        });
       }
-
-      // Store token in sessionStorage
-      sessionStorage.setItem('adminToken', data.token);
-      sessionStorage.setItem('adminUsername', data.username);
-
-      toast({
-        title: 'Erfolgreich angemeldet',
-        description: 'Willkommen im Admin-Bereich',
-      });
-
-      navigate('/admin/dashboard');
     } catch (error: any) {
       toast({
         title: 'Fehler',
@@ -71,22 +99,26 @@ const AdminLogin = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow rounded-full mb-4">
                 <Lock className="w-8 h-8 text-tennis-black" />
               </div>
-              <h1 className="text-3xl font-bold text-tennis-black">Admin Login</h1>
+              <h1 className="text-3xl font-bold text-tennis-black">
+                {isLogin ? 'Admin Login' : 'Admin Registrierung'}
+              </h1>
               <p className="text-muted-foreground mt-2">
-                Melden Sie sich an, um das Modal zu verwalten
+                {isLogin 
+                  ? 'Melden Sie sich an, um das System zu verwalten'
+                  : 'Neuen Admin-Account erstellen'}
               </p>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="username">Benutzername</Label>
+                <Label htmlFor="email">E-Mail</Label>
                 <div className="relative mt-2">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                   <Input
-                    id="username"
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="pl-10"
                     required
                     disabled={isLoading}
@@ -106,6 +138,7 @@ const AdminLogin = () => {
                     className="pl-10"
                     required
                     disabled={isLoading}
+                    minLength={6}
                   />
                 </div>
               </div>
@@ -115,8 +148,21 @@ const AdminLogin = () => {
                 className="w-full btn-hero"
                 disabled={isLoading}
               >
-                {isLoading ? 'Anmeldung...' : 'Anmelden'}
+                {isLoading ? 'Wird verarbeitet...' : (isLogin ? 'Anmelden' : 'Registrieren')}
               </Button>
+
+              <div className="text-center">
+                <button
+                  type="button"
+                  onClick={() => setIsLogin(!isLogin)}
+                  className="text-sm text-tennis-yellow hover:underline"
+                  disabled={isLoading}
+                >
+                  {isLogin 
+                    ? 'Noch kein Account? Registrieren'
+                    : 'Bereits registriert? Anmelden'}
+                </button>
+              </div>
             </form>
           </Card>
         </div>
