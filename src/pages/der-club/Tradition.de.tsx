@@ -1,9 +1,8 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const Tradition = () => {
+const TraditionDE = () => {
   const galleryImages = [
     {
       src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
@@ -28,15 +27,15 @@ const Tradition = () => {
           <div className="text-center mb-16">
             <div className="inline-block bg-tennis-yellow px-6 py-2 rounded-full mb-6">
               <span className="text-tennis-black font-bold text-sm uppercase tracking-wider">
-                Seit 1928
+                Tradition seit 1928
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tennis-black mb-6">
-              Tradition & Geschichte
+              Unsere Tradition
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Von 1928 bis heute - Eine stolze Vereinsgeschichte
+              Fast ein Jahrhundert Tennisgeschichte in Heidelberg
             </p>
           </div>
 
@@ -67,7 +66,7 @@ const Tradition = () => {
 
                 <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
                   <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
-                    Boris Becker bei Schwarz-Gelb
+                    Boris Becker
                   </h3>
                   <p className="leading-relaxed">
                     Aber auch die Herrenmannschaften gehören zum traditionellen Aushängeschild. So spielte unter 
@@ -78,7 +77,7 @@ const Tradition = () => {
                 </div>
 
                 <h3 className="text-2xl font-bold text-tennis-black mb-6">
-                  Tradition der Jugendförderung
+                  Jugendförderung
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Besonderer Wert wird in unserem Tennisverein Schwarz-Gelb Heidelberg seit jeher auf die 
@@ -104,7 +103,7 @@ const Tradition = () => {
                 </div>
 
                 <h3 className="text-2xl font-bold text-tennis-black mb-6">
-                  Moderne Erfolge
+                  Moderner Erfolg
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   In der jüngeren Vergangenheit spielten regelmäßig 20 bis 30 Mannschaften in der Medenrunde, 
@@ -139,11 +138,11 @@ const Tradition = () => {
           <div className="mt-16">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-tennis-black mb-4">
-                Historische Bildergalerie
+                Historische Galerie
               </h2>
               <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-4"></div>
               <p className="text-gray-600">
-                Ein kleiner Geschichtsunterricht über unseren Verein in frühen Jahren
+                Ein Blick in unsere bewegte Geschichte
               </p>
             </div>
 
@@ -172,4 +171,4 @@ const Tradition = () => {
   );
 };
 
-export default Tradition;
+export default TraditionDE;

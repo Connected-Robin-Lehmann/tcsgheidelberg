@@ -1,0 +1,226 @@
+{
+  "header": {
+    "club": "Der Club",
+    "tradition": "Tradition",
+    "board": "Vorstand",
+    "contacts": "Ansprechpartner",
+    "supportingAssociation": "Förderverein",
+    "teams": "Mannschaften",
+    "youth": "Jugend",
+    "training": "Training",
+    "ourTrainers": "Unsere Trainer",
+    "tennisSchoolSeibold": "Tennisschule Seibold",
+    "tennisSchoolPTS": "Tennisschule PTS Kukaras",
+    "events": "Veranstaltungen",
+    "tournaments": "Turniere",
+    "schwarzGelbCup": "Schwarz-Gelb Cup",
+    "rheinNeckarOpen": "Rhein-Neckar-Open",
+    "tournamentRegistration": "Turnieranmeldung",
+    "membership": "Mitgliedschaft",
+    "membershipFees": "Beitragsordnung",
+    "regulations": "Regelwerk",
+    "courtRules": "Platzordnung",
+    "statute": "Satzung",
+    "news": {
+      "title": "Nachrichten",
+      "current": "Aktuelles",
+      "news": "Nachrichten",
+      "pressReleases": "Pressemeldungen",
+      "tiebreaking": "Tiebreaking News"
+    },
+    "projects": "Projekte",
+    "crowdfunding": "Crowdfunding",
+    "facilities": "Anlagen",
+    "tennisCourts": "Tennisplätze",
+    "gastronomy": "Gastronomie",
+    "info": "Info",
+    "faq": "FAQ",
+    "tennisInfoBooklet": "Tennis-Info-Heft",
+    "sponsors": "Sponsoring",
+    "legal": {
+      "imprint": "Impressum",
+      "privacy": "Datenschutz"
+    }
+  },
+  "footer": {
+    "quickLinks": "Schnellzugriff",
+    "contact": "Kontakt",
+    "followUs": "Folgen Sie uns",
+    "allRightsReserved": "Alle Rechte vorbehalten."
+  },
+  "home": {
+    "hero": {
+      "title": "Tennis Club Schwarz-Gelb Heidelberg",
+      "subtitle": "Tradition trifft Innovation",
+      "description": "Seit 1921 Ihre erste Adresse für Tennis in Heidelberg. Erleben Sie erstklassigen Tennissport in familiärer Atmosphäre auf unseren modernen Anlagen.",
+      "joinButton": "Mitglied werden",
+      "contactButton": "Kontakt"
+    },
+    "stats": {
+      "title": "Schwarz-Gelb in Zahlen",
+      "members": "Mitglieder",
+      "teams": "Mannschaften",
+      "courts": "Plätze",
+      "yearsHistory": "Jahre Geschichte"
+    },
+    "events": {
+      "title": "Kommende Veranstaltungen",
+      "subtitle": "Seien Sie dabei bei unseren nächsten Events",
+      "allEvents": "Alle Veranstaltungen",
+      "date": "Datum",
+      "location": "Ort"
+    },
+    "video": {
+      "title": "Erleben Sie Schwarz-Gelb",
+      "subtitle": "Entdecken Sie unseren Club in Aktion"
+    },
+    "sponsors": {
+      "title": "Unsere Partner",
+      "subtitle": "Wir danken unseren wertvollen Sponsoren für ihre Unterstützung"
+    }
+  },
+  "common": {
+    "loading": "Lädt...",
+    "readMore": "Mehr erfahren",
+    "back": "Zurück",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "contact": "Kontakt",
+    "learnMore": "Mehr erfahren",
+    "becomeMember": "Mitglied werden",
+    "downloadPDF": "PDF herunterladen"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Seite nicht gefunden",
+    "returnHome": "Zurück zur Startseite"
+  },
+  "club": {
+    "title": "Der Club",
+    "traditionSince": "Tradition seit 1928",
+    "subtitle": "Der sympathische Tennisclub in Heidelberg vereint einzigartig Tradition und Moderne",
+    "photoGallery": "Fotogalerie",
+    "interestedTitle": "Interesse geweckt?",
+    "interestedText": "Werden Sie Teil unserer Tennisfamilie!",
+    "contactNow": "Jetzt Kontakt aufnehmen"
+  },
+  "tradition": {
+    "title": "Tradition & Geschichte",
+    "subtitle": "Von 1928 bis heute - Eine stolze Vereinsgeschichte",
+    "since1928": "Seit 1928",
+    "eraMaxBerk": "Die Ära Max Berk",
+    "borisBecker": "Boris Becker bei Schwarz-Gelb",
+    "youthPromotion": "Tradition der Jugendförderung",
+    "modernSuccess": "Moderne Erfolge",
+    "growingClub": "Ein wachsender Verein",
+    "historicalGallery": "Historische Bildergalerie",
+    "historyLesson": "Ein kleiner Geschichtsunterricht über unseren Verein in frühen Jahren"
+  },
+  "contacts": {
+    "title": "Ansprechpartner",
+    "subtitle": "Kompetente Betreuung für alle Ihre Fragen rund um unseren Verein",
+    "yourDirectLine": "Ihr direkter Draht",
+    "interestedInTennis": "Interesse am Tennis?",
+    "forMembers": "Für unsere Mitglieder",
+    "readyToStart": "Bereit für den Einstieg?"
+  },
+  "supportingAssociation": {
+    "title": "Unser Förderverein",
+    "subtitle": "Wenn Unterstützung noch viel weiter geht...",
+    "nonProfit": "Gemeinnütziger Verein",
+    "aboutUs": "WIR ÜBER UNS",
+    "workAreas": "Unsere Arbeitsschwerpunkte",
+    "supportAs": "UNTERSTÜTZEN KÖNNEN SIE UNS ALS:",
+    "contact": "KONTAKTAUFNAHME",
+    "bankDetails": "Bankverbindung"
+  },
+  "facilities": {
+    "tennisCourts": {
+      "title": "Unsere Tennisplätze",
+      "subtitle": "Unser Club besitzt 10 Sandplätze an unserem Stammsitz. Mehr Infos finden Sie weiter unten auf dieser Seite.",
+      "importantNotice": "Wichtiger Hinweis",
+      "mainFacility": "Hauptanlage Schwindstrasse",
+      "indoorHall": "Traglufthalle (Winter)",
+      "historicHall": "Historische Tennis(teppich)halle",
+      "court10": "Platz 10 - Der Besondere",
+      "impressions": "Impressionen unserer Anlage",
+      "visitFacility": "Besuchen Sie unsere Anlage"
+    },
+    "gastronomy": {
+      "title": "Clubgastronomie \"La Trattoria\"",
+      "subtitle": "Italienisches Flair mit Biergarten - Herzliche Gastfreundschaft und authentische Küche",
+      "currentHours": "Aktuelle Öffnungszeiten (Sommer 2025)",
+      "officialOpening": "Offizielle Eröffnung",
+      "closed": "Geschlossen",
+      "location": "Lage & Anfahrt für Lieferanten",
+      "postAddress": "Postadresse & Gästeparkplatz"
+    }
+  },
+  "membership": {
+    "title": "Mitgliedschaft",
+    "subtitle": "Werden Sie Teil unserer Tennisfamilie im TC Schwarz-Gelb Heidelberg e.V.",
+    "joinNow": "Jetzt beitreten",
+    "community": "Gemeinschaft",
+    "atmosphere": "Tolle Atmosphäre",
+    "variety": "Vielfältiges Angebot",
+    "interestedInTennis": "Lust auf Tennis in toller Atmosphäre?",
+    "feeInfo": "Beitragsinformationen",
+    "paymentInfo": "Zahlungsmodalitäten",
+    "infrastructureFee": "Hinweis zur Infrastrukturabgabe",
+    "alreadyMember": "Sie sind bereits Mitglied?",
+    "becomeMemberNow": "Jetzt Mitglied werden"
+  },
+  "teams": {
+    "title": "Unsere Mannschaften 2024",
+    "totalTeams": "Mannschaften insgesamt",
+    "youthTeams": "Jugend-Mannschaften",
+    "categories": "Unsere Mannschaftskategorien",
+    "women": "Damen",
+    "men": "Herren",
+    "seniors": "Senioren",
+    "youth": "Jugend",
+    "multipleTeams": "Mehrere Teams",
+    "teams": "Teams"
+  },
+  "training": {
+    "title": "Training",
+    "subtitle": "Trainingsmöglichkeiten für jeden Anspruch - von Anfängern bis zu ambitionierten Leistungssportlern",
+    "professional": "Professionelles Training",
+    "opportunities": "Trainingsmöglichkeiten im Club",
+    "ourOffer": "Unser Trainingsangebot",
+    "philosophy": "Unsere Philosophie",
+    "allAges": "Für alle Altersgruppen",
+    "ourGoal": "Unser Ziel",
+    "interestedInTraining": "Interesse am Training?"
+  },
+  "tournaments": {
+    "title": "Turniere",
+    "placeholder": "Placeholder für Turniere Seite"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Hier finden Sie Antworten auf die häufigsten Fragen rund um unseren Tennisclub",
+    "frequentQuestions": "Häufige Fragen",
+    "currentInfo": "Aktuelle Informationen",
+    "furtherQuestions": "Weitere Fragen?",
+    "contactUs": "Haben Sie weitere Fragen? Kontaktieren Sie uns gerne!",
+    "getInTouch": "Kontakt aufnehmen"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "manageContent": "Verwaltung der Website-Inhalte",
+    "logout": "Abmelden",
+    "modalSettings": "Modal-Einstellungen",
+    "news": "Nachrichten",
+    "activateModal": "Modal aktivieren",
+    "title": "Titel",
+    "content": "Inhalt (HTML)",
+    "preview": "Vorschau",
+    "saveChanges": "Änderungen speichern",
+    "saving": "Speichert...",
+    "loading": "Lädt..."
+  }
+}

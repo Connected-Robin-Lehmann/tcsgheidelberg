@@ -37,6 +37,7 @@ import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 import ImageResize from "quill-image-resize-module-react";
+import type { Session } from '@supabase/supabase-js';
 
 // Register image resize module
 Quill.register("modules/imageResize", ImageResize);
@@ -73,6 +74,7 @@ const AdminNews = () => {
   const [isTableDialogOpen, setIsTableDialogOpen] = useState(false);
   const [tableRows, setTableRows] = useState(3);
   const [tableCols, setTableCols] = useState(3);
+  const [session, setSession] = useState<Session | null>(null);
   const quillRef = useRef<ReactQuill>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -195,13 +197,49 @@ const AdminNews = () => {
   );
 
   useEffect(() => {
-    const token = sessionStorage.getItem("adminToken");
-    if (!token) {
-      navigate("/admin/login");
-      return;
-    }
-    loadNewsItems();
-  }, [navigate]);
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        navigate('/admin/login');
+        return;
+      }
+
+      // Verify admin role
+      const { data: roleData, error: roleError } = await supabase
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', session.user.id)
+        .eq('role', 'admin')
+        .single();
+
+      if (roleError || !roleData) {
+        toast({
+          title: 'Zugriff verweigert',
+          description: 'Sie haben keine Admin-Berechtigung',
+          variant: 'destructive',
+        });
+        await supabase.auth.signOut();
+        navigate('/admin/login');
+        return;
+      }
+
+      setSession(session);
+      loadNewsItems();
+    };
+
+    checkAuth();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!session) {
+        navigate('/admin/login');
+      } else {
+        setSession(session);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [navigate, toast]);
 
   const loadNewsItems = async () => {
     try {
@@ -286,6 +324,8 @@ const AdminNews = () => {
   };
 
   const handleSave = async () => {
+    if (!session) return;
+
     try {
       if (!formData.title || !formData.content) {
         toast({
@@ -296,8 +336,6 @@ const AdminNews = () => {
         return;
       }
 
-      const token = sessionStorage.getItem("adminToken");
-
       // Convert any uploaded files to base64
       const base64Files =
         uploadedFiles.length > 0
@@ -305,55 +343,31 @@ const AdminNews = () => {
           : [];
 
       if (editingItem) {
-        const response = await fetch(
-          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/manage-news`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${
-                import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
-              }`,
-            },
-            body: JSON.stringify({
-              action: "update",
-              newsId: editingItem.id,
-              newsItem: formData,
-              files: base64Files,
-              token,
-            }),
-          }
-        );
+        const { data, error } = await supabase.functions.invoke('manage-news', {
+          body: {
+            action: 'update',
+            newsId: editingItem.id,
+            newsItem: formData,
+            files: base64Files,
+          },
+        });
 
-        const result = await response.json();
-        if (!response.ok) throw new Error(result.error);
+        if (error) throw error;
 
         toast({
           title: "Erfolgreich aktualisiert",
           description: "Die Nachricht wurde aktualisiert",
         });
       } else {
-        const response = await fetch(
-          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/manage-news`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${
-                import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
-              }`,
-            },
-            body: JSON.stringify({
-              action: "create",
-              newsItem: formData,
-              files: base64Files,
-              token,
-            }),
-          }
-        );
+        const { data, error } = await supabase.functions.invoke('manage-news', {
+          body: {
+            action: 'create',
+            newsItem: formData,
+            files: base64Files,
+          },
+        });
 
-        const result = await response.json();
-        if (!response.ok) throw new Error(result.error);
+        if (error) throw error;
 
         toast({
           title: "Erfolgreich erstellt",
@@ -375,29 +389,17 @@ const AdminNews = () => {
 
   const handleDelete = async (id: string) => {
     if (!confirm("Möchten Sie diese Nachricht wirklich löschen?")) return;
+    if (!session) return;
 
     try {
-      const token = sessionStorage.getItem("adminToken");
-      const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/manage-news`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${
-              import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
-            }`,
-          },
-          body: JSON.stringify({
-            action: "delete",
-            newsId: id,
-            token,
-          }),
-        }
-      );
+      const { data, error } = await supabase.functions.invoke('manage-news', {
+        body: {
+          action: 'delete',
+          newsId: id,
+        },
+      });
 
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error);
+      if (error) throw error;
 
       toast({
         title: "Erfolgreich gelöscht",

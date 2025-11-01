@@ -2,7 +2,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const DerClub = () => {
+const DerClubDE = () => {
   const galleryImages = [
     {
       src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
@@ -44,8 +44,7 @@ const DerClub = () => {
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
             <div className="p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-8 leading-tight">
-                Der sympathische Tennisclub in Heidelberg vereint einzigartig
-                Tradition und Moderne
+                Der sympathische Tennisclub in Heidelberg vereint einzigartig Tradition und Moderne
               </h3>
 
               <div className="prose prose-lg max-w-none mb-12">
@@ -189,4 +188,4 @@ const DerClub = () => {
   );
 };
 
-export default DerClub;
+export default DerClubDE;

@@ -1,11 +1,10 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
-import { MapPin, Clock, Phone, Calendar } from 'lucide-react';
+import { MapPin, Clock, Calendar } from 'lucide-react';
 
-const Gastronomie = () => {
+const GastronomieDE = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -246,4 +245,4 @@ const Gastronomie = () => {
   );
 };
 
-export default Gastronomie;
+export default GastronomieDE;

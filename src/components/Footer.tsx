@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   MapPin,
@@ -8,8 +7,11 @@ import {
   Twitter,
   Instagram,
 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="bg-tennis-black text-white">
       <div className="container mx-auto px-4 py-12">
@@ -32,7 +34,7 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
-              Kontakt
+              {t('footer.contact')}
             </h3>
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
@@ -59,7 +61,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
-              Schnellzugriff
+              {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-2">
               <li>
@@ -116,7 +118,7 @@ const Footer = () => {
           {/* Social Media */}
           <div>
             <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
-              Folgen Sie uns
+              {t('footer.followUs')}
             </h3>
             <div className="flex space-x-4">
               <a
@@ -154,20 +156,20 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm">
-              © 2024 TC Schwarz-Gelb Heidelberg e.V.
+              © 2024 TC Schwarz-Gelb Heidelberg e.V. {t('footer.allRightsReserved')}
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a
                 href="/impressum"
                 className="text-gray-400 hover:text-tennis-yellow text-sm transition-colors"
               >
-                Impressum
+                {t('header.legal.imprint')}
               </a>
               <a
                 href="/datenschutz"
                 className="text-gray-400 hover:text-tennis-yellow text-sm transition-colors"
               >
-                Datenschutz
+                {t('header.legal.privacy')}
               </a>
             </div>
           </div>

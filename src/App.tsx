@@ -5,23 +5,33 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-// Club pages
-import DerClub from "./pages/club/DerClub";
-import Vorstand from "./pages/club/Vorstand";
-import Tradition from "./pages/club/Tradition";
-import Ansprechpartner from "./pages/club/Ansprechpartner";
-import Foerderverein from "./pages/club/Foerderverein";
+// Der Club pages
+import DerClub from "./pages/der-club/DerClub";
+import Vorstand from "./pages/der-club/Vorstand";
+import Tradition from "./pages/der-club/Tradition";
+import Foerderverein from "./pages/der-club/Foerderverein";
+import Tennisplaetze from "./pages/der-club/Tennisplaetze";
+import Mitgliedschaft from "./pages/der-club/Mitgliedschaft";
+import Beitragsordnung from "./pages/der-club/Beitragsordnung";
+import Satzung from "./pages/der-club/Satzung";
+import Platzordnung from "./pages/der-club/Platzordnung";
+import Sponsoring from "./pages/der-club/Sponsoring";
 
-// Membership pages
-import Mitgliedschaft from "./pages/membership/Mitgliedschaft";
-import Beitragsordnung from "./pages/membership/Beitragsordnung";
-import Satzung from "./pages/membership/Satzung";
-import Regelwerk from "./pages/membership/Regelwerk";
-import Platzordnung from "./pages/membership/Platzordnung";
+// Aktuelles pages
+import Aktuelles from "./pages/aktuelles/Aktuelles";
+import Nachrichten from "./pages/aktuelles/Nachrichten";
+import TiebreakingNews from "./pages/aktuelles/TiebreakingNews";
+import Pressemeldungen from "./pages/aktuelles/Pressemeldungen";
+import Veranstaltungen from "./pages/aktuelles/Veranstaltungen";
+import Crowdfunding from "./pages/aktuelles/Crowdfunding";
+import Projekte from "./pages/aktuelles/Projekte";
+import TennisInfoHeft from "./pages/aktuelles/TennisInfoHeft";
+import Ansprechpartner from "./pages/aktuelles/Ansprechpartner";
 
-// Teams pages
-import Mannschaften from "./pages/teams/Mannschaften";
-import Jugend from "./pages/teams/Jugend";
+// Mannschaften pages
+import Mannschaften from "./pages/mannschaften/Mannschaften";
+import Jugend from "./pages/mannschaften/Jugend";
+import Regelwerk from "./pages/mannschaften/Regelwerk";
 
 // Training pages
 import Training from "./pages/training/Training";
@@ -29,33 +39,15 @@ import UnsereTrainer from "./pages/training/UnsereTrainer";
 import TennisschulePTSKukaras from "./pages/training/TennisschulePTSKukaras";
 import TennisschuleSeibold from "./pages/training/TennisschuleSeibold";
 
-// Facilities pages
-import Tennisplaetze from "./pages/facilities/Tennisplaetze";
-import Gastronomie from "./pages/facilities/Gastronomie";
+// Root pages
+import Gastronomie from "./pages/Gastronomie";
+import FAQ from "./pages/FAQ";
 
-// Events pages
-import Veranstaltungen from "./pages/events/Veranstaltungen";
-import Turniere from "./pages/events/Turniere";
-import TurnierAnmeldung from "./pages/events/TurnierAnmeldung";
-import RheinNeckarOpen from "./pages/events/RheinNeckarOpen";
-import SchwarzGelbCup from "./pages/events/SchwarzGelbCup";
-
-// News pages
-import Aktuelles from "./pages/news/Aktuelles";
-import Nachrichten from "./pages/news/Nachrichten";
-import TiebreakingNews from "./pages/news/TiebreakingNews";
-import Pressemeldungen from "./pages/news/Pressemeldungen";
-
-// Projects pages
-import Projekte from "./pages/projects/Projekte";
-import Crowdfunding from "./pages/projects/Crowdfunding";
-
-// Sponsors pages
-import Sponsoring from "./pages/sponsors/Sponsoring";
-
-// Info pages
-import TennisInfoHeft from "./pages/info/TennisInfoHeft";
-import FAQ from "./pages/info/FAQ";
+// Events pages (root level - tournaments)
+import Turniere from "./pages/Turniere";
+import TurnierAnmeldung from "./pages/TurnierAnmeldung";
+import RheinNeckarOpen from "./pages/RheinNeckarOpen";
+import SchwarzGelbCup from "./pages/SchwarzGelbCup";
 
 // Legal pages
 import Impressum from "./pages/legal/Impressum";

@@ -1,0 +1,226 @@
+{
+  "header": {
+    "club": "The Club",
+    "tradition": "Tradition",
+    "board": "Board",
+    "contacts": "Contacts",
+    "supportingAssociation": "Supporting Association",
+    "teams": "Teams",
+    "youth": "Youth",
+    "training": "Training",
+    "ourTrainers": "Our Trainers",
+    "tennisSchoolSeibold": "Tennis School Seibold",
+    "tennisSchoolPTS": "Tennis School PTS Kukaras",
+    "events": "Events",
+    "tournaments": "Tournaments",
+    "schwarzGelbCup": "Schwarz-Gelb Cup",
+    "rheinNeckarOpen": "Rhein-Neckar-Open",
+    "tournamentRegistration": "Tournament Registration",
+    "membership": "Membership",
+    "membershipFees": "Membership Fees",
+    "regulations": "Regulations",
+    "courtRules": "Court Rules",
+    "statute": "Statute",
+    "news": {
+      "title": "News",
+      "current": "Current",
+      "news": "News",
+      "pressReleases": "Press Releases",
+      "tiebreaking": "Tiebreaking News"
+    },
+    "projects": "Projects",
+    "crowdfunding": "Crowdfunding",
+    "facilities": "Facilities",
+    "tennisCourts": "Tennis Courts",
+    "gastronomy": "Gastronomy",
+    "info": "Info",
+    "faq": "FAQ",
+    "tennisInfoBooklet": "Tennis Info Booklet",
+    "sponsors": "Sponsoring",
+    "legal": {
+      "imprint": "Imprint",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "Tennis Club Schwarz-Gelb Heidelberg",
+      "subtitle": "Tradition Meets Innovation",
+      "description": "Since 1921, your premier destination for tennis in Heidelberg. Experience first-class tennis in a family atmosphere on our modern facilities.",
+      "joinButton": "Become a Member",
+      "contactButton": "Contact"
+    },
+    "stats": {
+      "title": "Schwarz-Gelb in Numbers",
+      "members": "Members",
+      "teams": "Teams",
+      "courts": "Courts",
+      "yearsHistory": "Years of History"
+    },
+    "events": {
+      "title": "Upcoming Events",
+      "subtitle": "Join us at our next events",
+      "allEvents": "All Events",
+      "date": "Date",
+      "location": "Location"
+    },
+    "video": {
+      "title": "Experience Schwarz-Gelb",
+      "subtitle": "Discover our club in action"
+    },
+    "sponsors": {
+      "title": "Our Partners",
+      "subtitle": "We thank our valuable sponsors for their support"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "readMore": "Read More",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "contact": "Contact",
+    "learnMore": "Learn More",
+    "becomeMember": "Become a Member",
+    "downloadPDF": "Download PDF"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "club": {
+    "title": "The Club",
+    "traditionSince": "Tradition since 1928",
+    "subtitle": "The friendly tennis club in Heidelberg uniquely combines tradition and modernity",
+    "photoGallery": "Photo Gallery",
+    "interestedTitle": "Interested?",
+    "interestedText": "Become part of our tennis family!",
+    "contactNow": "Contact Us Now"
+  },
+  "tradition": {
+    "title": "Tradition & History",
+    "subtitle": "From 1928 to today - A proud club history",
+    "since1928": "Since 1928",
+    "eraMaxBerk": "The Max Berk Era",
+    "borisBecker": "Boris Becker at Schwarz-Gelb",
+    "youthPromotion": "Tradition of Youth Development",
+    "modernSuccess": "Modern Success",
+    "growingClub": "A Growing Club",
+    "historicalGallery": "Historical Image Gallery",
+    "historyLesson": "A brief history lesson about our club in its early years"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "Competent support for all your questions about our club",
+    "yourDirectLine": "Your Direct Line",
+    "interestedInTennis": "Interested in Tennis?",
+    "forMembers": "For Our Members",
+    "readyToStart": "Ready to Get Started?"
+  },
+  "supportingAssociation": {
+    "title": "Our Supporting Association",
+    "subtitle": "When support goes much further...",
+    "nonProfit": "Non-Profit Association",
+    "aboutUs": "ABOUT US",
+    "workAreas": "Our Focus Areas",
+    "supportAs": "YOU CAN SUPPORT US AS:",
+    "contact": "CONTACT",
+    "bankDetails": "Bank Details"
+  },
+  "facilities": {
+    "tennisCourts": {
+      "title": "Our Tennis Courts",
+      "subtitle": "Our club has 10 clay courts at our headquarters. More information can be found below on this page.",
+      "importantNotice": "Important Notice",
+      "mainFacility": "Main Facility Schwindstrasse",
+      "indoorHall": "Air-Supported Hall (Winter)",
+      "historicHall": "Historic Tennis (Carpet) Hall",
+      "court10": "Court 10 - The Special One",
+      "impressions": "Impressions of Our Facility",
+      "visitFacility": "Visit Our Facility"
+    },
+    "gastronomy": {
+      "title": "Club Gastronomy \"La Trattoria\"",
+      "subtitle": "Italian flair with beer garden - Warm hospitality and authentic cuisine",
+      "currentHours": "Current Opening Hours (Summer 2025)",
+      "officialOpening": "Official Opening",
+      "closed": "Closed",
+      "location": "Location & Directions for Suppliers",
+      "postAddress": "Postal Address & Guest Parking"
+    }
+  },
+  "membership": {
+    "title": "Membership",
+    "subtitle": "Become part of our tennis family at TC Schwarz-Gelb Heidelberg e.V.",
+    "joinNow": "Join Now",
+    "community": "Community",
+    "atmosphere": "Great Atmosphere",
+    "variety": "Diverse Offering",
+    "interestedInTennis": "Interested in Tennis in a Great Atmosphere?",
+    "feeInfo": "Membership Fee Information",
+    "paymentInfo": "Payment Terms",
+    "infrastructureFee": "Notice Regarding Infrastructure Fee",
+    "alreadyMember": "Already a Member?",
+    "becomeMemberNow": "Become a Member Now"
+  },
+  "teams": {
+    "title": "Our Teams 2024",
+    "totalTeams": "Total Teams",
+    "youthTeams": "Youth Teams",
+    "categories": "Our Team Categories",
+    "women": "Women",
+    "men": "Men",
+    "seniors": "Seniors",
+    "youth": "Youth",
+    "multipleTeams": "Multiple Teams",
+    "teams": "Teams"
+  },
+  "training": {
+    "title": "Training",
+    "subtitle": "Training opportunities for every level - from beginners to ambitious competitive athletes",
+    "professional": "Professional Training",
+    "opportunities": "Training Opportunities at the Club",
+    "ourOffer": "Our Training Offer",
+    "philosophy": "Our Philosophy",
+    "allAges": "For All Age Groups",
+    "ourGoal": "Our Goal",
+    "interestedInTraining": "Interested in Training?"
+  },
+  "tournaments": {
+    "title": "Tournaments",
+    "placeholder": "Placeholder for Tournaments Page"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Here you will find answers to the most frequently asked questions about our tennis club",
+    "frequentQuestions": "Frequently Asked Questions",
+    "currentInfo": "Current Information",
+    "furtherQuestions": "Further Questions?",
+    "contactUs": "Have more questions? Feel free to contact us!",
+    "getInTouch": "Get in Touch"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "manageContent": "Website Content Management",
+    "logout": "Logout",
+    "modalSettings": "Modal Settings",
+    "news": "News",
+    "activateModal": "Activate Modal",
+    "title": "Title",
+    "content": "Content (HTML)",
+    "preview": "Preview",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "loading": "Loading..."
+  }
+}

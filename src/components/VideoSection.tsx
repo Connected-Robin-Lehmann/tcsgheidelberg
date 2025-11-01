@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Play, Pause } from 'lucide-react';
+import { Play } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const VideoSection = () => {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleVideoPlay = () => {
@@ -13,10 +15,10 @@ const VideoSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
-            Unser Vereinsfilm
+            {t('home.video.title')}
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto" style={{ fontFamily: 'Arial, sans-serif' }}>
-            Erleben Sie die Atmosphäre und den Geist unseres Tennisclubs in unserem offiziellen Vereinsfilm
+            {t('home.video.subtitle')}
           </p>
         </div>
 

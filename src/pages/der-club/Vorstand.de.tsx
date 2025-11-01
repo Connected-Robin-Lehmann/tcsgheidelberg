@@ -1,10 +1,9 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Mail } from 'lucide-react';
 
-const Vorstand = () => {
+const VorstandDE = () => {
   const boardMembers = [
     {
       name: "Aleksandar Kukaras",
@@ -25,7 +24,7 @@ const Vorstand = () => {
       position: "Sportwart Herren (Aktive)",
       email: "marvin.tawasi@schwarzgelb-heidelberg.de",
       image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/08/Marvin-Tawasi-2020-e1742127517989.jpg",
-      description: "Marvin ist unser Sportwart Aktive und zudem B-Lizenz-Trainer (Tennis Akademie Alex Kukaras). Er kümmert sich im Erwachsenen-Sportbetrieb (Mannschaftssport) insbesondere um die Mannschafts-meldungen der aktiven Herrenmannschaften bei den Medenrunden sowie den reibungslosen Ablauf der einzelnen Begegnungen und ist damit wichtiges Bindeglied zwischen dem Vorstand und unseren Herren-Mannschaften."
+      description: "Marvin ist unser Sportwart Aktive und zudem B-Lizenz-Trainer (Tennis Akademie Alex Kukaras). Er kümmert sich im Erwachsenen-Sportbetrieb (Mannschaftssport) insbesondere um die Mannschaftsmeldungen der aktiven Herrenmannschaften bei den Medenrunden sowie den reibungslosen Ablauf der einzelnen Begegnungen und ist damit wichtiges Bindeglied zwischen dem Vorstand und unseren Herren-Mannschaften."
     },
     {
       name: "Marc Homsy",
@@ -67,7 +66,7 @@ const Vorstand = () => {
       position: "Beisitzerin Damensport",
       email: "kati.kukaras@schwarzgelb-heidelberg.de",
       image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/IMG_3690-e1741973256127.jpg",
-      description: "Kati ist nur in der offiziellen Vorstandsbetitelung ‚Beisitzerin' – sie ist de Fact Sportwartin für die aktiven Damenmansschaften, spielt in der 1. Damenmannschaft und ist B-Lizenz-Trainerin (Tennis Akademie Alex Kukaras). Sie sich um die Mannschaftsmeldungen der aktiven Damenmannschaften bei den Medenrunden sowie den reibungslosen Ablauf der einzelnen Begegnungen und ist damit ebenso wichtiges Bindeglied zwischen dem Vorstand und den Damenmannschaften."
+      description: "Kati ist nur in der offiziellen Vorstandsbetitelung 'Beisitzerin' – sie ist de Facto Sportwartin für die aktiven Damenmannschaften, spielt in der 1. Damenmannschaft und ist B-Lizenz-Trainerin (Tennis Akademie Alex Kukaras). Sie sich um die Mannschaftsmeldungen der aktiven Damenmannschaften bei den Medenrunden sowie den reibungslosen Ablauf der einzelnen Begegnungen und ist damit ebenso wichtiges Bindeglied zwischen dem Vorstand und den Damenmannschaften."
     },
     {
       name: "Sonja Althoff",
@@ -195,4 +194,4 @@ const Vorstand = () => {
   );
 };
 
-export default Vorstand;
+export default VorstandDE;
