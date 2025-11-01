@@ -5,12 +5,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-// Club pages
-import DerClub from "./pages/club/DerClub";
-import Vorstand from "./pages/club/Vorstand";
-import Tradition from "./pages/club/Tradition";
-import Ansprechpartner from "./pages/club/Ansprechpartner";
-import Foerderverein from "./pages/club/Foerderverein";
+// Der Club pages
+import DerClub from "./pages/der-club/DerClub";
+import Vorstand from "./pages/der-club/Vorstand";
+import Tradition from "./pages/der-club/Tradition";
+import Ansprechpartner from "./pages/der-club/Ansprechpartner";
+import Foerderverein from "./pages/der-club/Foerderverein";
 
 // Membership pages
 import Mitgliedschaft from "./pages/membership/Mitgliedschaft";
@@ -19,9 +19,9 @@ import Satzung from "./pages/membership/Satzung";
 import Regelwerk from "./pages/membership/Regelwerk";
 import Platzordnung from "./pages/membership/Platzordnung";
 
-// Teams pages
-import Mannschaften from "./pages/teams/Mannschaften";
-import Jugend from "./pages/teams/Jugend";
+// Mannschaften pages
+import Mannschaften from "./pages/mannschaften/Mannschaften";
+import Jugend from "./pages/mannschaften/Jugend";
 
 // Training pages
 import Training from "./pages/training/Training";
@@ -40,11 +40,11 @@ import TurnierAnmeldung from "./pages/events/TurnierAnmeldung";
 import RheinNeckarOpen from "./pages/events/RheinNeckarOpen";
 import SchwarzGelbCup from "./pages/events/SchwarzGelbCup";
 
-// News pages
-import Aktuelles from "./pages/news/Aktuelles";
-import Nachrichten from "./pages/news/Nachrichten";
-import TiebreakingNews from "./pages/news/TiebreakingNews";
-import Pressemeldungen from "./pages/news/Pressemeldungen";
+// Aktuelles pages
+import Aktuelles from "./pages/aktuelles/Aktuelles";
+import Nachrichten from "./pages/aktuelles/Nachrichten";
+import TiebreakingNews from "./pages/aktuelles/TiebreakingNews";
+import Pressemeldungen from "./pages/aktuelles/Pressemeldungen";
 
 // Projects pages
 import Projekte from "./pages/projects/Projekte";
