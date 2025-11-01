@@ -1,0 +1,92 @@
+{
+  "header": {
+    "club": "The Club",
+    "tradition": "Tradition",
+    "board": "Board",
+    "contacts": "Contacts",
+    "supportingAssociation": "Supporting Association",
+    "teams": "Teams",
+    "youth": "Youth",
+    "training": "Training",
+    "ourTrainers": "Our Trainers",
+    "tennisSchoolSeibold": "Tennis School Seibold",
+    "tennisSchoolPTS": "Tennis School PTS Kukaras",
+    "events": "Events",
+    "tournaments": "Tournaments",
+    "schwarzGelbCup": "Schwarz-Gelb Cup",
+    "rheinNeckarOpen": "Rhein-Neckar-Open",
+    "tournamentRegistration": "Tournament Registration",
+    "membership": "Membership",
+    "membershipFees": "Membership Fees",
+    "regulations": "Regulations",
+    "courtRules": "Court Rules",
+    "statute": "Statute",
+    "news": {
+      "title": "News",
+      "current": "Current",
+      "news": "News",
+      "pressReleases": "Press Releases",
+      "tiebreaking": "Tiebreaking News"
+    },
+    "projects": "Projects",
+    "crowdfunding": "Crowdfunding",
+    "facilities": "Facilities",
+    "tennisCourts": "Tennis Courts",
+    "gastronomy": "Gastronomy",
+    "info": "Info",
+    "faq": "FAQ",
+    "tennisInfoBooklet": "Tennis Info Booklet",
+    "sponsors": "Sponsoring",
+    "legal": {
+      "imprint": "Imprint",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "Tennis Club Schwarz-Gelb Heidelberg",
+      "subtitle": "Tradition Meets Innovation",
+      "description": "Since 1921, your premier destination for tennis in Heidelberg. Experience first-class tennis in a family atmosphere on our modern facilities.",
+      "joinButton": "Become a Member",
+      "contactButton": "Contact"
+    },
+    "stats": {
+      "title": "Schwarz-Gelb in Numbers",
+      "members": "Members",
+      "teams": "Teams",
+      "courts": "Courts",
+      "yearsHistory": "Years of History"
+    },
+    "events": {
+      "title": "Upcoming Events",
+      "subtitle": "Join us at our next events",
+      "allEvents": "All Events",
+      "date": "Date",
+      "location": "Location"
+    },
+    "video": {
+      "title": "Experience Schwarz-Gelb",
+      "subtitle": "Discover our club in action"
+    },
+    "sponsors": {
+      "title": "Our Partners",
+      "subtitle": "We thank our valuable sponsors for their support"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "readMore": "Read More",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close"
+  }
+}

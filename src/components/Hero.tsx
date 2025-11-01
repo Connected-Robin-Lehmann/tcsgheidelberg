@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Calendar, Users, Award, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { format } from "date-fns";
-import { de } from "date-fns/locale";
+import { de, enUS } from "date-fns/locale";
+import { useTranslation } from 'react-i18next';
 
 interface NewsItem {
   id: string;
@@ -14,7 +14,9 @@ interface NewsItem {
 }
 
 const Hero = () => {
+  const { t, i18n } = useTranslation();
   const [latestNews, setLatestNews] = useState<NewsItem | null>(null);
+  const locale = i18n.language === 'de' ? de : enUS;
 
   useEffect(() => {
     const fetchLatestNews = async () => {
@@ -32,6 +34,7 @@ const Hero = () => {
 
     fetchLatestNews();
   }, []);
+  
   return (
     <section
       id="home"
@@ -73,7 +76,7 @@ const Hero = () => {
                     </div>
                     <p className="text-white/70 text-xs md:text-sm mb-2">
                       {format(new Date(latestNews.date), "d. MMMM yyyy", {
-                        locale: de,
+                        locale,
                       })}
                     </p>
                     <p className="text-white/90 text-sm md:text-base mb-4 line-clamp-2">
@@ -83,7 +86,7 @@ const Hero = () => {
                       href="/aktuelles/nachrichten"
                       className="inline-flex items-center text-tennis-yellow hover:text-yellow-300 font-semibold transition-colors"
                     >
-                      Mehr erfahren
+                      {t('common.readMore')}
                       <svg
                         className="w-4 h-4 ml-2"
                         fill="none"
@@ -115,4 +118,5 @@ const Hero = () => {
     </section>
   );
 };
+
 export default Hero;

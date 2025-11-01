@@ -1,0 +1,92 @@
+{
+  "header": {
+    "club": "Der Club",
+    "tradition": "Tradition",
+    "board": "Vorstand",
+    "contacts": "Ansprechpartner",
+    "supportingAssociation": "Förderverein",
+    "teams": "Mannschaften",
+    "youth": "Jugend",
+    "training": "Training",
+    "ourTrainers": "Unsere Trainer",
+    "tennisSchoolSeibold": "Tennisschule Seibold",
+    "tennisSchoolPTS": "Tennisschule PTS Kukaras",
+    "events": "Veranstaltungen",
+    "tournaments": "Turniere",
+    "schwarzGelbCup": "Schwarz-Gelb Cup",
+    "rheinNeckarOpen": "Rhein-Neckar-Open",
+    "tournamentRegistration": "Turnieranmeldung",
+    "membership": "Mitgliedschaft",
+    "membershipFees": "Beitragsordnung",
+    "regulations": "Regelwerk",
+    "courtRules": "Platzordnung",
+    "statute": "Satzung",
+    "news": {
+      "title": "Nachrichten",
+      "current": "Aktuelles",
+      "news": "Nachrichten",
+      "pressReleases": "Pressemeldungen",
+      "tiebreaking": "Tiebreaking News"
+    },
+    "projects": "Projekte",
+    "crowdfunding": "Crowdfunding",
+    "facilities": "Anlagen",
+    "tennisCourts": "Tennisplätze",
+    "gastronomy": "Gastronomie",
+    "info": "Info",
+    "faq": "FAQ",
+    "tennisInfoBooklet": "Tennis-Info-Heft",
+    "sponsors": "Sponsoring",
+    "legal": {
+      "imprint": "Impressum",
+      "privacy": "Datenschutz"
+    }
+  },
+  "footer": {
+    "quickLinks": "Schnellzugriff",
+    "contact": "Kontakt",
+    "followUs": "Folgen Sie uns",
+    "allRightsReserved": "Alle Rechte vorbehalten."
+  },
+  "home": {
+    "hero": {
+      "title": "Tennis Club Schwarz-Gelb Heidelberg",
+      "subtitle": "Tradition trifft Innovation",
+      "description": "Seit 1921 Ihre erste Adresse für Tennis in Heidelberg. Erleben Sie erstklassigen Tennissport in familiärer Atmosphäre auf unseren modernen Anlagen.",
+      "joinButton": "Mitglied werden",
+      "contactButton": "Kontakt"
+    },
+    "stats": {
+      "title": "Schwarz-Gelb in Zahlen",
+      "members": "Mitglieder",
+      "teams": "Mannschaften",
+      "courts": "Plätze",
+      "yearsHistory": "Jahre Geschichte"
+    },
+    "events": {
+      "title": "Kommende Veranstaltungen",
+      "subtitle": "Seien Sie dabei bei unseren nächsten Events",
+      "allEvents": "Alle Veranstaltungen",
+      "date": "Datum",
+      "location": "Ort"
+    },
+    "video": {
+      "title": "Erleben Sie Schwarz-Gelb",
+      "subtitle": "Entdecken Sie unseren Club in Aktion"
+    },
+    "sponsors": {
+      "title": "Unsere Partner",
+      "subtitle": "Wir danken unseren wertvollen Sponsoren für ihre Unterstützung"
+    }
+  },
+  "common": {
+    "loading": "Lädt...",
+    "readMore": "Mehr erfahren",
+    "back": "Zurück",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen"
+  }
+}

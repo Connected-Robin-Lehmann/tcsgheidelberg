@@ -1,14 +1,16 @@
-
 import React from 'react';
 import { Users, Award, MapPin, Calendar, Trophy, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const StatsSection = () => {
+  const { t } = useTranslation();
+  
   const stats = [
-    { icon: Users, number: '612', label: 'Mitglieder', color: 'text-blue-600' },
+    { icon: Users, number: '612', label: t('home.stats.members'), color: 'text-blue-600' },
     { icon: Target, number: '35%', label: 'Jugendanteil', color: 'text-green-600' },
     { icon: Award, number: '16', label: 'Erwachsenen-Mannschaften', color: 'text-purple-600' },
-    { icon: MapPin, number: '10', label: 'Außenplätze', color: 'text-tennis-yellow' },
+    { icon: MapPin, number: '10', label: t('home.stats.courts'), color: 'text-tennis-yellow' },
     { icon: Trophy, number: '14', label: 'Jugendmannschaften', color: 'text-red-600' },
     { icon: Calendar, number: '9', label: 'Trainer', color: 'text-indigo-600' }
   ];
@@ -18,7 +20,7 @@ const StatsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-tennis-black mb-4">
-            Unser Verein in Zahlen
+            {t('home.stats.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Diese Zahlen zeigen die Größe und Vielfalt unserer Tennisgemeinschaft
@@ -50,7 +52,7 @@ const StatsSection = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link to="/mitgliedschaft" className="btn-hero">
-              Mitglied werden
+              {t('home.hero.joinButton')}
             </Link>
             <Link to="/mitgliedschaft" className="btn-hero-outline">
               Probetraining vereinbaren

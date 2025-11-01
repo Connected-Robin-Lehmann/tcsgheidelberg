@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const SponsorsSection = () => {
+  const { t } = useTranslation();
+  
   const mainSponsors = [
     {
       name: 'Stadtwerke Heidelberg',
@@ -38,10 +41,10 @@ const SponsorsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-tennis-black mb-4">
-            Unsere Partner & Sponsoren
+            {t('home.sponsors.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Wir danken unseren wertvollen Partnern für ihre Unterstützung
+            {t('home.sponsors.subtitle')}
           </p>
         </div>
 

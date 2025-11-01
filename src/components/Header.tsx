@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -12,75 +15,66 @@ const Header = () => {
       href: "/",
     },
     {
-      name: "Der Club",
+      name: t('header.club'),
       href: "/der-club",
       submenu: [
-        { name: "Vorstand", href: "/der-club/vorstand" },
-        { name: "Tradition", href: "/der-club/tradition" },
-        { name: "Tennisplätze", href: "/der-club/tennisplaetze" },
-        { name: "Mitgliedschaft", href: "/der-club/mitgliedschaft" },
-        { name: "Beitragsordnung", href: "/der-club/beitragsordnung" },
-        { name: "Satzung", href: "/der-club/satzung" },
-        { name: "Sponsoring", href: "/der-club/sponsoring" },
-        { name: "Unser Förderverein", href: "/der-club/foerderverein" },
-        { name: "Platzordnung", href: "/der-club/platzordnung" },
+        { name: t('header.board'), href: "/der-club/vorstand" },
+        { name: t('header.tradition'), href: "/der-club/tradition" },
+        { name: t('header.tennisCourts'), href: "/der-club/tennisplaetze" },
+        { name: t('header.membership'), href: "/der-club/mitgliedschaft" },
+        { name: t('header.membershipFees'), href: "/der-club/beitragsordnung" },
+        { name: t('header.statute'), href: "/der-club/satzung" },
+        { name: t('header.sponsors'), href: "/der-club/sponsoring" },
+        { name: t('header.supportingAssociation'), href: "/der-club/foerderverein" },
+        { name: t('header.courtRules'), href: "/der-club/platzordnung" },
       ],
     },
     {
-      name: "FAQ",
+      name: t('header.info'),
       href: "/faq",
     },
     {
-      name: "Aktuelles",
+      name: t('header.news.current'),
       href: "/aktuelles",
       submenu: [
-        { name: "Nachrichten", href: "/aktuelles/nachrichten" },
-        { name: "Veranstaltungen", href: "/aktuelles/veranstaltungen" },
-        { name: "Crowdfunding", href: "/aktuelles/crowdfunding" },
-        { name: "Projekte", href: "/aktuelles/projekte" },
-        { name: "Tiebreaking News", href: "/aktuelles/tiebreaking-news" },
-        { name: "Pressemeldungen", href: "/aktuelles/pressemeldungen" },
-        { name: "Tennis-Info Heft", href: "/aktuelles/tennis-info-heft" },
-        { name: "Ansprechpartner", href: "/aktuelles/ansprechpartner" },
+        { name: t('header.news.news'), href: "/aktuelles/nachrichten" },
+        { name: t('header.events'), href: "/aktuelles/veranstaltungen" },
+        { name: t('header.crowdfunding'), href: "/aktuelles/crowdfunding" },
+        { name: t('header.projects'), href: "/aktuelles/projekte" },
+        { name: t('header.news.tiebreaking'), href: "/aktuelles/tiebreaking-news" },
+        { name: t('header.news.pressReleases'), href: "/aktuelles/pressemeldungen" },
+        { name: t('header.tennisInfoBooklet'), href: "/aktuelles/tennis-info-heft" },
+        { name: t('header.contacts'), href: "/aktuelles/ansprechpartner" },
       ],
     },
     {
-      name: "Mannschaften",
+      name: t('header.teams'),
       href: "/mannschaften",
       submenu: [
-        { name: "Jugend", href: "/mannschaften/jugend" },
-        // { name: "Damen", href: "/mannschaften/damen" },
-        // { name: "Herren", href: "/mannschaften/herren" },
-        // { name: "Senioren", href: "/mannschaften/senioren" },
-        { name: "Regelwerk", href: "/mannschaften/regelwerk" },
+        { name: t('header.youth'), href: "/mannschaften/jugend" },
+        { name: t('header.regulations'), href: "/mannschaften/regelwerk" },
       ],
     },
     {
-      name: "Turniere",
+      name: t('header.tournaments'),
       href: "/turniere",
-      // submenu: [
-      //   { name: "Schwarz-Gelb-Cup", href: "/turniere/schwarz-gelb-cup" },
-      //   { name: "Rhein-Neckar Open", href: "/turniere/rhein-neckar-open" },
-      //   { name: "Anmeldung", href: "/turniere/anmeldung" },
-      // ],
     },
     {
-      name: "Training",
+      name: t('header.training'),
       href: "/training",
       submenu: [
-        // { name: "Unsere Trainer", href: "/training/unsere-trainer" },
         {
-          name: "Tennisschule PTS Kukaras",
+          name: t('header.tennisSchoolPTS'),
           href: "/training/tennisschule-pts-kukaras",
         },
         {
-          name: "Tennisschule Seibold",
+          name: t('header.tennisSchoolSeibold'),
           href: "/training/tennisschule-seibold",
         },
       ],
     },
     {
-      name: "Gastronomie",
+      name: t('header.gastronomy'),
       href: "/gastronomie",
     },
   ];
@@ -200,8 +194,9 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden xl:block">
+            {/* Language Switcher & CTA Button */}
+            <div className="hidden xl:flex items-center gap-2">
+              <LanguageSwitcher />
               <Button
                 className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-6 py-3 text-sm xl:text-base transition-all duration-300"
                 onClick={() =>
@@ -215,8 +210,9 @@ const Header = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden">
+            {/* Mobile Menu Button & Language Switcher */}
+            <div className="lg:hidden flex items-center gap-2">
+              <LanguageSwitcher />
               <button
                 className="p-2 text-tennis-black hover:text-tennis-yellow transition-colors"
                 onClick={() => {

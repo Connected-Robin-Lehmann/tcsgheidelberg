@@ -3,8 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const EventSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="news" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
@@ -13,8 +16,7 @@ const EventSection = () => {
             Aktuelle Termine & Informationen
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Bleiben Sie auf dem Laufenden mit unseren neuesten Veranstaltungen
-            und wichtigen Vereinsinformationen
+            {t('home.events.subtitle')}
           </p>
         </div>
 
