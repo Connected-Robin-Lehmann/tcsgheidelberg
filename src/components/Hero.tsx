@@ -69,18 +69,13 @@ const Hero = () => {
                     <Calendar className="w-6 h-6 text-tennis-black" />
                   </div>
                   <div className="text-left flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <h3 className="text-xl md:text-2xl font-bold text-tennis-yellow">
-                        {latestNews.title}
-                      </h3>
-                    </div>
-                    <p className="text-white/70 text-xs md:text-sm mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-tennis-yellow mb-3">
+                      {latestNews.title}
+                    </h3>
+                    <p className="text-white/70 text-sm md:text-base mb-4">
                       {format(new Date(latestNews.date), "d. MMMM yyyy", {
                         locale,
                       })}
-                    </p>
-                    <p className="text-white/90 text-sm md:text-base mb-4 line-clamp-2">
-                      {latestNews.content.replace(/<[^>]*>/g, "").substring(0, 150)}...
                     </p>
                     <a
                       href="/aktuelles/nachrichten"
