@@ -27,12 +27,12 @@ const SponsorsSection = () => {
     {
       name: 'Tennisschule PTS Kukaras',
       logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennisschule-PTS-Kukaras.jpg',
-      url: '#'
+      url: '/training/tennisschule-pts-kukaras'
     },
     {
       name: 'Tennisschule Seibold',
       logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennisschule-Seibold.jpg',
-      url: '#'
+      url: '/training/tennisschule-seibold'
     }
   ];
 
@@ -100,7 +100,7 @@ const SponsorsSection = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Interesse an einer Partnerschaft?
           </p>
-          <Link to="/sponsoring" className="btn-hero">
+          <Link to="/der-club/sponsoring" className="btn-hero">
             Sponsoring-Möglichkeiten
           </Link>
         </div>

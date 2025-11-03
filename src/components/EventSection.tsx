@@ -51,7 +51,9 @@ const EventSection = () => {
               mit tollem Programm!
             </p>
 
-            <Button className="btn-hero w-full">Mehr Informationen</Button>
+            <Link to="/aktuelles/veranstaltungen">
+              <Button className="btn-hero w-full">Mehr Informationen</Button>
+            </Link>
           </Card>
 
           {/* Tagesordnung */}
@@ -92,9 +94,11 @@ const EventSection = () => {
               </div>
             </div>
 
-            <Button variant="outline" className="btn-hero-outline w-full">
-              Einladung mit Details
-            </Button>
+            <Link to="/aktuelles/veranstaltungen">
+              <Button variant="outline" className="btn-hero-outline w-full">
+                Einladung mit Details
+              </Button>
+            </Link>
           </Card>
         </div>
 

@@ -51,10 +51,10 @@ const StatsSection = () => {
             Werden Sie Teil unserer großen Tennisfamilie
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Link to="/mitgliedschaft" className="btn-hero">
+            <Link to="/der-club/mitgliedschaft" className="btn-hero">
               {t('home.hero.joinButton')}
             </Link>
-            <Link to="/mitgliedschaft" className="btn-hero-outline">
+            <Link to="/der-club/mitgliedschaft" className="btn-hero-outline">
               Probetraining vereinbaren
             </Link>
           </div>

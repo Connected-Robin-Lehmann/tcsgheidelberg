@@ -66,18 +66,12 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="https://ssl.forumedia.eu/schwarzgelb-heidelberg.net//"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-300 hover:text-tennis-yellow transition-colors"
                 >
                   Platzreservierung
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-tennis-yellow transition-colors"
-                >
-                  SG-Forum
                 </a>
               </li>
               <li>
@@ -94,22 +88,6 @@ const Footer = () => {
                   className="text-gray-300 hover:text-tennis-yellow transition-colors"
                 >
                   Mitgliedschaft
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-tennis-yellow transition-colors"
-                >
-                  Anfahrt
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-tennis-yellow transition-colors"
-                >
-                  Wetter
                 </a>
               </li>
             </ul>
