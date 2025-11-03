@@ -7,11 +7,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { LogOut, Save, Newspaper } from 'lucide-react';
+import { LogOut, Save, Newspaper, ListChecks } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AdminStatus from './AdminStatus';
 import type { Session } from '@supabase/supabase-js';
 
 const AdminDashboard = () => {
@@ -176,11 +177,15 @@ const AdminDashboard = () => {
           </div>
 
           <Tabs defaultValue="modal" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsList className="grid w-full grid-cols-3 mb-8">
               <TabsTrigger value="modal">Modal-Einstellungen</TabsTrigger>
               <TabsTrigger value="news" onClick={() => navigate('/admin/news')}>
                 <Newspaper className="w-4 h-4 mr-2" />
                 Nachrichten
+              </TabsTrigger>
+              <TabsTrigger value="status">
+                <ListChecks className="w-4 h-4 mr-2" />
+                Status
               </TabsTrigger>
             </TabsList>
 
@@ -251,6 +256,10 @@ const AdminDashboard = () => {
                   </Button>
                 </div>
               </Card>
+            </TabsContent>
+
+            <TabsContent value="status">
+              <AdminStatus />
             </TabsContent>
           </Tabs>
         </div>
