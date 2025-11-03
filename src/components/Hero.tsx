@@ -32,29 +32,29 @@ const Hero = () => {
     };
     fetchLatestNews();
   }, []);
-  return <section id="home" className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center bg-gradient-to-br from-tennis-black via-gray-900 to-tennis-court overflow-hidden">
+  return <section id="home" className="relative min-h-[50vh] md:min-h-[70vh] flex flex-col bg-gradient-to-br from-tennis-black via-gray-900 to-tennis-court overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] bg-repeat"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center text-white animate-fade-in">
-          {/* Logo Integration */}
-          <div className="mb-4 md:mb-8"></div>
-
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-6 md:mb-12 leading-tight px-2">
+      <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col">
+        {/* Title Section - Near Header */}
+        <div className="text-center text-white animate-fade-in pt-6 md:pt-12">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight px-2">
             Willkommen im
             <span className="block text-tennis-yellow mt-1 md:mt-2">
               TC Schwarz-Gelb
             </span>
-            <span className="block text-base sm:text-lg md:text-3xl lg:text-4xl mt-1 md:mt-2 font-light">
+            <span className="block text-base sm:text-lg md:text-2xl lg:text-3xl mt-1 md:mt-2 font-light">
               Heidelberg e.V.
             </span>
           </h1>
+        </div>
 
-          {/* News Highlight */}
-          {latestNews && <div className="max-w-3xl mx-auto mt-6 md:mt-16 px-2 animate-slide-up">
+        {/* News Highlight - Center */}
+        {latestNews && <div className="flex-1 flex items-center justify-center py-6 md:py-8">
+            <div className="max-w-3xl w-full px-2 animate-slide-up">
               <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow/50 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-white/15 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-4">
                   <div className="bg-tennis-yellow rounded-full p-2 flex-shrink-0">
@@ -78,8 +78,8 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-            </div>}
-        </div>
+            </div>
+          </div>}
       </div>
 
       {/* Scroll Indicator */}
