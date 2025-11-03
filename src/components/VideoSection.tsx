@@ -11,13 +11,13 @@ const VideoSection = () => {
   };
 
   return (
-    <section className="py-20 bg-tennis-black">
+    <section className="py-12 md:py-20 bg-tennis-black">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
             {t('home.video.title')}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto" style={{ fontFamily: 'Arial, sans-serif' }}>
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4" style={{ fontFamily: 'Arial, sans-serif' }}>
             {t('home.video.subtitle')}
           </p>
         </div>
@@ -52,8 +52,8 @@ const VideoSection = () => {
             )}
           </div>
           
-          <div className="text-center mt-8">
-            <p className="text-gray-300 text-lg" style={{ fontFamily: 'Arial, sans-serif' }}>
+          <div className="text-center mt-6 md:mt-8 px-4">
+            <p className="text-gray-300 text-base md:text-lg" style={{ fontFamily: 'Arial, sans-serif' }}>
               Entdecken Sie unsere Anlage, unsere Gemeinschaft und unsere Leidenschaft für den Tennissport
             </p>
           </div>

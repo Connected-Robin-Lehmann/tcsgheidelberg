@@ -43,33 +43,33 @@ const Hero = () => {
           {/* Logo Integration */}
           <div className="mb-8"></div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-12 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-8 md:mb-12 leading-tight px-4">
             Willkommen im
             <span className="block text-tennis-yellow mt-2">
               TC Schwarz-Gelb
             </span>
-            <span className="block text-xl md:text-3xl lg:text-4xl mt-2 font-light">
+            <span className="block text-lg sm:text-xl md:text-3xl lg:text-4xl mt-2 font-light">
               Heidelberg e.V.
             </span>
           </h1>
 
           {/* News Highlight */}
-          {latestNews && <div className="max-w-3xl mx-auto mt-16 animate-slide-up">
-              <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow/50 rounded-2xl p-6 md:p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="bg-tennis-yellow rounded-full p-3 flex-shrink-0">
-                    <Calendar className="w-6 h-6 text-tennis-black" />
+          {latestNews && <div className="max-w-3xl mx-auto mt-8 md:mt-16 px-4 animate-slide-up">
+              <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow/50 rounded-xl md:rounded-2xl p-4 md:p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="flex flex-col sm:flex-row items-start gap-4">
+                  <div className="bg-tennis-yellow rounded-full p-2 md:p-3 flex-shrink-0">
+                    <Calendar className="w-5 h-5 md:w-6 md:h-6 text-tennis-black" />
                   </div>
                   <div className="text-left flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-tennis-yellow mb-3">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-tennis-yellow mb-2 md:mb-3">
                       {latestNews.title}
                     </h3>
-                    <p className="text-white/70 text-sm md:text-base mb-4">
+                    <p className="text-white/70 text-xs sm:text-sm md:text-base mb-3 md:mb-4">
                       {format(new Date(latestNews.date), "d. MMMM yyyy", {
                     locale
                   })}
                     </p>
-                    <a href="/aktuelles/nachrichten" className="inline-flex items-center text-tennis-yellow hover:text-yellow-300 font-semibold transition-colors">
+                    <a href="/aktuelles/nachrichten" className="inline-flex items-center text-tennis-yellow hover:text-yellow-300 font-semibold transition-colors text-sm md:text-base">
                       {t('common.readMore')}
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

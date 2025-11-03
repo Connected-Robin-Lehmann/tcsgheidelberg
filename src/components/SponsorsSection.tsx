@@ -37,13 +37,13 @@ const SponsorsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-tennis-black mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-tennis-black mb-3 md:mb-4">
             {t('home.sponsors.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             {t('home.sponsors.subtitle')}
           </p>
         </div>

@@ -14,8 +14,8 @@ const Footer = () => {
   
   return (
     <footer className="bg-tennis-black text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Club Info */}
           <div>
             <img
@@ -119,15 +119,6 @@ const Footer = () => {
               </a>
             </div>
 
-            <div className="mt-6">
-              <h4 className="text-sm font-semibold text-tennis-yellow mb-2">
-                Newsletter
-              </h4>
-              <p className="text-gray-300 text-sm mb-3">
-                Bleiben Sie informiert über Vereinsnews
-              </p>
-              <button className="btn-hero text-sm px-4 py-2">Anmelden</button>
-            </div>
           </div>
         </div>
 
