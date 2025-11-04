@@ -13,41 +13,41 @@ import {
 
 const AdminStatus = () => {
   const pages = [
-    { name: 'Startseite', implemented: true, finalized: true, translated: true },
-    { name: 'Der Club', implemented: true, finalized: true, translated: true },
-    { name: 'Tradition', implemented: true, finalized: true, translated: true },
-    { name: 'Vorstand', implemented: true, finalized: true, translated: true },
-    { name: 'Tennisplätze', implemented: true, finalized: true, translated: false },
-    { name: 'Mitgliedschaft', implemented: true, finalized: true, translated: false },
-    { name: 'Beitragsordnung', implemented: true, finalized: true, translated: false },
-    { name: 'Satzung', implemented: true, finalized: true, translated: false },
-    { name: 'Platzordnung', implemented: true, finalized: true, translated: false },
-    { name: 'Förderverein', implemented: true, finalized: true, translated: false },
-    { name: 'Sponsoring', implemented: true, finalized: true, translated: false },
-    { name: 'Training', implemented: true, finalized: true, translated: false },
-    { name: 'Tennisschule PTS Kukaras', implemented: true, finalized: true, translated: false },
-    { name: 'Tennisschule Seibold', implemented: true, finalized: true, translated: false },
-    { name: 'Unsere Trainer', implemented: true, finalized: true, translated: false },
-    { name: 'Mannschaften', implemented: true, finalized: true, translated: false },
-    { name: 'Jugend', implemented: true, finalized: true, translated: false },
-    { name: 'Regelwerk', implemented: true, finalized: true, translated: false },
-    { name: 'Turniere', implemented: true, finalized: true, translated: false },
-    { name: 'Rhein-Neckar Open', implemented: true, finalized: true, translated: false },
-    { name: 'Schwarz-Gelb Cup', implemented: true, finalized: true, translated: false },
-    { name: 'Turnieranmeldung', implemented: true, finalized: false, translated: false },
-    { name: 'Aktuelles', implemented: true, finalized: true, translated: false },
-    { name: 'Nachrichten', implemented: true, finalized: true, translated: false },
-    { name: 'Pressemeldungen', implemented: true, finalized: true, translated: false },
-    { name: 'Veranstaltungen', implemented: true, finalized: true, translated: false },
-    { name: 'Ansprechpartner', implemented: true, finalized: true, translated: false },
-    { name: 'Projekte', implemented: true, finalized: true, translated: false },
-    { name: 'Crowdfunding', implemented: true, finalized: true, translated: false },
-    { name: 'Tennis Info Heft', implemented: true, finalized: true, translated: false },
-    { name: 'Tiebreaking News', implemented: true, finalized: true, translated: false },
-    { name: 'Gastronomie', implemented: true, finalized: true, translated: true },
-    { name: 'FAQ', implemented: true, finalized: true, translated: false },
-    { name: 'Impressum', implemented: true, finalized: true, translated: false },
-    { name: 'Datenschutz', implemented: true, finalized: true, translated: false },
+    { name: 'Startseite', path: '/', implemented: true, finalized: true, translated: true },
+    { name: 'Der Club', path: '/der-club', implemented: true, finalized: true, translated: true },
+    { name: 'Tradition', path: '/tradition', implemented: true, finalized: true, translated: true },
+    { name: 'Vorstand', path: '/vorstand', implemented: true, finalized: true, translated: true },
+    { name: 'Tennisplätze', path: '/tennisplaetze', implemented: true, finalized: true, translated: false },
+    { name: 'Mitgliedschaft', path: '/mitgliedschaft', implemented: true, finalized: true, translated: false },
+    { name: 'Beitragsordnung', path: '/beitragsordnung', implemented: true, finalized: true, translated: false },
+    { name: 'Satzung', path: '/satzung', implemented: true, finalized: true, translated: false },
+    { name: 'Platzordnung', path: '/platzordnung', implemented: true, finalized: true, translated: false },
+    { name: 'Förderverein', path: '/foerderverein', implemented: true, finalized: true, translated: false },
+    { name: 'Sponsoring', path: '/sponsoring', implemented: true, finalized: true, translated: false },
+    { name: 'Training', path: '/training', implemented: true, finalized: true, translated: false },
+    { name: 'Tennisschule PTS Kukaras', path: '/tennisschule-pts-kukaras', implemented: true, finalized: true, translated: false },
+    { name: 'Tennisschule Seibold', path: '/tennisschule-seibold', implemented: true, finalized: true, translated: false },
+    { name: 'Unsere Trainer', path: '/unsere-trainer', implemented: true, finalized: true, translated: false },
+    { name: 'Mannschaften', path: '/mannschaften', implemented: true, finalized: true, translated: false },
+    { name: 'Jugend', path: '/jugend', implemented: true, finalized: true, translated: false },
+    { name: 'Regelwerk', path: '/regelwerk', implemented: true, finalized: true, translated: false },
+    { name: 'Turniere', path: '/turniere', implemented: true, finalized: true, translated: false },
+    { name: 'Rhein-Neckar Open', path: '/rhein-neckar-open', implemented: true, finalized: true, translated: false },
+    { name: 'Schwarz-Gelb Cup', path: '/schwarz-gelb-cup', implemented: true, finalized: true, translated: false },
+    { name: 'Turnieranmeldung', path: '/turnieranmeldung', implemented: true, finalized: false, translated: false },
+    { name: 'Aktuelles', path: '/aktuelles', implemented: true, finalized: true, translated: false },
+    { name: 'Nachrichten', path: '/nachrichten', implemented: true, finalized: true, translated: false },
+    { name: 'Pressemeldungen', path: '/pressemeldungen', implemented: true, finalized: true, translated: false },
+    { name: 'Veranstaltungen', path: '/veranstaltungen', implemented: true, finalized: true, translated: false },
+    { name: 'Ansprechpartner', path: '/ansprechpartner', implemented: true, finalized: true, translated: false },
+    { name: 'Projekte', path: '/projekte', implemented: true, finalized: true, translated: false },
+    { name: 'Crowdfunding', path: '/crowdfunding', implemented: true, finalized: true, translated: false },
+    { name: 'Tennis Info Heft', path: '/tennis-info-heft', implemented: true, finalized: true, translated: false },
+    { name: 'Tiebreaking News', path: '/tiebreaking-news', implemented: true, finalized: true, translated: false },
+    { name: 'Gastronomie', path: '/gastronomie', implemented: true, finalized: true, translated: true },
+    { name: 'FAQ', path: '/faq', implemented: true, finalized: true, translated: false },
+    { name: 'Impressum', path: '/impressum', implemented: true, finalized: true, translated: false },
+    { name: 'Datenschutz', path: '/datenschutz', implemented: true, finalized: true, translated: false },
   ];
 
   const pendingFeatures = [
@@ -133,7 +133,16 @@ const AdminStatus = () => {
             <TableBody>
               {pages.map((page, idx) => (
                 <TableRow key={idx}>
-                  <TableCell className="font-medium">{page.name}</TableCell>
+                  <TableCell className="font-medium">
+                    <a 
+                      href={page.path} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      {page.name}
+                    </a>
+                  </TableCell>
                   <TableCell className="text-center">
                     <StatusIcon status={page.implemented} />
                   </TableCell>
