@@ -1,60 +1,53 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import { CheckCircle2, Circle, AlertCircle } from 'lucide-react';
+import { CheckCircle2, X, AlertCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 
 const AdminStatus = () => {
-  const implementedFeatures = [
-    {
-      category: 'Allgemein',
-      items: [
-        'Responsive Design (Desktop, Tablet, Mobile)',
-        'Zweisprachige Website (Deutsch/Englisch)',
-        'SEO-Optimierung',
-        'Header mit Navigation',
-        'Footer mit Links und Kontaktinformationen',
-        'Hero Section mit neuesten Nachrichten',
-      ],
-    },
-    {
-      category: 'Seiten',
-      items: [
-        'Startseite',
-        'Der Club (Über uns, Tradition, Vorstand)',
-        'Tennisplätze',
-        'Mitgliedschaft & Beitragsordnung',
-        'Satzung & Platzordnung',
-        'Training & Tennisschulen',
-        'Mannschaften (Jugend & Erwachsene)',
-        'Turniere (Rhein-Neckar Open, Schwarz-Gelb Cup)',
-        'Aktuelles (Nachrichten, Pressemeldungen, Veranstaltungen)',
-        'Gastronomie',
-        'FAQ',
-        'Impressum & Datenschutz',
-      ],
-    },
-    {
-      category: 'Backend & Admin',
-      items: [
-        'Lovable Cloud Integration',
-        'Supabase Datenbank',
-        'Admin Login System',
-        'Nachrichten-Verwaltung',
-        'Modal-Verwaltung',
-        'Benutzerrollen (Admin)',
-      ],
-    },
-    {
-      category: 'Funktionen',
-      items: [
-        'Platzreservierung (externes System)',
-        'Event-Anzeige',
-        'Statistik-Anzeige',
-        'Video-Einbettung',
-        'Sponsoren-Sektion',
-        'Newsletter-Anmeldung',
-      ],
-    },
+  const pages = [
+    { name: 'Startseite', implemented: true, finalized: true, translated: true },
+    { name: 'Der Club', implemented: true, finalized: true, translated: true },
+    { name: 'Tradition', implemented: true, finalized: true, translated: true },
+    { name: 'Vorstand', implemented: true, finalized: true, translated: true },
+    { name: 'Tennisplätze', implemented: true, finalized: true, translated: false },
+    { name: 'Mitgliedschaft', implemented: true, finalized: true, translated: false },
+    { name: 'Beitragsordnung', implemented: true, finalized: true, translated: false },
+    { name: 'Satzung', implemented: true, finalized: true, translated: false },
+    { name: 'Platzordnung', implemented: true, finalized: true, translated: false },
+    { name: 'Förderverein', implemented: true, finalized: true, translated: false },
+    { name: 'Sponsoring', implemented: true, finalized: true, translated: false },
+    { name: 'Training', implemented: true, finalized: true, translated: false },
+    { name: 'Tennisschule PTS Kukaras', implemented: true, finalized: true, translated: false },
+    { name: 'Tennisschule Seibold', implemented: true, finalized: true, translated: false },
+    { name: 'Unsere Trainer', implemented: true, finalized: true, translated: false },
+    { name: 'Mannschaften', implemented: true, finalized: true, translated: false },
+    { name: 'Jugend', implemented: true, finalized: true, translated: false },
+    { name: 'Regelwerk', implemented: true, finalized: true, translated: false },
+    { name: 'Turniere', implemented: true, finalized: true, translated: false },
+    { name: 'Rhein-Neckar Open', implemented: true, finalized: true, translated: false },
+    { name: 'Schwarz-Gelb Cup', implemented: true, finalized: true, translated: false },
+    { name: 'Turnieranmeldung', implemented: true, finalized: false, translated: false },
+    { name: 'Aktuelles', implemented: true, finalized: true, translated: false },
+    { name: 'Nachrichten', implemented: true, finalized: true, translated: false },
+    { name: 'Pressemeldungen', implemented: true, finalized: true, translated: false },
+    { name: 'Veranstaltungen', implemented: true, finalized: true, translated: false },
+    { name: 'Ansprechpartner', implemented: true, finalized: true, translated: false },
+    { name: 'Projekte', implemented: true, finalized: true, translated: false },
+    { name: 'Crowdfunding', implemented: true, finalized: true, translated: false },
+    { name: 'Tennis Info Heft', implemented: true, finalized: true, translated: false },
+    { name: 'Tiebreaking News', implemented: true, finalized: true, translated: false },
+    { name: 'Gastronomie', implemented: true, finalized: true, translated: true },
+    { name: 'FAQ', implemented: true, finalized: true, translated: false },
+    { name: 'Impressum', implemented: true, finalized: true, translated: false },
+    { name: 'Datenschutz', implemented: true, finalized: true, translated: false },
   ];
 
   const pendingFeatures = [
@@ -85,19 +78,6 @@ const AdminStatus = () => {
     },
   ];
 
-  const issues = [
-    {
-      title: 'Mobile Navigation',
-      status: 'resolved',
-      description: 'Navigation wurde für mobile Geräte optimiert',
-    },
-    {
-      title: 'Hero Section Layout',
-      status: 'resolved',
-      description: 'Hero Section für mobile Ansicht angepasst',
-    },
-  ];
-
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'high':
@@ -124,37 +104,56 @@ const AdminStatus = () => {
     }
   };
 
+  const StatusIcon = ({ status }: { status: boolean }) => (
+    status ? (
+      <CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" />
+    ) : (
+      <X className="w-5 h-5 text-red-600 mx-auto" />
+    )
+  );
+
   return (
     <div className="space-y-6">
-      {/* Implemented Features */}
+      {/* Pages Status Table */}
       <Card className="p-6">
         <div className="flex items-center gap-2 mb-4">
-          <CheckCircle2 className="w-6 h-6 text-green-600" />
-          <h2 className="text-2xl font-bold">Implementierte Features</h2>
+          <CheckCircle2 className="w-6 h-6 text-tennis-yellow" />
+          <h2 className="text-2xl font-bold">Seiten-Status</h2>
         </div>
-        <div className="space-y-6">
-          {implementedFeatures.map((section, idx) => (
-            <div key={idx}>
-              <h3 className="text-lg font-semibold text-tennis-yellow mb-3">
-                {section.category}
-              </h3>
-              <ul className="space-y-2">
-                {section.items.map((item, itemIdx) => (
-                  <li key={itemIdx} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="font-semibold">Page</TableHead>
+                <TableHead className="text-center font-semibold">Implemented</TableHead>
+                <TableHead className="text-center font-semibold">Finalized</TableHead>
+                <TableHead className="text-center font-semibold">Translated (English available)</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {pages.map((page, idx) => (
+                <TableRow key={idx}>
+                  <TableCell className="font-medium">{page.name}</TableCell>
+                  <TableCell className="text-center">
+                    <StatusIcon status={page.implemented} />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <StatusIcon status={page.finalized} />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <StatusIcon status={page.translated} />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
       </Card>
 
       {/* Pending Features */}
       <Card className="p-6">
         <div className="flex items-center gap-2 mb-4">
-          <Circle className="w-6 h-6 text-yellow-600" />
+          <AlertCircle className="w-6 h-6 text-tennis-yellow" />
           <h2 className="text-2xl font-bold">Geplante Features</h2>
         </div>
         <div className="space-y-4">
@@ -172,30 +171,8 @@ const AdminStatus = () => {
         </div>
       </Card>
 
-      {/* Known Issues */}
-      <Card className="p-6">
-        <div className="flex items-center gap-2 mb-4">
-          <AlertCircle className="w-6 h-6 text-blue-600" />
-          <h2 className="text-2xl font-bold">Bekannte Probleme & Fixes</h2>
-        </div>
-        <div className="space-y-3">
-          {issues.map((issue, idx) => (
-            <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-              <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold">{issue.title}</h3>
-                <p className="text-sm text-muted-foreground">{issue.description}</p>
-                <Badge variant="outline" className="mt-2">
-                  {issue.status === 'resolved' ? 'Gelöst' : 'Offen'}
-                </Badge>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Card>
-
       {/* Technical Info */}
-      <Card className="p-6 bg-gray-50">
+      <Card className="p-6 bg-muted/50">
         <h2 className="text-xl font-bold mb-3">Technische Informationen</h2>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
           <div>
