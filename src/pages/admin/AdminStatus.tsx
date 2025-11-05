@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { CheckCircle2, X, AlertCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Switch } from '@/components/ui/switch';
 import {
   Table,
   TableBody,
@@ -10,45 +11,46 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { supabase } from '@/integrations/supabase/client';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { toast } from 'sonner';
 
 const AdminStatus = () => {
-  const pages = [
-    { name: 'Startseite', path: '/', implemented: true, finalized: true, translated: true },
-    { name: 'Der Club', path: '/der-club', implemented: true, finalized: true, translated: true },
-    { name: 'Tradition', path: '/tradition', implemented: true, finalized: true, translated: true },
-    { name: 'Vorstand', path: '/vorstand', implemented: true, finalized: true, translated: true },
-    { name: 'Tennisplätze', path: '/tennisplaetze', implemented: true, finalized: true, translated: false },
-    { name: 'Mitgliedschaft', path: '/mitgliedschaft', implemented: true, finalized: true, translated: false },
-    { name: 'Beitragsordnung', path: '/beitragsordnung', implemented: true, finalized: true, translated: false },
-    { name: 'Satzung', path: '/satzung', implemented: true, finalized: true, translated: false },
-    { name: 'Platzordnung', path: '/platzordnung', implemented: true, finalized: true, translated: false },
-    { name: 'Förderverein', path: '/foerderverein', implemented: true, finalized: true, translated: false },
-    { name: 'Sponsoring', path: '/sponsoring', implemented: true, finalized: true, translated: false },
-    { name: 'Training', path: '/training', implemented: true, finalized: true, translated: false },
-    { name: 'Tennisschule PTS Kukaras', path: '/tennisschule-pts-kukaras', implemented: true, finalized: true, translated: false },
-    { name: 'Tennisschule Seibold', path: '/tennisschule-seibold', implemented: true, finalized: true, translated: false },
-    { name: 'Unsere Trainer', path: '/unsere-trainer', implemented: true, finalized: true, translated: false },
-    { name: 'Mannschaften', path: '/mannschaften', implemented: true, finalized: true, translated: false },
-    { name: 'Jugend', path: '/jugend', implemented: true, finalized: true, translated: false },
-    { name: 'Regelwerk', path: '/regelwerk', implemented: true, finalized: true, translated: false },
-    { name: 'Turniere', path: '/turniere', implemented: true, finalized: true, translated: false },
-    { name: 'Rhein-Neckar Open', path: '/rhein-neckar-open', implemented: true, finalized: true, translated: false },
-    { name: 'Schwarz-Gelb Cup', path: '/schwarz-gelb-cup', implemented: true, finalized: true, translated: false },
-    { name: 'Turnieranmeldung', path: '/turnieranmeldung', implemented: true, finalized: false, translated: false },
-    { name: 'Aktuelles', path: '/aktuelles', implemented: true, finalized: true, translated: false },
-    { name: 'Nachrichten', path: '/nachrichten', implemented: true, finalized: true, translated: false },
-    { name: 'Pressemeldungen', path: '/pressemeldungen', implemented: true, finalized: true, translated: false },
-    { name: 'Veranstaltungen', path: '/veranstaltungen', implemented: true, finalized: true, translated: false },
-    { name: 'Ansprechpartner', path: '/ansprechpartner', implemented: true, finalized: true, translated: false },
-    { name: 'Projekte', path: '/projekte', implemented: true, finalized: true, translated: false },
-    { name: 'Crowdfunding', path: '/crowdfunding', implemented: true, finalized: true, translated: false },
-    { name: 'Tennis Info Heft', path: '/tennis-info-heft', implemented: true, finalized: true, translated: false },
-    { name: 'Tiebreaking News', path: '/tiebreaking-news', implemented: true, finalized: true, translated: false },
-    { name: 'Gastronomie', path: '/gastronomie', implemented: true, finalized: true, translated: true },
-    { name: 'FAQ', path: '/faq', implemented: true, finalized: true, translated: false },
-    { name: 'Impressum', path: '/impressum', implemented: true, finalized: true, translated: false },
-    { name: 'Datenschutz', path: '/datenschutz', implemented: true, finalized: true, translated: false },
-  ];
+  const queryClient = useQueryClient();
+
+  // Fetch pages from database
+  const { data: pages = [], isLoading } = useQuery({
+    queryKey: ['page-status'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('page_status')
+        .select('*')
+        .eq('implemented', true)
+        .order('page_name');
+      
+      if (error) throw error;
+      return data;
+    },
+  });
+
+  // Mutation to update finalized status
+  const updateFinalized = useMutation({
+    mutationFn: async ({ id, finalized }: { id: string; finalized: boolean }) => {
+      const { error } = await supabase
+        .from('page_status')
+        .update({ finalized })
+        .eq('id', id);
+      
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['page-status'] });
+      toast.success('Status aktualisiert');
+    },
+    onError: () => {
+      toast.error('Fehler beim Aktualisieren');
+    },
+  });
 
   const pendingFeatures = [
     {
@@ -131,29 +133,44 @@ const AdminStatus = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {pages.map((page, idx) => (
-                <TableRow key={idx}>
-                  <TableCell className="font-medium">
-                    <a 
-                      href={page.path} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      {page.name}
-                    </a>
-                  </TableCell>
-                  <TableCell className="text-center">
-                    <StatusIcon status={page.implemented} />
-                  </TableCell>
-                  <TableCell className="text-center">
-                    <StatusIcon status={page.finalized} />
-                  </TableCell>
-                  <TableCell className="text-center">
-                    <StatusIcon status={page.translated} />
+              {isLoading ? (
+                <TableRow>
+                  <TableCell colSpan={4} className="text-center">
+                    Lädt...
                   </TableCell>
                 </TableRow>
-              ))}
+              ) : (
+                pages.map((page) => (
+                  <TableRow key={page.id}>
+                    <TableCell className="font-medium">
+                      <a 
+                        href={page.page_path} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        {page.page_name}
+                      </a>
+                    </TableCell>
+                    <TableCell className="text-center">
+                      <StatusIcon status={page.implemented} />
+                    </TableCell>
+                    <TableCell className="text-center">
+                      <div className="flex justify-center">
+                        <Switch
+                          checked={page.finalized}
+                          onCheckedChange={(checked) =>
+                            updateFinalized.mutate({ id: page.id, finalized: checked })
+                          }
+                        />
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-center">
+                      <StatusIcon status={page.translated} />
+                    </TableCell>
+                  </TableRow>
+                ))
+              )}
             </TableBody>
           </Table>
         </div>

@@ -103,6 +103,39 @@ export type Database = {
           },
         ]
       }
+      page_status: {
+        Row: {
+          created_at: string
+          finalized: boolean
+          id: string
+          implemented: boolean
+          page_name: string
+          page_path: string
+          translated: boolean
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          finalized?: boolean
+          id?: string
+          implemented?: boolean
+          page_name: string
+          page_path: string
+          translated?: boolean
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          finalized?: boolean
+          id?: string
+          implemented?: boolean
+          page_name?: string
+          page_path?: string
+          translated?: boolean
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
