@@ -52,6 +52,74 @@ const AdminStatus = () => {
     },
   });
 
+  // Mutation to update translated status
+  const updateTranslated = useMutation({
+    mutationFn: async ({ id, translated }: { id: string; translated: boolean }) => {
+      const { error } = await supabase
+        .from('page_status')
+        .update({ translated })
+        .eq('id', id);
+      
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['page-status'] });
+      toast.success('Status aktualisiert');
+    },
+    onError: () => {
+      toast.error('Fehler beim Aktualisieren');
+    },
+  });
+
+  // Sort pages by hierarchy
+  const sortedPages = [...pages].sort((a, b) => {
+    const order = [
+      'Index',
+      'Der Club',
+      'Vorstand',
+      'Tradition',
+      'Tennisplätze',
+      'Mitgliedschaft',
+      'Beitragsordnung',
+      'Platzordnung',
+      'Satzung',
+      'Förderverein',
+      'Sponsoring',
+      'Aktuelles',
+      'Nachrichten',
+      'Tiebreaking News',
+      'Veranstaltungen',
+      'Ansprechpartner',
+      'Pressemeldungen',
+      'Projekte',
+      'Crowdfunding',
+      'Tennis Info Heft',
+      'Training',
+      'Unsere Trainer',
+      'Tennisschule Seibold',
+      'Tennisschule PTS Kukaras',
+      'Mannschaften',
+      'Jugend',
+      'Regelwerk',
+      'Turniere',
+      'Rhein-Neckar Open',
+      'Schwarz-Gelb Cup',
+      'Gastronomie',
+      'FAQ',
+      'Impressum',
+      'Datenschutz',
+    ];
+    
+    const indexA = order.indexOf(a.page_name);
+    const indexB = order.indexOf(b.page_name);
+    
+    if (indexA === -1 && indexB === -1) return 0;
+    if (indexA === -1) return 1;
+    if (indexB === -1) return -1;
+    
+    return indexA - indexB;
+  });
+
   const pendingFeatures = [
     {
       feature: 'Mitglieder-Login Portal',
@@ -140,7 +208,7 @@ const AdminStatus = () => {
                   </TableCell>
                 </TableRow>
               ) : (
-                pages.map((page) => (
+                sortedPages.map((page) => (
                   <TableRow key={page.id}>
                     <TableCell className="font-medium">
                       <a 
@@ -166,7 +234,14 @@ const AdminStatus = () => {
                       </div>
                     </TableCell>
                     <TableCell className="text-center">
-                      <StatusIcon status={page.translated} />
+                      <div className="flex justify-center">
+                        <Switch
+                          checked={page.translated}
+                          onCheckedChange={(checked) =>
+                            updateTranslated.mutate({ id: page.id, translated: checked })
+                          }
+                        />
+                      </div>
                     </TableCell>
                   </TableRow>
                 ))
