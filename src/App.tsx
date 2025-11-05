@@ -45,9 +45,6 @@ import FAQ from "./pages/FAQ";
 
 // Events pages (root level - tournaments)
 import Turniere from "./pages/Turniere";
-import TurnierAnmeldung from "./pages/TurnierAnmeldung";
-import RheinNeckarOpen from "./pages/RheinNeckarOpen";
-import SchwarzGelbCup from "./pages/SchwarzGelbCup";
 
 // Legal pages
 import Impressum from "./pages/legal/Impressum";
@@ -70,62 +67,83 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          
+
           {/* Der Club Routes */}
           <Route path="/der-club" element={<DerClub />} />
           <Route path="/der-club/vorstand" element={<Vorstand />} />
           <Route path="/der-club/tradition" element={<Tradition />} />
           <Route path="/der-club/tennisplaetze" element={<Tennisplaetze />} />
           <Route path="/der-club/mitgliedschaft" element={<Mitgliedschaft />} />
-          <Route path="/der-club/beitragsordnung" element={<Beitragsordnung />} />
+          <Route
+            path="/der-club/beitragsordnung"
+            element={<Beitragsordnung />}
+          />
           <Route path="/der-club/satzung" element={<Satzung />} />
           <Route path="/der-club/sponsoring" element={<Sponsoring />} />
           <Route path="/der-club/foerderverein" element={<Foerderverein />} />
           <Route path="/der-club/platzordnung" element={<Platzordnung />} />
-          
+
           {/* FAQ Route */}
           <Route path="/faq" element={<FAQ />} />
-          
+
           {/* Aktuelles Routes */}
           <Route path="/aktuelles" element={<Aktuelles />} />
           <Route path="/aktuelles/nachrichten" element={<Nachrichten />} />
-          <Route path="/aktuelles/veranstaltungen" element={<Veranstaltungen />} />
+          <Route
+            path="/aktuelles/veranstaltungen"
+            element={<Veranstaltungen />}
+          />
           <Route path="/aktuelles/crowdfunding" element={<Crowdfunding />} />
           <Route path="/aktuelles/projekte" element={<Projekte />} />
-          <Route path="/aktuelles/tiebreaking-news" element={<TiebreakingNews />} />
-          <Route path="/aktuelles/pressemeldungen" element={<Pressemeldungen />} />
-          <Route path="/aktuelles/tennis-info-heft" element={<TennisInfoHeft />} />
-          <Route path="/aktuelles/ansprechpartner" element={<Ansprechpartner />} />
-          
+          <Route
+            path="/aktuelles/tiebreaking-news"
+            element={<TiebreakingNews />}
+          />
+          <Route
+            path="/aktuelles/pressemeldungen"
+            element={<Pressemeldungen />}
+          />
+          <Route
+            path="/aktuelles/tennis-info-heft"
+            element={<TennisInfoHeft />}
+          />
+          <Route
+            path="/aktuelles/ansprechpartner"
+            element={<Ansprechpartner />}
+          />
+
           {/* Mannschaften Routes */}
           <Route path="/mannschaften" element={<Mannschaften />} />
           <Route path="/mannschaften/jugend" element={<Jugend />} />
           <Route path="/mannschaften/regelwerk" element={<Regelwerk />} />
-          
+
           {/* Turniere Routes */}
           <Route path="/turniere" element={<Turniere />} />
-          <Route path="/turniere/schwarz-gelb-cup" element={<SchwarzGelbCup />} />
-          <Route path="/turniere/rhein-neckar-open" element={<RheinNeckarOpen />} />
-          <Route path="/turniere/anmeldung" element={<TurnierAnmeldung />} />
-          
+
           {/* Training Routes */}
           <Route path="/training" element={<Training />} />
           <Route path="/training/unsere-trainer" element={<UnsereTrainer />} />
-          <Route path="/training/tennisschule-pts-kukaras" element={<TennisschulePTSKukaras />} />
-          <Route path="/training/tennisschule-seibold" element={<TennisschuleSeibold />} />
-          
+          <Route
+            path="/training/tennisschule-pts-kukaras"
+            element={<TennisschulePTSKukaras />}
+          />
+          <Route
+            path="/training/tennisschule-seibold"
+            element={<TennisschuleSeibold />}
+          />
+
           {/* Gastronomie Route */}
           <Route path="/gastronomie" element={<Gastronomie />} />
-          
+
           {/* Legal Routes */}
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
-          
+
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/news" element={<AdminNews />} />
-          
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

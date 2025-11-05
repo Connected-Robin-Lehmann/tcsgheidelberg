@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -11,70 +11,82 @@ const Header = () => {
 
   const navItems = [
     {
-      name: "Startseite",
+      name: t("header.home"),
       href: "/",
     },
     {
-      name: t('header.club'),
+      name: t("header.club"),
       href: "/der-club",
       submenu: [
-        { name: t('header.board'), href: "/der-club/vorstand" },
-        { name: t('header.tradition'), href: "/der-club/tradition" },
-        { name: t('header.tennisCourts'), href: "/der-club/tennisplaetze" },
-        { name: t('header.membership'), href: "/der-club/mitgliedschaft" },
-        { name: t('header.membershipFees'), href: "/der-club/beitragsordnung" },
-        { name: t('header.statute'), href: "/der-club/satzung" },
-        { name: t('header.sponsors'), href: "/der-club/sponsoring" },
-        { name: t('header.supportingAssociation'), href: "/der-club/foerderverein" },
-        { name: t('header.courtRules'), href: "/der-club/platzordnung" },
+        { name: t("header.board"), href: "/der-club/vorstand" },
+        { name: t("header.tradition"), href: "/der-club/tradition" },
+        { name: t("header.tennisCourts"), href: "/der-club/tennisplaetze" },
+        { name: t("header.membership"), href: "/der-club/mitgliedschaft" },
+        { name: t("header.membershipFees"), href: "/der-club/beitragsordnung" },
+        { name: t("header.statute"), href: "/der-club/satzung" },
+        { name: t("header.sponsors"), href: "/der-club/sponsoring" },
+        {
+          name: t("header.supportingAssociation"),
+          href: "/der-club/foerderverein",
+        },
+        { name: t("header.courtRules"), href: "/der-club/platzordnung" },
       ],
     },
     {
-      name: t('header.info'),
+      name: t("header.info"),
       href: "/faq",
     },
     {
-      name: t('header.news.current'),
+      name: t("header.news.current"),
       href: "/aktuelles",
       submenu: [
-        { name: t('header.news.news'), href: "/aktuelles/nachrichten" },
-        { name: t('header.events'), href: "/aktuelles/veranstaltungen" },
-        { name: t('header.crowdfunding'), href: "/aktuelles/crowdfunding" },
-        { name: t('header.projects'), href: "/aktuelles/projekte" },
-        { name: t('header.news.tiebreaking'), href: "/aktuelles/tiebreaking-news" },
-        { name: t('header.news.pressReleases'), href: "/aktuelles/pressemeldungen" },
-        { name: t('header.tennisInfoBooklet'), href: "/aktuelles/tennis-info-heft" },
-        { name: t('header.contacts'), href: "/aktuelles/ansprechpartner" },
+        { name: t("header.news.news"), href: "/aktuelles/nachrichten" },
+        { name: t("header.events"), href: "/aktuelles/veranstaltungen" },
+        { name: t("header.crowdfunding"), href: "/aktuelles/crowdfunding" },
+        { name: t("header.projects"), href: "/aktuelles/projekte" },
+        {
+          name: t("header.news.tiebreaking"),
+          href: "/aktuelles/tiebreaking-news",
+        },
+        {
+          name: t("header.news.pressReleases"),
+          href: "/aktuelles/pressemeldungen",
+        },
+        {
+          name: t("header.tennisInfoBooklet"),
+          href: "/aktuelles/tennis-info-heft",
+        },
+        { name: t("header.contacts"), href: "/aktuelles/ansprechpartner" },
       ],
     },
     {
-      name: t('header.teams'),
+      name: t("header.teams"),
       href: "/mannschaften",
       submenu: [
-        { name: t('header.youth'), href: "/mannschaften/jugend" },
-        { name: t('header.regulations'), href: "/mannschaften/regelwerk" },
+        { name: t("header.youth"), href: "/mannschaften/jugend" },
+        { name: t("header.regulations"), href: "/mannschaften/regelwerk" },
       ],
     },
     {
-      name: t('header.tournaments'),
+      name: t("header.tournaments"),
       href: "/turniere",
     },
     {
-      name: t('header.training'),
+      name: t("header.training"),
       href: "/training",
       submenu: [
         {
-          name: t('header.tennisSchoolPTS'),
+          name: t("header.tennisSchoolPTS"),
           href: "/training/tennisschule-pts-kukaras",
         },
         {
-          name: t('header.tennisSchoolSeibold'),
+          name: t("header.tennisSchoolSeibold"),
           href: "/training/tennisschule-seibold",
         },
       ],
     },
     {
-      name: t('header.gastronomy'),
+      name: t("header.gastronomy"),
       href: "/gastronomie",
     },
   ];
