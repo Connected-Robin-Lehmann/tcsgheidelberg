@@ -185,7 +185,7 @@ const Header = () => {
                               href={item.href}
                               className="block px-4 py-3 text-tennis-black hover:bg-tennis-yellow hover:text-tennis-black font-semibold border-b border-tennis-yellow/20 mb-2 rounded-md transition-colors duration-200"
                             >
-                              {item.name} Übersicht
+                              {item.name} {t("header.overview")}
                             </a>
                             {item.submenu.map((subItem) => (
                               <a
