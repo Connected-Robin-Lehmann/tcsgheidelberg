@@ -16,13 +16,13 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-tennis-black mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-tennis-black mb-3 md:mb-4">
             {t('home.stats.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Diese Zahlen zeigen die Größe und Vielfalt unserer Tennisgemeinschaft
           </p>
         </div>
@@ -46,15 +46,15 @@ const StatsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-lg text-muted-foreground mb-8">
+        <div className="text-center mt-12 md:mt-16 px-4">
+          <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
             Werden Sie Teil unserer großen Tennisfamilie
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Link to="/mitgliedschaft" className="btn-hero">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <Link to="/der-club/mitgliedschaft" className="btn-hero">
               {t('home.hero.joinButton')}
             </Link>
-            <Link to="/mitgliedschaft" className="btn-hero-outline">
+            <Link to="/der-club/mitgliedschaft" className="btn-hero-outline">
               Probetraining vereinbaren
             </Link>
           </div>

@@ -27,23 +27,23 @@ const SponsorsSection = () => {
     {
       name: 'Tennisschule PTS Kukaras',
       logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennisschule-PTS-Kukaras.jpg',
-      url: '#'
+      url: '/training/tennisschule-pts-kukaras'
     },
     {
       name: 'Tennisschule Seibold',
       logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennisschule-Seibold.jpg',
-      url: '#'
+      url: '/training/tennisschule-seibold'
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-tennis-black mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-tennis-black mb-3 md:mb-4">
             {t('home.sponsors.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             {t('home.sponsors.subtitle')}
           </p>
         </div>
@@ -100,7 +100,7 @@ const SponsorsSection = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Interesse an einer Partnerschaft?
           </p>
-          <Link to="/sponsoring" className="btn-hero">
+          <Link to="/der-club/sponsoring" className="btn-hero">
             Sponsoring-Möglichkeiten
           </Link>
         </div>

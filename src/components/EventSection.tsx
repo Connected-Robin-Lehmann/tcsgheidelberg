@@ -9,13 +9,13 @@ const EventSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="news" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="news" className="py-12 md:py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-tennis-black mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-tennis-black mb-3 md:mb-4">
             Aktuelle Termine & Informationen
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             {t('home.events.subtitle')}
           </p>
         </div>
@@ -51,7 +51,9 @@ const EventSection = () => {
               mit tollem Programm!
             </p>
 
-            <Button className="btn-hero w-full">Mehr Informationen</Button>
+            <Link to="/aktuelles/veranstaltungen">
+              <Button className="btn-hero w-full">Mehr Informationen</Button>
+            </Link>
           </Card>
 
           {/* Tagesordnung */}
@@ -92,9 +94,11 @@ const EventSection = () => {
               </div>
             </div>
 
-            <Button variant="outline" className="btn-hero-outline w-full">
-              Einladung mit Details
-            </Button>
+            <Link to="/aktuelles/veranstaltungen">
+              <Button variant="outline" className="btn-hero-outline w-full">
+                Einladung mit Details
+              </Button>
+            </Link>
           </Card>
         </div>
 

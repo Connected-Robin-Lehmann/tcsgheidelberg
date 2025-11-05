@@ -94,15 +94,17 @@
 }
 
 @layer components {
-  /* Hero Button Styles */
+  /* Hero Button Styles - Touch-friendly on mobile */
   .btn-hero {
-    @apply bg-tennis-yellow text-tennis-black font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-tennis-yellow-light transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-tennis-yellow text-tennis-black font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-tennis-yellow-light transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-sm md:text-base;
     font-family: Arial, sans-serif;
+    min-height: 44px; /* iOS touch target recommendation */
   }
 
   .btn-hero-outline {
-    @apply border-2 border-tennis-yellow text-tennis-yellow font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-tennis-yellow hover:text-tennis-black transition-all duration-300 transform hover:scale-105;
+    @apply border-2 border-tennis-yellow text-tennis-yellow font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-tennis-yellow hover:text-tennis-black transition-all duration-300 hover:scale-105 text-sm md:text-base;
     font-family: Arial, sans-serif;
+    min-height: 44px; /* iOS touch target recommendation */
   }
 
   /* Navigation Styles */
@@ -116,9 +118,9 @@
     font-family: Arial, sans-serif;
   }
 
-  /* Card Styles */
+  /* Card Styles - Better mobile padding */
   .card-tennis {
-    @apply bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1;
+    @apply bg-card border border-border rounded-lg md:rounded-xl p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
   }
 
   /* Statistics Counter */

@@ -89,40 +89,46 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-tennis-black text-tennis-yellow py-2 px-4 text-sm border-b border-tennis-yellow/20">
+      {/* Top Bar - Hidden on mobile for cleaner look */}
+      <div className="hidden md:block bg-tennis-black text-tennis-yellow py-2 px-4 text-sm border-b border-tennis-yellow/20">
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-2 lg:space-y-0">
-            <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4 lg:space-x-6">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
-                <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="text-xs sm:text-sm text-center">
+                <Phone className="h-4 w-4" />
+                <span className="text-sm">
                   Restaurant: 0174-6808685 | Vereinshotline: 06221-4337096
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="text-xs sm:text-sm">
+                <Mail className="h-4 w-4" />
+                <span className="text-sm">
                   tennis@schwarzgelb-heidelberg.de
                 </span>
               </div>
             </div>
-            <div className="flex space-x-3 sm:space-x-4">
+            <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/tc.schwarzgelb.3"
-                className="hover:text-white transition-colors text-xs sm:text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors text-sm"
               >
                 Facebook
               </a>
               <a
                 href="https://twitter.com/sgheidelberg"
-                className="hover:text-white transition-colors text-xs sm:text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors text-sm"
               >
                 Twitter
               </a>
               <a
                 href="https://www.instagram.com/tc_schwarzgelb_heidelberg/"
-                className="hover:text-white transition-colors text-xs sm:text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors text-sm"
               >
                 Instagram
               </a>
@@ -231,7 +237,7 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t-2 border-tennis-yellow bg-tennis-black/5 max-h-[70vh] overflow-y-auto">
+            <div className="lg:hidden py-4 border-t-2 border-tennis-yellow bg-white shadow-lg max-h-[70vh] overflow-y-auto">
               <nav className="flex flex-col space-y-1">
                 {navItems.map((item) => (
                   <div key={item.name}>
