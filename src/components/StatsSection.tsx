@@ -8,11 +8,11 @@ const StatsSection = () => {
   
   const stats = [
     { icon: Users, number: '612', label: t('home.stats.members'), color: 'text-blue-600' },
-    { icon: Target, number: '35%', label: 'Jugendanteil', color: 'text-green-600' },
-    { icon: Award, number: '16', label: 'Erwachsenen-Mannschaften', color: 'text-purple-600' },
+    { icon: Target, number: '35%', label: t('home.stats.youthPercentage'), color: 'text-green-600' },
+    { icon: Award, number: '16', label: t('home.stats.adultTeams'), color: 'text-purple-600' },
     { icon: MapPin, number: '10', label: t('home.stats.courts'), color: 'text-tennis-yellow' },
-    { icon: Trophy, number: '14', label: 'Jugendmannschaften', color: 'text-red-600' },
-    { icon: Calendar, number: '9', label: 'Trainer', color: 'text-indigo-600' }
+    { icon: Trophy, number: '14', label: t('home.stats.youthTeams'), color: 'text-red-600' },
+    { icon: Calendar, number: '9', label: t('home.stats.trainers'), color: 'text-indigo-600' }
   ];
 
   return (
@@ -23,7 +23,7 @@ const StatsSection = () => {
             {t('home.stats.title')}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Diese Zahlen zeigen die Größe und Vielfalt unserer Tennisgemeinschaft
+            {t('home.stats.description')}
           </p>
         </div>
 
@@ -48,14 +48,14 @@ const StatsSection = () => {
 
         <div className="text-center mt-12 md:mt-16 px-4">
           <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
-            Werden Sie Teil unserer großen Tennisfamilie
+            {t('home.stats.joinFamily')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <Link to="/der-club/mitgliedschaft" className="btn-hero">
               {t('home.hero.joinButton')}
             </Link>
             <Link to="/der-club/mitgliedschaft" className="btn-hero-outline">
-              Probetraining vereinbaren
+              {t('home.stats.trialTraining')}
             </Link>
           </div>
         </div>

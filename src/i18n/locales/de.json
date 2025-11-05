@@ -52,6 +52,9 @@
   },
   "home": {
     "hero": {
+      "welcome": "Willkommen im",
+      "clubName": "TC Schwarz-Gelb",
+      "clubSuffix": "Heidelberg e.V.",
       "title": "Tennis Club Schwarz-Gelb Heidelberg",
       "subtitle": "Tradition trifft Innovation",
       "description": "Seit 1921 Ihre erste Adresse für Tennis in Heidelberg. Erleben Sie erstklassigen Tennissport in familiärer Atmosphäre auf unseren modernen Anlagen.",
@@ -60,25 +63,53 @@
     },
     "stats": {
       "title": "Schwarz-Gelb in Zahlen",
+      "description": "Diese Zahlen zeigen die Größe und Vielfalt unserer Tennisgemeinschaft",
       "members": "Mitglieder",
-      "teams": "Mannschaften",
+      "youthPercentage": "Jugendanteil",
+      "adultTeams": "Erwachsenen-Mannschaften",
       "courts": "Plätze",
-      "yearsHistory": "Jahre Geschichte"
+      "youthTeams": "Jugendmannschaften",
+      "trainers": "Trainer",
+      "joinFamily": "Werden Sie Teil unserer großen Tennisfamilie",
+      "trialTraining": "Probetraining vereinbaren"
     },
     "events": {
-      "title": "Kommende Veranstaltungen",
+      "title": "Aktuelle Termine & Informationen",
       "subtitle": "Seien Sie dabei bei unseren nächsten Events",
       "allEvents": "Alle Veranstaltungen",
       "date": "Datum",
-      "location": "Ort"
+      "location": "Ort",
+      "memberMeeting": "Mitgliederversammlung & Sommerfest",
+      "saturday": "Samstag",
+      "time": "17:00 Uhr",
+      "clubGrounds": "Vereinsgelände TC Schwarz-Gelb",
+      "allMembers": "Alle Vereinsmitglieder",
+      "meetingDescription": "Unsere jährliche Mitgliederversammlung mit anschließendem legendären Sommerfest. Freuen Sie sich auf einen geselligen Abend mit tollem Programm!",
+      "moreInfo": "Mehr Informationen",
+      "agenda": "Tagesordnungspunkte 2025",
+      "boardElection": "Vorstandswahl",
+      "boardElectionDesc": "Neuwahl des Vereinsvorstands",
+      "membershipFees": "Beitragsordnung",
+      "membershipFeesDesc": "Anpassung der Mitgliedsbeiträge",
+      "statute": "Satzungsanpassung",
+      "statuteDesc": "Modernisierung der Vereinssatzung",
+      "invitationDetails": "Einladung mit Details",
+      "discoverClub": "Club entdecken",
+      "faqNewcomers": "FAQ für Neulinge"
     },
     "video": {
       "title": "Erleben Sie Schwarz-Gelb",
-      "subtitle": "Entdecken Sie unseren Club in Aktion"
+      "subtitle": "Entdecken Sie unseren Club in Aktion",
+      "description": "Entdecken Sie unsere Anlage, unsere Gemeinschaft und unsere Leidenschaft für den Tennissport",
+      "browserNotSupported": "Ihr Browser unterstützt keine HTML5-Videos."
     },
     "sponsors": {
       "title": "Unsere Partner",
-      "subtitle": "Wir danken unseren wertvollen Sponsoren für ihre Unterstützung"
+      "subtitle": "Wir danken unseren wertvollen Sponsoren für ihre Unterstützung",
+      "mainSponsors": "Hauptsponsoren",
+      "tennisSchools": "Unsere Tennisschulen",
+      "partnershipInterest": "Interesse an einer Partnerschaft?",
+      "sponsorshipOptions": "Sponsoring-Möglichkeiten"
     }
   },
   "common": {

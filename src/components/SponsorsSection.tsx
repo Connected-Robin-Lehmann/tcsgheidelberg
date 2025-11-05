@@ -51,7 +51,7 @@ const SponsorsSection = () => {
         {/* Main Sponsors */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-center text-tennis-black mb-8">
-            Hauptsponsoren
+            {t('home.sponsors.mainSponsors')}
           </h3>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {mainSponsors.map((sponsor, index) => (
@@ -76,7 +76,7 @@ const SponsorsSection = () => {
         {/* Tennis Schools */}
         <div>
           <h3 className="text-2xl font-semibold text-center text-tennis-black mb-8">
-            Unsere Tennisschulen
+            {t('home.sponsors.tennisSchools')}
           </h3>
           <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {tennisSchools.map((school, index) => (
@@ -98,10 +98,10 @@ const SponsorsSection = () => {
 
         <div className="text-center mt-12">
           <p className="text-lg text-muted-foreground mb-6">
-            Interesse an einer Partnerschaft?
+            {t('home.sponsors.partnershipInterest')}
           </p>
           <Link to="/der-club/sponsoring" className="btn-hero">
-            Sponsoring-Möglichkeiten
+            {t('home.sponsors.sponsorshipOptions')}
           </Link>
         </div>
       </div>

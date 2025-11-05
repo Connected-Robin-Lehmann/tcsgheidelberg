@@ -42,12 +42,12 @@ const Hero = () => {
         {/* Title Section - Near Header */}
         <div className="text-center text-white animate-fade-in pt-6 md:pt-12">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight px-2">
-            Willkommen im
+            {t('home.hero.welcome')}
             <span className="block text-tennis-yellow mt-1 md:mt-2">
-              TC Schwarz-Gelb
+              {t('home.hero.clubName')}
             </span>
             <span className="block text-base sm:text-lg md:text-2xl lg:text-3xl mt-1 md:mt-2 font-light">
-              Heidelberg e.V.
+              {t('home.hero.clubSuffix')}
             </span>
           </h1>
         </div>

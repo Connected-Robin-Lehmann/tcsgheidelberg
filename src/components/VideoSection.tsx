@@ -36,7 +36,7 @@ const VideoSection = () => {
                 src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Video-Tennis-Club-Schwarz-Gelb-Heidelberg_003.mp4" 
                 type="video/mp4" 
               />
-              Ihr Browser unterstützt keine HTML5-Videos.
+              {t('home.video.browserNotSupported')}
             </video>
             
             {/* Custom Play Button Overlay */}
@@ -54,7 +54,7 @@ const VideoSection = () => {
           
           <div className="text-center mt-6 md:mt-8 px-4">
             <p className="text-gray-300 text-base md:text-lg" style={{ fontFamily: 'Arial, sans-serif' }}>
-              Entdecken Sie unsere Anlage, unsere Gemeinschaft und unsere Leidenschaft für den Tennissport
+              {t('home.video.description')}
             </p>
           </div>
         </div>

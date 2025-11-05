@@ -52,6 +52,9 @@
   },
   "home": {
     "hero": {
+      "welcome": "Welcome to",
+      "clubName": "TC Schwarz-Gelb",
+      "clubSuffix": "Heidelberg e.V.",
       "title": "Tennis Club Schwarz-Gelb Heidelberg",
       "subtitle": "Tradition Meets Innovation",
       "description": "Since 1921, your premier destination for tennis in Heidelberg. Experience first-class tennis in a family atmosphere on our modern facilities.",
@@ -60,25 +63,53 @@
     },
     "stats": {
       "title": "Schwarz-Gelb in Numbers",
+      "description": "These numbers show the size and diversity of our tennis community",
       "members": "Members",
-      "teams": "Teams",
+      "youthPercentage": "Youth Percentage",
+      "adultTeams": "Adult Teams",
       "courts": "Courts",
-      "yearsHistory": "Years of History"
+      "youthTeams": "Youth Teams",
+      "trainers": "Trainers",
+      "joinFamily": "Become part of our great tennis family",
+      "trialTraining": "Schedule trial training"
     },
     "events": {
-      "title": "Upcoming Events",
+      "title": "Current Dates & Information",
       "subtitle": "Join us at our next events",
       "allEvents": "All Events",
       "date": "Date",
-      "location": "Location"
+      "location": "Location",
+      "memberMeeting": "Members' Meeting & Summer Festival",
+      "saturday": "Saturday",
+      "time": "5:00 PM",
+      "clubGrounds": "TC Schwarz-Gelb Club Grounds",
+      "allMembers": "All club members",
+      "meetingDescription": "Our annual members' meeting followed by the legendary summer festival. Look forward to a sociable evening with a great program!",
+      "moreInfo": "More Information",
+      "agenda": "Agenda 2025",
+      "boardElection": "Board Election",
+      "boardElectionDesc": "Re-election of the club board",
+      "membershipFees": "Membership Fees",
+      "membershipFeesDesc": "Adjustment of membership fees",
+      "statute": "Statute Amendment",
+      "statuteDesc": "Modernization of the club statute",
+      "invitationDetails": "Invitation with Details",
+      "discoverClub": "Discover Club",
+      "faqNewcomers": "FAQ for Newcomers"
     },
     "video": {
       "title": "Experience Schwarz-Gelb",
-      "subtitle": "Discover our club in action"
+      "subtitle": "Discover our club in action",
+      "description": "Discover our facilities, our community, and our passion for tennis",
+      "browserNotSupported": "Your browser does not support HTML5 videos."
     },
     "sponsors": {
       "title": "Our Partners",
-      "subtitle": "We thank our valuable sponsors for their support"
+      "subtitle": "We thank our valuable sponsors for their support",
+      "mainSponsors": "Main Sponsors",
+      "tennisSchools": "Our Tennis Schools",
+      "partnershipInterest": "Interested in a partnership?",
+      "sponsorshipOptions": "Sponsorship Opportunities"
     }
   },
   "common": {
