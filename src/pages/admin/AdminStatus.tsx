@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import { CheckCircle2, X, AlertCircle } from 'lucide-react';
+import { CheckCircle2, X, AlertCircle, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import {
@@ -215,9 +215,10 @@ const AdminStatus = () => {
                         href={page.page_path} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline"
+                        className="text-primary hover:text-tennis-yellow transition-colors flex items-center gap-2 w-fit"
                       >
                         {page.page_name}
+                        <ExternalLink className="w-4 h-4" />
                       </a>
                     </TableCell>
                     <TableCell className="text-center">
