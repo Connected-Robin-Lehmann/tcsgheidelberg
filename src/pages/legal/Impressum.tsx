@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -232,6 +233,14 @@ const Impressum = () => {
       <Footer />
     </div>
   );
+=======
+import { LanguageRoute } from '@/utils/LanguageRoute';
+import ImpressumDE from './Impressum.de';
+import ImpressumEN from './Impressum.en';
+
+const Impressum = () => {
+  return <LanguageRoute de={ImpressumDE} en={ImpressumEN} />;
+>>>>>>> b8a6f6b9174ea5c4dbefe9d0cb2558a7631f5c52
 };
 
 export default Impressum;
