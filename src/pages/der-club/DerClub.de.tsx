@@ -44,7 +44,8 @@ const DerClubDE = () => {
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
             <div className="p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-8 leading-tight">
-                Der sympathische Tennisclub in Heidelberg vereint einzigartig Tradition und Moderne
+                Der sympathische Tennisclub in Heidelberg vereint einzigartig
+                Tradition und Moderne
               </h3>
 
               <div className="prose prose-lg max-w-none mb-12">

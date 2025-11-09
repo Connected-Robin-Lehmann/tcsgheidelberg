@@ -44,16 +44,31 @@ const DerClubEN = () => {
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
             <div className="p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-8 leading-tight">
-                The friendly tennis club in Heidelberg uniquely combines tradition and modernity
+                The friendly tennis club in Heidelberg uniquely combines
+                tradition and modernity
               </h3>
 
               <div className="prose prose-lg max-w-none mb-12">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  In beautiful and world-renowned Heidelberg, more precisely at the intersection of the Heidelberg districts of Rohrbach, Kirchheim, Bahnstadt, West and Südstadt, our tennis club founded in 1928, the traditional club TC Schwarz-Gelb Heidelberg e.V., has its sporting and cultural center.
+                  In beautiful and world-renowned Heidelberg, more precisely at
+                  the intersection of the Heidelberg districts of Rohrbach,
+                  Kirchheim, Bahnstadt, West and Südstadt, our tennis club
+                  founded in 1928, the traditional club TC Schwarz-Gelb
+                  Heidelberg e.V., has its sporting and cultural center.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-8">
-                  We offer our members many opportunities to pursue their beloved tennis sport among like-minded people with fun, but also with sporting ambition and a lot of commitment. Our infrastructure includes 10 well-maintained clay courts on the club grounds, an air-supported hall with 2 clay courts for use in winter, and an indoor carpet court that can of course be used all year round. Since 2020, we have had a digital court reservation system in use, with which our members can conveniently book online and mobile, and we are also committed to further modernizing the entire facility and making the grounds even more beautiful.
+                  We offer our members many opportunities to pursue their
+                  beloved tennis sport among like-minded people with fun, but
+                  also with sporting ambition and a lot of commitment. Our
+                  infrastructure includes 10 well-maintained clay courts on the
+                  club grounds, an air-supported hall with 2 clay courts for use
+                  in winter, and an indoor carpet court that can of course be
+                  used all year round. Since 2020, we have had a digital court
+                  reservation system in use, with which our members can
+                  conveniently book online and mobile, and we are also committed
+                  to further modernizing the entire facility and making the
+                  grounds even more beautiful.
                 </p>
               </div>
 
@@ -68,15 +83,35 @@ const DerClubEN = () => {
 
               <div className="prose prose-lg max-w-none mb-12">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Our sporting activities include many men's, women's, senior, mixed and many youth teams that represent our black and yellow colors up to the regional league. Our sporting success and the development of the athletic skills of all our members is supported by the two tennis schools Kukaras and Seibold, which have been working closely with the club for many years. The Kukaras tennis school also offers several tennis camps during the Easter and summer holidays on the facility and a camp in Croatia during Pentecost. Above all, youth development is also very important in our club, and the high number of young members and families shows our commitment in this area. Of course, we also organize our own LK tournaments every year as well as the Schwarz-Gelb Cup, so that athletic competition with like-minded people from other clubs is also possible.
+                  Our sporting activities include many men's, women's, senior,
+                  mixed and many youth teams that represent our black and yellow
+                  colors up to the regional league. Our sporting success and the
+                  development of the athletic skills of all our members is
+                  supported by the two tennis schools Kukaras and Seibold, which
+                  have been working closely with the club for many years. The
+                  Kukaras tennis school also offers several tennis camps during
+                  the Easter and summer holidays on the facility and a camp in
+                  Croatia during Pentecost. Above all, youth development is also
+                  very important in our club, and the high number of young
+                  members and families shows our commitment in this area. Of
+                  course, we also organize our own LK tournaments every year as
+                  well as the Schwarz-Gelb Cup, so that athletic competition
+                  with like-minded people from other clubs is also possible.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  We also don't want to forget our clubhouse in a fantastic location with a beautiful beer garden, because our members also appreciate a drink or two and good food after an intensive tennis match. This is also where our legendary summer parties take place, where new members can quickly feel at home in the club and make new contacts.
+                  We also don't want to forget our clubhouse in a fantastic
+                  location with a beautiful beer garden, because our members
+                  also appreciate a drink or two and good food after an
+                  intensive tennis match. This is also where our legendary
+                  summer parties take place, where new members can quickly feel
+                  at home in the club and make new contacts.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  We are always happy to welcome new members! If you are interested or have questions about membership, training opportunities and anything else, just send a quick email:{" "}
+                  We are always happy to welcome new members! If you are
+                  interested or have questions about membership, training
+                  opportunities and anything else, just send a quick email:{" "}
                   <a
                     href="mailto:mitgliederservice@schwarzgelb-heidelberg.de"
                     className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
@@ -86,7 +121,9 @@ const DerClubEN = () => {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Further impressions of our club are shown in our extensive <strong>photo gallery</strong> below. Simply click on an image and then scroll right or left… and now enjoy!
+                  Further impressions of our club are shown in our extensive{" "}
+                  <strong>photo gallery</strong> below. Simply click on an image
+                  and then scroll right or left… and now enjoy!
                 </p>
               </div>
 

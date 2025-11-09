@@ -1,7 +1,7 @@
-import React from 'react';
-import { LanguageRoute } from '@/utils/LanguageRoute';
-import DerClubDE from './DerClub.de';
-import DerClubEN from './DerClub.en';
+import React from "react";
+import { LanguageRoute } from "@/utils/LanguageRoute";
+import DerClubDE from "./DerClub.de";
+import DerClubEN from "./DerClub.en";
 
 const DerClub = () => {
   return <LanguageRoute de={DerClubDE} en={DerClubEN} />;
