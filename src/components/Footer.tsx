@@ -142,6 +142,17 @@ const Footer = () => {
               </a>
             </div>
           </div>
+          
+          <div className="mt-6 pt-6 border-t border-gray-800 text-center">
+            <a
+              href="https://connected-webdesign.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-tennis-yellow hover:text-white transition-colors font-medium"
+            >
+              Website managed by Connected Webdesign
+            </a>
+          </div>
         </div>
       </div>
     </footer>
