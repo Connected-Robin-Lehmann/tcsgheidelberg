@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card } from '@/components/ui/card';
-import { CheckCircle2, X, AlertCircle, ExternalLink } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
-import { Switch } from '@/components/ui/switch';
+import React from "react";
+import { Card } from "@/components/ui/card";
+import { CheckCircle2, X, AlertCircle, ExternalLink } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
 import {
   Table,
   TableBody,
@@ -10,24 +10,24 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { supabase } from '@/integrations/supabase/client';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { toast } from 'sonner';
+} from "@/components/ui/table";
+import { supabase } from "@/integrations/supabase/client";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 
 const AdminStatus = () => {
   const queryClient = useQueryClient();
 
   // Fetch pages from database
   const { data: pages = [], isLoading } = useQuery({
-    queryKey: ['page-status'],
+    queryKey: ["page-status"],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from('page_status')
-        .select('*')
-        .eq('implemented', true)
-        .order('page_name');
-      
+        .from("page_status")
+        .select("*")
+        .eq("implemented", true)
+        .order("page_name");
+
       if (error) throw error;
       return data;
     },
@@ -35,152 +35,164 @@ const AdminStatus = () => {
 
   // Mutation to update finalized status
   const updateFinalized = useMutation({
-    mutationFn: async ({ id, finalized }: { id: string; finalized: boolean }) => {
+    mutationFn: async ({
+      id,
+      finalized,
+    }: {
+      id: string;
+      finalized: boolean;
+    }) => {
       const { error } = await supabase
-        .from('page_status')
+        .from("page_status")
         .update({ finalized })
-        .eq('id', id);
-      
+        .eq("id", id);
+
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['page-status'] });
-      toast.success('Status aktualisiert');
+      queryClient.invalidateQueries({ queryKey: ["page-status"] });
+      toast.success("Status aktualisiert");
     },
     onError: () => {
-      toast.error('Fehler beim Aktualisieren');
+      toast.error("Fehler beim Aktualisieren");
     },
   });
 
   // Mutation to update translated status
   const updateTranslated = useMutation({
-    mutationFn: async ({ id, translated }: { id: string; translated: boolean }) => {
+    mutationFn: async ({
+      id,
+      translated,
+    }: {
+      id: string;
+      translated: boolean;
+    }) => {
       const { error } = await supabase
-        .from('page_status')
+        .from("page_status")
         .update({ translated })
-        .eq('id', id);
-      
+        .eq("id", id);
+
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['page-status'] });
-      toast.success('Status aktualisiert');
+      queryClient.invalidateQueries({ queryKey: ["page-status"] });
+      toast.success("Status aktualisiert");
     },
     onError: () => {
-      toast.error('Fehler beim Aktualisieren');
+      toast.error("Fehler beim Aktualisieren");
     },
   });
 
   // Sort pages by hierarchy
   const sortedPages = [...pages].sort((a, b) => {
     const order = [
-      'Index',
-      'Der Club',
-      'Vorstand',
-      'Tradition',
-      'Tennisplätze',
-      'Mitgliedschaft',
-      'Beitragsordnung',
-      'Platzordnung',
-      'Satzung',
-      'Förderverein',
-      'Sponsoring',
-      'Aktuelles',
-      'Nachrichten',
-      'Tiebreaking News',
-      'Veranstaltungen',
-      'Ansprechpartner',
-      'Pressemeldungen',
-      'Projekte',
-      'Crowdfunding',
-      'Tennis Info Heft',
-      'Training',
-      'Unsere Trainer',
-      'Tennisschule Seibold',
-      'Tennisschule PTS Kukaras',
-      'Mannschaften',
-      'Jugend',
-      'Regelwerk',
-      'Turniere',
-      'Rhein-Neckar Open',
-      'Schwarz-Gelb Cup',
-      'Gastronomie',
-      'FAQ',
-      'Impressum',
-      'Datenschutz',
+      "Index",
+      "Der Club",
+      "Vorstand",
+      "Tradition",
+      "Tennisplätze",
+      "Mitgliedschaft",
+      "Beitragsordnung",
+      "Platzordnung",
+      "Satzung",
+      "Förderverein",
+      "Sponsoring",
+      "Aktuelles",
+      "Nachrichten",
+      "Tiebreaking News",
+      "Veranstaltungen",
+      "Ansprechpartner",
+      "Pressemeldungen",
+      "Projekte",
+      "Crowdfunding",
+      "Tennis Info Heft",
+      "Training",
+      "Unsere Trainer",
+      "Tennisschule Seibold",
+      "Tennisschule PTS Kukaras",
+      "Mannschaften",
+      "Jugend",
+      "Regelwerk",
+      "Turniere",
+      "Rhein-Neckar Open",
+      "Schwarz-Gelb Cup",
+      "Gastronomie",
+      "FAQ",
+      "Impressum",
+      "Datenschutz",
     ];
-    
+
     const indexA = order.indexOf(a.page_name);
     const indexB = order.indexOf(b.page_name);
-    
+
     if (indexA === -1 && indexB === -1) return 0;
     if (indexA === -1) return 1;
     if (indexB === -1) return -1;
-    
+
     return indexA - indexB;
   });
 
   const pendingFeatures = [
     {
-      feature: 'Mitglieder-Login Portal',
-      priority: 'medium',
-      description: 'Mitglieder können sich einloggen und persönliche Daten verwalten',
+      feature: "Mitglieder-Login Portal",
+      priority: "medium",
+      description:
+        "Mitglieder können sich einloggen und persönliche Daten verwalten",
     },
     {
-      feature: 'Turnieranmeldung Backend',
-      priority: 'high',
-      description: 'Direkte Online-Anmeldung für Turniere',
+      feature: "Turnieranmeldung Backend",
+      priority: "high",
+      description: "Direkte Online-Anmeldung für Turniere",
     },
     {
-      feature: 'Bildergalerie',
-      priority: 'low',
-      description: 'Galerie für Club-Fotos und Event-Bilder',
+      feature: "Bildergalerie",
+      priority: "low",
+      description: "Galerie für Club-Fotos und Event-Bilder",
     },
     {
-      feature: 'Kontaktformular',
-      priority: 'medium',
-      description: 'Direktes Kontaktformular statt nur E-Mail-Links',
+      feature: "Kontaktformular",
+      priority: "medium",
+      description: "Direktes Kontaktformular statt nur E-Mail-Links",
     },
     {
-      feature: 'Veranstaltungskalender',
-      priority: 'medium',
-      description: 'Interaktiver Kalender für alle Club-Events',
+      feature: "Veranstaltungskalender",
+      priority: "medium",
+      description: "Interaktiver Kalender für alle Club-Events",
     },
   ];
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'high':
-        return 'destructive';
-      case 'medium':
-        return 'default';
-      case 'low':
-        return 'secondary';
+      case "high":
+        return "destructive";
+      case "medium":
+        return "default";
+      case "low":
+        return "secondary";
       default:
-        return 'default';
+        return "default";
     }
   };
 
   const getPriorityLabel = (priority: string) => {
     switch (priority) {
-      case 'high':
-        return 'Hoch';
-      case 'medium':
-        return 'Mittel';
-      case 'low':
-        return 'Niedrig';
+      case "high":
+        return "Hoch";
+      case "medium":
+        return "Mittel";
+      case "low":
+        return "Niedrig";
       default:
         return priority;
     }
   };
 
-  const StatusIcon = ({ status }: { status: boolean }) => (
+  const StatusIcon = ({ status }: { status: boolean }) =>
     status ? (
       <CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" />
     ) : (
       <X className="w-5 h-5 text-red-600 mx-auto" />
-    )
-  );
+    );
 
   return (
     <div className="space-y-6">
@@ -195,9 +207,15 @@ const AdminStatus = () => {
             <TableHeader>
               <TableRow>
                 <TableHead className="font-semibold">Page</TableHead>
-                <TableHead className="text-center font-semibold">Implemented</TableHead>
-                <TableHead className="text-center font-semibold">Finalized</TableHead>
-                <TableHead className="text-center font-semibold">Translated (English available)</TableHead>
+                <TableHead className="text-center font-semibold">
+                  Implemented
+                </TableHead>
+                <TableHead className="text-center font-semibold">
+                  Finalized
+                </TableHead>
+                <TableHead className="text-center font-semibold">
+                  Translated (English available)
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -211,9 +229,9 @@ const AdminStatus = () => {
                 sortedPages.map((page) => (
                   <TableRow key={page.id}>
                     <TableCell className="font-medium">
-                      <a 
-                        href={page.page_path} 
-                        target="_blank" 
+                      <a
+                        href={page.page_path}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:text-tennis-yellow transition-colors flex items-center gap-2 w-fit"
                       >
@@ -229,7 +247,10 @@ const AdminStatus = () => {
                         <Switch
                           checked={page.finalized}
                           onCheckedChange={(checked) =>
-                            updateFinalized.mutate({ id: page.id, finalized: checked })
+                            updateFinalized.mutate({
+                              id: page.id,
+                              finalized: checked,
+                            })
                           }
                         />
                       </div>
@@ -239,7 +260,10 @@ const AdminStatus = () => {
                         <Switch
                           checked={page.translated}
                           onCheckedChange={(checked) =>
-                            updateTranslated.mutate({ id: page.id, translated: checked })
+                            updateTranslated.mutate({
+                              id: page.id,
+                              translated: checked,
+                            })
                           }
                         />
                       </div>
@@ -249,27 +273,6 @@ const AdminStatus = () => {
               )}
             </TableBody>
           </Table>
-        </div>
-      </Card>
-
-      {/* Pending Features */}
-      <Card className="p-6">
-        <div className="flex items-center gap-2 mb-4">
-          <AlertCircle className="w-6 h-6 text-tennis-yellow" />
-          <h2 className="text-2xl font-bold">Geplante Features</h2>
-        </div>
-        <div className="space-y-4">
-          {pendingFeatures.map((feature, idx) => (
-            <div key={idx} className="border-l-4 border-tennis-yellow pl-4 py-2">
-              <div className="flex items-center gap-2 mb-1">
-                <h3 className="font-semibold">{feature.feature}</h3>
-                <Badge variant={getPriorityColor(feature.priority)}>
-                  {getPriorityLabel(feature.priority)}
-                </Badge>
-              </div>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
-            </div>
-          ))}
         </div>
       </Card>
 
@@ -284,10 +287,12 @@ const AdminStatus = () => {
             <span className="font-semibold">Styling:</span> Tailwind CSS
           </div>
           <div>
-            <span className="font-semibold">Backend:</span> Lovable Cloud (Supabase)
+            <span className="font-semibold">Backend:</span> Lovable Cloud
+            (Supabase)
           </div>
           <div>
-            <span className="font-semibold">Authentifizierung:</span> Supabase Auth
+            <span className="font-semibold">Authentifizierung:</span> Supabase
+            Auth
           </div>
           <div>
             <span className="font-semibold">UI Components:</span> Shadcn/ui
