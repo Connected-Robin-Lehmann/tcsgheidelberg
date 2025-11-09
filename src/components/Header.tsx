@@ -11,10 +11,6 @@ const Header = () => {
 
   const navItems = [
     {
-      name: t("header.home"),
-      href: "/",
-    },
-    {
       name: t("header.club"),
       href: "/der-club",
       submenu: [
