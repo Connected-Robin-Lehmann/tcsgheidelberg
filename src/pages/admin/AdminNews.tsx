@@ -298,6 +298,41 @@ const AdminNews = () => {
     }
   };
 
+  const handleDeleteMedia = async (mediaId: string, filePath: string) => {
+    if (!confirm("Möchten Sie diese Datei wirklich löschen?")) return;
+
+    try {
+      // Delete from storage
+      const { error: storageError } = await supabase.storage
+        .from("news-media")
+        .remove([filePath]);
+
+      if (storageError) throw storageError;
+
+      // Delete from database
+      const { error: dbError } = await supabase
+        .from("news_media")
+        .delete()
+        .eq("id", mediaId);
+
+      if (dbError) throw dbError;
+
+      // Update local state
+      setExistingMedia(existingMedia.filter((media) => media.id !== mediaId));
+
+      toast({
+        title: "Erfolgreich gelöscht",
+        description: "Die Datei wurde gelöscht",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Fehler beim Löschen",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
+  };
+
   const getMediaUrl = (filePath: string) => {
     const { data } = supabase.storage.from("news-media").getPublicUrl(filePath);
     return data.publicUrl;
@@ -577,6 +612,14 @@ const AdminNews = () => {
                             key={media.id}
                             className="relative border rounded-lg p-3 bg-accent/50"
                           >
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="absolute top-1 right-1 h-6 w-6 bg-background/80 hover:bg-destructive hover:text-destructive-foreground"
+                              onClick={() => handleDeleteMedia(media.id, media.file_path)}
+                            >
+                              <X className="h-4 w-4" />
+                            </Button>
                             {media.file_type.startsWith("image/") ? (
                               <img
                                 src={getMediaUrl(media.file_path)}

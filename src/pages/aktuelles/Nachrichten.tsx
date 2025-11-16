@@ -309,11 +309,11 @@ export default function Nachrichten() {
                         className="card-tennis border-t-4 border-t-tennis-yellow flex flex-col h-full"
                       >
                         {firstImage && (
-                          <div className="w-full h-48">
+                          <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
                             <img
                               src={getMediaUrl(firstImage.file_path)}
                               alt={item.title}
-                              className="w-full h-full object-cover rounded-t-lg"
+                              className="max-w-full max-h-full object-contain rounded-t-lg"
                             />
                           </div>
                         )}
@@ -393,11 +393,11 @@ export default function Nachrichten() {
                             </Button>
                           </div>
                           {firstImage && (
-                            <div className="w-40 h-40 flex-shrink-0">
+                            <div className="w-40 h-40 flex-shrink-0 bg-gray-100 flex items-center justify-center rounded-lg shadow-md">
                               <img
                                 src={getMediaUrl(firstImage.file_path)}
                                 alt={item.title}
-                                className="w-full h-full object-cover rounded-lg shadow-md"
+                                className="max-w-full max-h-full object-contain rounded-lg"
                               />
                             </div>
                           )}
@@ -455,11 +455,11 @@ export default function Nachrichten() {
                       {newsMedia[selectedNews.id].map((media) => {
                         if (media.file_type.startsWith('image/')) {
                           return (
-                            <div key={media.id} className="rounded-lg overflow-hidden">
+                            <div key={media.id} className="rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center min-h-[200px]">
                               <img
                                 src={getMediaUrl(media.file_path)}
                                 alt="News media"
-                                className="w-full h-auto object-cover"
+                                className="max-w-full h-auto object-contain"
                               />
                             </div>
                           );
