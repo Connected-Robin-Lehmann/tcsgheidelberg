@@ -260,7 +260,7 @@ const Header = () => {
                               setOpenDropdown(null);
                             }}
                           >
-                            {item.name} Übersicht
+                            {item.name}
                           </a>
                           <button
                             className="p-3 md:p-4 text-tennis-black hover:text-tennis-yellow transition-colors touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
