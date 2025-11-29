@@ -108,8 +108,9 @@ const TraditionDE = () => {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   In der jüngeren Vergangenheit spielten regelmäßig 20 bis 30 Mannschaften in der Medenrunde, 
                   davon etwa die Hälfte als Erwachsenen-Teams und die Hälfte in Jugendmannschaften. Der „Leuchtturm" 
-                  des TC Schwarz-Gelb Heidelberg e.V. ist heute die Damenmannschaft, die in den letzten Jahren 
-                  erfolgreich in der Badenliga spielte und der 2019 sogar der Aufstieg in die Regionalliga gelang.
+                  des TC Schwarz-Gelb Heidelberg e.V. ist heute die Damenmannschaft, die sich von der Badenliga über die 
+                  Regionalliga kontinuierlich nach oben gearbeitet hat und mittlerweile in der{" "}
+                  <strong>2. Bundesliga</strong> spielt.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
