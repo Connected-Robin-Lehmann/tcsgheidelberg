@@ -104,8 +104,8 @@ const TraditionEN = () => {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   In recent years, regularly 20 to 30 teams have played in the Medenrunde, about half as adult teams 
                   and half in youth teams. The "flagship" of TC Schwarz-Gelb Heidelberg e.V. today is the women's team, 
-                  which has successfully played in the Baden League in recent years and even achieved promotion to the 
-                  Regional League in 2019.
+                  which has continuously worked its way up from the Baden League through the Regional League and now plays 
+                  in the <strong>2nd Bundesliga</strong>.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
