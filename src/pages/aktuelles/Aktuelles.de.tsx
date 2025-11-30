@@ -257,7 +257,7 @@ const AktuellesDE = () => {
                     Aktuelles rund um den Sport, aber auch geplante Veranstaltungen und neue Entwicklungen und Planungen
                     im und rund um den Club teilen wir als Vorstand in unserem Newsletter mit.
                   </p>
-                  <Link href="/aktuelles/tiebreaking-news">
+                  <Link to="/aktuelles/tiebreaking-news">
                     <Button variant="outline" className="btn-hero-outline w-full">
                       Newsletter lesen
                     </Button>
