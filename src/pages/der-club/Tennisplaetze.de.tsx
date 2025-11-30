@@ -27,7 +27,7 @@ const TennisplaetzeDE = () => {
       title: "Historische Tennis(teppich)halle",
       description:
         "Insbesondere in der Wintersaison steht uns in Absprache mit dem Eigentümer ebenfalls auch die historische Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.",
-      image: "/placeholder.svg",
+      image: "/images/Teppichhalle.jpg",
       features: [
         "Teppichboden",
         "Ganzjährig verfügbar",
