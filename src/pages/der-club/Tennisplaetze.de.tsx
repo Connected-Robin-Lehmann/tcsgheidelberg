@@ -9,8 +9,7 @@ const TennisplaetzeDE = () => {
       title: "Hauptanlage Schwindstrasse",
       description:
         'Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Restaurant durch eine Hecke getrennt der zentrale Center-Court "Max BERK" anschließt. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.',
-      image:
-        "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
+      image: "/images/Hauptanlage_Schwindstrasse.jpg",
       features: [
         "10 Sandplätze",
         "Center-Court Max-BERK",
@@ -39,7 +38,7 @@ const TennisplaetzeDE = () => {
 
   const galleryImages = [
     {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
+      src: "/images/Hauptanlage_Schwindstrasse.jpg",
       alt: "Hauptanlage Tennisplätze",
     },
     {

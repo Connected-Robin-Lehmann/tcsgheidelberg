@@ -9,8 +9,7 @@ const TennisplaetzeEN = () => {
       title: "Main Facility Schwindstrasse",
       description:
         'Our central tennis facility around our clubhouse consists of four adjacent courts No. 1 to No. 4, followed by the central Center Court "Max BERK" separated by a hedge towards the restaurant. Behind the clubhouse and changing rooms are courts 6-9, where most of our children and youth training takes place.',
-      image:
-        "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
+      image: "/images/Hauptanlage_Schwindstrasse.jpg",
       features: [
         "10 Clay Courts",
         "Center Court Max-BERK",
@@ -39,7 +38,7 @@ const TennisplaetzeEN = () => {
 
   const galleryImages = [
     {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
+      src: "/images/Hauptanlage_Schwindstrasse.jpg",
       alt: "Main Facility Tennis Courts",
     },
     {
