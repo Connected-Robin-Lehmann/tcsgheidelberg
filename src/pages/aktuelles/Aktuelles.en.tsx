@@ -102,9 +102,7 @@ const AktuellesEN = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            News 2025
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">News 2025</h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Stay up to date with all important dates and news from our club
           </p>
@@ -176,10 +174,11 @@ const AktuellesEN = () => {
             </div>
 
             <div className="text-center">
-              <p className="text-gray-600 mb-4">
-                Find all other dates at:
-              </p>
-              <Link to="/veranstaltungen" className="btn-hero inline-flex items-center">
+              <p className="text-gray-600 mb-4">Find all other dates at:</p>
+              <Link
+                to="/aktuelles/veranstaltungen"
+                className="btn-hero inline-flex items-center"
+              >
                 <Calendar className="h-4 w-4 mr-2" />
                 All Events
               </Link>
@@ -206,7 +205,8 @@ const AktuellesEN = () => {
                     {" "}
                     1,679 vouchers{" "}
                   </span>
-                  through the 'Vouchers for Clubs' collection campaign and were able to redeem them for
+                  through the 'Vouchers for Clubs' collection campaign and were
+                  able to redeem them for
                   <span className="font-bold text-tennis-black">
                     {" "}
                     eight new scoreboards{" "}
@@ -238,11 +238,14 @@ const AktuellesEN = () => {
                     News
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    Reports from tournaments, matches and other news from club life. 
-                    Browse our news collection by month and category.
+                    Reports from tournaments, matches and other news from club
+                    life. Browse our news collection by month and category.
                   </p>
                   <Link to="/aktuelles/nachrichten">
-                    <Button variant="outline" className="btn-hero-outline w-full">
+                    <Button
+                      variant="outline"
+                      className="btn-hero-outline w-full"
+                    >
                       View News
                     </Button>
                   </Link>
@@ -256,9 +259,9 @@ const AktuellesEN = () => {
                     Crowdfunding Initiative
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    In crowdfunding, one or more individuals finance a project 
-                    for a good cause with small or larger individual amounts. 
-                    We have adopted this idea in our club to improve and enhance 
+                    In crowdfunding, one or more individuals finance a project
+                    for a good cause with small or larger individual amounts. We
+                    have adopted this idea in our club to improve and enhance
                     our tennis infrastructure.
                   </p>
                   <Button variant="outline" className="btn-hero-outline w-full">
@@ -274,9 +277,9 @@ const AktuellesEN = () => {
                     Major Projects & Club Initiatives
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    Innovative and infrastructural major projects that only 
-                    indirectly relate to tennis pose many requirements for 
-                    our TC Schwarz-Gelb Heidelberg e.V.
+                    Innovative and infrastructural major projects that only
+                    indirectly relate to tennis pose many requirements for our
+                    TC Schwarz-Gelb Heidelberg e.V.
                   </p>
                   <Button variant="outline" className="btn-hero-outline w-full">
                     View Club Initiatives
@@ -291,9 +294,9 @@ const AktuellesEN = () => {
                     Tie-Break(ing)News
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    News about sports, planned events and new developments 
-                    and plans in and around the club are shared by the board 
-                    in our newsletter.
+                    News about sports, planned events and new developments and
+                    plans in and around the club are shared by the board in our
+                    newsletter.
                   </p>
                   <Button variant="outline" className="btn-hero-outline w-full">
                     Read Newsletter

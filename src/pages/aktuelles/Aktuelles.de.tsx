@@ -180,7 +180,10 @@ const AktuellesDE = () => {
               <p className="text-gray-600 mb-4">
                 Alle weiteren Termine finden Sie unter:
               </p>
-              <Link to="/veranstaltungen" className="btn-hero inline-flex items-center">
+              <Link
+                to="/aktuelles/veranstaltungen"
+                className="btn-hero inline-flex items-center"
+              >
                 <Calendar className="h-4 w-4 mr-2" />
                 Alle Veranstaltungen
               </Link>
@@ -241,11 +244,15 @@ const AktuellesDE = () => {
                     Nachrichten
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    Berichte von Turnieren, Spielen und weitere Nachrichten aus dem Vereinsleben. 
-                    Durchsuchen Sie unsere Nachrichtensammlung nach Monat und Kategorie.
+                    Berichte von Turnieren, Spielen und weitere Nachrichten aus
+                    dem Vereinsleben. Durchsuchen Sie unsere Nachrichtensammlung
+                    nach Monat und Kategorie.
                   </p>
                   <Link to="/aktuelles/nachrichten">
-                    <Button variant="outline" className="btn-hero-outline w-full">
+                    <Button
+                      variant="outline"
+                      className="btn-hero-outline w-full"
+                    >
                       Zu den Nachrichten
                     </Button>
                   </Link>
@@ -265,9 +272,14 @@ const AktuellesDE = () => {
                     unserem Verein zur Verbesserung und Verschönerung unserer
                     Tennis-Infrastruktur aufgenommen.
                   </p>
-                  <Button variant="outline" className="btn-hero-outline w-full">
-                    Zu den Projekten
-                  </Button>
+                  <Link to="/aktuelles/projekte">
+                    <Button
+                      variant="outline"
+                      className="btn-hero-outline w-full"
+                    >
+                      Zu den Projekten
+                    </Button>
+                  </Link>
                 </div>
               </Card>
 
