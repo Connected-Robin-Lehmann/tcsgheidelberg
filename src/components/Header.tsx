@@ -97,8 +97,8 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Bar - Hidden on mobile and tablet for cleaner look */}
-      <div className="hidden lg:block bg-tennis-black text-tennis-yellow py-2 px-4 text-sm border-b border-tennis-yellow/20">
+      {/* Top Bar - Only visible in desktop mode */}
+      <div className="hidden xl:block bg-tennis-black text-tennis-yellow py-2 px-4 text-sm border-b border-tennis-yellow/20">
         <div className="container mx-auto">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-6">
@@ -209,7 +209,7 @@ const Header = () => {
             </nav>
 
             {/* Language Switcher & CTA Button - Desktop */}
-            <div className="hidden 2xl:flex items-center gap-2 xl:gap-3">
+            <div className="hidden xl:flex items-center gap-3">
               <LanguageSwitcher />
               <Button
                 className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-4 xl:px-6 py-2 xl:py-3 text-sm 2xl:text-base transition-all duration-300 whitespace-nowrap"
