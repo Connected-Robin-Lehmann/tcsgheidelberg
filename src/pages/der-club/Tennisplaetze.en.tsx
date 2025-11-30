@@ -27,7 +27,7 @@ const TennisplaetzeEN = () => {
       title: "Historic Tennis (Carpet) Hall",
       description:
         "Especially during the winter season, the historic tennis hall with carpet floor directly at the parking lot in Schwindstrasse is also available to us in consultation with the owner.",
-      image: "/placeholder.svg",
+      image: "/images/Teppichhalle.jpg",
       features: [
         "Carpet Floor",
         "Available Year-Round",
