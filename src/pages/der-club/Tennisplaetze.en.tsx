@@ -21,7 +21,7 @@ const TennisplaetzeEN = () => {
       title: "Air-Supported Hall (Winter)",
       description:
         "For the winter season, a heated air-supported hall is erected on courts 7 and 8. This allows our members to train and play freely on a clay court even in winter.",
-      image: "/placeholder.svg",
+      image: "/images/Traglufthalle.jpg",
       features: ["2 Clay Courts", "Heated", "October to April"],
     },
     {
@@ -43,15 +43,15 @@ const TennisplaetzeEN = () => {
       alt: "Main Facility Tennis Courts",
     },
     {
-      src: "/placeholder.svg",
+      src: "/images/Max_Berk.jpg",
       alt: "Center Court Max BERK",
     },
     {
-      src: "/placeholder.svg",
-      alt: "Youth Courts",
+      src: "/images/Platz_10.jpg",
+      alt: "Court 10",
     },
     {
-      src: "/placeholder.svg",
+      src: "/images/Traglufthalle.jpg",
       alt: "Air-Supported Hall",
     },
   ];

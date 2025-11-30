@@ -21,7 +21,7 @@ const TennisplaetzeDE = () => {
       title: "Traglufthalle (Winter)",
       description:
         "Auf den Plätzen 7 und 8 wird für die Wintersaison eine beheizte Traglufthalle aufgebaut. So können unsere Mitglieder auch im Winter auf einem Sandplatz trainieren und frei spielen.",
-      image: "/placeholder.svg",
+      image: "/images/Traglufthalle.jpg",
       features: ["2 Sandplätze", "Beheizt", "Oktober bis April"],
     },
     {
@@ -43,15 +43,15 @@ const TennisplaetzeDE = () => {
       alt: "Hauptanlage Tennisplätze",
     },
     {
-      src: "/placeholder.svg",
+      src: "/images/Max_Berk.jpg",
       alt: "Center Court Max BERK",
     },
     {
-      src: "/placeholder.svg",
-      alt: "Jugendplätze",
+      src: "/images/Platz_10.jpg",
+      alt: "Platz 10",
     },
     {
-      src: "/placeholder.svg",
+      src: "/images/Traglufthalle.jpg",
       alt: "Traglufthalle",
     },
   ];
