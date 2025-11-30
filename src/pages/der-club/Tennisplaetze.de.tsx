@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MapPin, Calendar, Users, Info } from "lucide-react";
+import { MapPin, Calendar, Users, Info, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const TennisplaetzeDE = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
   const facilities = [
     {
       title: "Hauptanlage Schwindstrasse",
@@ -54,6 +56,26 @@ const TennisplaetzeDE = () => {
       alt: "Traglufthalle",
     },
   ];
+
+  const openLightbox = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const goToPrevious = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
+
+  const goToNext = () => {
+    if (selectedImageIndex !== null && selectedImageIndex < galleryImages.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -163,6 +185,7 @@ const TennisplaetzeDE = () => {
               {galleryImages.map((image, index) => (
                 <div
                   key={index}
+                  onClick={() => openLightbox(index)}
                   className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
                 >
                   <div className="relative overflow-hidden">
@@ -205,6 +228,59 @@ const TennisplaetzeDE = () => {
         </div>
       </main>
       <Footer />
+
+      {/* Lightbox */}
+      {selectedImageIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white hover:text-tennis-yellow transition-colors z-10"
+          >
+            <X className="h-8 w-8" />
+          </button>
+
+          {selectedImageIndex > 0 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="absolute left-4 text-white hover:text-tennis-yellow transition-colors z-10"
+            >
+              <ChevronLeft className="h-12 w-12" />
+            </button>
+          )}
+
+          {selectedImageIndex < galleryImages.length - 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="absolute right-4 text-white hover:text-tennis-yellow transition-colors z-10"
+            >
+              <ChevronRight className="h-12 w-12" />
+            </button>
+          )}
+
+          <div
+            className="max-w-7xl max-h-[90vh] flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={galleryImages[selectedImageIndex].src}
+              alt={galleryImages[selectedImageIndex].alt}
+              className="max-w-full max-h-[80vh] object-contain"
+            />
+            <p className="text-white text-lg mt-4 text-center">
+              {galleryImages[selectedImageIndex].alt}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
