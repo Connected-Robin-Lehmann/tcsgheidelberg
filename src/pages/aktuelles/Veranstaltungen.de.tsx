@@ -1,13 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Calendar, Clock, MapPin, Users } from "lucide-react";
-import { 
-  upcomingEvents, 
-  eventTypeLabels, 
-  getEventTypeColor, 
-  getEventIcon 
-} from "@/data/events";
+import { Calendar } from "lucide-react";
 
 const VeranstaltungenDE = () => {
   return (
@@ -30,72 +24,6 @@ const VeranstaltungenDE = () => {
               Hier finden Sie alle kommenden Termine und Veranstaltungen unseres
               Vereins geordnet und übersichtlich
             </p>
-          </div>
-
-          {/* Events Grid */}
-          <div className="grid gap-8">
-            {upcomingEvents.map((event) => (
-              <div
-                key={event.id}
-                className="bg-white rounded-2xl shadow-lg border-4 border-tennis-yellow/20 overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="p-6 md:p-8">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                    <div className="flex items-center mb-4 md:mb-0">
-                      <div className="text-2xl mr-3">
-                        {getEventIcon(event.type)}
-                      </div>
-                      <div>
-                        <h3 className="text-xl md:text-2xl font-bold text-tennis-black">
-                          {event.title.de}
-                        </h3>
-                        <div
-                          className={`inline-block px-3 py-1 rounded-full text-sm font-medium mt-2 ${getEventTypeColor(
-                            event.type
-                          )}`}
-                        >
-                          {eventTypeLabels[event.type].de}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-4 mb-4">
-                    <div className="flex items-center text-gray-600">
-                      <Calendar className="h-5 w-5 text-tennis-yellow mr-2" />
-                      <span className="font-medium">{event.date}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600">
-                      <Clock className="h-5 w-5 text-tennis-yellow mr-2" />
-                      <span>{event.time.de}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600">
-                      <MapPin className="h-5 w-5 text-tennis-yellow mr-2" />
-                      <span>{event.location.de}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    {event.description.de}
-                  </p>
-
-                  {event.contact && (
-                    <div className="bg-tennis-yellow/10 rounded-xl p-4">
-                      <div className="flex items-center text-tennis-black">
-                        <Users className="h-5 w-5 mr-2" />
-                        <span className="font-medium">Anmeldung:</span>
-                        <a
-                          href={`mailto:${event.contact}`}
-                          className="ml-2 text-tennis-black hover:underline font-medium"
-                        >
-                          {event.contact}
-                        </a>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
           </div>
 
           {/* Call to Action */}
