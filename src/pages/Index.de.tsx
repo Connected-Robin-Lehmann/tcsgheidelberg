@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import EventSection from "@/components/EventSection";
+// import EventSection from "@/components/EventSection";
 import VideoSection from "@/components/VideoSection";
 import StatsSection from "@/components/StatsSection";
 import SponsorsSection from "@/components/SponsorsSection";
@@ -56,7 +56,7 @@ const IndexDE = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <EventSection />
+      {/* <EventSection /> */}
       <StatsSection />
       <VideoSection />
       <SponsorsSection />
