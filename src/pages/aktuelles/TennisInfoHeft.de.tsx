@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FileText, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { tennisInfoHefte, getDownloadUrl } from '@/data/tennisInfoHefte';
+import PdfThumbnail from '@/components/PdfThumbnail';
 
 const TennisInfoHeftDe = () => {
   const handleDownload = (fileName: string, title: string) => {
@@ -38,13 +39,11 @@ const TennisInfoHeftDe = () => {
                 key={heft.id}
                 className="bg-card border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
-                {/* PDF Icon/Preview */}
-                <div className="aspect-[3/4] bg-muted flex items-center justify-center">
-                  <div className="text-center">
-                    <FileText className="w-16 h-16 text-primary mx-auto mb-2" />
-                    <span className="text-2xl font-bold text-foreground">{heft.year}</span>
-                  </div>
-                </div>
+                {/* PDF Cover Preview */}
+                <PdfThumbnail 
+                  pdfUrl={getDownloadUrl(heft.fileName)} 
+                  year={heft.year} 
+                />
 
                 {/* Card Content */}
                 <div className="p-4">
