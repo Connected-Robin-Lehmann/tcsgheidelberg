@@ -1,100 +1,12 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import {
-  Calendar,
-  Mail,
-  ExternalLink,
-  Users,
-  MapPin,
-  Clock,
-} from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const upcomingEvents = [
-  {
-    date: "08.09.-12.09.2025",
-    title: "Summer Holiday Tennis Camp",
-    description: "Registration and info at A. Kukaras",
-    contact: "tennis@kukaras.de",
-    type: "training",
-  },
-  {
-    date: "12.09.-14.09.2025",
-    title: "Air Dome Hall Setup",
-    description: "Construction of the winter hall",
-    type: "maintenance",
-  },
-  {
-    date: "13.09.-14.09.2025",
-    title: "Baden Team Championships U12w",
-    description: "Youth tournament",
-    type: "tournament",
-  },
-  {
-    date: "22.09.2025",
-    title: "Winter Training Starts",
-    description: "Registration via Sportision",
-    link: "https://www.sportision.de/club/kukaras-professional-tennis-1",
-    type: "training",
-  },
-  {
-    date: "12.10.2025",
-    title: "Members' Meeting",
-    description: "5:00 PM",
-    type: "meeting",
-  },
-  {
-    date: "18.10.2025",
-    title: "Club Cleanup Day",
-    description: "from 10:00 AM",
-    type: "maintenance",
-  },
-  {
-    date: "21.11.2025",
-    title: "Thanksgiving – Turkey Dinner",
-    description: "from 7:00 PM at Rose (Kirchheim)",
-    type: "social",
-  },
-];
-
 const AktuellesEN = () => {
-  const getEventIcon = (type: string) => {
-    switch (type) {
-      case "training":
-        return <Users className="h-5 w-5" />;
-      case "tournament":
-        return <Calendar className="h-5 w-5" />;
-      case "meeting":
-        return <Users className="h-5 w-5" />;
-      case "maintenance":
-        return <MapPin className="h-5 w-5" />;
-      case "social":
-        return <Calendar className="h-5 w-5" />;
-      default:
-        return <Calendar className="h-5 w-5" />;
-    }
-  };
-
-  const getEventColor = (type: string) => {
-    switch (type) {
-      case "training":
-        return "border-l-tennis-yellow bg-tennis-yellow/5";
-      case "tournament":
-        return "border-l-red-500 bg-red-50";
-      case "meeting":
-        return "border-l-blue-500 bg-blue-50";
-      case "maintenance":
-        return "border-l-green-500 bg-green-50";
-      case "social":
-        return "border-l-purple-500 bg-purple-50";
-      default:
-        return "border-l-tennis-yellow bg-tennis-yellow/5";
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -111,70 +23,9 @@ const AktuellesEN = () => {
 
       <main className="py-12">
         <div className="container mx-auto px-4 max-w-6xl">
-          {/* Upcoming Events */}
+          {/* Events Link */}
           <section className="mb-12">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-tennis-black mb-4">
-                Upcoming Events
-              </h2>
-              <div className="w-24 h-1 bg-tennis-yellow mx-auto rounded-full"></div>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {upcomingEvents.map((event, index) => (
-                <Card
-                  key={index}
-                  className={`border-l-4 ${getEventColor(
-                    event.type
-                  )} hover:shadow-lg transition-all duration-300`}
-                >
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center text-tennis-black">
-                        {getEventIcon(event.type)}
-                        <span className="ml-2 text-sm font-medium text-gray-600">
-                          {event.date}
-                        </span>
-                      </div>
-                      <Clock className="h-4 w-4 text-gray-400" />
-                    </div>
-
-                    <h3 className="text-lg font-bold text-tennis-black mb-2">
-                      {event.title}
-                    </h3>
-
-                    <p className="text-gray-600 text-sm mb-4">
-                      {event.description}
-                    </p>
-
-                    {event.contact && (
-                      <a
-                        href={`mailto:${event.contact}`}
-                        className="inline-flex items-center text-tennis-yellow hover:text-tennis-black transition-colors text-sm font-medium"
-                      >
-                        <Mail className="h-4 w-4 mr-1" />
-                        {event.contact}
-                      </a>
-                    )}
-
-                    {event.link && (
-                      <a
-                        href={event.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-tennis-yellow hover:text-tennis-black transition-colors text-sm font-medium"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-1" />
-                        Register
-                      </a>
-                    )}
-                  </div>
-                </Card>
-              ))}
-            </div>
-
             <div className="text-center">
-              <p className="text-gray-600 mb-4">Find all other dates at:</p>
               <Link
                 to="/aktuelles/veranstaltungen"
                 className="btn-hero inline-flex items-center"
@@ -264,9 +115,11 @@ const AktuellesEN = () => {
                     have adopted this idea in our club to improve and enhance
                     our tennis infrastructure.
                   </p>
-                  <Button variant="outline" className="btn-hero-outline w-full">
-                    View Projects
-                  </Button>
+                  <Link to="/aktuelles/projekte">
+                    <Button variant="outline" className="btn-hero-outline w-full">
+                      View Projects
+                    </Button>
+                  </Link>
                 </div>
               </Card>
 
@@ -298,9 +151,11 @@ const AktuellesEN = () => {
                     plans in and around the club are shared by the board in our
                     newsletter.
                   </p>
-                  <Button variant="outline" className="btn-hero-outline w-full">
-                    Read Newsletter
-                  </Button>
+                  <Link to="/aktuelles/tiebreaking-news">
+                    <Button variant="outline" className="btn-hero-outline w-full">
+                      Read Newsletter
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             </div>
