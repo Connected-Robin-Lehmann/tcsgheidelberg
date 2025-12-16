@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Download } from 'lucide-react';
+import { Download, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { tennisInfoHefte, getDownloadUrl } from '@/data/tennisInfoHefte';
 import PdfThumbnail from '@/components/PdfThumbnail';
+import PdfViewerModal from '@/components/PdfViewerModal';
 
 const TennisInfoHeftEn = () => {
-  const handleDownload = (fileName: string, title: string) => {
+  const [selectedPdf, setSelectedPdf] = useState<{ url: string; title: string } | null>(null);
+
+  const handleDownload = (fileName: string) => {
     if (!fileName) {
       alert('This issue is not yet available.');
       return;
     }
     const url = getDownloadUrl(fileName);
     window.open(url, '_blank');
+  };
+
+  const handlePreview = (fileName: string, title: string) => {
+    if (!fileName) return;
+    setSelectedPdf({ url: getDownloadUrl(fileName), title });
   };
 
   return (
@@ -39,24 +47,40 @@ const TennisInfoHeftEn = () => {
                 key={heft.id}
                 className="bg-card border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
-                {/* PDF Cover Preview */}
-                <PdfThumbnail 
-                  pdfUrl={getDownloadUrl(heft.fileName)} 
-                  year={heft.year} 
-                />
+                {/* PDF Cover Preview - clickable */}
+                <div 
+                  className="cursor-pointer"
+                  onClick={() => handlePreview(heft.fileName, heft.titleEn)}
+                >
+                  <PdfThumbnail 
+                    pdfUrl={getDownloadUrl(heft.fileName)} 
+                    year={heft.year} 
+                  />
+                </div>
 
                 {/* Card Content */}
                 <div className="p-4">
                   <h3 className="font-semibold text-foreground mb-3">{heft.titleEn}</h3>
-                  <Button
-                    onClick={() => handleDownload(heft.fileName, heft.titleEn)}
-                    className="w-full"
-                    variant={heft.fileName ? 'default' : 'outline'}
-                    disabled={!heft.fileName}
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    {heft.fileName ? 'Download' : 'Coming soon'}
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button
+                      onClick={() => handlePreview(heft.fileName, heft.titleEn)}
+                      className="flex-1"
+                      variant="outline"
+                      disabled={!heft.fileName}
+                    >
+                      <Eye className="w-4 h-4 mr-2" />
+                      View
+                    </Button>
+                    <Button
+                      onClick={() => handleDownload(heft.fileName)}
+                      className="flex-1"
+                      variant={heft.fileName ? 'default' : 'outline'}
+                      disabled={!heft.fileName}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Download
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -71,6 +95,14 @@ const TennisInfoHeftEn = () => {
         </div>
       </main>
       <Footer />
+
+      {/* PDF Viewer Modal */}
+      <PdfViewerModal
+        pdfUrl={selectedPdf?.url || ''}
+        title={selectedPdf?.title || ''}
+        isOpen={!!selectedPdf}
+        onClose={() => setSelectedPdf(null)}
+      />
     </div>
   );
 };
