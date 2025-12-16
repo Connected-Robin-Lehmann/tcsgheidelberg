@@ -1,20 +1,13 @@
-
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { LanguageRoute } from '@/utils/LanguageRoute';
+import TennisInfoHeftDe from './TennisInfoHeft.de';
+import TennisInfoHeftEn from './TennisInfoHeft.en';
 
 const TennisInfoHeft = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main className="flex items-center justify-center min-h-[50vh] bg-gray-50">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800">Tennis-Info Heft</h1>
-          <p className="mt-4 text-gray-600">Placeholder für Tennis-Info Heft Seite</p>
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <LanguageRoute
+      de={TennisInfoHeftDe}
+      en={TennisInfoHeftEn}
+    />
   );
 };
 
