@@ -32,11 +32,13 @@ const TennisInfoHeftEn = () => {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Tennis Info Booklets
+              Our Club Magazine TennisInfo
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Here you can find all issues of our Tennis Info booklets for download.
-              Learn more about current club news, tournaments, and events.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Following a fine tradition, we print a comprehensive club magazine every 2 years for our members, friends, and sponsors. It primarily reports on sporting achievements and provides an extensive presentation of our teams and youth development.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+              Additionally, the booklet offers insights into all developments within the club and board, as well as current projects in areas such as infrastructure. The printed booklet is automatically sent by post to all members and sponsors upon publication. Of course, the current issue and historical editions can be downloaded as PDF below.
             </p>
           </div>
 
