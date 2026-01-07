@@ -239,25 +239,6 @@ export const upcomingEvents: ClubEvent[] = [
     },
     type: "tournament",
   },
-  {
-    id: "turkey-time-2025",
-    date: "21.11.2025",
-    time: { de: "19:30 Uhr", en: "7:30 PM" },
-    title: { 
-      de: "Turkey Time mit Tanz statt Gans", 
-      en: "Turkey Time with Dance instead of Goose" 
-    },
-    location: { 
-      de: "Ristorante Zur Goldenen Rose, Hegenichstraße 10, 69124 Heidelberg", 
-      en: "Ristorante Zur Goldenen Rose, Hegenichstraße 10, 69124 Heidelberg" 
-    },
-    description: { 
-      de: "Buffet mit Putenbraten oder vegetarischen Ravioli. Erwachsene 41€, Kinder bis 12 Jahre 18€. Anmeldung bis 15.11.2025.", 
-      en: "Buffet with turkey roast or vegetarian ravioli. Adults €41, Children up to 12 €18. Registration until 15.11.2025." 
-    },
-    contact: "terezie.zuna-homsy@schwarzgelb-heidelberg.de",
-    type: "food",
-  },
 ];
 
 export const eventTypeLabels: Record<EventType, { de: string; en: string }> = {
