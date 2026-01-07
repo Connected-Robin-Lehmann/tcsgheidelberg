@@ -1,9 +1,24 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Calendar } from "lucide-react";
+import { Calendar, Clock, MapPin } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { 
+  upcomingEvents, 
+  getEventTypeColor, 
+  getEventIcon,
+  eventTypeLabels 
+} from "@/data/events";
 
 const VeranstaltungenDE = () => {
+  // Filter match events for 2026
+  const matchEvents = upcomingEvents.filter(e => e.type === "match");
+  
+  // Group by team
+  const damen1 = matchEvents.filter(e => e.id.includes("damen1"));
+  const damen2 = matchEvents.filter(e => e.id.includes("damen2"));
+  const herren1 = matchEvents.filter(e => e.id.includes("herren1"));
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -24,6 +39,112 @@ const VeranstaltungenDE = () => {
               Hier finden Sie alle kommenden Termine und Veranstaltungen unseres
               Vereins geordnet und übersichtlich
             </p>
+          </div>
+
+          {/* Badenliga Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-tennis-black mb-8 flex items-center gap-3">
+              <span className="text-4xl">🏸</span>
+              Badenliga Hallensaison 2026
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Damen 1 */}
+              <div>
+                <h3 className="text-xl font-bold text-tennis-black mb-4 pb-2 border-b-2 border-tennis-yellow">
+                  Damen 1
+                </h3>
+                <div className="space-y-4">
+                  {damen1.map((event) => (
+                    <Card key={event.id} className="p-4 hover:shadow-lg transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)}`}>
+                          {eventTypeLabels[event.type].de}
+                        </span>
+                      </div>
+                      <div className="mt-3 space-y-2">
+                        <div className="flex items-center text-gray-700">
+                          <Calendar className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span className="font-medium">{event.date}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <Clock className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span>{event.time.de}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <MapPin className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span>{event.location.de}</span>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Damen 2 */}
+              <div>
+                <h3 className="text-xl font-bold text-tennis-black mb-4 pb-2 border-b-2 border-tennis-yellow">
+                  Damen 2
+                </h3>
+                <div className="space-y-4">
+                  {damen2.map((event) => (
+                    <Card key={event.id} className="p-4 hover:shadow-lg transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)}`}>
+                          {eventTypeLabels[event.type].de}
+                        </span>
+                      </div>
+                      <div className="mt-3 space-y-2">
+                        <div className="flex items-center text-gray-700">
+                          <Calendar className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span className="font-medium">{event.date}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <Clock className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span>{event.time.de}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <MapPin className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span>{event.location.de}</span>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Herren 1 */}
+              <div>
+                <h3 className="text-xl font-bold text-tennis-black mb-4 pb-2 border-b-2 border-tennis-yellow">
+                  Herren 1
+                </h3>
+                <div className="space-y-4">
+                  {herren1.map((event) => (
+                    <Card key={event.id} className="p-4 hover:shadow-lg transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)}`}>
+                          {eventTypeLabels[event.type].de}
+                        </span>
+                      </div>
+                      <div className="mt-3 space-y-2">
+                        <div className="flex items-center text-gray-700">
+                          <Calendar className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span className="font-medium">{event.date}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <Clock className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span>{event.time.de}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <MapPin className="h-4 w-4 mr-2 text-tennis-yellow" />
+                          <span>{event.location.de}</span>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Call to Action */}
