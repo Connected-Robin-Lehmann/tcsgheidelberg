@@ -90,22 +90,6 @@ export const upcomingEvents: ClubEvent[] = [
   },
   // Legacy events from 2025
   {
-    id: "80s-90s-party-2025",
-    date: "30.04.2025",
-    time: { de: "20:00", en: "20:00" },
-    title: { 
-      de: "80er/90er Party zum Tanz in den Mai", 
-      en: "80s/90s Party – Dance into May" 
-    },
-    location: { de: "Clubhaus", en: "Clubhouse" },
-    description: { 
-      de: "Zwecks Planung bitte per Email anmelden", 
-      en: "Please register via email for planning purposes" 
-    },
-    contact: "terezie.zuna-homsy@schwarzgelb-heidelberg.de",
-    type: "party",
-  },
-  {
     id: "meden-start-2025",
     date: "03.05.2025",
     time: { de: "ganztägig", en: "All day" },

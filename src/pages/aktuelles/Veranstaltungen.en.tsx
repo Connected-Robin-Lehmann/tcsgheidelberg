@@ -47,31 +47,36 @@ const VeranstaltungenEN = () => {
                 Upcoming Events
               </h2>
               
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {socialEvents.map((event) => (
-                  <Card key={event.id} className="p-6 hover:shadow-lg transition-shadow">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div>
-                        <h3 className="font-bold text-xl text-tennis-black mb-2">{event.title.en}</h3>
-                        <p className="text-gray-600">{event.description.en}</p>
-                        {event.contact && (
-                          <p className="text-sm text-gray-500 mt-2">
-                            Contact: <a href={`mailto:${event.contact}`} className="text-tennis-black hover:underline">{event.contact}</a>
-                          </p>
-                        )}
-                      </div>
-                      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 text-sm md:text-base shrink-0">
-                        <div className="flex items-center text-gray-700">
-                          <Calendar className="h-5 w-5 mr-2 text-tennis-yellow" />
-                          <span className="font-medium">{event.date}</span>
+                  <Card key={event.id} className="overflow-hidden border-l-4 border-l-tennis-yellow hover:shadow-xl transition-all duration-300 bg-white">
+                    <div className="p-6 md:p-8">
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        {/* Event Info */}
+                        <div className="flex-1">
+                          <h3 className="font-bold text-2xl text-tennis-black mb-3">{event.title.en}</h3>
+                          <p className="text-gray-600 leading-relaxed">{event.description.en}</p>
+                          {event.contact && (
+                            <p className="text-sm text-gray-500 mt-4">
+                              Contact: <a href={`mailto:${event.contact}`} className="text-tennis-black font-medium hover:text-tennis-yellow transition-colors">{event.contact}</a>
+                            </p>
+                          )}
                         </div>
-                        <div className="flex items-center text-gray-600">
-                          <Clock className="h-5 w-5 mr-2 text-tennis-yellow" />
-                          <span>{event.time.en}</span>
-                        </div>
-                        <div className="flex items-center text-gray-600">
-                          <MapPin className="h-5 w-5 mr-2 text-tennis-yellow" />
-                          <span>{event.location.en}</span>
+                        
+                        {/* Event Details */}
+                        <div className="lg:text-right space-y-3 lg:min-w-[280px]">
+                          <div className="flex items-center lg:justify-end text-tennis-black">
+                            <Calendar className="h-5 w-5 mr-3 text-tennis-yellow" />
+                            <span className="font-bold text-lg">{event.date}</span>
+                          </div>
+                          <div className="flex items-center lg:justify-end text-gray-700">
+                            <Clock className="h-5 w-5 mr-3 text-tennis-yellow" />
+                            <span className="font-medium">{event.time.en}</span>
+                          </div>
+                          <div className="flex items-center lg:justify-end text-gray-600">
+                            <MapPin className="h-5 w-5 mr-3 text-tennis-yellow" />
+                            <span>{event.location.en}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
