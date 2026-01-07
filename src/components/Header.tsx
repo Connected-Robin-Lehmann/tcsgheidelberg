@@ -105,7 +105,7 @@ const Header = () => {
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
                 <span className="text-sm">
-                  Restaurant: 0174-6808685 | Vereinshotline: 06221-4337096
+                  Restaurant: 0176-25554081 | Vereinshotline: 06221-4337096
                 </span>
               </div>
               <div className="flex items-center space-x-2">
