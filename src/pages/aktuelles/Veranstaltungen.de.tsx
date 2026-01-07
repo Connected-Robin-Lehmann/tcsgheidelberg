@@ -3,12 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { 
-  upcomingEvents, 
-  getEventTypeColor, 
-  getEventIcon,
-  eventTypeLabels 
-} from "@/data/events";
+import { upcomingEvents } from "@/data/events";
 
 const VeranstaltungenDE = () => {
   // Filter match events for 2026
@@ -57,12 +52,7 @@ const VeranstaltungenDE = () => {
                 <div className="space-y-4">
                   {damen1.map((event) => (
                     <Card key={event.id} className="p-4 hover:shadow-lg transition-shadow">
-                      <div className="flex items-start gap-3">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)}`}>
-                          {eventTypeLabels[event.type].de}
-                        </span>
-                      </div>
-                      <div className="mt-3 space-y-2">
+                      <div className="space-y-2">
                         <div className="flex items-center text-gray-700">
                           <Calendar className="h-4 w-4 mr-2 text-tennis-yellow" />
                           <span className="font-medium">{event.date}</span>
@@ -89,12 +79,7 @@ const VeranstaltungenDE = () => {
                 <div className="space-y-4">
                   {damen2.map((event) => (
                     <Card key={event.id} className="p-4 hover:shadow-lg transition-shadow">
-                      <div className="flex items-start gap-3">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)}`}>
-                          {eventTypeLabels[event.type].de}
-                        </span>
-                      </div>
-                      <div className="mt-3 space-y-2">
+                      <div className="space-y-2">
                         <div className="flex items-center text-gray-700">
                           <Calendar className="h-4 w-4 mr-2 text-tennis-yellow" />
                           <span className="font-medium">{event.date}</span>
@@ -121,12 +106,7 @@ const VeranstaltungenDE = () => {
                 <div className="space-y-4">
                   {herren1.map((event) => (
                     <Card key={event.id} className="p-4 hover:shadow-lg transition-shadow">
-                      <div className="flex items-start gap-3">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)}`}>
-                          {eventTypeLabels[event.type].de}
-                        </span>
-                      </div>
-                      <div className="mt-3 space-y-2">
+                      <div className="space-y-2">
                         <div className="flex items-center text-gray-700">
                           <Calendar className="h-4 w-4 mr-2 text-tennis-yellow" />
                           <span className="font-medium">{event.date}</span>
