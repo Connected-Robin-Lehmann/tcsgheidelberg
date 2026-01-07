@@ -256,18 +256,22 @@ export const upcomingEvents: ClubEvent[] = [
     type: "tournament",
   },
   {
-    id: "thanksgiving-2025",
+    id: "turkey-time-2025",
     date: "21.11.2025",
-    time: { de: "19:00", en: "19:00" },
+    time: { de: "19:30 Uhr", en: "7:30 PM" },
     title: { 
-      de: "Thanksgiving Pute-Essen", 
-      en: "Thanksgiving Turkey Dinner" 
+      de: "Turkey Time mit Tanz statt Gans", 
+      en: "Turkey Time with Dance instead of Goose" 
     },
-    location: { de: "Clubhaus", en: "Clubhouse" },
+    location: { 
+      de: "Ristorante Zur Goldenen Rose, Hegenichstraße 10, 69124 Heidelberg", 
+      en: "Ristorante Zur Goldenen Rose, Hegenichstraße 10, 69124 Heidelberg" 
+    },
     description: { 
-      de: "Gemütliches Beisammensein mit traditionellem Thanksgiving-Essen", 
-      en: "Cozy gathering with traditional Thanksgiving meal" 
+      de: "Buffet mit Putenbraten oder vegetarischen Ravioli. Erwachsene 41€, Kinder bis 12 Jahre 18€. Anmeldung bis 15.11.2025.", 
+      en: "Buffet with turkey roast or vegetarian ravioli. Adults €41, Children up to 12 €18. Registration until 15.11.2025." 
     },
+    contact: "terezie.zuna-homsy@schwarzgelb-heidelberg.de",
     type: "food",
   },
 ];
