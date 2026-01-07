@@ -6,7 +6,8 @@ export type EventType =
   | "meeting" 
   | "training" 
   | "infrastructure" 
-  | "food";
+  | "food"
+  | "match";
 
 export interface ClubEvent {
   id: string;
@@ -32,6 +33,62 @@ export interface ClubEvent {
 }
 
 export const upcomingEvents: ClubEvent[] = [
+  // Badenliga Hallensaison 2026
+  {
+    id: "damen1-badenliga-jan-2026",
+    date: "17.01.2026",
+    time: { de: "18:00 Uhr", en: "6:00 PM" },
+    title: { de: "Damen 1 Badenliga", en: "Women 1 Baden League" },
+    location: { de: "Halle TC Plankstadt", en: "TC Plankstadt Indoor Court" },
+    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
+    type: "match",
+  },
+  {
+    id: "damen1-badenliga-feb-2026",
+    date: "28.02.2026",
+    time: { de: "17:00 Uhr", en: "5:00 PM" },
+    title: { de: "Damen 1 Badenliga", en: "Women 1 Baden League" },
+    location: { de: "Halle TC Wolfsberg Pforzheim", en: "TC Wolfsberg Pforzheim Indoor Court" },
+    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
+    type: "match",
+  },
+  {
+    id: "damen2-badenliga-jan-2026",
+    date: "31.01.2026",
+    time: { de: "18:00 Uhr", en: "6:00 PM" },
+    title: { de: "Damen 2 Badenliga", en: "Women 2 Baden League" },
+    location: { de: "Halle LLZ Leimen", en: "LLZ Leimen Indoor Court" },
+    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
+    type: "match",
+  },
+  {
+    id: "damen2-badenliga-feb-2026",
+    date: "28.02.2026",
+    time: { de: "18:00 Uhr", en: "6:00 PM" },
+    title: { de: "Damen 2 Badenliga", en: "Women 2 Baden League" },
+    location: { de: "Halle TC Plankstadt", en: "TC Plankstadt Indoor Court" },
+    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
+    type: "match",
+  },
+  {
+    id: "herren1-badenliga-jan-2026",
+    date: "17.01.2026",
+    time: { de: "17:00 Uhr", en: "5:00 PM" },
+    title: { de: "Herren 1 Badenliga", en: "Men 1 Baden League" },
+    location: { de: "Halle St. Ilgen", en: "St. Ilgen Indoor Court" },
+    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
+    type: "match",
+  },
+  {
+    id: "herren1-badenliga-feb-2026",
+    date: "31.01.2026",
+    time: { de: "18:00 Uhr", en: "6:00 PM" },
+    title: { de: "Herren 1 Badenliga", en: "Men 1 Baden League" },
+    location: { de: "Halle LLZ Leimen", en: "LLZ Leimen Indoor Court" },
+    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
+    type: "match",
+  },
+  // Legacy events from 2025
   {
     id: "80s-90s-party-2025",
     date: "30.04.2025",
@@ -224,6 +281,7 @@ export const eventTypeLabels: Record<EventType, { de: string; en: string }> = {
   training: { de: "Training", en: "Training" },
   infrastructure: { de: "Infrastruktur", en: "Infrastructure" },
   food: { de: "Essen", en: "Food" },
+  match: { de: "Punktspiel", en: "League Match" },
 };
 
 export const getEventTypeColor = (type: EventType): string => {
@@ -244,6 +302,8 @@ export const getEventTypeColor = (type: EventType): string => {
       return "bg-gray-100 text-gray-800";
     case "food":
       return "bg-amber-100 text-amber-800";
+    case "match":
+      return "bg-emerald-100 text-emerald-800";
     default:
       return "bg-gray-100 text-gray-800";
   }
@@ -267,6 +327,8 @@ export const getEventIcon = (type: EventType): string => {
       return "🔧";
     case "food":
       return "🍽️";
+    case "match":
+      return "🏸";
     default:
       return "📅";
   }
