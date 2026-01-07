@@ -47,29 +47,33 @@ const VeranstaltungenDE = () => {
                 Kommende Veranstaltungen
               </h2>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="space-y-4">
                 {socialEvents.map((event) => (
                   <Card key={event.id} className="p-6 hover:shadow-lg transition-shadow">
-                    <div className="space-y-3">
-                      <h3 className="font-bold text-lg text-tennis-black">{event.title.de}</h3>
-                      <div className="flex items-center text-gray-700">
-                        <Calendar className="h-4 w-4 mr-2 text-tennis-yellow" />
-                        <span className="font-medium">{event.date}</span>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                      <div>
+                        <h3 className="font-bold text-xl text-tennis-black mb-2">{event.title.de}</h3>
+                        <p className="text-gray-600">{event.description.de}</p>
+                        {event.contact && (
+                          <p className="text-sm text-gray-500 mt-2">
+                            Kontakt: <a href={`mailto:${event.contact}`} className="text-tennis-black hover:underline">{event.contact}</a>
+                          </p>
+                        )}
                       </div>
-                      <div className="flex items-center text-gray-600">
-                        <Clock className="h-4 w-4 mr-2 text-tennis-yellow" />
-                        <span>{event.time.de}</span>
+                      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 text-sm md:text-base shrink-0">
+                        <div className="flex items-center text-gray-700">
+                          <Calendar className="h-5 w-5 mr-2 text-tennis-yellow" />
+                          <span className="font-medium">{event.date}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <Clock className="h-5 w-5 mr-2 text-tennis-yellow" />
+                          <span>{event.time.de}</span>
+                        </div>
+                        <div className="flex items-center text-gray-600">
+                          <MapPin className="h-5 w-5 mr-2 text-tennis-yellow" />
+                          <span>{event.location.de}</span>
+                        </div>
                       </div>
-                      <div className="flex items-start text-gray-600">
-                        <MapPin className="h-4 w-4 mr-2 text-tennis-yellow mt-0.5" />
-                        <span>{event.location.de}</span>
-                      </div>
-                      <p className="text-gray-600 text-sm pt-2">{event.description.de}</p>
-                      {event.contact && (
-                        <p className="text-sm text-gray-500">
-                          Kontakt: <a href={`mailto:${event.contact}`} className="text-tennis-black hover:underline">{event.contact}</a>
-                        </p>
-                      )}
                     </div>
                   </Card>
                 ))}
