@@ -9,6 +9,9 @@ const VeranstaltungenEN = () => {
   // Filter match events for 2026
   const matchEvents = upcomingEvents.filter(e => e.type === "match");
   
+  // Get upcoming social/food events
+  const socialEvents = upcomingEvents.filter(e => e.type === "food" || e.type === "party");
+  
   // Group by team
   const damen1 = matchEvents.filter(e => e.id.includes("damen1"));
   const damen2 = matchEvents.filter(e => e.id.includes("damen2"));
@@ -36,68 +39,43 @@ const VeranstaltungenEN = () => {
             </p>
           </div>
 
-          {/* Turkey Time Section */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-tennis-black mb-8 flex items-center gap-3">
-              <span className="text-4xl">🦃</span>
-              Turkey Time with Dance instead of Goose
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src="/images/turkey-time-2025.jpg" 
-                  alt="Turkey Time Event Flyer"
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="space-y-6">
-                <Card className="p-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center text-gray-700">
-                      <Calendar className="h-5 w-5 mr-3 text-tennis-yellow" />
-                      <span className="font-bold text-lg">Friday, November 21, 2025</span>
+          {/* Social Events Section */}
+          {socialEvents.length > 0 && (
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-tennis-black mb-8 flex items-center gap-3">
+                <span className="text-4xl">🎉</span>
+                Upcoming Events
+              </h2>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {socialEvents.map((event) => (
+                  <Card key={event.id} className="p-6 hover:shadow-lg transition-shadow">
+                    <div className="space-y-3">
+                      <h3 className="font-bold text-lg text-tennis-black">{event.title.en}</h3>
+                      <div className="flex items-center text-gray-700">
+                        <Calendar className="h-4 w-4 mr-2 text-tennis-yellow" />
+                        <span className="font-medium">{event.date}</span>
+                      </div>
+                      <div className="flex items-center text-gray-600">
+                        <Clock className="h-4 w-4 mr-2 text-tennis-yellow" />
+                        <span>{event.time.en}</span>
+                      </div>
+                      <div className="flex items-start text-gray-600">
+                        <MapPin className="h-4 w-4 mr-2 text-tennis-yellow mt-0.5" />
+                        <span>{event.location.en}</span>
+                      </div>
+                      <p className="text-gray-600 text-sm pt-2">{event.description.en}</p>
+                      {event.contact && (
+                        <p className="text-sm text-gray-500">
+                          Contact: <a href={`mailto:${event.contact}`} className="text-tennis-black hover:underline">{event.contact}</a>
+                        </p>
+                      )}
                     </div>
-                    <div className="flex items-center text-gray-600">
-                      <Clock className="h-5 w-5 mr-3 text-tennis-yellow" />
-                      <span>7:30 PM</span>
-                    </div>
-                    <div className="flex items-start text-gray-600">
-                      <MapPin className="h-5 w-5 mr-3 text-tennis-yellow mt-0.5" />
-                      <span>Ristorante Zur Goldenen Rose<br/>Hegenichstraße 10, 69124 Heidelberg</span>
-                    </div>
-                  </div>
-                </Card>
-                
-                <Card className="p-6">
-                  <h3 className="font-bold text-lg text-tennis-black mb-3">Buffet</h3>
-                  <ul className="text-gray-600 space-y-1">
-                    <li>• Italian appetizers and salads</li>
-                    <li>• Turkey roast with white wine sauce and sage, rosemary potatoes</li>
-                    <li>• Ravioli with ricotta and spinach (vegetarian)</li>
-                  </ul>
-                </Card>
-                
-                <Card className="p-6">
-                  <h3 className="font-bold text-lg text-tennis-black mb-3">Price</h3>
-                  <ul className="text-gray-600 space-y-1">
-                    <li>• Adults: <strong>€41</strong></li>
-                    <li>• Children up to 12 years: <strong>€18</strong></li>
-                  </ul>
-                </Card>
-                
-                <Card className="p-6 bg-tennis-yellow/10 border-tennis-yellow">
-                  <h3 className="font-bold text-lg text-tennis-black mb-3">Registration</h3>
-                  <p className="text-gray-700 mb-2">
-                    Please register with meal choice and number of attendees by <strong>Saturday, November 15, 2025</strong>
-                  </p>
-                  <p className="text-gray-700">
-                    Contact: <a href="mailto:terezie.zuna-homsy@schwarzgelb-heidelberg.de" className="text-tennis-black font-medium hover:underline">terezie.zuna-homsy@schwarzgelb-heidelberg.de</a>
-                  </p>
-                </Card>
+                  </Card>
+                ))}
               </div>
             </div>
-          </div>
+          )}
 
           {/* Badenliga Section */}
           <div className="mb-16">
