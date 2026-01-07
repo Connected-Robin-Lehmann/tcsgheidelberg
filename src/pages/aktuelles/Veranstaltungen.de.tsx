@@ -36,6 +36,69 @@ const VeranstaltungenDE = () => {
             </p>
           </div>
 
+          {/* Turkey Time Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-tennis-black mb-8 flex items-center gap-3">
+              <span className="text-4xl">🦃</span>
+              Turkey Time mit Tanz statt Gans
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="/images/turkey-time-2025.jpg" 
+                  alt="Turkey Time mit Tanz statt Gans Flyer"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="space-y-6">
+                <Card className="p-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center text-gray-700">
+                      <Calendar className="h-5 w-5 mr-3 text-tennis-yellow" />
+                      <span className="font-bold text-lg">Freitag, 21.11.2025</span>
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <Clock className="h-5 w-5 mr-3 text-tennis-yellow" />
+                      <span>19:30 Uhr</span>
+                    </div>
+                    <div className="flex items-start text-gray-600">
+                      <MapPin className="h-5 w-5 mr-3 text-tennis-yellow mt-0.5" />
+                      <span>Ristorante Zur Goldenen Rose<br/>Hegenichstraße 10, 69124 Heidelberg</span>
+                    </div>
+                  </div>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="font-bold text-lg text-tennis-black mb-3">Buffet</h3>
+                  <ul className="text-gray-600 space-y-1">
+                    <li>• Italienische Vorspeisen und Salate</li>
+                    <li>• Putenbraten mit Weißweinsoße und Salbei, Rosmarinkartoffeln</li>
+                    <li>• Ravioli mit Ricotta und Spinat (vegetarisch)</li>
+                  </ul>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="font-bold text-lg text-tennis-black mb-3">Preis</h3>
+                  <ul className="text-gray-600 space-y-1">
+                    <li>• Erwachsene: <strong>41 Euro</strong></li>
+                    <li>• Kinder bis 12 Jahre: <strong>18 Euro</strong></li>
+                  </ul>
+                </Card>
+                
+                <Card className="p-6 bg-tennis-yellow/10 border-tennis-yellow">
+                  <h3 className="font-bold text-lg text-tennis-black mb-3">Anmeldung</h3>
+                  <p className="text-gray-700 mb-2">
+                    Anmeldung mit Angabe des Essens und Anzahl der Teilnehmer bis <strong>Samstag, 15.11.2025</strong>
+                  </p>
+                  <p className="text-gray-700">
+                    Kontakt: <a href="mailto:terezie.zuna-homsy@schwarzgelb-heidelberg.de" className="text-tennis-black font-medium hover:underline">terezie.zuna-homsy@schwarzgelb-heidelberg.de</a>
+                  </p>
+                </Card>
+              </div>
+            </div>
+          </div>
+
           {/* Badenliga Section */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-tennis-black mb-8 flex items-center gap-3">
