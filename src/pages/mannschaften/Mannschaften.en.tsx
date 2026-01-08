@@ -93,12 +93,12 @@ const MannschaftenEN = () => {
                   Tennis Association website:
                 </p>
                 <a
-                  href="https://baden.liga.nu/"
+                  href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/clubTeams?club=33129"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                 >
-                  Baden Tennis Association
+                  nuLiga TC Schwarz-Gelb Heidelberg
                   <svg
                     className="ml-2 w-4 h-4"
                     fill="none"
