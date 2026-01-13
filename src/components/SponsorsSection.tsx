@@ -49,13 +49,13 @@ const SponsorsSection = () => {
         </div>
 
         {/* Main Sponsors */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-center text-tennis-black mb-8">
+        <div className="mb-10 md:mb-16">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-center text-tennis-black mb-4 sm:mb-6 md:mb-8">
             {t('home.sponsors.mainSponsors')}
           </h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
             {mainSponsors.map((sponsor, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div key={index} className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                 <a 
                   href={sponsor.url} 
                   target="_blank" 
@@ -65,7 +65,7 @@ const SponsorsSection = () => {
                   <img 
                     src={sponsor.logo} 
                     alt={sponsor.name}
-                    className="sponsor-logo w-full h-20 object-contain mx-auto"
+                    className="sponsor-logo w-full h-12 sm:h-16 md:h-20 object-contain mx-auto"
                   />
                 </a>
               </div>
@@ -75,12 +75,12 @@ const SponsorsSection = () => {
 
         {/* Tennis Schools */}
         <div>
-          <h3 className="text-2xl font-semibold text-center text-tennis-black mb-8">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-center text-tennis-black mb-4 sm:mb-6 md:mb-8">
             {t('home.sponsors.tennisSchools')}
           </h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-2xl mx-auto">
             {tennisSchools.map((school, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div key={index} className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                 <a 
                   href={school.url} 
                   className="block"
@@ -88,7 +88,7 @@ const SponsorsSection = () => {
                   <img 
                     src={school.logo} 
                     alt={school.name}
-                    className="sponsor-logo w-full h-20 object-contain mx-auto"
+                    className="sponsor-logo w-full h-12 sm:h-16 md:h-20 object-contain mx-auto"
                   />
                 </a>
               </div>
@@ -96,8 +96,8 @@ const SponsorsSection = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-lg text-muted-foreground mb-6">
+        <div className="text-center mt-8 sm:mt-10 md:mt-12 px-2">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-4 sm:mb-6">
             {t('home.sponsors.partnershipInterest')}
           </p>
           <Link to="/der-club/sponsoring" className="btn-hero">

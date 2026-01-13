@@ -27,19 +27,19 @@ const StatsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <div 
               key={index} 
               className="text-center group hover:transform hover:scale-105 transition-all duration-300"
             >
-              <div className="bg-gray-50 rounded-2xl p-6 mb-4 group-hover:bg-tennis-yellow-light transition-colors duration-300">
-                <stat.icon className={`h-8 w-8 mx-auto mb-4 ${stat.color} group-hover:text-tennis-black transition-colors duration-300`} />
-                <div className="stat-counter text-tennis-black group-hover:text-tennis-black">
+              <div className="bg-gray-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 mb-2 sm:mb-4 group-hover:bg-tennis-yellow-light transition-colors duration-300">
+                <stat.icon className={`h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 mx-auto mb-2 sm:mb-4 ${stat.color} group-hover:text-tennis-black transition-colors duration-300`} />
+                <div className="text-xl sm:text-2xl md:text-4xl font-bold text-tennis-black group-hover:text-tennis-black">
                   {stat.number}
                 </div>
               </div>
-              <p className="stat-label text-tennis-black font-medium">
+              <p className="text-[10px] sm:text-xs md:text-sm text-tennis-black font-medium leading-tight px-1">
                 {stat.label}
               </p>
             </div>

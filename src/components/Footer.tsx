@@ -37,19 +37,19 @@ const Footer = () => {
               {t('footer.contact')}
             </h3>
             <div className="space-y-3">
-              <div className="flex items-center text-gray-300">
-                <Phone className="h-5 w-5 mr-3 text-tennis-yellow" />
+              <div className="flex items-start text-gray-300 text-sm sm:text-base">
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-tennis-yellow flex-shrink-0 mt-0.5" />
                 <div>
                   <div>Restaurant: 0176-25554081</div>
                   <div>Vereinshotline: 06221-4337096</div>
                 </div>
               </div>
-              <div className="flex items-center text-gray-300">
-                <Mail className="h-5 w-5 mr-3 text-tennis-yellow" />
-                <span>tennis@schwarzgelb-heidelberg.de</span>
+              <div className="flex items-center text-gray-300 text-sm sm:text-base">
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-tennis-yellow flex-shrink-0" />
+                <span className="break-all">tennis@schwarzgelb-heidelberg.de</span>
               </div>
-              <div className="flex items-start text-gray-300">
-                <MapPin className="h-5 w-5 mr-3 text-tennis-yellow mt-1" />
+              <div className="flex items-start text-gray-300 text-sm sm:text-base">
+                <MapPin className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-tennis-yellow mt-0.5 flex-shrink-0" />
                 <div>
                   <div>Tennisclub Schwarz-Gelb</div>
                   <div>Heidelberg e.V.</div>
