@@ -155,26 +155,29 @@ const DerClubEN = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {galleryImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-tennis-black/0 group-hover:bg-tennis-black/20 transition-colors duration-300"></div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-tennis-black/70 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-white text-sm font-medium">
-                        {image.alt}
-                      </p>
+              {galleryImages.map((image, index) => {
+                const isLogo = image.alt.toLowerCase().includes("logo");
+                return (
+                  <div
+                    key={index}
+                    className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
+                  >
+                    <div className={`relative overflow-hidden ${isLogo ? 'bg-gray-100' : ''}`}>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className={`w-full h-48 ${isLogo ? 'object-contain p-2' : 'object-cover'} group-hover:scale-110 transition-transform duration-500`}
+                      />
+                      <div className="absolute inset-0 bg-tennis-black/0 group-hover:bg-tennis-black/20 transition-colors duration-300"></div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-tennis-black/70 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <p className="text-white text-sm font-medium">
+                          {image.alt}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
