@@ -20,9 +20,6 @@ const SpielberichtsbogenEN = () => {
               Match Report Form
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Official forms for your team matches
-            </p>
           </div>
 
           {/* Placeholder */}
