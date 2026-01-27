@@ -63,6 +63,8 @@ const Header = () => {
         { name: t("header.adults"), href: "/mannschaften/aktive" },
         { name: t("header.seniors"), href: "/mannschaften/senioren" },
         { name: t("header.regulations"), href: "/mannschaften/regelwerk" },
+        { name: t("header.matchReportForm"), href: "/mannschaften/spielberichtsbogen" },
+        { name: t("header.teamCaptainInfo"), href: "/mannschaften/mannschaftsfuehrer" },
       ],
     },
     {
