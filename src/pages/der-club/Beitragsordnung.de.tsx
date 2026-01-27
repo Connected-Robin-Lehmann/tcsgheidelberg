@@ -211,7 +211,7 @@ const BeitragsordnungDE = () => {
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-8 py-4 text-lg"
                   onClick={() =>
                     window.open(
-                      "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2021/01/Beitragsordnung-ab-2021-komplett.pdf",
+                      "/downloads/Beitragsordnung-2026.png",
                       "_blank"
                     )
                   }
