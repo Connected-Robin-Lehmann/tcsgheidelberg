@@ -122,9 +122,9 @@ const MannschaftenEN = () => {
                 Our Team Categories
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <a
-                  href="/teams/youth"
+                  href="/mannschaften/jugend"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
@@ -139,43 +139,22 @@ const MannschaftenEN = () => {
                 </a>
 
                 <a
-                  href="https://baden.liga.nu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/mannschaften/aktive"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow/20 group-hover:bg-tennis-yellow rounded-full mb-4 transition-colors">
                       <Target className="w-8 h-8 text-tennis-black" />
                     </div>
-                    <h4 className="text-xl font-bold text-foreground">Women</h4>
+                    <h4 className="text-xl font-bold text-foreground">Adults</h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Multiple Teams
+                      Women & Men
                     </p>
                   </div>
                 </a>
 
                 <a
-                  href="https://baden.liga.nu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
-                >
-                  <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow/20 group-hover:bg-tennis-yellow rounded-full mb-4 transition-colors">
-                      <Users className="w-8 h-8 text-tennis-black" />
-                    </div>
-                    <h4 className="text-xl font-bold text-foreground">Men</h4>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Multiple Teams
-                    </p>
-                  </div>
-                </a>
-
-                <a
-                  href="https://baden.liga.nu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/mannschaften/senioren"
                   className="group bg-gradient-to-br from-background to-secondary/20 p-8 rounded-xl border-2 border-tennis-yellow/30 hover:border-tennis-yellow transition-all hover:shadow-xl transform hover:-translate-y-1 duration-300"
                 >
                   <div className="text-center">
@@ -186,7 +165,7 @@ const MannschaftenEN = () => {
                       Seniors
                     </h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Multiple Teams
+                      Age Groups
                     </p>
                   </div>
                 </a>

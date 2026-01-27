@@ -60,6 +60,8 @@ const Header = () => {
       href: "/mannschaften",
       submenu: [
         { name: t("header.youth"), href: "/mannschaften/jugend" },
+        { name: t("header.adults"), href: "/mannschaften/aktive" },
+        { name: t("header.seniors"), href: "/mannschaften/senioren" },
         { name: t("header.regulations"), href: "/mannschaften/regelwerk" },
       ],
     },

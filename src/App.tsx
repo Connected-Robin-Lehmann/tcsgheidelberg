@@ -31,6 +31,8 @@ import Ansprechpartner from "./pages/aktuelles/Ansprechpartner";
 // Mannschaften pages
 import Mannschaften from "./pages/mannschaften/Mannschaften";
 import Jugend from "./pages/mannschaften/Jugend";
+import Aktive from "./pages/mannschaften/Aktive";
+import Senioren from "./pages/mannschaften/Senioren";
 import Regelwerk from "./pages/mannschaften/Regelwerk";
 
 // Training pages
@@ -115,6 +117,8 @@ const App = () => (
           {/* Mannschaften Routes */}
           <Route path="/mannschaften" element={<Mannschaften />} />
           <Route path="/mannschaften/jugend" element={<Jugend />} />
+          <Route path="/mannschaften/aktive" element={<Aktive />} />
+          <Route path="/mannschaften/senioren" element={<Senioren />} />
           <Route path="/mannschaften/regelwerk" element={<Regelwerk />} />
 
           {/* Turniere Routes */}
