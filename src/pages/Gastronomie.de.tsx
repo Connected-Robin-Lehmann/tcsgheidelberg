@@ -13,7 +13,7 @@ const GastronomieDE = () => {
       <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Clubgastronomie „La Trattoria"
+            Clubgastronomie <em>„La Trattoria"</em>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Italienisches Flair mit Biergarten - Eröffnung April 2026
@@ -29,24 +29,15 @@ const GastronomieDE = () => {
             
             {/* Left Column - Main Info */}
             <div className="lg:col-span-2">
-              {/* La Trattoria Image Card */}
-              <Card className="card-tennis mb-8 overflow-hidden">
-                <img 
-                  src="/images/la-trattoria-banner.png" 
-                  alt="La Trattoria - Coming Soon April 2026" 
-                  className="w-full h-auto object-contain"
-                />
-              </Card>
-
               <Card className="card-tennis mb-8">
                 <div className="p-8">
                   <h2 className="text-3xl font-bold text-tennis-black mb-6">
-                    Clubgastronomie „La Trattoria" mit Biergarten
+                    Clubgastronomie <em>„La Trattoria"</em> mit Biergarten
                   </h2>
                   
                   <div className="space-y-6 text-gray-700 leading-relaxed">
                     <p>
-                      Im April 2026 eröffnet die neue „La Trattoria" im Tennisclub ihre Türen. 
+                      Im April 2026 eröffnet die neue <em>„La Trattoria"</em> im Tennisclub ihre Türen. 
                       Freut Euch auf authentische italienische Küche, erlesene Weine, ein liebevoll 
                       neu gestaltetes Restaurant mit gemütlichem Biergarten und herzliche Gastfreundschaft. 
                       Auch Events und Feiern können künftig in besonderem Ambiente gebucht werden.
@@ -58,6 +49,15 @@ const GastronomieDE = () => {
                     </p>
                   </div>
                 </div>
+              </Card>
+
+              {/* La Trattoria Image Card */}
+              <Card className="card-tennis mb-8 overflow-hidden">
+                <img 
+                  src="/images/la-trattoria-banner.png" 
+                  alt="La Trattoria - Coming Soon April 2026" 
+                  className="w-full h-auto object-contain"
+                />
               </Card>
 
               {/* Restaurant Info Card */}

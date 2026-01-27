@@ -13,7 +13,7 @@ const GastronomieEN = () => {
       <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Club Gastronomy "La Trattoria"
+            Club Gastronomy <em>"La Trattoria"</em>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Italian Flair with Beer Garden - Opening April 2026
@@ -29,24 +29,15 @@ const GastronomieEN = () => {
             
             {/* Left Column - Main Info */}
             <div className="lg:col-span-2">
-              {/* La Trattoria Image Card */}
-              <Card className="card-tennis mb-8 overflow-hidden">
-                <img 
-                  src="/images/la-trattoria-banner.png" 
-                  alt="La Trattoria - Coming Soon April 2026" 
-                  className="w-full h-auto object-contain"
-                />
-              </Card>
-
               <Card className="card-tennis mb-8">
                 <div className="p-8">
                   <h2 className="text-3xl font-bold text-tennis-black mb-6">
-                    Club Gastronomy "La Trattoria" with Beer Garden
+                    Club Gastronomy <em>"La Trattoria"</em> with Beer Garden
                   </h2>
                   
                   <div className="space-y-6 text-gray-700 leading-relaxed">
                     <p>
-                      In April 2026, the new "La Trattoria" will open its doors at the tennis club. 
+                      In April 2026, the new <em>"La Trattoria"</em> will open its doors at the tennis club. 
                       Look forward to authentic Italian cuisine, exquisite wines, a lovingly redesigned 
                       restaurant with a cozy beer garden, and warm hospitality. Events and celebrations 
                       can also be booked in this special atmosphere in the future.
@@ -58,6 +49,15 @@ const GastronomieEN = () => {
                     </p>
                   </div>
                 </div>
+              </Card>
+
+              {/* La Trattoria Image Card */}
+              <Card className="card-tennis mb-8 overflow-hidden">
+                <img 
+                  src="/images/la-trattoria-banner.png" 
+                  alt="La Trattoria - Coming Soon April 2026" 
+                  className="w-full h-auto object-contain"
+                />
               </Card>
 
               {/* Restaurant Info Card */}
