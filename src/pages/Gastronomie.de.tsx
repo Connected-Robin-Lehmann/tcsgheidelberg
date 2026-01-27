@@ -91,15 +91,6 @@ const GastronomieDE = () => {
                 </div>
               </Card>
 
-              {/* Club Statement */}
-              <div className="mt-6 p-6 bg-gray-100 rounded-lg border-l-4 border-blue-500">
-                <p className="text-gray-700 leading-relaxed">
-                  Der Vorstand ist sich bewusst, dass unsere Vereinsgastronomie für viele unserer 
-                  Mitglieder einen sehr wichtigen Teil des Vereinslebens darstellt und auch dem 
-                  Vorstand ist ein schönes Gastronomieerlebnis in ansprechender und zu unserem 
-                  Club passender Atmosphäre wichtig.
-                </p>
-              </div>
 
               {/* Restaurant Image */}
               <div className="mt-8">
