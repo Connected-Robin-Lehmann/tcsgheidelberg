@@ -9,22 +9,19 @@ const GastronomieEN = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Club Gastronomy "La Trattoria"
-          </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Italian Flair with Beer Garden - Warm Hospitality and Authentic Cuisine
-          </p>
-        </div>
+      {/* Hero Section with Banner Image */}
+      <section className="relative">
+        <img 
+          src="/images/la-trattoria-banner.png" 
+          alt="La Trattoria - Coming Soon April 2026" 
+          className="w-full h-auto object-cover"
+        />
       </section>
 
       <main className="py-12">
         <div className="container mx-auto px-4 max-w-6xl">
           
-          {/* Main Content Grid */}
+          {/* Main Content */}
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
             
             {/* Left Column - Main Info */}
@@ -32,47 +29,20 @@ const GastronomieEN = () => {
               <Card className="card-tennis mb-8">
                 <div className="p-8">
                   <h2 className="text-3xl font-bold text-tennis-black mb-6">
-                    Club Gastronomy <em>"La Trattoria"</em> with Beer Garden
+                    Club Gastronomy "La Trattoria" with Beer Garden
                   </h2>
                   
                   <div className="space-y-6 text-gray-700 leading-relaxed">
                     <p>
-                      We are pleased to announce that our new host{' '}
-                      <span className="text-red-600 font-bold">Pasquale Dimauro</span>{' '}
-                      has taken over the gastronomy of our tennis club and will bring fresh 
-                      Italian flair to our club starting in 2026. Look forward to warm hospitality, 
-                      a cozy atmosphere and a delicious menu.
+                      In April 2026, the new "La Trattoria" will open its doors at the tennis club. 
+                      Look forward to authentic Italian cuisine, exquisite wines, a lovingly redesigned 
+                      restaurant with a cozy beer garden, and warm hospitality. Events and celebrations 
+                      can also be booked in this special atmosphere in the future.
                     </p>
                     
-                    <div className="bg-tennis-yellow/10 border-l-4 border-tennis-yellow p-4 rounded-r-lg">
-                      <p className="font-bold">
-                        Generally, Pasquale is present on weekends this summer (2025) with 
-                        a small menu and drinks. Wednesday to Friday he is available for you 
-                        from 6:00 PM to 9:00 PM. Monday and Tuesday are closed.
-                      </p>
-                    </div>
-                    
-                    <p>
-                      We encourage everyone to try the new offer – not only is the food sure to be 
-                      wonderful – many have surely been wishing for a sparkling prosecco or a cold 
-                      beer after training at our tennis schools or free play!
-                    </p>
-                    
-                    <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
-                      <p className="text-red-600 font-bold">
-                        In April 2026, the official opening of an Italian 
-                        restaurant <em>"La Trattoria"</em> with an extensive menu will take place.
-                      </p>
-                    </div>
-                    
-                    <p>
-                      We are convinced it will be a perfect place for a sociable gathering 
-                      after the match or a relaxed meal with family and friends.
-                    </p>
-                    
-                    <p>
-                      For birthdays, weddings and events of all kinds, reservations can then 
-                      also be made with Pasquale again.
+                    <p className="font-semibold text-tennis-black">
+                      Pasquale Dimauro and his team look forward to welcoming you for 
+                      delightful hours.
                     </p>
                   </div>
                 </div>
