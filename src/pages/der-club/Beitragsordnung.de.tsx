@@ -3,15 +3,33 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, Euro, Users, AlertTriangle, Mail } from "lucide-react";
+import { Download, Euro, AlertTriangle, Mail } from "lucide-react";
 
 const BeitragsordnungDE = () => {
-  const membershipTypes = [
-    { type: "Erwachsene (25-65 Jahre)", rate: "Regulärer Beitrag" },
-    { type: "Familien", rate: "Ermäßigter Tarif" },
-    { type: "Jugendliche (bis 18 Jahre)", rate: "Ermäßigter Tarif" },
-    { type: "Studenten", rate: "Ermäßigter Tarif" },
-    { type: "Senioren (ab 65 Jahre)", rate: "Spezieller Tarif" },
+  const mitgliedsbeitraege = [
+    { type: "Ehepaar / Lebensgemeinschaft (2 Erwachsene mit gleicher Adresse)", annual: "632 €", halfYear: "435 €" },
+    { type: "Einzelmitglied Erwachsener über 18 Jahre", annual: "406 €", halfYear: "265 €" },
+    { type: "Einzelmitglied Erwachsener in Ausbildung 18-25 Jahre (Nachweispflicht)", annual: "197 €", halfYear: "135 €" },
+    { type: "Einzelmitglied Kind unter 14 Jahre", annual: "155 €", halfYear: "110 €" },
+    { type: "Einzelmitglied Jugendliche/r 14-18 Jahre", annual: "167 €", halfYear: "115 €" },
+    { type: "Trainingsmitgliedschaft (nur Training ohne Platzbuchungsberechtigung)", annual: "135 €", halfYear: "135 €" },
+    { type: "Fördermitglied (passive Mitgliedschaft ohne Trainings-/Spielberechtigung)", annual: "75 €", halfYear: "75 €" },
+  ];
+
+  const kinderZusatzbeitraege = [
+    { type: "Zuschlag für 1. Kind bis 18 Jahre", annual: "48 €", halfYear: "35 €" },
+    { type: "Zuschlag für 2. Kind bis 18 Jahre", annual: "24 €", halfYear: "15 €" },
+    { type: "Zuschlag ab 3. Kind bis 18 Jahre", annual: "0 €", halfYear: "0 €" },
+    { type: "Zuschlag für 1. erwachsenes Kind 18-25 Jahre und in Ausbildung (Nachweispflicht)", annual: "95 €", halfYear: "70 €" },
+    { type: "Zuschlag für 2. erwachsenes Kind in Ausbildung (Nachweispflicht)", annual: "48 €", halfYear: "35 €" },
+    { type: "Zuschlag ab 3. erwachsenes Kind 18-25 Jahre und in Ausbildung (Nachweispflicht)", annual: "0 €", halfYear: "0 €" },
+  ];
+
+  const aufnahmegebuehren = [
+    { type: "Aufnahmeantrag in eine aktive Mitgliedschaft, über 25 Jahre", fee: "100 €" },
+    { type: "Aufnahmeantrag in eine aktive Mitgliedschaft, unter 25 Jahre", fee: "50 €" },
+    { type: "Aufnahmeantrag oder Wechsel zum Fördermitglied", fee: "0 €" },
+    { type: "Wiederaufnahme (nach einem Austritt)", fee: "100 €" },
   ];
 
   return (
@@ -23,7 +41,7 @@ const BeitragsordnungDE = () => {
           <div className="text-center mb-16">
             <div className="inline-block bg-tennis-yellow px-6 py-2 rounded-full mb-6">
               <span className="text-tennis-black font-bold text-sm uppercase tracking-wider">
-                Transparente Preise
+                Gültig ab 01.01.2026
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tennis-black mb-6">
@@ -41,49 +59,97 @@ const BeitragsordnungDE = () => {
               <div className="flex items-center mb-8">
                 <Euro className="h-8 w-8 text-tennis-yellow mr-4" />
                 <h2 className="text-3xl font-bold text-tennis-black">
-                  Unsere Beitragsstruktur
+                  Mitgliedsbeiträge TC Schwarz-Gelb Heidelberg e.V.
                 </h2>
               </div>
 
-              <div className="prose prose-lg max-w-none mb-8">
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Hier finden Sie alle Details zu unseren Beiträgen. Für
-                  Familien, Jugendliche und Studenten haben wir natürlich auch
-                  ermäßigte Tarife. Auch bieten wir im ersten Jahr der Aufnahme
-                  bei Eintritt nach dem 15.7. ermäßigte Beträge bis zum
-                  Jahresende.
-                </p>
-
-                <div className="bg-tennis-yellow/10 rounded-2xl p-8 mb-8 border-l-4 border-tennis-yellow">
-                  <h3 className="text-2xl font-bold text-tennis-black mb-4">
-                    Neue Beitragsordnung ab 2021
-                  </h3>
-                  <p className="text-gray-700">
-                    Es gilt eine neue Beitragsordnung ab 2021. Diese wurde von
-                    der Mitgliederversammlung am 11.10.2020 beschlossen. Die
-                    untenstehende Tabelle zeigt die ab 01.01.2021 geltende
-                    Beitragsordnung.
-                  </p>
+              {/* Mitgliedsbeiträge Tabelle */}
+              <div className="mb-10">
+                <h3 className="text-xl font-bold text-tennis-black mb-4 flex items-center">
+                  <span className="bg-tennis-yellow text-tennis-black px-3 py-1 rounded-full text-sm mr-3">Sockelbetrag</span>
+                  Mitgliedsbeiträge
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse">
+                    <thead>
+                      <tr className="bg-tennis-yellow">
+                        <th className="text-left p-4 font-bold text-tennis-black">Mitgliedsart</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">Jahresbeitrag</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">bei Eintritt nach 15.07.</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {mitgliedsbeitraege.map((item, index) => (
+                        <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                          <td className="p-4 text-gray-700">{item.type}</td>
+                          <td className="p-4 text-right font-semibold text-tennis-black">{item.annual}</td>
+                          <td className="p-4 text-right font-semibold text-tennis-black">{item.halfYear}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
 
-              {/* Membership Types */}
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                {membershipTypes.map((membership, index) => (
-                  <Card key={index} className="border-tennis-yellow/20">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h4 className="font-bold text-tennis-black">
-                            {membership.type}
-                          </h4>
-                          <p className="text-gray-600">{membership.rate}</p>
-                        </div>
-                        <Users className="h-6 w-6 text-tennis-yellow" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+              {/* Kinder Zusatzbeiträge */}
+              <div className="mb-10">
+                <h3 className="text-xl font-bold text-tennis-black mb-4">
+                  Kinder Zusatzbeiträge zum Sockelbetrag für Erwachsene, Ehepaare und Lebensgemeinschaften
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse">
+                    <thead>
+                      <tr className="bg-tennis-yellow">
+                        <th className="text-left p-4 font-bold text-tennis-black">Zusatzbeitrag</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">Jahresbeitrag</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">bei Eintritt nach 15.07.</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {kinderZusatzbeitraege.map((item, index) => (
+                        <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                          <td className="p-4 text-gray-700">{item.type}</td>
+                          <td className="p-4 text-right font-semibold text-tennis-black">{item.annual}</td>
+                          <td className="p-4 text-right font-semibold text-tennis-black">{item.halfYear}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Aufnahmegebühren */}
+              <div className="mb-10">
+                <h3 className="text-xl font-bold text-tennis-black mb-4 flex items-center">
+                  <span className="bg-tennis-black text-tennis-yellow px-3 py-1 rounded-full text-sm mr-3">Einmalig</span>
+                  Aufnahmegebühr bei Eintritt in den TC Schwarz-Gelb Heidelberg e.V.
+                </h3>
+                <p className="text-gray-600 mb-4 text-sm">Gebühr je Antrag, unabhängig von der Personenanzahl</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse">
+                    <thead>
+                      <tr className="bg-tennis-yellow">
+                        <th className="text-left p-4 font-bold text-tennis-black">Art des Antrags</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">unabhängig vom Eintrittsdatum</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {aufnahmegebuehren.map((item, index) => (
+                        <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                          <td className="p-4 text-gray-700">{item.type}</td>
+                          <td className="p-4 text-right font-semibold text-tennis-black">{item.fee}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Fußnoten */}
+              <div className="bg-gray-100 rounded-xl p-6 mb-8 text-sm text-gray-600">
+                <p className="mb-2">1) Die genannten Preise gelten für ein Kalenderjahr und Beitragszahlung im SEPA Lastschriftverfahren</p>
+                <p className="mb-2">2) Bei Zahlung des Beitrags ohne SEPA Lastschriftverfahren wird jedes Jahr zusätzlich eine Bearbeitungsgebühr von 25 € erhoben</p>
+                <p>3) Arbeitseinsatz: Mitglieder von 16 bis 65 Jahre, 2 Std. / Jahr. Bei nicht Erbringung werden zum Ende des Kalenderjahres 15 €/ Std. fällig</p>
               </div>
 
               {/* Important Notes */}
@@ -135,29 +201,6 @@ const BeitragsordnungDE = () => {
                     Alle Beiträge sind stets in voller Höhe zu entrichten.
                     Ausnahmen von der geltenden Beitragsordnung oder sonstige
                     Vergünstigungen werden keine gewährt.
-                  </p>
-                </div>
-              </div>
-
-              {/* Infrastructure Fee */}
-              <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
-                <h3 className="text-2xl font-bold text-tennis-yellow mb-6">
-                  Infrastrukturabgabe
-                </h3>
-                <div className="space-y-4">
-                  <p>
-                    Im Jahr 2022 werden zusätzlich (gemäß Beschluss der
-                    Mitgliederversammlung vom 11.10.2020) einmalig{" "}
-                    <strong>EUR 20,-</strong> pro aktivem erwachsenen Mitglied
-                    (25-65 Jahre alt) als Infrastrukturabgabe erhoben.
-                  </p>
-                  <p>
-                    Für alle Folgejahre (2023 ff.) entscheidet die
-                    Mitgliederversammlung jährlich (konkret auf der
-                    Mitgliederversammlung im Vorjahr) auf Antrag in einem
-                    Tagesordnungspunkt, ob im Folgejahr überhaupt eine
-                    Infrastrukturabgabe erhoben werden soll, und falls ja, über
-                    die exakte Höhe des Betrages.
                   </p>
                 </div>
               </div>
