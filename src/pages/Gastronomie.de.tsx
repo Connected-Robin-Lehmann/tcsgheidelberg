@@ -9,13 +9,16 @@ const GastronomieDE = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Hero Section with Banner Image */}
-      <section className="relative">
-        <img 
-          src="/images/la-trattoria-banner.png" 
-          alt="La Trattoria - Coming Soon April 2026" 
-          className="w-full h-auto object-cover"
-        />
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Clubgastronomie „La Trattoria"
+          </h1>
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+            Italienisches Flair mit Biergarten - Eröffnung April 2026
+          </p>
+        </div>
       </section>
 
       <main className="py-12">
@@ -26,6 +29,15 @@ const GastronomieDE = () => {
             
             {/* Left Column - Main Info */}
             <div className="lg:col-span-2">
+              {/* La Trattoria Image Card */}
+              <Card className="card-tennis mb-8 overflow-hidden">
+                <img 
+                  src="/images/la-trattoria-banner.png" 
+                  alt="La Trattoria - Coming Soon April 2026" 
+                  className="w-full h-auto object-contain"
+                />
+              </Card>
+
               <Card className="card-tennis mb-8">
                 <div className="p-8">
                   <h2 className="text-3xl font-bold text-tennis-black mb-6">
