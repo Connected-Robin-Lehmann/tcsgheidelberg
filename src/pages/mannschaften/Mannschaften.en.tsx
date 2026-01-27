@@ -12,11 +12,8 @@ const MannschaftenEN = () => {
       <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Teams 2024
+            Our Teams 2026
           </h1>
-          {/* <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Stay up to date with all important dates and news from our club
-          </p> */}
         </div>
       </section>
 
@@ -24,33 +21,60 @@ const MannschaftenEN = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Main Content */}
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Statistics Cards */}
+            
+            {/* Season Overview */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <div className="p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow rounded-full mb-4">
-                    <Users className="w-8 h-8 text-tennis-black" />
-                  </div>
-                  <h3 className="text-6xl font-bold text-tennis-black mb-2">
-                    28
+              {/* Winter Season */}
+              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-tennis-black mb-4 text-center">
+                    ❄️ Winter 2025/2026
                   </h3>
-                  <p className="text-lg font-medium text-foreground">
-                    Total Teams
-                  </p>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Youth</span>
+                      <span className="font-bold text-tennis-black text-xl">9</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Adults</span>
+                      <span className="font-bold text-tennis-black text-xl">7</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Seniors</span>
+                      <span className="font-bold text-tennis-black text-xl">3</span>
+                    </div>
+                    <div className="border-t pt-3 mt-3 flex justify-between items-center">
+                      <span className="font-semibold text-foreground">Total</span>
+                      <span className="font-bold text-tennis-black text-2xl">19</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
 
-              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <div className="p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow rounded-full mb-4">
-                    <Trophy className="w-8 h-8 text-tennis-black" />
-                  </div>
-                  <h3 className="text-6xl font-bold text-tennis-black mb-2">
-                    16
+              {/* Summer Season */}
+              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-tennis-black mb-4 text-center">
+                    ☀️ Summer 2026
                   </h3>
-                  <p className="text-lg font-medium text-foreground">
-                    Youth Teams
-                  </p>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Youth</span>
+                      <span className="font-bold text-tennis-black text-xl">14</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Adults</span>
+                      <span className="font-bold text-tennis-black text-xl">7</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Seniors</span>
+                      <span className="font-bold text-tennis-black text-xl">6</span>
+                    </div>
+                    <div className="border-t pt-3 mt-3 flex justify-between items-center">
+                      <span className="font-semibold text-foreground">Total</span>
+                      <span className="font-bold text-tennis-black text-2xl">27</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -58,21 +82,19 @@ const MannschaftenEN = () => {
             {/* Description */}
             <Card className="p-8 border-tennis-yellow border-2">
               <h2 className="text-2xl font-bold text-foreground mb-6">
-                Our Teams 2024
+                Team Sports at Schwarz-Gelb
               </h2>
               <p className="text-lg leading-relaxed text-foreground mb-6">
-                In 2024, TC Schwarz-Gelb Heidelberg e.V. will again send a total
-                of{" "}
+                In 2026, TC Schwarz-Gelb Heidelberg e.V. will send up to{" "}
                 <span className="font-semibold text-tennis-black">
-                  28 teams
+                  27 teams
                 </span>{" "}
-                into the summer season, including{" "}
+                into the season, including{" "}
                 <span className="font-semibold text-tennis-black">
-                  16 youth teams
+                  14 youth teams
                 </span>
-                , to compete with other clubs. We therefore offer our members
-                attractive team sports across various skill levels and age
-                groups.
+                . We offer our members attractive team sports across various 
+                skill levels and age groups.
               </p>
 
               <p className="text-lg leading-relaxed text-foreground mb-8">
