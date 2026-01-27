@@ -34,6 +34,8 @@ import Jugend from "./pages/mannschaften/Jugend";
 import Aktive from "./pages/mannschaften/Aktive";
 import Senioren from "./pages/mannschaften/Senioren";
 import Regelwerk from "./pages/mannschaften/Regelwerk";
+import Spielberichtsbogen from "./pages/mannschaften/Spielberichtsbogen";
+import Mannschaftsfuehrer from "./pages/mannschaften/Mannschaftsfuehrer";
 
 // Training pages
 import Training from "./pages/training/Training";
@@ -120,6 +122,8 @@ const App = () => (
           <Route path="/mannschaften/aktive" element={<Aktive />} />
           <Route path="/mannschaften/senioren" element={<Senioren />} />
           <Route path="/mannschaften/regelwerk" element={<Regelwerk />} />
+          <Route path="/mannschaften/spielberichtsbogen" element={<Spielberichtsbogen />} />
+          <Route path="/mannschaften/mannschaftsfuehrer" element={<Mannschaftsfuehrer />} />
 
           {/* Turniere Routes */}
           <Route path="/turniere" element={<Turniere />} />
