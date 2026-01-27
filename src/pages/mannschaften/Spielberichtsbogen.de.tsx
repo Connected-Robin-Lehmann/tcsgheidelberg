@@ -20,9 +20,6 @@ const SpielberichtsbogenDE = () => {
               Spielberichtsbogen
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Offizielle Formulare für Ihre Mannschaftsspiele
-            </p>
           </div>
 
           {/* Placeholder */}
