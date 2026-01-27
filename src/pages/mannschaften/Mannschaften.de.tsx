@@ -12,12 +12,8 @@ const MannschaftenDE = () => {
       <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Unsere Mannschaften 2024
+            Unsere Mannschaften 2026
           </h1>
-          {/* <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Bleiben Sie auf dem Laufenden mit allen wichtigen Terminen und
-            Neuigkeiten unseres Vereins
-          </p> */}
         </div>
       </section>
 
@@ -25,33 +21,60 @@ const MannschaftenDE = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Main Content */}
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Statistics Cards */}
+            
+            {/* Season Overview */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <div className="p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow rounded-full mb-4">
-                    <Users className="w-8 h-8 text-tennis-black" />
-                  </div>
-                  <h3 className="text-6xl font-bold text-tennis-black mb-2">
-                    28
+              {/* Winter Season */}
+              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-tennis-black mb-4 text-center">
+                    ❄️ Winter 2025/2026
                   </h3>
-                  <p className="text-lg font-medium text-foreground">
-                    Mannschaften insgesamt
-                  </p>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Jugend</span>
+                      <span className="font-bold text-tennis-black text-xl">9</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Aktive</span>
+                      <span className="font-bold text-tennis-black text-xl">7</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Senioren</span>
+                      <span className="font-bold text-tennis-black text-xl">3</span>
+                    </div>
+                    <div className="border-t pt-3 mt-3 flex justify-between items-center">
+                      <span className="font-semibold text-foreground">Gesamt</span>
+                      <span className="font-bold text-tennis-black text-2xl">19</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
 
-              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <div className="p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-tennis-yellow rounded-full mb-4">
-                    <Trophy className="w-8 h-8 text-tennis-black" />
-                  </div>
-                  <h3 className="text-6xl font-bold text-tennis-black mb-2">
-                    16
+              {/* Summer Season */}
+              <Card className="border-tennis-yellow border-2 hover:shadow-xl transition-all duration-300">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-tennis-black mb-4 text-center">
+                    ☀️ Sommer 2026
                   </h3>
-                  <p className="text-lg font-medium text-foreground">
-                    Jugend-Mannschaften
-                  </p>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Jugend</span>
+                      <span className="font-bold text-tennis-black text-xl">14</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Aktive</span>
+                      <span className="font-bold text-tennis-black text-xl">7</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-foreground">Senioren</span>
+                      <span className="font-bold text-tennis-black text-xl">6</span>
+                    </div>
+                    <div className="border-t pt-3 mt-3 flex justify-between items-center">
+                      <span className="font-semibold text-foreground">Gesamt</span>
+                      <span className="font-bold text-tennis-black text-2xl">27</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -59,20 +82,19 @@ const MannschaftenDE = () => {
             {/* Description */}
             <Card className="p-8 border-tennis-yellow border-2">
               <h2 className="text-2xl font-bold text-foreground mb-6">
-                Unsere Mannschaften 2024
+                Mannschaftssport bei Schwarz-Gelb
               </h2>
               <p className="text-lg leading-relaxed text-foreground mb-6">
-                Auch in 2024 schicken wir als TC Schwarz-Gelb Heidelberg e.V.
-                insgesamt{" "}
+                Im Jahr 2026 schicken wir als TC Schwarz-Gelb Heidelberg e.V.
+                bis zu{" "}
                 <span className="font-semibold text-tennis-black">
-                  28 Mannschaften
+                  27 Mannschaften
                 </span>{" "}
-                in die Sommersaison, davon{" "}
+                in die Saison, davon{" "}
                 <span className="font-semibold text-tennis-black">
-                  16 Jugend-Mannschaften
+                  14 Jugend-Mannschaften
                 </span>
-                , um sich mit den anderen Teams zu messen. Wir bieten also auch
-                in dieser Hinsicht unseren Mitgliedern attraktiven
+                . Wir bieten unseren Mitgliedern attraktiven
                 Mannschaftssport in zahlreichen Leistungs- und Altersklassen.
               </p>
 
