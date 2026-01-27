@@ -72,7 +72,7 @@ const JugendDE = () => {
                 <div className="grid md:grid-cols-4 gap-6 mb-8">
                   <div className="bg-tennis-black rounded-xl p-6 text-center text-white">
                     <div className="text-3xl font-bold text-tennis-yellow mb-2">
-                      16
+                      14
                     </div>
                     <div className="text-sm font-medium">
                       Jugendmannschaften
@@ -88,7 +88,7 @@ const JugendDE = () => {
                   </div>
                   <div className="bg-gray-100 rounded-xl p-6 text-center">
                     <div className="text-3xl font-bold text-gray-800 mb-2">
-                      2024
+                      2026
                     </div>
                     <div className="text-sm font-medium text-gray-600">
                       Aktuelle Saison
@@ -111,15 +111,15 @@ const JugendDE = () => {
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 mb-12">
             <div className="bg-tennis-yellow p-6">
               <h2 className="text-2xl font-bold text-tennis-black text-center">
-                Unsere Jugendmannschaften 2024
+                Unsere Jugendmannschaften 2026
               </h2>
             </div>
 
             <div className="p-8">
               <p className="text-gray-700 text-center mb-8">
-                Hier finden Sie die aktuelle Übersicht über alle 16
+                Hier finden Sie die aktuelle Übersicht über alle 14
                 Jugendmannschaften unseres TC Schwarz-Gelb Heidelberg e.V. in
-                2024
+                der Sommersaison 2026
               </p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
