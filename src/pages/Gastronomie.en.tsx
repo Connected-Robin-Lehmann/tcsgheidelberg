@@ -91,14 +91,6 @@ const GastronomieEN = () => {
                 </div>
               </Card>
 
-              {/* Club Statement */}
-              <div className="mt-6 p-6 bg-gray-100 rounded-lg border-l-4 border-blue-500">
-                <p className="text-gray-700 leading-relaxed">
-                  The board is aware that our club gastronomy represents a very important part of 
-                  club life for many of our members, and a nice gastronomic experience in an appealing 
-                  atmosphere that suits our club is also important to the board.
-                </p>
-              </div>
 
               {/* Restaurant Image */}
               <div className="mt-8">
