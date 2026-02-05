@@ -118,12 +118,8 @@ const SatzungEN = () => {
                 </div>
                 <div className="space-y-4">
                   <p>
-                    At the general assembly on <strong>October 11, 2020</strong>
-                    , a new version of the statutes was adopted.
-                  </p>
-                  <p>
-                    This version was entered into the Register of Associations
-                    in Mannheim on <strong>November 20, 2020</strong>.
+                    At the general assembly in <strong>November 2025</strong>,
+                    a new version of the statutes was adopted.
                   </p>
                   <p>The currently valid version is available for download.</p>
                 </div>
@@ -135,7 +131,7 @@ const SatzungEN = () => {
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   onClick={() =>
                     window.open(
-                      "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/11/Satzung-TC-Schwarzgelb-Heidelberg-e.V.-Beschluss-MV-11-Okt-2020-und-Eintragung-20-Nov-2020.pdf",
+                      "/downloads/Satzung_TC_Schwarzgelb_Heidelberg_e.V._-_Nov_2025.pdf",
                       "_blank"
                     )
                   }
@@ -144,10 +140,7 @@ const SatzungEN = () => {
                   Download Statutes (PDF)
                 </Button>
                 <p className="text-gray-600 text-sm mt-4">
-                  Resolution of the General Assembly from October 11, 2020
-                  <br />
-                  Entered on November 20, 2020 at the Register of Associations
-                  Mannheim
+                  Resolution of the General Assembly November 2025
                 </p>
               </div>
             </div>

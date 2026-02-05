@@ -120,12 +120,8 @@ const SatzungDE = () => {
                 </div>
                 <div className="space-y-4">
                   <p>
-                    In der Mitgliederversammlung am <strong>11.10.2020</strong>{" "}
+                    In der Mitgliederversammlung im <strong>November 2025</strong>{" "}
                     wurde eine neue Satzung verabschiedet.
-                  </p>
-                  <p>
-                    Diese wurde am <strong>20.11.2020</strong> vom
-                    Registergericht Mannheim eingetragen.
                   </p>
                   <p>
                     Die aktuelle gültige Fassung steht zum Download zur
@@ -140,7 +136,7 @@ const SatzungDE = () => {
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   onClick={() =>
                     window.open(
-                      "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/11/Satzung-TC-Schwarzgelb-Heidelberg-e.V.-Beschluss-MV-11-Okt-2020-und-Eintragung-20-Nov-2020.pdf",
+                      "/downloads/Satzung_TC_Schwarzgelb_Heidelberg_e.V._-_Nov_2025.pdf",
                       "_blank"
                     )
                   }
@@ -149,9 +145,7 @@ const SatzungDE = () => {
                   Satzung herunterladen (PDF)
                 </Button>
                 <p className="text-gray-600 text-sm mt-4">
-                  Beschluss der Mitgliederversammlung vom 11.10.2020
-                  <br />
-                  Eingetragen am 20.11.2020 beim Registergericht Mannheim
+                  Beschluss der Mitgliederversammlung November 2025
                 </p>
               </div>
             </div>
