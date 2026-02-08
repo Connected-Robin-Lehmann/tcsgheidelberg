@@ -1,42 +1,31 @@
 import React from "react";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Facebook,
-  Instagram,
-} from "lucide-react";
-import { useTranslation } from 'react-i18next';
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const { t } = useTranslation();
-  
+
   return (
     <footer className="bg-tennis-black text-white">
       <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
-          {/* Club Info - wider column */}
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Club Info */}
+          <div>
             <img
               src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg"
               alt="TC Schwarz-Gelb Logo"
               className="h-16 w-auto mb-4"
             />
-            <h3 className="text-xl font-bold text-tennis-yellow mb-4">
-              TC Schwarz-Gelb
-              <br />
-              Heidelberg e.V.
-            </h3>
+            <h3 className="text-xl font-bold text-tennis-yellow mb-4">TC Schwarz-Gelb Heidelberg e.V.</h3>
             <p className="text-gray-300">
-              Tradition trifft Moderne - Ihr Tennisverein im Herzen Heidelbergs
+              Tradition trifft Moderne - <br />
+              Ihr Tennisverein im Herzen Heidelbergs
             </p>
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-3 lg:col-start-5">
-            <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
-              {t('footer.contact')}
-            </h3>
+          <div>
+            <h3 className="text-lg font-semibold text-tennis-yellow mb-4">{t("footer.contact")}</h3>
             <div className="space-y-3">
               <div className="flex items-start text-gray-300 text-sm sm:text-base">
                 <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-tennis-yellow flex-shrink-0 mt-0.5" />
@@ -52,18 +41,16 @@ const Footer = () => {
               <div className="flex items-start text-gray-300 text-sm sm:text-base">
                 <MapPin className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-tennis-yellow mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="whitespace-nowrap">Tennisclub Schwarz-Gelb Heidelberg e.V.</div>
-                  <div>Schwindstraße 9, 69126 Heidelberg</div>
+                  <div>Tennisclub Schwarz-Gelb</div>
+                  <div>Heidelberg e.V.</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2 lg:col-start-9">
-            <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
-              {t('footer.quickLinks')}
-            </h3>
+          <div>
+            <h3 className="text-lg font-semibold text-tennis-yellow mb-4">{t("footer.quickLinks")}</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -76,37 +63,21 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="/faq"
-                  className="text-gray-300 hover:text-tennis-yellow transition-colors"
-                >
+                <a href="/faq" className="text-gray-300 hover:text-tennis-yellow transition-colors">
                   FAQ
                 </a>
               </li>
               <li>
-                <a
-                  href="/der-club/mitgliedschaft"
-                  className="text-gray-300 hover:text-tennis-yellow transition-colors"
-                >
+                <a href="/der-club/mitgliedschaft" className="text-gray-300 hover:text-tennis-yellow transition-colors">
                   Mitgliedschaft
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/anfahrt"
-                  className="text-gray-300 hover:text-tennis-yellow transition-colors"
-                >
-                  Anfahrt
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Social Media */}
-          <div className="lg:col-span-2 lg:col-start-11">
-            <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
-              {t('footer.followUs')}
-            </h3>
+          <div>
+            <h3 className="text-lg font-semibold text-tennis-yellow mb-4">{t("footer.followUs")}</h3>
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/tc.schwarzgelb.3"
@@ -115,37 +86,36 @@ const Footer = () => {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
+                href="https://twitter.com/sgheidelberg"
+                className="bg-gray-800 p-3 rounded-full hover:bg-tennis-yellow hover:text-tennis-black transition-all duration-300"
+              >
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a
                 href="https://www.instagram.com/tc_schwarzgelb_heidelberg/"
                 className="bg-gray-800 p-3 rounded-full hover:bg-tennis-yellow hover:text-tennis-black transition-all duration-300"
               >
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
-
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm">
-              © 2024 TC Schwarz-Gelb Heidelberg e.V. {t('footer.allRightsReserved')}
+              © 2024 TC Schwarz-Gelb Heidelberg e.V. {t("footer.allRightsReserved")}
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a
-                href="/impressum"
-                className="text-gray-400 hover:text-tennis-yellow text-sm transition-colors"
-              >
-                {t('header.legal.imprint')}
+              <a href="/impressum" className="text-gray-400 hover:text-tennis-yellow text-sm transition-colors">
+                {t("header.legal.imprint")}
               </a>
-              <a
-                href="/datenschutz"
-                className="text-gray-400 hover:text-tennis-yellow text-sm transition-colors"
-              >
-                {t('header.legal.privacy')}
+              <a href="/datenschutz" className="text-gray-400 hover:text-tennis-yellow text-sm transition-colors">
+                {t("header.legal.privacy")}
               </a>
             </div>
           </div>
-          
+
           <div className="mt-6 pt-6 border-t border-gray-800 text-center">
             <a
               href="https://connected-webdesign.de"
