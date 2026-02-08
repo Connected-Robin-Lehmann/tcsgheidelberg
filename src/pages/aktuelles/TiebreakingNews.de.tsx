@@ -1,22 +1,16 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Calendar, Users, Utensils, Mail } from "lucide-react";
+import {
+  Calendar,
+  CreditCard,
+  MessageCircle,
+  Globe,
+  CalendarDays,
+  Utensils,
+} from "lucide-react";
 
 const TiebreakingNewsDE = () => {
-  const newsItems = [
-    {
-      title: "Schwarz-Gelb(e) TieBreaking No. 2/2025",
-      date: "26.06.2025",
-      content: "Sommerfest und Mitgliederversammlung kombiniert",
-    },
-    {
-      title: "Schwarz-Gelb(e) TieBreaking No. 1/2025",
-      date: "22.03.2025",
-      content: "Saisoneröffnung und neue Gastronomie",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -38,16 +32,16 @@ const TiebreakingNewsDE = () => {
             </p>
           </div>
 
-          {/* Latest News - No. 2/2025 */}
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20 mb-12">
+          {/* Latest News - No. 1/2026 */}
+          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
             <div className="bg-tennis-yellow p-6">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-tennis-black">
-                  Schwarz-Gelb(e) TieBreaking No. 2/2025
+                  Schwarz-Gelb(e) TieBreaking No. 1/2026
                 </h2>
                 <div className="flex items-center text-tennis-black">
                   <Calendar className="h-5 w-5 mr-2" />
-                  <span className="font-semibold">26.06.2025</span>
+                  <span className="font-semibold">Februar 2026</span>
                 </div>
               </div>
             </div>
@@ -55,221 +49,187 @@ const TiebreakingNewsDE = () => {
             <div className="p-8 md:p-12">
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  <strong>Liebe Mitglieder und Freunde unseres Vereins,</strong>
+                  <strong>Liebe Mitglieder,</strong>
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-8">
-                  zur Mitte der Saison gibt es für unsere Mitglieder und Freunde
-                  unseres Vereins wieder das ganz besondere jährliche
-                  Club-Highlight!
+                  wir hoffen, das neue Jahr hat gut für Euch gestartet und es
+                  gelingt Euch, über die kalte Jahreszeit fit und gesund zu
+                  bleiben. Der neue Vorstand hat bereits mit Ausklang des alten
+                  Jahres seine Arbeit aufgenommen und eine Übergabe aller
+                  Aufgaben und Themen von Frank Schöneborn vorbereitet, so dass
+                  wir positiver Dinge in das neue Jahr starten konnten.
                 </p>
 
-                {/* Sommerfest Announcement */}
+                {/* Mitgliedsbeitrag */}
                 <div className="bg-gradient-to-r from-tennis-yellow/10 to-tennis-yellow/5 rounded-2xl p-8 mb-8 border-l-4 border-tennis-yellow">
                   <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-tennis-yellow mr-3" />
+                    <CreditCard className="h-6 w-6 text-tennis-yellow mr-3" />
                     <h3 className="text-2xl font-bold text-tennis-black">
-                      Sommerfest am 19.07.2025
+                      Einzug des Mitgliedsbeitrags – Februar 2026
                     </h3>
                   </div>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Wir feiern unser Sommerfest am{" "}
-                    <strong>Samstag 19.07.2025 ab 17.00h</strong> auf unserer
-                    Clubterrasse. Es gibt zu Beginn auch Live-Musik und wir
-                    verbinden das zugleich mit der Mitgliederversammlung!
+                    Planmäßig werden die fälligen Mitgliedsbeiträge im Laufe des
+                    Februars im Lastschriftverfahren eingezogen. Aus
+                    Kostengründen und der Umwelt zuliebe verzichten wir zukünftig
+                    auf den Versand der Rechnungen in Papierform. Die neuen
+                    Mitgliedsbeiträge, die im Oktober 2025 auf unserer
+                    Mitgliederversammlung beschlossen wurden, findet ihr in
+                    unserer{" "}
+                    <a
+                      href="/der-club/beitragsordnung"
+                      className="text-tennis-yellow hover:underline font-semibold"
+                    >
+                      Beitragsordnung
+                    </a>
+                    .
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    Alle langjährigen oder neuen Vereinsmitglieder, die Lust und
-                    Spaß am Wiedersehen in geselliger Runde bei sommerlichem
-                    Ambiente haben, sind willkommen! Unsere Sommerfeste sind
-                    schließlich legendär und es wird an Speisen und leckeren
-                    Drinks nicht mangeln.
+                    Mitglieder, von denen uns kein SEPA-Lastschriftmandat
+                    vorliegt, erhalten die Rechnung weiterhin in Papierform,
+                    wodurch sich die Bearbeitungsgebühr von 25€ begründet. Sofern
+                    diese Mitglieder auf das Lastschriftverfahren umstellen
+                    möchten, schreibt uns bitte eine Mail mit eurer
+                    Bankverbindung an{" "}
+                    <a
+                      href="mailto:mitgliederservice@schwarzgelb-heidelberg.de"
+                      className="text-tennis-yellow hover:underline font-semibold"
+                    >
+                      mitgliederservice@schwarzgelb-heidelberg.de
+                    </a>
+                    . Die Umstellung nehmen wir dann im nächsten Jahr vor, für
+                    2026 sind die Rechnungen bereits erstellt.
                   </p>
                 </div>
 
-                {/* Mitgliederversammlung */}
+                {/* WhatsApp News */}
                 <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
-                  <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
-                    Mitgliederversammlung um 17.00h
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <MessageCircle className="h-6 w-6 text-tennis-yellow mr-3" />
+                    <h3 className="text-2xl font-bold text-tennis-yellow">
+                      WhatsApp News vom Vorstand
+                    </h3>
+                  </div>
                   <p className="leading-relaxed mb-4">
-                    Wir laden hiermit formal alle Mitglieder zu unserer
-                    ordentlichen Mitgliederversammlung am{" "}
-                    <strong>Samstag 19.07.2025 um 17.00h</strong> im Club ein.
+                    Wir möchten euch vor allem während der Sommermonate, wenn das
+                    Vereinsleben wieder aktiver wird, immer auf dem Laufenden
+                    halten und bieten euch dazu eine WhatsApp Gruppe an.
                   </p>
-                  <p className="leading-relaxed mb-4">
-                    Neben den formalen Punkten zu Beginn wird insbesondere das
-                    Jahr 2024 im Mittelpunkt der Berichte des Vorstands und die
-                    neue Vorstandswahl stehen.
+                  <p className="leading-relaxed">
+                    Wenn Ihr regelmäßig informiert werden und nichts verpassen
+                    wollt, dann tretet bitte der WhatsApp Gruppe bei. Wichtige
+                    Infos schicken wir natürlich in regelmäßigen Abständen
+                    weiterhin per E-Mail via unseren TieBreaking News.
                   </p>
-                  <div className="bg-tennis-yellow/20 rounded-xl p-4">
-                    <h4 className="font-bold text-tennis-yellow mb-2">
-                      Wichtige Abstimmungspunkte:
-                    </h4>
-                    <ul className="list-disc list-inside space-y-1 text-sm">
-                      <li>Anpassung der Satzung</li>
-                      <li>Neue Beitragsordnung gültig ab 2026</li>
-                      <li>
-                        Einmal-Umlage für 2025 über EUR 45,- (altersunabhängig)
-                      </li>
-                    </ul>
+                </div>
+
+                {/* Neue Webseite */}
+                <div className="bg-gradient-to-r from-tennis-yellow/10 to-tennis-yellow/5 rounded-2xl p-8 mb-8 border-l-4 border-tennis-yellow">
+                  <div className="flex items-center mb-4">
+                    <Globe className="h-6 w-6 text-tennis-yellow mr-3" />
+                    <h3 className="text-2xl font-bold text-tennis-black">
+                      Vorabankündigung: Neue Webseite – März 2026
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    Wir haben schon fleißig an einer neuen Webseite gearbeitet,
+                    so dass unser Verein in einem „neuen Look" erscheinen kann.
+                    Hier planen wir, Euch einen stets aktuellen und
+                    übersichtlichen Einblick in alles zu geben, was die
+                    Mitglieder suchen und wissen müssen. Wir planen, die Webseite
+                    ab Anfang März freizuschalten – schaut doch dann einfach mal
+                    vorbei und gebt uns gerne Rückmeldung.
+                  </p>
+                </div>
+
+                {/* Termine 2026 */}
+                <div className="bg-gradient-to-r from-tennis-yellow/10 to-tennis-yellow/5 rounded-2xl p-8 mb-8">
+                  <div className="flex items-center mb-4">
+                    <CalendarDays className="h-6 w-6 text-tennis-yellow mr-3" />
+                    <h3 className="text-2xl font-bold text-tennis-black">
+                      Termine 2026
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Hier schon mal ein erster Einblick in die nächsten
+                    anstehenden Termine:
+                  </p>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
+                      <h5 className="font-bold text-tennis-black mb-1">
+                        22.02. & 01.03. – Putzete
+                      </h5>
+                      <p className="text-gray-700 text-sm">
+                        Zur Erinnerung: Die letzte Mitgliederversammlung hat
+                        beschlossen, dass alle Mitglieder Arbeitsstunden leisten
+                        oder alternativ eine Pauschale zu entrichten haben.
+                        Weitere Projekte mit Arbeitseinsätzen werden im Laufe
+                        der Saison folgen.
+                      </p>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
+                      <h5 className="font-bold text-tennis-black mb-1">
+                        07.04. – 10.04. – Osterferien Tenniscamp
+                      </h5>
+                      <p className="text-gray-700 text-sm">
+                        Tenniscamp für Kinder in den Osterferien.
+                      </p>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
+                      <h5 className="font-bold text-tennis-black mb-1">
+                        26.04. – Tag der offenen Tür & Saisoneröffnung
+                      </h5>
+                      <p className="text-gray-700 text-sm">
+                        Mit Blümchenturnier.
+                      </p>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
+                      <h5 className="font-bold text-tennis-black mb-1">
+                        30.05. – 06.06. – Pfingstferien Tenniscamp
+                      </h5>
+                      <p className="text-gray-700 text-sm">
+                        Tenniscamp in Veli Lošinj (Anmeldeschluss 15.02.).
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Restaurant News */}
+                {/* La Trattoria */}
                 <div className="bg-gradient-to-r from-tennis-yellow/10 to-tennis-yellow/5 rounded-2xl p-8 mb-8">
                   <div className="flex items-center mb-4">
                     <Utensils className="h-6 w-6 text-tennis-yellow mr-3" />
                     <h3 className="text-2xl font-bold text-tennis-black">
-                      Unser neuer Restaurantpächter – Pasquale DiMauro
+                      Hinweis: Die neue <em>„La Trattoria"</em>
                     </h3>
                   </div>
-                  <div className="bg-white rounded-xl p-6 border-l-4 border-tennis-yellow mb-4">
-                    <h4 className="font-bold text-tennis-black mb-2">
-                      Willkommen bei „La Trattoria"!
-                    </h4>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      <em>
-                        "Ab April 2026 übernehmen mein Team und ich die
-                        Gastronomie des Tennisclubs Schwarz-Gelb!"
-                      </em>
-                    </p>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      Mein Name ist Pasquale Dimauro. Ich bin ein erfahrener
-                      Gastronom mit Leidenschaft und Tradition und manche kennen
-                      mich vielleicht schon. Ich freue mich, Sie mit 30 Jahren
-                      erfolgreicher Tätigkeit in der Gastronomie, zukünftig mit
-                      italienischer Herzlichkeit und Küche zu verwöhnen.
-                    </p>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-white rounded-xl p-4">
-                      <h5 className="font-bold text-tennis-black mb-2">
-                        Sommer 2025 (begrenzt)
-                      </h5>
-                      <ul className="text-sm text-gray-700 space-y-1">
-                        <li>• Wochenenden: kleines Speisenangebot</li>
-                        <li>• Mi-Fr: 18:00-21:00 Uhr geöffnet</li>
-                        <li>• Mo-Di: geschlossen</li>
-                      </ul>
-                    </div>
-                    <div className="bg-tennis-yellow/20 rounded-xl p-4">
-                      <h5 className="font-bold text-tennis-black mb-2">
-                        Ab April 2026
-                      </h5>
-                      <ul className="text-sm text-gray-700 space-y-1">
-                        <li>• Vollbetrieb "La Trattoria"</li>
-                        <li>• Italienische Küche & Pizza</li>
-                        <li>• Private Events möglich</li>
-                      </ul>
-                    </div>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Im April 2026 eröffnet die neue <em>„La Trattoria"</em> im
+                    Tennisclub Schwarz-Gelb ihre Türen. Freut Euch auf
+                    authentische italienische Küche, erlesene Weine und ein
+                    liebevoll neu gestaltetes Restaurant mit gemütlichem
+                    Biergarten.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-6">
+                    Auch Events und Feiern können künftig in besonderem Ambiente
+                    gebucht werden. Pasquale Dimauro und sein Team freuen sich
+                    darauf, Euch zu genussvollen Stunden willkommen zu heißen.
+                  </p>
+                  <div className="rounded-xl overflow-hidden shadow-lg">
+                    <img
+                      src="/images/la-trattoria-coming-soon.png"
+                      alt="La Trattoria – Coming Soon April 2026"
+                      className="w-full object-contain"
+                    />
                   </div>
                 </div>
 
                 <div className="text-center bg-tennis-yellow/10 rounded-xl p-6">
                   <p className="text-gray-700 font-medium">
-                    Mit sportlichen Grüssen
+                    Schöne Grüße,
                     <br />
-                    <strong>Vorstand TC Schwarz-Gelb Heidelberg e.V.</strong>
+                    <strong>Euer Vorstandsteam</strong>
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Previous News - No. 1/2025 */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200">
-            <div className="bg-gray-100 p-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-xl font-bold text-gray-800">
-                  Schwarz-Gelb(e) TieBreaking No. 1/2025
-                </h2>
-                <div className="flex items-center text-gray-600">
-                  <Calendar className="h-5 w-5 mr-2" />
-                  <span className="font-semibold">22.03.2025</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-8">
-              <div className="prose max-w-none">
-                <p className="text-gray-700 mb-4">
-                  <strong>Liebe Mitglieder und Freunde unseres Vereins,</strong>
-                </p>
-                <p className="text-gray-700 mb-6">
-                  seit längerem melden wir uns wieder mit den neuesten und
-                  spannenden Informationen rund um unseren Verein. Diesmal gibt
-                  es viele Neuigkeiten!
-                </p>
-
-                {/* Key Updates */}
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-gray-50 rounded-xl p-6">
-                    <h4 className="font-bold text-tennis-black mb-3">
-                      Plätze bald geöffnet
-                    </h4>
-                    <p className="text-gray-700 text-sm">
-                      Die sanierten Außenplätze werden voraussichtlich ab
-                      nächste Woche bespielbar sein. BERK, Plätze 1-4 und 10
-                      stehen dann zur Verfügung.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 rounded-xl p-6">
-                    <h4 className="font-bold text-tennis-black mb-3">
-                      Umkleiden renoviert
-                    </h4>
-                    <p className="text-gray-700 text-sm">
-                      Die Renovierung der Umkleiden und Nebenräume ist
-                      abgeschlossen. Das Ergebnis ist wunderbar - schauen Sie
-                      sich die Details an!
-                    </p>
-                  </div>
-                </div>
-
-                {/* Important Dates */}
-                <div className="bg-tennis-yellow/10 rounded-xl p-6">
-                  <h4 className="font-bold text-tennis-black mb-4">
-                    Wichtige Termine 2025
-                  </h4>
-                  <div className="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <ul className="space-y-2 text-gray-700">
-                        <li>
-                          • <strong>30.04.</strong> - 80er/90er Party
-                        </li>
-                        <li>
-                          • <strong>03.05.</strong> - Beginn Medenrunde
-                        </li>
-                        <li>
-                          • <strong>04.05.</strong> - Saisoneröffnung mit
-                          Blümchenturnier
-                        </li>
-                        <li>
-                          • <strong>07.06.-21.06.</strong> - Tenniscamp Kroatien
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <ul className="space-y-2 text-gray-700">
-                        <li>
-                          • <strong>19.07.</strong> - Mitgliederversammlung +
-                          Sommerfest
-                        </li>
-                        <li>
-                          • <strong>30.07.-03.08.</strong> - Schwarz Gelb Cup
-                          2025
-                        </li>
-                        <li>
-                          • <strong>07.10.</strong> - Saisonabschluss
-                          Doppel-Turnier
-                        </li>
-                        <li>
-                          • <strong>21.11.</strong> - Thanksgiving Pute-Essen
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
