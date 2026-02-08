@@ -101,54 +101,6 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Bar - Only visible in desktop mode */}
-      <div className="hidden xl:block bg-tennis-black text-tennis-yellow py-2 px-4 text-sm border-b border-tennis-yellow/20">
-        <div className="container mx-auto">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span className="text-sm">
-                  Restaurant: 0176-25554081 | Vereinshotline: 06221-4337096
-                </span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4" />
-                <span className="text-sm">
-                  tennis@schwarzgelb-heidelberg.de
-                </span>
-              </div>
-            </div>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.facebook.com/tc.schwarzgelb.3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors text-sm"
-              >
-                Facebook
-              </a>
-              <a
-                href="https://twitter.com/sgheidelberg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors text-sm"
-              >
-                Twitter
-              </a>
-              <a
-                href="https://www.instagram.com/tc_schwarzgelb_heidelberg/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors text-sm"
-              >
-                Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Header */}
       <header className="bg-white shadow-lg sticky top-0 z-50 border-b-4 border-tennis-yellow">
         <div className="container mx-auto px-3 md:px-4">

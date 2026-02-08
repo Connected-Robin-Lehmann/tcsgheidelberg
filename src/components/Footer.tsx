@@ -4,7 +4,6 @@ import {
   Phone,
   Mail,
   Facebook,
-  Twitter,
   Instagram,
 } from "lucide-react";
 import { useTranslation } from 'react-i18next';
@@ -15,16 +14,18 @@ const Footer = () => {
   return (
     <footer className="bg-tennis-black text-white">
       <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Club Info */}
-          <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
+          {/* Club Info - wider column */}
+          <div className="lg:col-span-4">
             <img
               src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg"
               alt="TC Schwarz-Gelb Logo"
               className="h-16 w-auto mb-4"
             />
             <h3 className="text-xl font-bold text-tennis-yellow mb-4">
-              TC Schwarz-Gelb Heidelberg e.V.
+              TC Schwarz-Gelb
+              <br />
+              Heidelberg e.V.
             </h3>
             <p className="text-gray-300">
               Tradition trifft Moderne - Ihr Tennisverein im Herzen Heidelbergs
@@ -32,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="lg:col-span-3 lg:col-start-5">
             <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
               {t('footer.contact')}
             </h3>
@@ -51,15 +52,15 @@ const Footer = () => {
               <div className="flex items-start text-gray-300 text-sm sm:text-base">
                 <MapPin className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-tennis-yellow mt-0.5 flex-shrink-0" />
                 <div>
-                  <div>Tennisclub Schwarz-Gelb</div>
-                  <div>Heidelberg e.V.</div>
+                  <div className="whitespace-nowrap">Tennisclub Schwarz-Gelb Heidelberg e.V.</div>
+                  <div>Schwindstraße 9, 69126 Heidelberg</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="lg:col-span-2 lg:col-start-9">
             <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
               {t('footer.quickLinks')}
             </h3>
@@ -90,11 +91,19 @@ const Footer = () => {
                   Mitgliedschaft
                 </a>
               </li>
+              <li>
+                <a
+                  href="/anfahrt"
+                  className="text-gray-300 hover:text-tennis-yellow transition-colors"
+                >
+                  Anfahrt
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Social Media */}
-          <div>
+          <div className="lg:col-span-2 lg:col-start-11">
             <h3 className="text-lg font-semibold text-tennis-yellow mb-4">
               {t('footer.followUs')}
             </h3>
@@ -104,12 +113,6 @@ const Footer = () => {
                 className="bg-gray-800 p-3 rounded-full hover:bg-tennis-yellow hover:text-tennis-black transition-all duration-300"
               >
                 <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com/sgheidelberg"
-                className="bg-gray-800 p-3 rounded-full hover:bg-tennis-yellow hover:text-tennis-black transition-all duration-300"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
               <a
                 href="https://www.instagram.com/tc_schwarzgelb_heidelberg/"
