@@ -16,6 +16,7 @@ import Beitragsordnung from "./pages/der-club/Beitragsordnung";
 import Satzung from "./pages/der-club/Satzung";
 import Platzordnung from "./pages/der-club/Platzordnung";
 import Sponsoring from "./pages/der-club/Sponsoring";
+import Anfahrt from "./pages/der-club/Anfahrt";
 
 // Aktuelles pages
 import Aktuelles from "./pages/aktuelles/Aktuelles";
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/der-club/sponsoring" element={<Sponsoring />} />
           <Route path="/der-club/foerderverein" element={<Foerderverein />} />
           <Route path="/der-club/platzordnung" element={<Platzordnung />} />
+          <Route path="/anfahrt" element={<Anfahrt />} />
 
           {/* FAQ Route */}
           <Route path="/faq" element={<FAQ />} />
