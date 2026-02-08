@@ -16,19 +16,19 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
           {/* Club Info - wider column */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4">
             <img
               src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg"
               alt="TC Schwarz-Gelb Logo"
               className="h-16 w-auto mb-4"
             />
-            <h3 className="text-xl font-bold text-tennis-yellow mb-4 whitespace-nowrap">
-              TC Schwarz-Gelb Heidelberg e.V.
+            <h3 className="text-xl font-bold text-tennis-yellow mb-4">
+              TC Schwarz-Gelb
+              <br />
+              Heidelberg e.V.
             </h3>
             <p className="text-gray-300">
-              Tradition trifft Moderne
-              <br />
-              Ihr Tennisverein im Herzen Heidelbergs
+              Tradition trifft Moderne - Ihr Tennisverein im Herzen Heidelbergs
             </p>
           </div>
 
