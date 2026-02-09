@@ -1,12 +1,49 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const DerClubDE = () => {
   const galleryImages = [
     {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
-      alt: "Tennisplätze TC Schwarz-Gelb Heidelberg",
+      src: "/images/gallery/TC-SG-018.jpg",
+      alt: "Luftaufnahme TC Schwarz-Gelb Heidelberg",
+    },
+    {
+      src: "/images/gallery/TC-SG-012.jpg",
+      alt: "Sandplätze mit Spielern",
+    },
+    {
+      src: "/images/gallery/SG65.jpg",
+      alt: "Sandplätze mit Flutlicht",
+    },
+    {
+      src: "/images/gallery/SG33.jpg",
+      alt: "Spieler auf Platz 2",
+    },
+    {
+      src: "/images/gallery/SG47.jpg",
+      alt: "Platzbänke und Sonnenschirme",
+    },
+    {
+      src: "/images/gallery/SG49.jpg",
+      alt: "Anzeigetafel Match Pointer",
+    },
+    {
+      src: "/images/gallery/SG43.jpg",
+      alt: "Traglufthalle innen",
+    },
+    {
+      src: "/images/gallery/TC-SG-013.jpg",
+      alt: "Biergarten Terrasse",
+    },
+    {
+      src: "/images/gallery/TC-SG-015.jpg",
+      alt: "Sommerfest im Biergarten",
+    },
+    {
+      src: "/images/gallery/TC-SG-017.jpg",
+      alt: "Clubparty am Abend",
     },
     {
       src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/07/Metin-Gastronomie-Geburtstagsfeier-2.jpg",
@@ -61,23 +98,25 @@ const DerClubDE = () => {
                   Wir bieten unseren Mitgliedern viele Möglichkeiten, den
                   geliebten Tennissport unter Gleichgesinnten mit Spaß, aber
                   auch mit sportlichem Ehrgeiz und viel Engagement nachzugehen.
-                  Zu unserer Infrastruktur gehören 10 top gepflegte Sandplätze
-                  auf dem Clubgelände, eine Traglufthalle mit 2 Sandplätzen zur
-                  Nutzung im Winter sowie ein Hallen-Teppichplatz, der natürlich
-                  ganzjährig genutzt werden kann. Seit 2020 haben wir ein
-                  digitales Platzreservierungssystem im Einsatz, mit dem sich
-                  unsere Mitglieder bequem online und mobil einbuchen können und
-                  sind auch sonst bestrebt, die gesamte Anlage weiter zu
-                  modernisieren und das Gelände insgesamt noch weiter zu
-                  verschönern.
+                  Zu unserer Infrastruktur gehören zehn top gepflegte Sandplätze
+                  auf dem Clubgelände, eine private Tragluftlufthalle der
+                  Tennisschule Kukaras mit zwei Sandplätzen zur Nutzung im Winter
+                  (sofern verfügbar können die Plätze gegen Gebühr gebucht
+                  werden) sowie ein Hallen-Teppichplatz, der ebenfalls, auch
+                  ganzjährig, gegen Gebühr gebucht werden kann. Unsere
+                  Außenplätze können während der Saison von unseren Mitgliedern
+                  über ein digitales Platzreservierungssystem bequem online
+                  gebucht werden. Abends haben wir auf fünf Plätzen kostenfreies
+                  Flutlicht, sodass die Plätze bis 22 Uhr bespielt werden
+                  können.
                 </p>
               </div>
 
               {/* Main Image */}
               <div className="mb-12 rounded-2xl overflow-hidden shadow-xl border-4 border-tennis-yellow/30">
                 <img
-                  src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg"
-                  alt="TC Schwarz-Gelb Heidelberg Tennisplätze"
+                  src="/images/gallery/TC-SG-018.jpg"
+                  alt="TC Schwarz-Gelb Heidelberg Luftaufnahme"
                   className="w-full h-64 md:h-96 object-cover"
                 />
               </div>
@@ -86,42 +125,66 @@ const DerClubDE = () => {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Zu unseren sportlichen Aktivitäten zählen viele Herren-,
                   Damen-, Senioren-, Mixed- und viele Jugend-Mannschaften, die
-                  unsere Schwarz-Gelb Farben bis hoch zur Regionalliga
+                  unsere Schwarz-Gelb Farben derzeit bis hoch zur Badenliga
                   vertreten. Unterstützt wird unser sportlicher Erfolg und der
                   Ausbau des sportlichen Könnens all unserer Mitglieder durch
                   die zwei bereits langjährig mit dem Club eng
                   zusammenarbeitende Tennisschulen Kukaras und Seibold. Die
                   Tennisschule Kukaras bietet zudem mehrere Tenniscamps über die
-                  Oster- und Sommerferien auf der Anlage sowie über Pfingsten
-                  ein Camp in Kroatien an. Vor allem wird in unserem Verein auch
-                  die Jugendförderung großgeschrieben und die hohe Zahl an
-                  jugendlichen Mitgliedern und Familien zeigt unser Engagement
-                  auf dem Gebiet. Natürlich veranstalten wir jedes Jahr auch
-                  eigene LK-Turniere sowie den Schwarz-Gelb Cup, so dass auch
-                  das sportliche Leistungsmessen mit Gleichgesinnten aus anderen
-                  Vereinen möglich ist.
+                  Oster- und Sommerferien auf der Anlage sowie in den
+                  Pfingstferien ein Camp in Kroatien an. In unserem Verein wird
+                  besonders die Jugendförderung großgeschrieben und die hohe Zahl
+                  an jugendlichen Mitgliedern und Familien zeigen das Engagement
+                  der Tennisschulen auf dem Gebiet. Natürlich veranstalten wir
+                  jedes Jahr auch eigene Turniere, wie das Blümchenturnier zum
+                  Start der Saison, eigene LK-Turniere und den Schwarz-Gelb Cup
+                  für interne und externe Spieler und Spielerinnen, und zum
+                  Saisonende noch ein Abschlussturnier, so dass das sportliche
+                  Leistungsmessen mit Gleichgesinnten aus dem eigenen und auch
+                  aus anderen Vereinen möglich ist.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Nicht vergessen wollen wir auch unser Clubhaus in traumhafter
-                  Lage mit einem wunderschönen Biergarten, denn unsere
-                  Mitglieder wissen auch ein oder zwei Getränke und gutes Essen
-                  nach einem intensiven Tennis-Match zu schätzen. Hier finden
-                  auch unsere legendären Sommerfeste statt, wo sich auch neue
-                  Mitglieder problemlos und schnell im Verein wohlfühlen und
-                  neue Kontakte knüpfen können.
+                  Unser Clubhaus befindet sich in traumhafter Lage mit einem
+                  wunderschönen Biergarten. Nicht nur unsere Mitglieder wissen
+                  Getränke und gutes Essen nach einem intensiven Tennis-Match zu
+                  schätzen. Hier finden auch unsere legendären Sommerfeste statt,
+                  wo sich auch neue Mitglieder problemlos und schnell im Verein
+                  wohlfühlen und neue Kontakte knüpfen können.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Wir freuen uns immer über neue Mitglieder! Bei Interesse und
-                  Fragen zur Mitgliedschaft, zu den Trainingsmöglichkeiten und
-                  allem sonst einfach eine kurze Email:{" "}
+                  Fragen bitte an die folgenden E-Mail-Adressen schreiben: zur
+                  Mitgliedschaft{" "}
                   <a
                     href="mailto:mitgliederservice@schwarzgelb-heidelberg.de"
                     className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
                   >
                     mitgliederservice@schwarzgelb-heidelberg.de
                   </a>
+                  , zu Trainingsmöglichkeiten an die Tennisschulen Kukaras (
+                  <a
+                    href="mailto:aleksandar.kukaras@schwarzgelb-heidelberg.de"
+                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
+                  >
+                    aleksandar.kukaras@schwarzgelb-heidelberg.de
+                  </a>
+                  ) und Seibold (
+                  <a
+                    href="mailto:seibold-tennis@t-online.de"
+                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
+                  >
+                    seibold-tennis@t-online.de
+                  </a>
+                  ), siehe auch unter{" "}
+                  <Link
+                    to="/training"
+                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
+                  >
+                    Training
+                  </Link>
+                  .
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">

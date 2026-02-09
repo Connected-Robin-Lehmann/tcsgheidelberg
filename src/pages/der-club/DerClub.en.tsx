@@ -1,12 +1,49 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const DerClubEN = () => {
   const galleryImages = [
     {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
-      alt: "Tennis Courts TC Schwarz-Gelb Heidelberg",
+      src: "/images/gallery/TC-SG-018.jpg",
+      alt: "Aerial View TC Schwarz-Gelb Heidelberg",
+    },
+    {
+      src: "/images/gallery/TC-SG-012.jpg",
+      alt: "Clay Courts with Players",
+    },
+    {
+      src: "/images/gallery/SG65.jpg",
+      alt: "Clay Courts with Floodlights",
+    },
+    {
+      src: "/images/gallery/SG33.jpg",
+      alt: "Player on Court 2",
+    },
+    {
+      src: "/images/gallery/SG47.jpg",
+      alt: "Court Benches and Umbrellas",
+    },
+    {
+      src: "/images/gallery/SG49.jpg",
+      alt: "Match Pointer Scoreboard",
+    },
+    {
+      src: "/images/gallery/SG43.jpg",
+      alt: "Air-Supported Hall Inside",
+    },
+    {
+      src: "/images/gallery/TC-SG-013.jpg",
+      alt: "Beer Garden Terrace",
+    },
+    {
+      src: "/images/gallery/TC-SG-015.jpg",
+      alt: "Summer Party in Beer Garden",
+    },
+    {
+      src: "/images/gallery/TC-SG-017.jpg",
+      alt: "Club Party at Night",
     },
     {
       src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/07/Metin-Gastronomie-Geburtstagsfeier-2.jpg",
@@ -61,22 +98,23 @@ const DerClubEN = () => {
                   We offer our members many opportunities to pursue their
                   beloved tennis sport among like-minded people with fun, but
                   also with sporting ambition and a lot of commitment. Our
-                  infrastructure includes 10 well-maintained clay courts on the
-                  club grounds, an air-supported hall with 2 clay courts for use
-                  in winter, and an indoor carpet court that can of course be
-                  used all year round. Since 2020, we have had a digital court
-                  reservation system in use, with which our members can
-                  conveniently book online and mobile, and we are also committed
-                  to further modernizing the entire facility and making the
-                  grounds even more beautiful.
+                  infrastructure includes ten well-maintained clay courts on the
+                  club grounds, a private air-supported hall of the Kukaras
+                  tennis school with two clay courts for winter use (subject to
+                  availability, courts can be booked for a fee), as well as an
+                  indoor carpet court that can also be booked year-round for a
+                  fee. During the season, our outdoor courts can be conveniently
+                  booked online by our members via a digital court reservation
+                  system. In the evenings, we have free floodlighting on five
+                  courts, so they can be played on until 10 PM.
                 </p>
               </div>
 
               {/* Main Image */}
               <div className="mb-12 rounded-2xl overflow-hidden shadow-xl border-4 border-tennis-yellow/30">
                 <img
-                  src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg"
-                  alt="TC Schwarz-Gelb Heidelberg Tennis Courts"
+                  src="/images/gallery/TC-SG-018.jpg"
+                  alt="TC Schwarz-Gelb Heidelberg Aerial View"
                   className="w-full h-64 md:h-96 object-cover"
                 />
               </div>
@@ -85,39 +123,66 @@ const DerClubEN = () => {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Our sporting activities include many men's, women's, senior,
                   mixed and many youth teams that represent our black and yellow
-                  colors up to the regional league. Our sporting success and the
-                  development of the athletic skills of all our members is
-                  supported by the two tennis schools Kukaras and Seibold, which
-                  have been working closely with the club for many years. The
-                  Kukaras tennis school also offers several tennis camps during
-                  the Easter and summer holidays on the facility and a camp in
-                  Croatia during Pentecost. Above all, youth development is also
-                  very important in our club, and the high number of young
-                  members and families shows our commitment in this area. Of
-                  course, we also organize our own LK tournaments every year as
-                  well as the Schwarz-Gelb Cup, so that athletic competition
-                  with like-minded people from other clubs is also possible.
+                  colors currently up to the Baden league. Our sporting success
+                  and the development of the athletic skills of all our members
+                  is supported by the two tennis schools Kukaras and Seibold,
+                  which have been working closely with the club for many years.
+                  The Kukaras tennis school also offers several tennis camps
+                  during the Easter and summer holidays on the facility and a
+                  camp in Croatia during the Pentecost holidays. Youth
+                  development is especially important in our club and the high
+                  number of young members and families show the commitment of
+                  the tennis schools in this area. Of course, we also organize
+                  our own tournaments every year, such as the Blümchenturnier to
+                  kick off the season, our own ranking tournaments and the
+                  Schwarz-Gelb Cup for internal and external players, and a
+                  closing tournament at the end of the season, so that
+                  competitive play with like-minded people from our own and
+                  other clubs is possible.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  We also don't want to forget our clubhouse in a fantastic
-                  location with a beautiful beer garden, because our members
-                  also appreciate a drink or two and good food after an
-                  intensive tennis match. This is also where our legendary
-                  summer parties take place, where new members can quickly feel
-                  at home in the club and make new contacts.
+                  Our clubhouse is situated in a fantastic location with a
+                  beautiful beer garden. Not only our members appreciate drinks
+                  and good food after an intensive tennis match. This is also
+                  where our legendary summer parties take place, where new
+                  members can quickly feel at home in the club and make new
+                  contacts.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
                   We are always happy to welcome new members! If you are
-                  interested or have questions about membership, training
-                  opportunities and anything else, just send a quick email:{" "}
+                  interested or have questions, please write to the following
+                  email addresses: for membership{" "}
                   <a
                     href="mailto:mitgliederservice@schwarzgelb-heidelberg.de"
                     className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
                   >
                     mitgliederservice@schwarzgelb-heidelberg.de
                   </a>
+                  , for training opportunities contact the tennis schools
+                  Kukaras (
+                  <a
+                    href="mailto:aleksandar.kukaras@schwarzgelb-heidelberg.de"
+                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
+                  >
+                    aleksandar.kukaras@schwarzgelb-heidelberg.de
+                  </a>
+                  ) and Seibold (
+                  <a
+                    href="mailto:seibold-tennis@t-online.de"
+                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
+                  >
+                    seibold-tennis@t-online.de
+                  </a>
+                  ), see also under{" "}
+                  <Link
+                    to="/training"
+                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
+                  >
+                    Training
+                  </Link>
+                  .
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
