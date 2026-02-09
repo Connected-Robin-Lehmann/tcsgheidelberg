@@ -24,4 +24,13 @@ export const clubGalleryImages: GalleryImage[] = [
   { src: "/images/gallery/TC-SG-013.jpg", alt: { de: "Biergarten Terrasse", en: "Beer Garden Terrace" } },
   { src: "/images/gallery/TC-SG-015.jpg", alt: { de: "Sommerfest im Biergarten", en: "Summer Party in Beer Garden" } },
   { src: "/images/gallery/TC-SG-017.jpg", alt: { de: "Clubparty am Abend", en: "Club Party at Night" } },
+  { src: "/images/gallery/TC-SG-008-2.jpg", alt: { de: "Clubhaus Lounge", en: "Clubhouse Lounge" } },
+  { src: "/images/gallery/TC-SG-009.jpg", alt: { de: "Clubhaus und Biergarten", en: "Clubhouse and Beer Garden" } },
+  { src: "/images/gallery/TC-SG-010.jpg", alt: { de: "Biergarten Dekoration", en: "Beer Garden Decoration" } },
+  { src: "/images/gallery/TC-SG-011.jpg", alt: { de: "Spielbetrieb auf der Anlage", en: "Match Play on the Grounds" } },
+  { src: "/images/gallery/TC-SG-019.jpg", alt: { de: "Luftaufnahme Gesamtanlage", en: "Aerial View Full Complex" } },
+  { src: "/images/gallery/TC-SG-020.jpg", alt: { de: "Drohnenaufnahme Plätze 6-9", en: "Drone View Courts 6-9" } },
+  { src: "/images/gallery/TC-SG-021.jpg", alt: { de: "Luftbild Biergarten und Plätze", en: "Aerial Beer Garden and Courts" } },
+  { src: "/images/gallery/TC-SG-022.jpg", alt: { de: "Drohnenaufnahme Hauptanlage", en: "Drone View Main Facility" } },
+  { src: "/images/gallery/TC-SG-023.jpg", alt: { de: "Luftbild Plätze 1-5", en: "Aerial View Courts 1-5" } },
 ];
