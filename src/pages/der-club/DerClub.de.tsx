@@ -2,65 +2,48 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
 const DerClubDE = () => {
-  const galleryImages = [
-    {
-      src: "/images/gallery/TC-SG-018.jpg",
-      alt: "Luftaufnahme TC Schwarz-Gelb Heidelberg",
-    },
-    {
-      src: "/images/gallery/TC-SG-012.jpg",
-      alt: "Sandplätze mit Spielern",
-    },
-    {
-      src: "/images/gallery/SG65.jpg",
-      alt: "Sandplätze mit Flutlicht",
-    },
-    {
-      src: "/images/gallery/SG33.jpg",
-      alt: "Spieler auf Platz 2",
-    },
-    {
-      src: "/images/gallery/SG47.jpg",
-      alt: "Platzbänke und Sonnenschirme",
-    },
-    {
-      src: "/images/gallery/SG49.jpg",
-      alt: "Anzeigetafel Match Pointer",
-    },
-    {
-      src: "/images/gallery/SG43.jpg",
-      alt: "Traglufthalle innen",
-    },
-    {
-      src: "/images/gallery/TC-SG-013.jpg",
-      alt: "Biergarten Terrasse",
-    },
-    {
-      src: "/images/gallery/TC-SG-015.jpg",
-      alt: "Sommerfest im Biergarten",
-    },
-    {
-      src: "/images/gallery/TC-SG-017.jpg",
-      alt: "Clubparty am Abend",
-    },
-    {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/07/Metin-Gastronomie-Geburtstagsfeier-2.jpg",
-      alt: "Clubhaus und Biergarten",
-    },
-    {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg",
-      alt: "TC Schwarz-Gelb Logo",
-    },
-    {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/06/Foto_Pasquale_Dimauro_kompakt.jpg",
-      alt: "Vereinsleben TC Schwarz-Gelb",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen bg-white">
+  const galleryImages = [{
+    src: "/images/gallery/TC-SG-018.jpg",
+    alt: "Luftaufnahme TC Schwarz-Gelb Heidelberg"
+  }, {
+    src: "/images/gallery/TC-SG-012.jpg",
+    alt: "Sandplätze mit Spielern"
+  }, {
+    src: "/images/gallery/SG65.jpg",
+    alt: "Sandplätze mit Flutlicht"
+  }, {
+    src: "/images/gallery/SG33.jpg",
+    alt: "Spieler auf Platz 2"
+  }, {
+    src: "/images/gallery/SG47.jpg",
+    alt: "Platzbänke und Sonnenschirme"
+  }, {
+    src: "/images/gallery/SG49.jpg",
+    alt: "Anzeigetafel Match Pointer"
+  }, {
+    src: "/images/gallery/SG43.jpg",
+    alt: "Traglufthalle innen"
+  }, {
+    src: "/images/gallery/TC-SG-013.jpg",
+    alt: "Biergarten Terrasse"
+  }, {
+    src: "/images/gallery/TC-SG-015.jpg",
+    alt: "Sommerfest im Biergarten"
+  }, {
+    src: "/images/gallery/TC-SG-017.jpg",
+    alt: "Clubparty am Abend"
+  }, {
+    src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/07/Metin-Gastronomie-Geburtstagsfeier-2.jpg",
+    alt: "Clubhaus und Biergarten"
+  }, {
+    src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg",
+    alt: "TC Schwarz-Gelb Logo"
+  }, {
+    src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/06/Foto_Pasquale_Dimauro_kompakt.jpg",
+    alt: "Vereinsleben TC Schwarz-Gelb"
+  }];
+  return <div className="min-h-screen bg-white">
       <Header />
       <main className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -86,13 +69,7 @@ const DerClubDE = () => {
               </h3>
 
               <div className="prose prose-lg max-w-none mb-12">
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Im schönen und weltbekannten Heidelberg, genauer gesagt an der
-                  Schnittstelle der Heidelberger Stadtteile Rohrbach, Kirchheim,
-                  Bahnstadt, West- und Südstadt hat unser 1928 gegründete
-                  Tennisclub, der Traditionsverein TC Schwarz-Gelb Heidelberg
-                  e.V. seinen sportlichen und kulturellen Mittelpunkt.
-                </p>
+                
 
                 <p className="text-gray-700 leading-relaxed mb-8">
                   Wir bieten unseren Mitgliedern viele Möglichkeiten, den
@@ -114,11 +91,7 @@ const DerClubDE = () => {
 
               {/* Main Image */}
               <div className="mb-12 rounded-2xl overflow-hidden shadow-xl border-4 border-tennis-yellow/30">
-                <img
-                  src="/images/gallery/TC-SG-018.jpg"
-                  alt="TC Schwarz-Gelb Heidelberg Luftaufnahme"
-                  className="w-full h-64 md:h-96 object-cover"
-                />
+                <img src="/images/gallery/TC-SG-018.jpg" alt="TC Schwarz-Gelb Heidelberg Luftaufnahme" className="w-full h-64 md:h-96 object-cover" />
               </div>
 
               <div className="prose prose-lg max-w-none mb-12">
@@ -157,31 +130,19 @@ const DerClubDE = () => {
                   Wir freuen uns immer über neue Mitglieder! Bei Interesse und
                   Fragen bitte an die folgenden E-Mail-Adressen schreiben: zur
                   Mitgliedschaft{" "}
-                  <a
-                    href="mailto:mitgliederservice@schwarzgelb-heidelberg.de"
-                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
-                  >
+                  <a href="mailto:mitgliederservice@schwarzgelb-heidelberg.de" className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline">
                     mitgliederservice@schwarzgelb-heidelberg.de
                   </a>
                   , zu Trainingsmöglichkeiten an die Tennisschulen Kukaras (
-                  <a
-                    href="mailto:aleksandar.kukaras@schwarzgelb-heidelberg.de"
-                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
-                  >
+                  <a href="mailto:aleksandar.kukaras@schwarzgelb-heidelberg.de" className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline">
                     aleksandar.kukaras@schwarzgelb-heidelberg.de
                   </a>
                   ) und Seibold (
-                  <a
-                    href="mailto:seibold-tennis@t-online.de"
-                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
-                  >
+                  <a href="mailto:seibold-tennis@t-online.de" className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline">
                     seibold-tennis@t-online.de
                   </a>
                   ), siehe auch unter{" "}
-                  <Link
-                    to="/training"
-                    className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline"
-                  >
+                  <Link to="/training" className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors underline">
                     Training
                   </Link>
                   .
@@ -203,10 +164,7 @@ const DerClubDE = () => {
                 <p className="text-white mb-6">
                   Werden Sie Teil unserer Tennisfamilie!
                 </p>
-                <a
-                  href="mailto:mitgliederservice@schwarzgelb-heidelberg.de"
-                  className="inline-block bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                >
+                <a href="mailto:mitgliederservice@schwarzgelb-heidelberg.de" className="inline-block bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                   Jetzt Kontakt aufnehmen
                 </a>
               </div>
@@ -224,18 +182,10 @@ const DerClubDE = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {galleryImages.map((image, index) => {
-                const isLogo = image.alt.toLowerCase().includes("logo");
-                return (
-                  <div
-                    key={index}
-                    className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
-                  >
+              const isLogo = image.alt.toLowerCase().includes("logo");
+              return <div key={index} className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60">
                     <div className={`relative overflow-hidden ${isLogo ? 'bg-gray-100' : ''}`}>
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className={`w-full h-48 ${isLogo ? 'object-contain p-2' : 'object-cover'} group-hover:scale-110 transition-transform duration-500`}
-                      />
+                      <img src={image.src} alt={image.alt} className={`w-full h-48 ${isLogo ? 'object-contain p-2' : 'object-cover'} group-hover:scale-110 transition-transform duration-500`} />
                       <div className="absolute inset-0 bg-tennis-black/0 group-hover:bg-tennis-black/20 transition-colors duration-300"></div>
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-tennis-black/70 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <p className="text-white text-sm font-medium">
@@ -243,16 +193,13 @@ const DerClubDE = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
           </div>
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default DerClubDE;
