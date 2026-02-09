@@ -1,53 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ImageLightbox from "@/components/ImageLightbox";
+import { clubGalleryImages } from "@/data/clubGalleryImages";
+
 const DerClubDE = () => {
-  const galleryImages = [{
-    src: "/images/gallery/TC-SG-018.jpg",
-    alt: "Luftaufnahme TC Schwarz-Gelb Heidelberg"
-  }, {
-    src: "/images/gallery/TC-SG-012.jpg",
-    alt: "Sandplätze mit Spielern"
-  }, {
-    src: "/images/gallery/SG65.jpg",
-    alt: "Sandplätze mit Flutlicht"
-  }, {
-    src: "/images/gallery/SG33.jpg",
-    alt: "Spieler auf Platz 2"
-  }, {
-    src: "/images/gallery/SG47.jpg",
-    alt: "Platzbänke und Sonnenschirme"
-  }, {
-    src: "/images/gallery/SG49.jpg",
-    alt: "Anzeigetafel Match Pointer"
-  }, {
-    src: "/images/gallery/SG43.jpg",
-    alt: "Traglufthalle innen"
-  }, {
-    src: "/images/gallery/TC-SG-013.jpg",
-    alt: "Biergarten Terrasse"
-  }, {
-    src: "/images/gallery/TC-SG-015.jpg",
-    alt: "Sommerfest im Biergarten"
-  }, {
-    src: "/images/gallery/TC-SG-017.jpg",
-    alt: "Clubparty am Abend"
-  }, {
-    src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/07/Metin-Gastronomie-Geburtstagsfeier-2.jpg",
-    alt: "Clubhaus und Biergarten"
-  }, {
-    src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg",
-    alt: "TC Schwarz-Gelb Logo"
-  }, {
-    src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/06/Foto_Pasquale_Dimauro_kompakt.jpg",
-    alt: "Vereinsleben TC Schwarz-Gelb"
-  }];
-  return <div className="min-h-screen bg-white">
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
+  const images = clubGalleryImages.map((img) => ({ src: img.src, alt: img.alt.de }));
+
+  return (
+    <div className="min-h-screen bg-white">
       <Header />
       <main className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          {/* Header Section */}
           <div className="text-center mb-16">
             <div className="inline-block bg-tennis-yellow px-6 py-2 rounded-full mb-6">
               <span className="text-tennis-black font-bold text-sm uppercase tracking-wider">
@@ -60,7 +26,6 @@ const DerClubDE = () => {
             <div className="w-24 h-1 bg-tennis-yellow mx-auto"></div>
           </div>
 
-          {/* Main Content */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
             <div className="p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-8 leading-tight">
@@ -69,8 +34,6 @@ const DerClubDE = () => {
               </h3>
 
               <div className="prose prose-lg max-w-none mb-12">
-                
-
                 <p className="text-gray-700 leading-relaxed mb-8">
                   Wir bieten unseren Mitgliedern viele Möglichkeiten, den
                   geliebten Tennissport unter Gleichgesinnten mit Spaß, aber
@@ -89,7 +52,6 @@ const DerClubDE = () => {
                 </p>
               </div>
 
-              {/* Main Image */}
               <div className="mb-12 rounded-2xl overflow-hidden shadow-xl border-4 border-tennis-yellow/30">
                 <img src="/images/gallery/TC-SG-018.jpg" alt="TC Schwarz-Gelb Heidelberg Luftaufnahme" className="w-full h-64 md:h-96 object-cover" />
               </div>
@@ -156,7 +118,6 @@ const DerClubDE = () => {
                 </p>
               </div>
 
-              {/* Contact CTA */}
               <div className="bg-gradient-to-r from-tennis-black to-gray-800 rounded-2xl p-8 text-center">
                 <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
                   Interesse geweckt?
@@ -181,25 +142,43 @@ const DerClubDE = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {galleryImages.map((image, index) => {
-              const isLogo = image.alt.toLowerCase().includes("logo");
-              return <div key={index} className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60">
-                    <div className={`relative overflow-hidden ${isLogo ? 'bg-gray-100' : ''}`}>
-                      <img src={image.src} alt={image.alt} className={`w-full h-48 ${isLogo ? 'object-contain p-2' : 'object-cover'} group-hover:scale-110 transition-transform duration-500`} />
+              {images.map((image, index) => {
+                const isLogo = image.alt.toLowerCase().includes("logo");
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setLightboxIndex(index)}
+                    className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
+                  >
+                    <div className={`relative overflow-hidden ${isLogo ? "bg-gray-100" : ""}`}>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className={`w-full h-48 ${isLogo ? "object-contain p-2" : "object-cover"} group-hover:scale-110 transition-transform duration-500`}
+                      />
                       <div className="absolute inset-0 bg-tennis-black/0 group-hover:bg-tennis-black/20 transition-colors duration-300"></div>
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-tennis-black/70 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                        <p className="text-white text-sm font-medium">
-                          {image.alt}
-                        </p>
+                        <p className="text-white text-sm font-medium">{image.alt}</p>
                       </div>
                     </div>
-                  </div>;
-            })}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </main>
       <Footer />
-    </div>;
+
+      <ImageLightbox
+        images={images}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxIndex >= 0}
+        onClose={() => setLightboxIndex(-1)}
+        onNavigate={setLightboxIndex}
+      />
+    </div>
+  );
 };
+
 export default DerClubDE;
