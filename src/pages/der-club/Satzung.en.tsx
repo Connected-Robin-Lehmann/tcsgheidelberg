@@ -131,7 +131,7 @@ const SatzungEN = () => {
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   onClick={() =>
                     window.open(
-                      "/downloads/Satzung_TC_Schwarzgelb_Heidelberg_e.V._-_Nov_2025.pdf",
+                      "/downloads/Satzung_TC_Schwarz-Gelb_Heidelberg_e.V._Fassung_vom_19.10.2025.pdf",
                       "_blank"
                     )
                   }
