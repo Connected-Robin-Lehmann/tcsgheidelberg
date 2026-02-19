@@ -25,6 +25,14 @@ const TraditionDE = () => {
     { src: "/images/tradition/international-tennis-match.jpg", alt: "Internationales Tennis vor großer Kulisse" },
     { src: "/images/tradition/mens-team-group.jpg", alt: "Herrenmannschaft Gruppenbild" },
     { src: "/images/tradition/1957-womens-team.jpg", alt: "1957: v. Slytermann, Milek, Schröder, Vera Berk, Prestinari, Doris Berk" },
+    { src: "/images/tradition/1932-team.jpg", alt: "1932: Dr. Dehoff, Henning, Frau Preßler, 1. Vorstand Prof. Dr. Schmitt, Max Pries, Fritz Pries" },
+    { src: "/images/tradition/1942-stadtmeister.jpg", alt: "Stadtmeister 1942 – Dr. Bucher, Assmuß" },
+    { src: "/images/tradition/1933-alte-anlage.jpg", alt: "1933: Alte Anlage am Eselsgrund – Pries, Dr. Eckert, Berk, Frau Dr. Berk, Frau Bopp" },
+    { src: "/images/tradition/1938-hans-hassemer.jpg", alt: "1938: Nach der Umsiedlung auf den Hans-Hassemer-Platz" },
+    { src: "/images/tradition/1948-damenmannschaft.jpg", alt: "1948/49/50: Pemsel, Klotz, Trainer Probst, Dr. Huck, Dr. Berk" },
+    { src: "/images/tradition/1953-damenmannschaft.jpg", alt: "1953: Nightingal, Berk, Kuder, Klotz, Voncken (1954 mit Frau Selbach)" },
+    { src: "/images/tradition/1955-damenmannschaft.jpg", alt: "1955/1956: Prestinari, Schröder, Doris Berk, Vera Berk, Lamminger, Kuder, Milek" },
+    { src: "/images/tradition/steg-halle-beleuchtung.jpg", alt: "Eigener Steg über die Bahn mit Halle und Platz mit Beleuchtung" },
   ];
 
   const [lightboxIndex, setLightboxIndex] = useState(-1);
