@@ -168,7 +168,7 @@ const VorstandDE = () => {
                       ))}
                     </div>
                   ) : null}
-                  <div className="md:w-2/3 lg:w-3/4 p-8">
+                  <div className="md:w-2/3 lg:w-3/4 p-8 flex flex-col justify-center">
                     <h3 className="text-2xl font-bold text-tennis-black mb-2">
                       {member.name}
                     </h3>
