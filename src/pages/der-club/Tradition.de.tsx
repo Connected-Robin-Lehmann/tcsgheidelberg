@@ -15,6 +15,16 @@ const TraditionDE = () => {
     { src: "/images/tradition/tennis-hall-sign.jpg", alt: "Zufahrt zur Tennishalle - Historisch" },
     { src: "/images/tradition/indoor-tennis-historical.jpg", alt: "In der Halle - Trainer Molloy und Lamy jun." },
     { src: "/images/tradition/team-historical-2.jpg", alt: "Historisches Gruppenbild auf dem Platz" },
+    { src: "/images/tradition/1954-youth-team.jpg", alt: "1954: Jugendmannschaft mit Vera Berk, H. Schweizer, Doris Berk, Lamy, Hill, Rittershausen, B. Schweizer" },
+    { src: "/images/tradition/vera-berk-champion.jpg", alt: "Vera Berk mit 14 Jahren Deutsche Meisterin der Mädchenklasse" },
+    { src: "/images/tradition/youth-team-group.jpg", alt: "Jugendgruppe mit B. Schweizer, Mi. Wisniovsky, Vera Berk, Pelzin, Walz, H. Lenk, R. v. Traetteur, R. Lenk, Baly Berk, Ma. Wisniovsky" },
+    { src: "/images/tradition/edda-budding.jpg", alt: "Edda Budding" },
+    { src: "/images/tradition/sedgman-gregor-pails-segura.jpg", alt: "Sedgman, M. Gregor, Pails, Segura - Klassetennis vor 2.000 Zuschauern" },
+    { src: "/images/tradition/sedgman-segura-match.jpg", alt: "Sedgman und Segura im Match (im Hintergrund die Tennishalle)" },
+    { src: "/images/tradition/cramm-berk-kuhlmann.jpg", alt: "v. Cramm, Berk, Kuhlmann beim ersten Ausländergastspiel 1949" },
+    { src: "/images/tradition/international-tennis-match.jpg", alt: "Internationales Tennis vor großer Kulisse" },
+    { src: "/images/tradition/mens-team-group.jpg", alt: "Herrenmannschaft Gruppenbild" },
+    { src: "/images/tradition/1957-womens-team.jpg", alt: "1957: v. Slytermann, Milek, Schröder, Vera Berk, Prestinari, Doris Berk" },
   ];
 
   const [lightboxIndex, setLightboxIndex] = useState(-1);
