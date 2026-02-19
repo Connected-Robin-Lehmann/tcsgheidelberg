@@ -83,8 +83,8 @@ const VorstandEN = () => {
       description: "Britta switched from volleyball to tennis in 2022. She plays on the current W40.1 (BK1) team and manages the club's website. Sonja, who maintains our press contacts, has been a club member since childhood, making it only natural for her to get involved on the board. She loves writing in all forms, making the 'Media & Press' department a perfect fit. Together, they have been handling the layout and editing of the biannual Tennis Info since 2024.",
       secondEmail: "britta.mueller@schwarzgelb-heidelberg.de",
       images: [
-        "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/Sonja_6-e1741973362391.jpg",
-        "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/20240713_201252-scaled-e1741973410235.jpg"
+        "/images/vorstand/sonja-althoff.jpg",
+        "/images/vorstand/britta-mueller.jpg"
       ]
     }
   ];
@@ -102,6 +102,19 @@ const VorstandEN = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             The leadership team of TC Schwarz-Gelb Heidelberg e.V.
           </p>
+        </div>
+      </section>
+
+      {/* Board Photo */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <img
+              src="/images/vorstand/vorstand-gemeinsam.jpg"
+              alt="Board of TC Schwarz-Gelb Heidelberg"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </section>
 
