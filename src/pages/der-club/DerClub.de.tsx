@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +8,10 @@ import { clubGalleryImages } from "@/data/clubGalleryImages";
 const DerClubDE = () => {
   const [lightboxIndex, setLightboxIndex] = useState(-1);
   const images = clubGalleryImages.map((img) => ({ src: img.src, alt: img.alt.de }));
+  const previewImages = useMemo(() => {
+    const shuffled = [...images].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 4);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -141,29 +145,35 @@ const DerClubDE = () => {
               <div className="w-24 h-1 bg-tennis-yellow mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {images.map((image, index) => {
-                const isLogo = image.alt.toLowerCase().includes("logo");
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {previewImages.map((image) => {
+                const fullIndex = images.findIndex((img) => img.src === image.src);
                 return (
                   <div
-                    key={index}
-                    onClick={() => setLightboxIndex(index)}
+                    key={image.src}
+                    onClick={() => setLightboxIndex(fullIndex)}
                     className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
                   >
-                    <div className={`relative overflow-hidden ${isLogo ? "bg-gray-100" : ""}`}>
+                    <div className="relative overflow-hidden">
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className={`w-full h-48 ${isLogo ? "object-contain p-2" : "object-cover"} group-hover:scale-110 transition-transform duration-500`}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-tennis-black/0 group-hover:bg-tennis-black/20 transition-colors duration-300"></div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-tennis-black/70 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                        <p className="text-white text-sm font-medium">{image.alt}</p>
-                      </div>
                     </div>
                   </div>
                 );
               })}
+            </div>
+
+            <div className="text-center mt-8">
+              <button
+                onClick={() => setLightboxIndex(0)}
+                className="inline-block bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow transition-all duration-300 shadow-lg"
+              >
+                Alle {images.length} Bilder anzeigen
+              </button>
             </div>
           </div>
         </div>
