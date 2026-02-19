@@ -9,78 +9,83 @@ const VorstandDE = () => {
       name: "Aleksandar Kukaras",
       position: "1. Vorsitzender",
       email: "aleksandar.kukaras@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/Bild1-e1741965335756.png",
-      description: "Alex ist das Gesicht unseres Traditionsvereins. Er verantwortet die Vereinsleitung, dessen Gesamtkoordination und repräsentiert unseren Club nach außen wie nach innen. Er organisiert Vorstandssitzungen und Mitgliederversammlungen, steht in regelmäßigem Kontakt zu Verbänden und ist auch intensiv in die Trainings-, Turnier- und Jugendarbeit involviert."
-    },
-    {
-      name: "Dr. Frank Schöneborn",
-      position: "2. Vorsitzender / Finanzen",
-      email: "frank.schoeneborn@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Dr-Frank-Schöneborn.jpg",
-      description: "Frank ist für die Finanzen, die Mitgliederverwaltung und die allgemeine Administration in unserem Verein verantwortlich. Ohne ihn geht finanziell nichts, denn zu seinem Ressort zählen die Vermögensverwaltung, die Buchführung, die Jahresbilanz, der Haushaltsplan, die Steuererklärung und Versicherungen, ferner auch das Einziehen der Mitgliederbeiträge und die Erstellung der Spendenbescheinigungen."
-    },
-    {
-      name: "Marvin Tawasi",
-      position: "Sportwart Herren (Aktive)",
-      email: "marvin.tawasi@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/08/Marvin-Tawasi-2020-e1742127517989.jpg",
-      description: "Marvin ist unser Sportwart Aktive und zudem B-Lizenz-Trainer (Tennis Akademie Alex Kukaras). Er kümmert sich im Erwachsenen-Sportbetrieb (Mannschaftssport) insbesondere um die Mannschaftsmeldungen der aktiven Herrenmannschaften bei den Medenrunden sowie den reibungslosen Ablauf der einzelnen Begegnungen und ist damit wichtiges Bindeglied zwischen dem Vorstand und unseren Herren-Mannschaften."
+      image: "/images/vorstand/alex-kukaras.jpg",
+      description: "Alex verantwortet die Vereinsleitung, deren Gesamtkoordination und repräsentiert unseren Club nach außen wie nach innen. Er organisiert Vorstandssitzungen und Mitgliederversammlungen, steht in regelmäßigem Kontakt zu Verbänden und ist als Leiter einer Tennisschule auch intensiv in die Trainings-, Turnier- und Jugendarbeit involviert."
     },
     {
       name: "Marc Homsy",
-      position: "Sportwart Senioren",
+      position: "2. Vorsitzender",
       email: "marc.homsy@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Marc-Homsy.jpg",
-      description: "Marc ist Sportwart für die Senioren-Mannschaften und kümmert sich im Sportbetrieb um die Meldungen der derzeit 6 Mannschaften (D40.1, H50.1, D50.1, H40, D40.2 und H55.1) bei den Medenrunden, den reibungslosen Ablauf der einzelnen Begegnungen und fungiert als deren Interessenvertretung im Vorstand."
+      image: "/images/vorstand/marc-homsy.jpg",
+      description: "Marc ist Stellvertreter von Alex und in die Gesamtkoordination des Vereins eingebunden. Er kümmert sich auch um das Tagesgeschäft im Rahmen der Geschäftsführung des Vereins. Dazu gehören beispielsweise die Beantragung von Zuschüssen bei der Stadt Heidelberg und Verbänden oder die Auftragsvergabe für Arbeiten zur Erhaltung der Platzanlage und des Clubhauses."
     },
     {
-      name: "Karolin Kukaras",
-      position: "Jugendwart",
-      email: "karolin.kukaras@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Karolin-Kukaras.jpg",
-      description: "Karo hat als Jugendwart den besten Draht zu unserem Nachwuchs. Sie ist für alle Vereinsmitglieder bis 18 Jahre zuständig. Sie hilft bei der Planung der Jugendtrainings und organisiert Jugendturniere. Zu ihren weiteren Aufgaben zählen die Talentförderung, das Gewinnen von Kids und Jugendlichen für den Verein und das Vertreten deren Interessen im Vorstand."
+      name: "Timo Schulz",
+      position: "Kassenwart",
+      email: "timo.schulz@schwarzgelb-heidelberg.de",
+      image: "/images/vorstand/timo-schulz.jpg",
+      description: "Timo ist neu im Vorstand und fungiert als Kassenwart und hat auch die Budgetplanung übernommen."
     },
     {
-      name: "Tanya Thouw",
-      position: "Schriftführerin",
-      email: "tanya.thouw@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/Tanya-e1742127659488.jpg",
-      description: "Tanya ist unsere Protokollantin und eine große Stütze für die allgemeine Vorstandsarbeit."
+      name: "Ulrike Nuber",
+      position: "Mitgliederverwaltung",
+      email: "ulrike.nuber@schwarzgelb-heidelberg.de",
+      image: "/images/vorstand/ulrike-nuber.jpg",
+      description: "Uli spielt seit 1980 Tennis und ist mit ihrer Familie seit 2019 im Schwarz-Gelb. Seit einiger Zeit ist sie leidenschaftliche Mannschaftsführerin des Damen-50-Teams. Bei Fragen rund um die Mitgliedschaft oder Problemen mit dem Platzbuchungssystem erreicht ihr sie unter mitgliederservice@schwarz-gelb-heidelberg.de"
     },
     {
-      name: "Manfred Seibold",
-      position: "Platzreferent", 
-      email: "manfred.seibold@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Manfred-Seibold.jpg",
-      description: "Manfred ist verantwortlich für alles, was mit unserer Tennisanlage zu tun hat. Er arbeitet in vielen Fällen Hand in Hand mit unserem Platzwart Sharif. Sein Ziel ist es, unsere Vereinsanlage im bestmöglichen Zustand zu halten und sie nach Möglichkeit noch zu verbessern. Alle anfallenden Reparaturen obliegen daher seiner Obhut."
-    },
-    {
-      name: "Terezie Zuna-Homsy",
-      position: "Vergnügungswart",
-      email: "terezie.zuna-homsy@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/Terezie-e1741973196281.jpg",
-      description: "Terezie ist unsere Vergnügungswartin, doch hinter ihr steckt ein ganzes Team, das sich gemeinsam um den gesellige Teil im Vereinsleben kümmert und immer wieder tolle Ideen für gemeinsame Veranstaltungen hat. So ist u.a. eine 80er/90er-Jahre-Party geplant, ebenso wie eine Nuit Blanche neben dem bereits traditionellen Blümchenturnier und dem Doppel-Turnier zum Saison-Abschluss. Wir dürfen gespannt bleiben."
+      name: "Ursula Fernández Lamarche",
+      position: "stellv. Mitgliederverwaltung",
+      email: "ursula.fernandez-lamarche@schwarzgelb-heidelberg.de",
+      image: "/images/vorstand/ursula-fernandez.jpg",
+      description: "Ursula ist Sportwissenschaftlerin und als Beisitzerin Teil des Vorstands, Schwerpunkt Mitgliederverwaltung. Mit Leidenschaft und fachlicher Kompetenz engagiert sie sich für ein aktives, gesundes und lebendiges Vereinsleben."
     },
     {
       name: "Katharina Kukaras",
-      position: "Beisitzerin Damensport",
-      email: "kati.kukaras@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/IMG_3690-e1741973256127.jpg",
-      description: "Kati ist nur in der offiziellen Vorstandsbetitelung 'Beisitzerin' – sie ist de Facto Sportwartin für die aktiven Damenmannschaften, spielt in der 1. Damenmannschaft und ist B-Lizenz-Trainerin (Tennis Akademie Alex Kukaras). Sie sich um die Mannschaftsmeldungen der aktiven Damenmannschaften bei den Medenrunden sowie den reibungslosen Ablauf der einzelnen Begegnungen und ist damit ebenso wichtiges Bindeglied zwischen dem Vorstand und den Damenmannschaften."
+      position: "Sportwartin",
+      email: "katharina.kukaras@schwarzgelb-heidelberg.de",
+      image: "/images/vorstand/kati-kukaras.jpg",
+      description: "Kati ist unsere Sportwartin und kümmert sich um die Mannschaftsmeldungen der Aktiven und der Senioren Mannschaften, sowie den reibungslosen Ablauf der einzelnen Begegnungen."
     },
     {
-      name: "Sonja Althoff",
-      position: "Beisitzerin Presse",
+      name: "Karolin Kukaras",
+      position: "Jugendwartin",
+      email: "karolin.kukaras@schwarzgelb-heidelberg.de",
+      image: "/images/vorstand/karo-kukaras.jpg",
+      description: "Karo hat als Jugendwartin den besten Draht zu unserem Nachwuchs. Sie ist für alle Vereinsmitglieder bis 18 Jahre zuständig. Sie hilft bei der Planung der Jugendtrainings und organisiert Jugendturniere. Zu ihren weiteren Aufgaben zählen die Talentförderung, das Gewinnen von Kids und Jugendlichen für den Verein und das Vertreten deren Interessen im Vorstand."
+    },
+    {
+      name: "Tanya Thouw",
+      position: "Schriftführerin und Mitgliederkommunikation",
+      email: "tanya.thouw@schwarzgelb-heidelberg.de",
+      image: "/images/vorstand/tanya-thouw.jpg",
+      description: "Tanya ist seit 2020 im Vorstand aktiv und protokolliert in allen Vorstandssitzungen und Mitgliederversammlungen, seit der letzten Vorstandswahl ist sie auch für die Mitgliederkommunikation zuständig. Ihr werdet sie aber auch sonst überall antreffen, denn sie hilft wann immer notwendig."
+    },
+    {
+      name: "Terezie Homsy",
+      position: "Vergnügungswartin",
+      email: "terezie.zuna-homsy@schwarzgelb-heidelberg.de",
+      image: "/images/vorstand/terezie-homsy.jpg",
+      description: "Terezie ist unsere Vergnügungswartin, doch hinter ihr steckt ein ganzes Team, das sich gemeinsam um den geselligen Teil im Vereinsleben kümmert und immer wieder tolle Ideen für gemeinsame Veranstaltungen hat. So finden neben dem traditionellen Blümchenturnier und dem Doppelturnier zu Saisonabschluss unter anderem eine 80er/90er-Jahre-Party und eine Nuit Blanche statt. Wir dürfen gespannt bleiben ..."
+    },
+    {
+      name: "Manfred Seibold",
+      position: "Platzreferent",
+      email: "manfred.seibold@schwarzgelb-heidelberg.de",
+      image: "/images/vorstand/manfred-seibold.jpg",
+      description: "Manfred ist neben der Leitung seiner Tennisschule Seibold verantwortlich für alles, was mit unserer Tennisanlage zu tun hat. Er arbeitet im Verbund mit der Vorstandschaft und unserem Platzwart Sharif, um unsere Anlage im bestmöglichen Zustand zu halten und sie nach Möglichkeit noch zu verbessern."
+    },
+    {
+      name: "Sonja Althoff & Britta Müller",
+      position: "Beisitzerinnen Media und Presse",
       email: "sonja.althoff@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/Sonja_6-e1741973362391.jpg",
-      description: "Sonja unterstützt als Beisitzerin Presse den Verein."
-    },
-    {
-      name: "Britta Müller", 
-      position: "Beisitzerin Medien",
-      email: "britta.mueller@schwarzgelb-heidelberg.de",
-      image: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/20240713_201252-scaled-e1741973410235.jpg",
-      description: "Britta unterstützt als Beisitzer den Verein beim Aktualisieren der Homepage und bei der Erstellung der TennisInfo."
+      image: null,
+      description: "Britta ist 2022 von Volleyball auf Tennis umgeschwenkt. Sie spielt in der aktuellen D40.1 (BK1) und kümmert sich für den Verein um die Homepage. Sonja, die für uns den Kontakt zur Presse unterhält, war schon als Kind Mitglied in unserem Verein. Somit war es nur folgerichtig, dass sie sich auch im Vorstand engagiert. Sie liebt Texte in jeder Form und so passt das Ressort 'Media und Presse' perfekt zu ihr. Beide gemeinsam kümmern sich seit 2024 um Satz und Redaktion der zweijährlich erscheinenden Tennisinfo.",
+      secondEmail: "britta.mueller@schwarzgelb-heidelberg.de",
+      images: [
+        "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/Sonja_6-e1741973362391.jpg",
+        "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/20240713_201252-scaled-e1741973410235.jpg"
+      ]
     }
   ];
 
@@ -100,48 +105,20 @@ const VorstandDE = () => {
         </div>
       </section>
 
-      {/* Board Photo */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <img
-              src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/03/Vorstand2023-e1741964818524.jpg"
-              alt="Vorstand 2023"
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Introduction */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-tennis-black mb-8 text-center">
-              Unser neuer Vorstand - hier gleich nach der Wahl am 24.09.2023
-            </h2>
-            
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
               <p>
-                Wer sich für ein Ehrenamt im Sport - so auch im Tennisverein - entscheidet, möchte die Ziele des Vereins neu definieren und sie im Sinne der Vereinsmitglieder erfolgreich umsetzen. Dies erfordert vor allem auch ein hohes Maß an Engagement aller Vorstandsmitglieder.
-              </p>
-              
-              <p>
-                Der aktuelle Vorstand unseres Tennis-Vereins wurde gemäß unserer Satzung in der Mitgliederversammlung am 24.09.2023 für zwei Jahre wiedergewählt und widmet sich weiterhin mit großer Energie der kontinuierlichen Erneuerung, Modernisierung und weiteren Verbesserung unseres geschichtsträchtigen Traditionsvereins TC Schwarz-Gelb Heidelberg e.V. mitten in unserer schönen und weltbekannten Stadt.
-              </p>
-              
-              <p>
-                Wir als Vorstand freuen uns über jeden, der unseren Club ebenfalls mitgestalten möchte. Gern können deshalb auch eigene Projekte vorgeschlagen werden, die dann auch gemeinsam umgesetzt werden können. Mitglieder und Interessierte können uns gern jederzeit ansprechen oder anschreiben unter{' '}
+                Hier unsere aktuellen Vorstandsmitglieder mit ihrem jeweiligen Zuständigkeitsbereich.
+                Mitglieder und Interessierte können uns gern jederzeit ansprechen oder anschreiben unter{' '}
                 <a 
                   href="mailto:vorstand@schwarzgelb-heidelberg.de" 
                   className="text-tennis-yellow hover:text-tennis-black font-semibold transition-colors"
                 >
                   vorstand@schwarzgelb-heidelberg.de
                 </a>.
-              </p>
-              
-              <p className="text-center font-semibold text-tennis-black">
-                Die folgende Übersicht zeigt unsere aktuellen Vorstandsmitglieder mit ihrem Zuständigkeitsbereich.
               </p>
             </div>
           </div>
@@ -155,13 +132,29 @@ const VorstandDE = () => {
             {boardMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="md:flex">
-                  <div className="md:w-1/3 lg:w-1/4">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
-                  </div>
+                  {member.image ? (
+                    <div className="md:w-1/3 lg:w-1/4">
+                      <div className="aspect-[3/4] overflow-hidden">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      </div>
+                    </div>
+                  ) : member.images ? (
+                    <div className="md:w-1/3 lg:w-1/4 flex flex-col">
+                      {member.images.map((img, i) => (
+                        <div key={i} className="aspect-square overflow-hidden">
+                          <img
+                            src={img}
+                            alt={member.name.split(' & ')[i]}
+                            className="w-full h-full object-cover object-top"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
                   <div className="md:w-2/3 lg:w-3/4 p-8">
                     <h3 className="text-2xl font-bold text-tennis-black mb-2">
                       {member.name}
@@ -169,14 +162,27 @@ const VorstandDE = () => {
                     <p className="text-tennis-yellow font-semibold text-lg mb-4">
                       {member.position}
                     </p>
-                    <div className="flex items-center mb-4">
-                      <Mail className="h-5 w-5 text-tennis-yellow mr-3" />
-                      <a 
-                        href={`mailto:${member.email}`}
-                        className="text-tennis-black hover:text-tennis-yellow font-semibold transition-colors"
-                      >
-                        {member.email}
-                      </a>
+                    <div className="flex flex-col gap-2 mb-4">
+                      <div className="flex items-center">
+                        <Mail className="h-5 w-5 text-tennis-yellow mr-3 flex-shrink-0" />
+                        <a 
+                          href={`mailto:${member.email}`}
+                          className="text-tennis-black hover:text-tennis-yellow font-semibold transition-colors break-all"
+                        >
+                          {member.email}
+                        </a>
+                      </div>
+                      {member.secondEmail && (
+                        <div className="flex items-center">
+                          <Mail className="h-5 w-5 text-tennis-yellow mr-3 flex-shrink-0" />
+                          <a 
+                            href={`mailto:${member.secondEmail}`}
+                            className="text-tennis-black hover:text-tennis-yellow font-semibold transition-colors break-all"
+                          >
+                            {member.secondEmail}
+                          </a>
+                        </div>
+                      )}
                     </div>
                     <p className="text-gray-700 leading-relaxed">
                       {member.description}
