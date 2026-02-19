@@ -24,7 +24,7 @@ export const clubGalleryImages: GalleryImage[] = [
   { src: "/images/gallery/TC-SG-013.jpg", alt: { de: "Biergarten Terrasse", en: "Beer Garden Terrace" } },
   { src: "/images/gallery/TC-SG-015.jpg", alt: { de: "Sommerfest im Biergarten", en: "Summer Party in Beer Garden" } },
   { src: "/images/gallery/TC-SG-017.jpg", alt: { de: "Clubparty am Abend", en: "Club Party at Night" } },
-  { src: "/images/gallery/TC-SG-008-2.jpg", alt: { de: "Clubhaus Lounge", en: "Clubhouse Lounge" } },
+  
   { src: "/images/gallery/TC-SG-009.jpg", alt: { de: "Clubhaus und Biergarten", en: "Clubhouse and Beer Garden" } },
   { src: "/images/gallery/TC-SG-010.jpg", alt: { de: "Biergarten Dekoration", en: "Beer Garden Decoration" } },
   { src: "/images/gallery/TC-SG-011.jpg", alt: { de: "Spielbetrieb auf der Anlage", en: "Match Play on the Grounds" } },
