@@ -1,22 +1,29 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ImageLightbox from '@/components/ImageLightbox';
 
 const TraditionEN = () => {
   const galleryImages = [
-    {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennis-Club-Schwarz-Gelb-Heidelberg-018.jpg",
-      alt: "Historic photo of TC Schwarz-Gelb",
-    },
-    {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/07/Metin-Gastronomie-Geburtstagsfeier-2.jpg",
-      alt: "Club life in the early years",
-    },
-    {
-      src: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg",
-      alt: "Traditional club logo",
-    },
+    { src: "/images/tradition/team-historical-1.jpg", alt: "Historic Team Photo" },
+    { src: "/images/tradition/team-historical-list.jpg", alt: "Championship Teams 1948-1955" },
+    { src: "/images/tradition/max-berk-historical.jpg", alt: "Our President Max Berk at his regular spot" },
+    { src: "/images/tradition/fritz-kuhlmann.jpg", alt: "Fritz Kuhlmann, former Davis Cup Player" },
+    { src: "/images/tradition/clubhouse-opening-1958.jpg", alt: "Inauguration of the new clubhouse July 1958" },
+    { src: "/images/tradition/clubhouse-historical.jpg", alt: "Our Clubhouse - Historical Photo" },
+    { src: "/images/tradition/indoor-historical.jpg", alt: "Inside the Clubhouse" },
+    { src: "/images/tradition/tennis-hall-sign.jpg", alt: "Entrance to Tennis Hall - Historical" },
+    { src: "/images/tradition/indoor-tennis-historical.jpg", alt: "In the Hall - Coach Molloy and Lamy jun." },
+    { src: "/images/tradition/team-historical-2.jpg", alt: "Historical Group Photo on Court" },
   ];
+
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
+
+  const previewImages = useMemo(() => {
+    // Show 4 random images
+    const shuffled = [...galleryImages].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 4);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -104,14 +111,16 @@ const TraditionEN = () => {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   In recent years, regularly 20 to 30 teams have played in the Medenrunde, about half as adult teams 
                   and half in youth teams. The "flagship" of TC Schwarz-Gelb Heidelberg e.V. today is the women's team, 
-                  which has continuously worked its way up from the Baden League through the Regional League and now plays 
-                  in the <strong>2nd Bundesliga</strong>.
+                  which has continuously worked its way up from the Baden League through the Regional League, temporarily 
+                  even playing in the 2nd Bundesliga, and is currently playing in the Baden League again. The Women's 50 
+                  team has also continuously worked its way up and will play in the Regional Team league in the 2026 
+                  summer season.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  TC Schwarz-Gelb Heidelberg, then as now, and this is also a daily lived tradition, places value not 
-                  only on competitive sports. Above all, it sees itself as a place where families and recreational 
-                  players feel at home and dedicate themselves to tennis with a lot of fun.
+                  However, TC Schwarz-Gelb Heidelberg places value not only on competitive sports. Above all, it sees 
+                  itself as a place where families and recreational players feel at home and dedicate themselves to 
+                  tennis with a lot of fun.
                 </p>
 
                 <div className="bg-gradient-to-r from-tennis-yellow/10 to-tennis-yellow/5 rounded-2xl p-8 mb-8">
@@ -141,27 +150,51 @@ const TraditionEN = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {galleryImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-tennis-black/0 group-hover:bg-tennis-black/20 transition-colors duration-300"></div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {previewImages.map((image) => {
+                const fullIndex = galleryImages.findIndex(img => img.src === image.src);
+                return (
+                  <div
+                    key={image.src}
+                    onClick={() => setLightboxIndex(fullIndex)}
+                    className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
+                  >
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-tennis-black/0 group-hover:bg-tennis-black/20 transition-colors duration-300"></div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-tennis-black/70 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <p className="text-white text-xs font-medium truncate">{image.alt}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
+            </div>
+
+            <div className="text-center mt-8">
+              <button
+                onClick={() => setLightboxIndex(0)}
+                className="inline-block bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow transition-all duration-300 shadow-lg"
+              >
+                View all {galleryImages.length} historical photos
+              </button>
             </div>
           </div>
         </div>
       </main>
       <Footer />
+      
+      <ImageLightbox 
+        images={galleryImages} 
+        currentIndex={lightboxIndex} 
+        isOpen={lightboxIndex >= 0} 
+        onClose={() => setLightboxIndex(-1)} 
+        onNavigate={setLightboxIndex} 
+      />
     </div>
   );
 };
