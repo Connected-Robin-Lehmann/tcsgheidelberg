@@ -160,7 +160,7 @@ const MitgliedschaftDE = () => {
                   }
                 >
                   <Download className="h-5 w-5 mr-2" />
-                  Aufnahmeantrag (PDF)
+                  Aufnahmeantrag
                 </Button>
               </div>
             </div>
