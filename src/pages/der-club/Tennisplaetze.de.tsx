@@ -10,7 +10,7 @@ const TennisplaetzeDE = () => {
     {
       title: "Hauptanlage Schwindstrasse",
       description:
-        'Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Club-Restaurant durch eine Hecke getrennt der zentrale Center-Court "Max BERK" anschließt. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.',
+        'Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Club-Restaurant durch eine Hecke getrennt der zentrale Center-Court "Max BERK" anschließt. Diese 5 Sandplätze sind zudem mit Flutlicht ausgestattet und können von unseren Mitgliedern in der Saison nach Verfügbarkeit bis 22 Uhr zum Freispiel gebucht werden. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.',
       image: "/images/Hauptanlage_Schwindstrasse.jpg",
       features: [
         "10 Sandplätze",
