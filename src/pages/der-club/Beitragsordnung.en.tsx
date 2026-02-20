@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, Euro, AlertTriangle, Mail } from "lucide-react";
+import { Euro, AlertTriangle, Mail } from "lucide-react";
 
 const BeitragsordnungEN = () => {
   const membershipFees = [
@@ -49,7 +49,7 @@ const BeitragsordnungEN = () => {
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              All details about our membership fees at a glance
+              All details about our current membership fees at a glance
             </p>
           </div>
 
@@ -153,33 +153,20 @@ const BeitragsordnungEN = () => {
               </div>
 
               {/* Important Notes */}
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="bg-red-50 rounded-2xl p-6 border-l-4 border-red-400">
-                  <div className="flex items-start">
-                    <AlertTriangle className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-red-800 mb-2">
-                        Important Notice
-                      </h4>
-                      <p className="text-red-700 text-sm">
-                        We do not offer "trial" or "introductory" memberships.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-green-50 rounded-2xl p-6 border-l-4 border-green-400">
-                  <div className="flex items-start">
-                    <Download className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-green-800 mb-2">
-                        Membership Application
-                      </h4>
-                      <p className="text-green-700 text-sm">
-                        The current valid version of the membership application
-                        is available for download.
-                      </p>
-                    </div>
+              <div className="bg-red-50 rounded-2xl p-6 border-l-4 border-red-400 mb-8">
+                <div className="flex items-start">
+                  <AlertTriangle className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-red-800 mb-2">
+                      Important Notice
+                    </h4>
+                    <p className="text-red-700 text-sm">
+                      We do not offer "trial" or "introductory" memberships – however, a trial training session can be arranged at the{" "}
+                      <a href="/training/tennisschule-pts-kukaras" className="font-semibold underline hover:opacity-70 transition-opacity">Kukaras</a>{" "}
+                      or{" "}
+                      <a href="/training/tennisschule-seibold" className="font-semibold underline hover:opacity-70 transition-opacity">Seibold</a>{" "}
+                      tennis schools, see under <a href="/training" className="font-semibold underline hover:opacity-70 transition-opacity">Training</a>.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -202,22 +189,6 @@ const BeitragsordnungEN = () => {
                     granted.
                   </p>
                 </div>
-              </div>
-
-              {/* Download Button */}
-              <div className="text-center mb-8">
-                <Button
-                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-8 py-4 text-lg"
-                  onClick={() =>
-                    window.open(
-                      "/downloads/Beitragsordnung-2026.png",
-                      "_blank"
-                    )
-                  }
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Download Fee Regulations (PDF)
-                </Button>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, Euro, AlertTriangle, Mail } from "lucide-react";
+import { Euro, AlertTriangle, Mail } from "lucide-react";
 
 const BeitragsordnungDE = () => {
   const mitgliedsbeitraege = [
@@ -49,7 +49,7 @@ const BeitragsordnungDE = () => {
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Alle Details zu unseren Mitgliedsbeiträgen im Überblick
+              Alle Details zu unseren aktuellen Mitgliedsbeiträgen im Überblick
             </p>
           </div>
 
@@ -153,34 +153,20 @@ const BeitragsordnungDE = () => {
               </div>
 
               {/* Important Notes */}
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="bg-red-50 rounded-2xl p-6 border-l-4 border-red-400">
-                  <div className="flex items-start">
-                    <AlertTriangle className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-red-800 mb-2">
-                        Wichtiger Hinweis
-                      </h4>
-                      <p className="text-red-700 text-sm">
-                        „Probe-" oder „Schnupper"-Mitgliedschaften bieten wir
-                        nicht an.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-green-50 rounded-2xl p-6 border-l-4 border-green-400">
-                  <div className="flex items-start">
-                    <Download className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-green-800 mb-2">
-                        Mitgliedsantrag
-                      </h4>
-                      <p className="text-green-700 text-sm">
-                        Die aktuelle gültige Fassung des Mitgliedsantrags steht
-                        als Download zur Verfügung.
-                      </p>
-                    </div>
+              <div className="bg-red-50 rounded-2xl p-6 border-l-4 border-red-400 mb-8">
+                <div className="flex items-start">
+                  <AlertTriangle className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-red-800 mb-2">
+                      Wichtiger Hinweis
+                    </h4>
+                    <p className="text-red-700 text-sm">
+                      „Probe-" oder „Schnupper"-Mitgliedschaften bieten wir nicht an – es kann aber ein Probetraining bei einer der Tennisschulen{" "}
+                      <a href="/training/tennisschule-pts-kukaras" className="font-semibold underline hover:opacity-70 transition-opacity">Kukaras</a>{" "}
+                      oder{" "}
+                      <a href="/training/tennisschule-seibold" className="font-semibold underline hover:opacity-70 transition-opacity">Seibold</a>{" "}
+                      vereinbart werden, siehe unter <a href="/training" className="font-semibold underline hover:opacity-70 transition-opacity">Training</a>.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -203,22 +189,6 @@ const BeitragsordnungDE = () => {
                     Vergünstigungen werden keine gewährt.
                   </p>
                 </div>
-              </div>
-
-              {/* Download Button */}
-              <div className="text-center mb-8">
-                <Button
-                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-8 py-4 text-lg"
-                  onClick={() =>
-                    window.open(
-                      "/downloads/Beitragsordnung-2026.png",
-                      "_blank"
-                    )
-                  }
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Beitragsordnung herunterladen (PDF)
-                </Button>
               </div>
             </div>
           </div>
