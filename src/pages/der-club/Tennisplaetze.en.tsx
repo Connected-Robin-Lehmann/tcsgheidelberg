@@ -10,7 +10,7 @@ const TennisplaetzeEN = () => {
     {
       title: "Main Facility Schwindstrasse",
       description:
-        'Our central tennis facility around our clubhouse consists of four adjacent courts No. 1 to No. 4, followed by the central Center Court "Max BERK" separated by a hedge towards the club restaurant. Behind the clubhouse and changing rooms are courts 6-9, where most of our children and youth training takes place.',
+        'Our central tennis facility around our clubhouse consists of four adjacent courts No. 1 to No. 4, followed by the central Center Court "Max BERK" separated by a hedge towards the club restaurant. These 5 clay courts are also equipped with floodlights and can be booked by our members during the season for free play until 10 p.m., subject to availability. Behind the clubhouse and changing rooms are courts 6-9, where most of our children and youth training takes place.',
       image: "/images/Hauptanlage_Schwindstrasse.jpg",
       features: [
         "10 Clay Courts",
