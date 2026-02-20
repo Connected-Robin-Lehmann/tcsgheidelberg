@@ -41,28 +41,20 @@ const MitgliedschaftEN = () => {
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Become part of our tennis family at TC Schwarz-Gelb Heidelberg
-              e.V.
+              Become part of our tennis family at TC Schwarz-Gelb Heidelberg e.V.
             </p>
           </div>
 
           {/* Benefits Section */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {benefits.map((benefit, index) => (
-              <Card
-                key={index}
-                className="border-tennis-yellow/20 hover:border-tennis-yellow/40 transition-colors"
-              >
+              <Card key={index} className="border-tennis-yellow/20 hover:border-tennis-yellow/40 transition-colors">
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">{benefit.icon}</div>
-                  <CardTitle className="text-tennis-black">
-                    {benefit.title}
-                  </CardTitle>
+                  <CardTitle className="text-tennis-black">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 text-center">
-                    {benefit.description}
-                  </p>
+                  <p className="text-gray-600 text-center">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -77,82 +69,73 @@ const MitgliedschaftEN = () => {
 
               <div className="prose prose-lg max-w-none mb-8">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Are you interested in playing tennis in a great atmosphere in
-                  the heart of Heidelberg? Would you like to pick up a racket
-                  for the first time or return to the game after many years of
-                  break to send balls — and opponents — across the court? Then
-                  we look forward to welcoming you as a new member of our
-                  traditional club.
+                  Are you interested in playing tennis in a great atmosphere in the heart of Heidelberg?
+                  Would you like to pick up a racket for the first time or return to the game after many
+                  years of break to send balls — and opponents — across the court? Then we look forward to
+                  welcoming you as a new member of our traditional club.
                 </p>
-
                 <p className="text-gray-700 leading-relaxed mb-8">
-                  As a new member, you can be sure that you will not only have
-                  fun playing, but also make new friends. With our many players
-                  of different strengths and levels of ambition, you will always
-                  find friendly people who love tennis just as much as you do!
+                  As a new member, you can be sure that you will not only have fun playing, but also make
+                  new friends. With our many players of different strengths and levels of ambition, you
+                  will always find friendly people who love tennis just as much as you do!
                 </p>
               </div>
 
               {/* Membership Info */}
               <div className="bg-tennis-yellow/10 rounded-2xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-tennis-black mb-6">
-                  Membership Information
-                </h3>
+                <h3 className="text-2xl font-bold text-tennis-black mb-6">Membership Information</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Reduced rates for families, youth, and students</li>
+                  <li>• Reduced fees for joining after July 15 until year-end</li>
+                  <li>• New fee structure as of 01.01.2026 (adopted on 19.10.2025)</li>
                   <li>
-                    • Reduced fees for joining after July 15 until year-end
-                  </li>
-                  <li>
-                    • New fee structure as of 01.01.2026 (adopted on 19.10.2025)
-                  </li>
-                  <li>
-                    • No trial or introductory memberships available – however, a trial training session can be arranged at the{" "}
+                    • No trial or introductory memberships available – however, a trial training session
+                    can be arranged at the{" "}
                     <a href="/training/tennisschule-pts-kukaras" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Kukaras</a>{" "}
                     or{" "}
                     <a href="/training/tennisschule-seibold" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Seibold</a>{" "}
-                    tennis schools, see under <a href="/training" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Training</a>
+                    tennis schools, see under{" "}
+                    <a href="/training" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Training</a>
                   </li>
                 </ul>
               </div>
 
               {/* Payment Info */}
               <div className="bg-gray-50 rounded-2xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-tennis-black mb-6">
-                  Payment Modalities
-                </h3>
+                <h3 className="text-2xl font-bold text-tennis-black mb-6">Payment Modalities</h3>
                 <p className="text-gray-700 mb-4">
-                  We recommend setting up a SEPA direct debit mandate.
-                  Otherwise, an additional processing fee of EUR 25 will be
-                  charged for manual transfer according to the fee regulations.
+                  We recommend setting up a SEPA direct debit mandate. Otherwise, an additional processing
+                  fee of EUR 25 will be charged for manual transfer according to the fee regulations.
                 </p>
                 <p className="text-gray-700 font-semibold">
-                  All membership fees must always be paid in full. No exceptions
-                  or other discounts outside the official fee structure will be
-                  granted.
+                  All membership fees must always be paid in full. No exceptions or other discounts outside
+                  the official fee structure will be granted.
                 </p>
               </div>
 
               {/* Work Hours Notice */}
               <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
-                <h3 className="text-2xl font-bold text-tennis-yellow mb-6">
-                  Note on Work Hours
-                </h3>
+                <h3 className="text-2xl font-bold text-tennis-yellow mb-6">Note on Work Hours</h3>
                 <p>
-                  From 2026 onwards, every member between the ages of 16 and 65 must perform one voluntary work assignment of 2 hours per year for the club. Otherwise, a fee of €15 per uncompleted hour will be charged at the end of the year – the amount will be collected or invoiced accordingly.
+                  From 2026 onwards, every member between the ages of 16 and 65 must perform one voluntary
+                  work assignment of 2 hours per year for the club. Otherwise, a fee of €15 per uncompleted
+                  hour will be charged at the end of the year – the amount will be collected or invoiced
+                  accordingly.
                 </p>
               </div>
 
               {/* Downloads */}
-              <div className="mb-8">
+              <div className="flex flex-wrap gap-4 mb-4">
                 <Button
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
-                  onClick={() =>
-                    window.open(
-                      "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2023/01/Aufnahmeantrag-komplett-ab-2023.pdf",
-                      "_blank"
-                    )
-                  }
+                  onClick={() => window.open("/downloads/Beitragsordnung-2026.pdf", "_blank")}
+                >
+                  <Download className="h-5 w-5 mr-2" />
+                  Fee Regulations 2026
+                </Button>
+                <Button
+                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
+                  onClick={() => window.open("https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2023/01/Aufnahmeantrag-komplett-ab-2023.pdf", "_blank")}
                 >
                   <Download className="h-5 w-5 mr-2" />
                   Membership Application
@@ -170,10 +153,9 @@ const MitgliedschaftEN = () => {
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 mb-6">
-                For questions regarding changes to your membership, fee
-                invoices, or updates to your personal data (such as address,
-                email, bank details, phone number, etc.), please contact us
-                exclusively at:
+                For questions regarding changes to your membership, fee invoices, or updates to your
+                personal data (such as address, email, bank details, phone number, etc.), please contact
+                us exclusively at:
               </p>
               <div className="flex items-center space-x-3 mb-6">
                 <Mail className="h-5 w-5 text-tennis-yellow" />
@@ -186,9 +168,8 @@ const MitgliedschaftEN = () => {
               </div>
               <div className="bg-red-50 border-l-4 border-red-400 p-4">
                 <p className="text-red-800 font-semibold">
-                  Important: A termination or withdrawal notice must be
-                  submitted to the board in writing (letter or email) no later
-                  than September 30th of each year.
+                  Important: A termination or withdrawal notice must be submitted to the board in writing
+                  (letter or email) no later than September 30th of each year.
                 </p>
               </div>
             </CardContent>
