@@ -33,16 +33,7 @@ export interface ClubEvent {
 }
 
 export const upcomingEvents: ClubEvent[] = [
-  // Badenliga Hallensaison 2026
-  {
-    id: "damen1-badenliga-jan-2026",
-    date: "17.01.2026",
-    time: { de: "18:00 Uhr", en: "6:00 PM" },
-    title: { de: "Damen 1 Badenliga", en: "Women 1 Baden League" },
-    location: { de: "Halle TC Plankstadt", en: "TC Plankstadt Indoor Court" },
-    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
-    type: "match",
-  },
+  // Badenliga Hallensaison 2026 – nur noch zukünftige Termine (ab 20.02.2026)
   {
     id: "damen1-badenliga-feb-2026",
     date: "28.02.2026",
@@ -53,38 +44,11 @@ export const upcomingEvents: ClubEvent[] = [
     type: "match",
   },
   {
-    id: "damen2-badenliga-jan-2026",
-    date: "31.01.2026",
-    time: { de: "18:00 Uhr", en: "6:00 PM" },
-    title: { de: "Damen 2 Badenliga", en: "Women 2 Baden League" },
-    location: { de: "Halle LLZ Leimen", en: "LLZ Leimen Indoor Court" },
-    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
-    type: "match",
-  },
-  {
     id: "damen2-badenliga-feb-2026",
     date: "28.02.2026",
     time: { de: "18:00 Uhr", en: "6:00 PM" },
     title: { de: "Damen 2 Badenliga", en: "Women 2 Baden League" },
     location: { de: "Halle TC Plankstadt", en: "TC Plankstadt Indoor Court" },
-    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
-    type: "match",
-  },
-  {
-    id: "herren1-badenliga-jan-2026",
-    date: "17.01.2026",
-    time: { de: "17:00 Uhr", en: "5:00 PM" },
-    title: { de: "Herren 1 Badenliga", en: "Men 1 Baden League" },
-    location: { de: "Halle St. Ilgen", en: "St. Ilgen Indoor Court" },
-    description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
-    type: "match",
-  },
-  {
-    id: "herren1-badenliga-feb-2026",
-    date: "31.01.2026",
-    time: { de: "18:00 Uhr", en: "6:00 PM" },
-    title: { de: "Herren 1 Badenliga", en: "Men 1 Baden League" },
-    location: { de: "Halle LLZ Leimen", en: "LLZ Leimen Indoor Court" },
     description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
     type: "match",
   },
