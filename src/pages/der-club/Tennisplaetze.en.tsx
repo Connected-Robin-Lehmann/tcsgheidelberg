@@ -28,7 +28,7 @@ const TennisplaetzeEN = () => {
     {
       title: "Historic Tennis (Carpet) Hall",
       description:
-        "Especially during the winter season, the historic tennis hall with carpet floor directly at the parking lot in Schwindstrasse is also available to us in consultation with the owner.",
+        "Furthermore, the tennis hall with carpet floor directly at the parking lot in Schwindstrasse is available to us in consultation with the owners.\nThe hall can also be booked directly through the owners (see sign at the entrance).",
       image: "/images/Teppichhalle.jpg",
       features: [
         "Carpet Floor",
@@ -135,7 +135,7 @@ const TennisplaetzeEN = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-6">
                       {facility.title}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-6">
+                    <p className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
                       {facility.description}
                     </p>
                     <div className="space-y-2">

@@ -28,7 +28,7 @@ const TennisplaetzeDE = () => {
     {
       title: "Historische Tennis(teppich)halle",
       description:
-        "Insbesondere in der Wintersaison steht uns in Absprache mit dem Eigentümer ebenfalls auch die historische Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.",
+        "Weiterhin steht uns in Absprache mit den Eigentümern die Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.\nDie Halle kann aber auch über die Eigentümer gebucht werden (siehe Schild am Eingang).",
       image: "/images/Teppichhalle.jpg",
       features: [
         "Teppichboden",
@@ -137,7 +137,7 @@ const TennisplaetzeDE = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-6">
                       {facility.title}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-6">
+                    <p className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
                       {facility.description}
                     </p>
                     <div className="space-y-2">
