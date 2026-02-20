@@ -10,18 +10,18 @@ const TennisplaetzeEN = () => {
     {
       title: "Main Facility Schwindstrasse",
       description:
-        'Our central tennis facility around our clubhouse consists of four adjacent courts No. 1 to No. 4, followed by the central Center Court "Max BERK" separated by a hedge towards the restaurant. Behind the clubhouse and changing rooms are courts 6-9, where most of our children and youth training takes place.',
+        'Our central tennis facility around our clubhouse consists of four adjacent courts No. 1 to No. 4, followed by the central Center Court "Max BERK" separated by a hedge towards the club restaurant. Behind the clubhouse and changing rooms are courts 6-9, where most of our children and youth training takes place.',
       image: "/images/Hauptanlage_Schwindstrasse.jpg",
       features: [
         "10 Clay Courts",
         "Center Court Max-BERK",
-        "Children and Youth Area",
+        "Children and Youth Training Area",
       ],
     },
     {
       title: "Air-Supported Hall (Winter)",
       description:
-        "For the winter season, a heated air-supported hall is erected on courts 7 and 8. This allows our members to train and play freely on a clay court even in winter.",
+        "The air-supported hall belongs to the Kukaras Tennis School and offers two courts with the advantage that training can take place on clay even in winter, resulting in fewer adaptation difficulties when transitioning from outdoor to indoor courts. The hall can be used by our members for free play without a trainer, subject to availability, for a fee. For information on current availability and pricing, please contact Alexandar Kukaras at 0172-66 44 369 or by email: kukaras@t-online.de.",
       image: "/images/Traglufthalle.jpg",
       features: ["2 Clay Courts", "Heated", "October to April"],
     },
@@ -204,9 +204,17 @@ const TennisplaetzeEN = () => {
           {/* Contact CTA */}
           <div className="mt-16">
             <div className="bg-gradient-to-r from-tennis-black to-gray-800 rounded-2xl p-8 text-center">
-              <MapPin className="h-8 w-8 text-tennis-yellow mx-auto mb-4" />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Schwindstra%C3%9Fe+9+69126+Heidelberg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block hover:scale-110 transition-transform duration-200"
+                title="Open in Google Maps"
+              >
+                <MapPin className="h-8 w-8 text-tennis-yellow mx-auto mb-4" />
+              </a>
               <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
-                Visit Our Facility
+                Visit Our Facility and Club Restaurant
               </h3>
               <p className="text-white mb-6">
                 See for yourself our first-class tennis courts

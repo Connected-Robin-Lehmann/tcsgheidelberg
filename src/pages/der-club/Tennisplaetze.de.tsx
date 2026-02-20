@@ -10,18 +10,18 @@ const TennisplaetzeDE = () => {
     {
       title: "Hauptanlage Schwindstrasse",
       description:
-        'Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Restaurant durch eine Hecke getrennt der zentrale Center-Court "Max BERK" anschließt. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.',
+        'Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Club-Restaurant durch eine Hecke getrennt der zentrale Center-Court "Max BERK" anschließt. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.',
       image: "/images/Hauptanlage_Schwindstrasse.jpg",
       features: [
         "10 Sandplätze",
         "Center-Court Max-BERK",
-        "Kinder- und Jugendbereich",
+        "Kinder- und Jugendtrainingsbereich",
       ],
     },
     {
       title: "Traglufthalle (Winter)",
       description:
-        "Auf den Plätzen 7 und 8 wird für die Wintersaison eine beheizte Traglufthalle aufgebaut. So können unsere Mitglieder auch im Winter auf einem Sandplatz trainieren und frei spielen.",
+        "Diese gehört der Tennisschule Kukaras und bietet mit zwei Plätzen den Vorteil, dass auch im Winter auf Sandplatz trainiert werden kann und es somit weniger Umstellungs- und Anpassungsschwierigkeiten vom Freiplatz auf den Hallenplatz gibt. Die Traglufthalle kann von unseren Mitgliedern zum freien Spiel ohne Trainer nach Verfügbarkeit gegen Gebühr genutzt werden. Informationen zur aktuellen Belegung wie auch zu den Preisen erhalten Sie gern von Alexandar Kukaras unter 0172-66 44 369 oder per E-Mail: kukaras@t-online.de.",
       image: "/images/Traglufthalle.jpg",
       features: ["2 Sandplätze", "Beheizt", "Oktober bis April"],
     },
@@ -209,9 +209,17 @@ const TennisplaetzeDE = () => {
           {/* Contact CTA */}
           <div className="mt-16">
             <div className="bg-gradient-to-r from-tennis-black to-gray-800 rounded-2xl p-8 text-center">
-              <MapPin className="h-8 w-8 text-tennis-yellow mx-auto mb-4" />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Schwindstra%C3%9Fe+9+69126+Heidelberg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block hover:scale-110 transition-transform duration-200"
+                title="In Google Maps öffnen"
+              >
+                <MapPin className="h-8 w-8 text-tennis-yellow mx-auto mb-4" />
+              </a>
               <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
-                Besuchen Sie unsere Anlage
+                Besuchen Sie unsere Anlage und unser Club-Restaurant
               </h3>
               <p className="text-white mb-6">
                 Überzeugen Sie sich selbst von unseren erstklassigen
