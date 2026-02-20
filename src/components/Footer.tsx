@@ -97,7 +97,7 @@ const Footer = () => {
                   href="/anfahrt"
                   className="text-gray-300 hover:text-tennis-yellow transition-colors"
                 >
-                  {t("footer.contact")}
+                  Anfahrt
                 </a>
               </li>
             </ul>
