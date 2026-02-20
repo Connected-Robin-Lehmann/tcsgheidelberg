@@ -94,7 +94,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/aktuelles/ansprechpartner"
+                  href="/anfahrt"
                   className="text-gray-300 hover:text-tennis-yellow transition-colors"
                 >
                   {t("footer.contact")}
@@ -134,7 +134,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm">
-              © 2024 TC Schwarz-Gelb Heidelberg e.V.{" "}
+              TC Schwarz-Gelb Heidelberg e.V.{" "}
               {t("footer.allRightsReserved")}
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
