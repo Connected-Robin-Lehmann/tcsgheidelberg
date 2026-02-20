@@ -107,11 +107,16 @@ const MitgliedschaftDE = () => {
                     Jahresende
                   </li>
                   <li>
-                    • Neue Beitragsordnung ab 01.01.2021 (beschlossen am
-                    11.10.2020)
+                    • Neue Beitragsordnung ab 01.01.2026 (beschlossen am
+                    19.10.2025)
                   </li>
                   <li>
-                    • Keine "Probe-" oder "Schnupper"-Mitgliedschaften verfügbar
+                    • Keine „Probe-" oder „Schnupper"-Mitgliedschaften verfügbar
+                    – es kann aber ein Probetraining bei einer der Tennisschulen{" "}
+                    <a href="/training/tennisschule-pts-kukaras" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Kukaras</a>{" "}
+                    oder{" "}
+                    <a href="/training/tennisschule-seibold" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Seibold</a>{" "}
+                    vereinbart werden, siehe unter <a href="/training" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Training</a>
                   </li>
                 </ul>
               </div>
@@ -133,21 +138,13 @@ const MitgliedschaftDE = () => {
                 </p>
               </div>
 
-              {/* Infrastructure Fee */}
+              {/* Work Hours Notice */}
               <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
                 <h3 className="text-2xl font-bold text-tennis-yellow mb-6">
-                  Hinweis zur Infrastrukturabgabe
+                  Hinweis Arbeitsstunden
                 </h3>
-                <p className="mb-4">
-                  Im Jahr 2023 werden zusätzlich (gemäß Beschluß der
-                  Mitgliederversammlung vom 18.09.2022) einmalig EUR 20,- pro
-                  aktivem erwachsenen Mitglied (25-65 Jahre alt) als
-                  Infrastrukturabgabe erhoben.
-                </p>
                 <p>
-                  Für alle Folgejahre (2024 ff.) entscheidet die
-                  Mitgliederversammlung jährlich über eine eventuelle
-                  Infrastrukturabgabe und deren Höhe.
+                  Ab dem Jahr 2026 muss jedes Mitglied im Alter von 16–65 Jahren einmal pro Jahr einen Arbeitseinsatz von 2 Stunden für den Verein erbringen. Ansonsten sind am Jahresende 15 Euro pro nichtgeleisteter Stunde zu bezahlen – der Betrag wird entsprechend eingezogen bzw. in Rechnung gestellt.
                 </p>
               </div>
 
@@ -157,13 +154,13 @@ const MitgliedschaftDE = () => {
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
                   onClick={() =>
                     window.open(
-                      "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2021/01/Beitragsordnung-ab-2021-komplett.pdf",
+                      "/downloads/Beitragsordnung-2026.pdf",
                       "_blank"
                     )
                   }
                 >
                   <Download className="h-5 w-5 mr-2" />
-                  Beitragsordnung (PDF)
+                  Beitragsordnung 2026 (PDF)
                 </Button>
                 <Button
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"

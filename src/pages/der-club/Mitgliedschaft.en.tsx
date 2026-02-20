@@ -104,9 +104,15 @@ const MitgliedschaftEN = () => {
                     • Reduced fees for joining after July 15 until year-end
                   </li>
                   <li>
-                    • New fee structure as of 01.01.2021 (adopted on 11.10.2020)
+                    • New fee structure as of 01.01.2026 (adopted on 19.10.2025)
                   </li>
-                  <li>• No trial or introductory memberships available</li>
+                  <li>
+                    • No trial or introductory memberships available – however, a trial training session can be arranged at the{" "}
+                    <a href="/training/tennisschule-pts-kukaras" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Kukaras</a>{" "}
+                    or{" "}
+                    <a href="/training/tennisschule-seibold" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Seibold</a>{" "}
+                    tennis schools, see under <a href="/training" className="text-tennis-black font-semibold underline hover:text-yellow-700 transition-colors">Training</a>
+                  </li>
                 </ul>
               </div>
 
@@ -127,21 +133,13 @@ const MitgliedschaftEN = () => {
                 </p>
               </div>
 
-              {/* Infrastructure Fee */}
+              {/* Work Hours Notice */}
               <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
                 <h3 className="text-2xl font-bold text-tennis-yellow mb-6">
-                  Note on Infrastructure Fee
+                  Note on Work Hours
                 </h3>
-                <p className="mb-4">
-                  In 2023, an additional one-time fee of EUR 20 per active adult
-                  member (ages 25–65) will be charged as an infrastructure fee
-                  (according to the resolution of the general assembly on
-                  18.09.2022).
-                </p>
                 <p>
-                  For all subsequent years (2024 onward), the general assembly
-                  will decide annually whether an infrastructure fee will be
-                  charged and at what amount.
+                  From 2026 onwards, every member between the ages of 16 and 65 must perform one voluntary work assignment of 2 hours per year for the club. Otherwise, a fee of €15 per uncompleted hour will be charged at the end of the year – the amount will be collected or invoiced accordingly.
                 </p>
               </div>
 
@@ -151,13 +149,13 @@ const MitgliedschaftEN = () => {
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
                   onClick={() =>
                     window.open(
-                      "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2021/01/Beitragsordnung-ab-2021-komplett.pdf",
+                      "/downloads/Beitragsordnung-2026.pdf",
                       "_blank"
                     )
                   }
                 >
                   <Download className="h-5 w-5 mr-2" />
-                  Fee Regulations (PDF)
+                  Fee Regulations 2026 (PDF)
                 </Button>
                 <Button
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
