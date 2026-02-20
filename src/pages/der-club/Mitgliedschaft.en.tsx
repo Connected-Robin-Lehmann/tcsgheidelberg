@@ -155,7 +155,7 @@ const MitgliedschaftEN = () => {
                   }
                 >
                   <Download className="h-5 w-5 mr-2" />
-                  Membership Application (PDF)
+                  Membership Application
                 </Button>
               </div>
             </div>
