@@ -92,6 +92,14 @@ const Footer = () => {
                   Mitgliedschaft
                 </a>
               </li>
+              <li>
+                <a
+                  href="/aktuelles/ansprechpartner"
+                  className="text-gray-300 hover:text-tennis-yellow transition-colors"
+                >
+                  {t("footer.contact")}
+                </a>
+              </li>
             </ul>
           </div>
 
