@@ -33,6 +33,16 @@ export interface ClubEvent {
 }
 
 export const upcomingEvents: ClubEvent[] = [
+  // Putzete 2026
+  {
+    id: "putzete-maerz-2026",
+    date: "08.03.2026",
+    time: { de: "10:00 Uhr", en: "10:00 AM" },
+    title: { de: "Putzete", en: "Spring Cleanup" },
+    location: { de: "Tennisanlage", en: "Tennis Facility" },
+    description: { de: "Gemeinsame Putzaktion auf der Anlage – Alle Mitglieder sind herzlich eingeladen!", en: "Joint cleanup action at the facility – All members are welcome!" },
+    type: "infrastructure",
+  },
   // Badenliga Hallensaison 2026 – nur noch zukünftige Termine
   {
     id: "damen1-badenliga-feb-2026",
