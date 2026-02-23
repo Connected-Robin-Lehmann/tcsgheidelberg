@@ -241,7 +241,7 @@ const PlatzordnungEN = () => {
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold"
                   onClick={() =>
                     window.open(
-                      "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2023/01/Platzordnung-Stand-1.2023.pdf",
+                      "/downloads/Platzordnung_vollstaendig-2026.pdf",
                       "_blank"
                     )
                   }
