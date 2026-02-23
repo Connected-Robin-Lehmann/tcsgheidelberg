@@ -15,7 +15,7 @@
     "ourTrainers": "Our Trainers",
     "tennisSchoolSeibold": "Tennis School Seibold",
     "tennisSchoolPTS": "Tennis School PTS Kukaras",
-    "events": "Events",
+    "events": "Current Dates / Events",
     "tournaments": "Tournaments",
     "schwarzGelbCup": "Schwarz-Gelb Cup",
     "rheinNeckarOpen": "Rhein-Neckar-Open",
@@ -31,8 +31,8 @@
       "title": "News",
       "current": "Current",
       "news": "News",
-      "pressReleases": "Press Releases",
-      "tiebreaking": "Tiebreaking News"
+      "newsAndPress": "News and Press Releases",
+      "tiebreaking": "TieBreaking News"
     },
     "projects": "Projects",
     "crowdfunding": "Crowdfunding",
@@ -41,7 +41,7 @@
     "gastronomy": "Gastronomy",
     "info": "FAQs",
     "faq": "FAQ",
-    "tennisInfoBooklet": "Tennis Info Booklet",
+    "tennisInfoBooklet": "TennisInfo Booklets",
     "sponsors": "Sponsoring",
     "legal": {
       "imprint": "Imprint",

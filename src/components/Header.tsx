@@ -36,22 +36,17 @@ const Header = () => {
       name: t("header.news.current"),
       href: "/aktuelles",
       submenu: [
-        { name: t("header.news.news"), href: "/aktuelles/nachrichten" },
         { name: t("header.events"), href: "/aktuelles/veranstaltungen" },
-        { name: t("header.crowdfunding"), href: "/aktuelles/crowdfunding" },
-        { name: t("header.projects"), href: "/aktuelles/projekte" },
+        { name: t("header.news.newsAndPress"), href: "/aktuelles/nachrichten" },
         {
           name: t("header.news.tiebreaking"),
           href: "/aktuelles/tiebreaking-news",
         },
         {
-          name: t("header.news.pressReleases"),
-          href: "/aktuelles/pressemeldungen",
-        },
-        {
           name: t("header.tennisInfoBooklet"),
           href: "/aktuelles/tennis-info-heft",
         },
+        { name: t("header.projects"), href: "/aktuelles/projekte" },
         { name: t("header.contacts"), href: "/aktuelles/ansprechpartner" },
       ],
     },
