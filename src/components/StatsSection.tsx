@@ -7,9 +7,9 @@ const StatsSection = () => {
   const { t } = useTranslation();
   
   const stats = [
-    { icon: Users, number: '612', label: t('home.stats.members'), color: 'text-blue-600' },
+    { icon: Users, number: '515', label: t('home.stats.members'), color: 'text-blue-600' },
     { icon: Target, number: '35%', label: t('home.stats.youthPercentage'), color: 'text-green-600' },
-    { icon: Award, number: '16', label: t('home.stats.adultTeams'), color: 'text-purple-600' },
+    { icon: Award, number: '13', label: t('home.stats.adultTeams'), color: 'text-purple-600' },
     { icon: MapPin, number: '10', label: t('home.stats.courts'), color: 'text-tennis-yellow' },
     { icon: Trophy, number: '14', label: t('home.stats.youthTeams'), color: 'text-red-600' },
     { icon: Calendar, number: '9', label: t('home.stats.trainers'), color: 'text-indigo-600' }
