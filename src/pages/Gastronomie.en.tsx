@@ -161,7 +161,7 @@ const GastronomieEN = () => {
                 </div>
               </Card>
 
-              {/* Opening Hours Card */}
+              {/* Opening Hours Card - temporarily hidden
               <Card className="card-tennis border-l-4 border-l-tennis-yellow">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
@@ -187,6 +187,7 @@ const GastronomieEN = () => {
                   </div>
                 </div>
               </Card>
+              */}
 
               {/* Future Opening */}
               <Card className="card-tennis border-l-4 border-l-red-500">
