@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Club Info */}
           <div>
             <img
-              src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg"
+              src="/images/Logo1.jpg"
               alt="TC Schwarz-Gelb Logo"
               className="h-16 w-auto mb-4"
             />

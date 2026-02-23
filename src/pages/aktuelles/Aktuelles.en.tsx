@@ -67,12 +67,12 @@ const AktuellesEN = () => {
 
                 <div className="grid grid-cols-2 gap-4">
                   <img
-                    src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/07/ScheineFuerVereineAktion-211x300.jpg"
+                    src="/images/aktuelles/ScheineFuerVereineAktion.jpg"
                     alt="Vouchers for Clubs Campaign"
                     className="w-full h-40 object-cover rounded-lg shadow-md"
                   />
                   <img
-                    src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/07/ScheineFuerVereine2025-219x300.jpg"
+                    src="/images/aktuelles/ScheineFuerVereine2025.jpg"
                     alt="Vouchers for Clubs 2025"
                     className="w-full h-40 object-cover rounded-lg shadow-md"
                   />

@@ -109,7 +109,7 @@ const Header = () => {
             <div className="flex items-center justify-center flex-1 xl:flex-none xl:justify-start">
               <a href="/" onClick={closeDropdowns}>
                 <img
-                  src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/06/Logo1.jpg"
+                  src="/images/Logo1.jpg"
                   alt="TC Schwarz-Gelb Heidelberg e.V."
                   className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto"
                 />

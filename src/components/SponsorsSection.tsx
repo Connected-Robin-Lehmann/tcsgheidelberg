@@ -8,17 +8,17 @@ const SponsorsSection = () => {
   const mainSponsors = [
     {
       name: 'Stadtwerke Heidelberg',
-      logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Stadtwerke-Heidelberg.jpg',
+      logo: '/images/sponsors/Stadtwerke-Heidelberg.jpg',
       url: 'https://www.swhd.de/'
     },
     {
       name: 'Engelhorn Sports',
-      logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/engelhorn-sports.jpg',
+      logo: '/images/sponsors/engelhorn-sports.jpg',
       url: 'https://info.engelhorn.de/sport/'
     },
     {
       name: 'Heidelberger Volksbank',
-      logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Heidelberger-Volksbank.jpg',
+      logo: '/images/sponsors/Heidelberger-Volksbank.jpg',
       url: 'https://www.heidelberger-volksbank.de/'
     }
   ];
@@ -26,12 +26,12 @@ const SponsorsSection = () => {
   const tennisSchools = [
     {
       name: 'Tennisschule PTS Kukaras',
-      logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennisschule-PTS-Kukaras.jpg',
+      logo: '/images/sponsors/Tennisschule-PTS-Kukaras.jpg',
       url: '/training/tennisschule-pts-kukaras'
     },
     {
       name: 'Tennisschule Seibold',
-      logo: 'https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Tennisschule-Seibold.jpg',
+      logo: '/images/sponsors/Tennisschule-Seibold.jpg',
       url: '/training/tennisschule-seibold'
     }
   ];

@@ -21,7 +21,7 @@ const FAQDE = () => {
       links: [
         {
           text: "Mitgliedsantrag (PDF)",
-          url: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2023/01/Aufnahmeantrag-komplett-ab-2023.pdf",
+          url: "/downloads/Aufnahmeantrag-komplett-ab-2023.pdf",
         },
         {
           text: "Beitragsordnung",
