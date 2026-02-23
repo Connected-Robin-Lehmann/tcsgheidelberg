@@ -23,9 +23,7 @@ import Anfahrt from "./pages/der-club/Anfahrt";
 import Aktuelles from "./pages/aktuelles/Aktuelles";
 import Nachrichten from "./pages/aktuelles/Nachrichten";
 import TiebreakingNews from "./pages/aktuelles/TiebreakingNews";
-import Pressemeldungen from "./pages/aktuelles/Pressemeldungen";
 import Veranstaltungen from "./pages/aktuelles/Veranstaltungen";
-import Crowdfunding from "./pages/aktuelles/Crowdfunding";
 import Projekte from "./pages/aktuelles/Projekte";
 import TennisInfoHeft from "./pages/aktuelles/TennisInfoHeft";
 import Ansprechpartner from "./pages/aktuelles/Ansprechpartner";
@@ -101,16 +99,7 @@ const App = () => (
             path="/aktuelles/veranstaltungen"
             element={<Veranstaltungen />}
           />
-          <Route path="/aktuelles/crowdfunding" element={<Crowdfunding />} />
           <Route path="/aktuelles/projekte" element={<Projekte />} />
-          <Route
-            path="/aktuelles/tiebreaking-news"
-            element={<TiebreakingNews />}
-          />
-          <Route
-            path="/aktuelles/pressemeldungen"
-            element={<Pressemeldungen />}
-          />
           <Route
             path="/aktuelles/tennis-info-heft"
             element={<TennisInfoHeft />}
