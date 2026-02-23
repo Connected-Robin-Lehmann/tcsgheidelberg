@@ -109,39 +109,34 @@ const SatzungEN = () => {
               </div>
 
               {/* Current Version */}
-              <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
+              <div className="bg-tennis-black rounded-2xl p-8 text-white">
                 <div className="flex items-center mb-4">
                   <Calendar className="h-6 w-6 text-tennis-yellow mr-3" />
                   <h3 className="text-2xl font-bold text-tennis-yellow">
                     Current Version
                   </h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-4 mb-6">
                   <p>
-                    At the general assembly in <strong>November 2025</strong>,
+                    At the general assembly on <strong>October 19, 2025</strong>,
                     a new version of the statutes was adopted.
                   </p>
                   <p>The currently valid version is available for download.</p>
                 </div>
-              </div>
-
-              {/* Download Section */}
-              <div className="text-center">
-                <Button
-                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                  onClick={() =>
-                    window.open(
-                      "/downloads/Satzung_TC_Schwarz-Gelb_Heidelberg_e.V._Fassung_vom_19.10.2025.pdf",
-                      "_blank"
-                    )
-                  }
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Download Statutes (PDF)
-                </Button>
-                <p className="text-gray-600 text-sm mt-4">
-                  Resolution of the General Assembly November 2025
-                </p>
+                <div className="text-center">
+                  <Button
+                    className="bg-tennis-yellow text-tennis-black hover:bg-tennis-yellow/90 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                    onClick={() =>
+                      window.open(
+                        "/downloads/Satzung_TC_Schwarz-Gelb_Heidelberg_e.V._Fassung_vom_19.10.2025.pdf",
+                        "_blank"
+                      )
+                    }
+                  >
+                    <Download className="h-5 w-5 mr-2" />
+                    Download Statutes (PDF)
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
