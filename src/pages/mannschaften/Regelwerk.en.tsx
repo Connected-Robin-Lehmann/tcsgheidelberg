@@ -7,19 +7,19 @@ const RegelwerkEN = () => {
   const documents = [
     {
       title: "ITF Tennis Rules",
-      url: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/ITF-Tennisregeln.pdf",
+      url: "/downloads/ITF-Tennisregeln.pdf",
     },
     {
       title: "BTV Match Regulations (WSpO)",
-      url: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/BTV-Wettspielordnung.pdf",
+      url: "/downloads/BTV-Wettspielordnung.pdf",
     },
     {
       title: "DTB Recommendations for Play Without Umpire",
-      url: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/DTB-Empfehlungen-für-das-Spiel-ohne-Schiedsrichter.pdf",
+      url: "/downloads/DTB-Empfehlungen-fuer-das-Spiel-ohne-Schiedsrichter.pdf",
     },
     {
       title: "Rule Presentation for League Matches",
-      url: "https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Regelpräsentation-für-Medenspiele.pdf",
+      url: "/downloads/Regelpraesentation-fuer-Medenspiele.pdf",
     },
   ];
 

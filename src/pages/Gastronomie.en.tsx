@@ -95,7 +95,7 @@ const GastronomieEN = () => {
               {/* Restaurant Image */}
               <div className="mt-8">
                 <img 
-                  src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2020/07/Metin-Gastronomie-Geburtstagsfeier-2.jpg" 
+                  src="/images/gastronomie/Metin-Gastronomie-Geburtstagsfeier-2.jpg" 
                   alt="Restaurant interior during a birthday party" 
                   className="w-full rounded-lg shadow-lg"
                 />
@@ -108,7 +108,7 @@ const GastronomieEN = () => {
               {/* Pasquale Photo */}
               <div className="text-center">
                 <img 
-                  src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2025/06/Foto_Pasquale_Dimauro_kompakt.jpg" 
+                  src="/images/gastronomie/Foto_Pasquale_Dimauro_kompakt.jpg" 
                   alt="Pasquale Dimauro" 
                   className="w-full max-w-xs mx-auto rounded-lg shadow-lg"
                 />

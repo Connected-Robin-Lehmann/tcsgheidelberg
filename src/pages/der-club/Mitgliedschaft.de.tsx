@@ -136,7 +136,7 @@ const MitgliedschaftDE = () => {
                 </Button>
                 <Button
                   className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
-                  onClick={() => window.open("https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2023/01/Aufnahmeantrag-komplett-ab-2023.pdf", "_blank")}
+                  onClick={() => window.open("/downloads/Aufnahmeantrag-komplett-ab-2023.pdf", "_blank")}
                 >
                   <Download className="h-5 w-5 mr-2" />
                   Aufnahmeantrag
