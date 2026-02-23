@@ -33,7 +33,7 @@ export interface ClubEvent {
 }
 
 export const upcomingEvents: ClubEvent[] = [
-  // Badenliga Hallensaison 2026 – nur noch zukünftige Termine (ab 20.02.2026)
+  // Badenliga Hallensaison 2026 – nur noch zukünftige Termine
   {
     id: "damen1-badenliga-feb-2026",
     date: "28.02.2026",
@@ -52,156 +52,33 @@ export const upcomingEvents: ClubEvent[] = [
     description: { de: "Punktspiel Hallensaison", en: "League match indoor season" },
     type: "match",
   },
-  // Legacy events from 2025
+  // Termine 2026
   {
-    id: "meden-start-2025",
-    date: "03.05.2025",
+    id: "ostercamp-2026",
+    date: "07.04. - 10.04.2026",
     time: { de: "ganztägig", en: "All day" },
-    title: { 
-      de: "Beginn der Medenrunde", 
-      en: "Start of League Matches" 
-    },
-    location: { de: "Diverse Plätze", en: "Various Courts" },
-    description: { 
-      de: "Start der Mannschaftsspiele für die Saison 2025", 
-      en: "Start of team matches for the 2025 season" 
-    },
-    type: "sport",
+    title: { de: "Osterferien Tenniscamp", en: "Easter Tennis Camp" },
+    location: { de: "Tennisanlage", en: "Tennis Facility" },
+    description: { de: "Tenniscamp für Kinder in den Osterferien", en: "Tennis camp for children during Easter holidays" },
+    type: "camp",
   },
   {
-    id: "season-opening-2025",
-    date: "04.05.2025",
-    time: { de: "14:00", en: "14:00" },
-    title: { 
-      de: "Saisoneröffnung mit Blümchenturnier", 
-      en: "Season Opening with Flower Tournament" 
-    },
+    id: "season-opening-2026",
+    date: "26.04.2026",
+    time: { de: "ganztägig", en: "All day" },
+    title: { de: "Tag der offenen Tür & Saisoneröffnung", en: "Open Day & Season Opening" },
     location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { 
-      de: "Offizielle Eröffnung der Tennissaison mit traditionellem Turnier", 
-      en: "Official opening of the tennis season with a traditional tournament" 
-    },
+    description: { de: "Mit Blümchenturnier", en: "With flower tournament" },
     type: "tournament",
   },
   {
-    id: "pentecost-camp-2025",
-    date: "07.06. - 21.06.2025",
+    id: "pfingstcamp-2026",
+    date: "30.05. - 06.06.2026",
     time: { de: "ganztägig", en: "All day" },
-    title: { 
-      de: "Pfingstferien Tenniscamp", 
-      en: "Pentecost Tennis Camp" 
-    },
+    title: { de: "Pfingstferien Tenniscamp", en: "Whitsun Tennis Camp" },
     location: { de: "Veli Lošinj, Kroatien", en: "Veli Lošinj, Croatia" },
-    description: { 
-      de: "Tenniscamp in traumhafter Kulisse an der kroatischen Küste", 
-      en: "Tennis camp in a beautiful setting on the Croatian coast" 
-    },
+    description: { de: "Tenniscamp in Veli Lošinj", en: "Tennis camp in Veli Lošinj" },
     type: "camp",
-  },
-  {
-    id: "member-meeting-2025",
-    date: "19.07.2025",
-    time: { de: "17:00", en: "17:00" },
-    title: { 
-      de: "Mitgliederversammlung + Sommerfest", 
-      en: "General Meeting + Summer Festival" 
-    },
-    location: { de: "Clubhaus & Terrasse", en: "Clubhouse & Terrace" },
-    description: { 
-      de: "Kombiniert mit Nuit Blanche - unser jährliches Vereinshighlight", 
-      en: "Combined with Nuit Blanche – our annual club highlight" 
-    },
-    type: "meeting",
-  },
-  {
-    id: "schwarz-gelb-cup-2025",
-    date: "30.07. - 03.08.2025",
-    time: { de: "ganztägig", en: "All day" },
-    title: { 
-      de: "Schwarz Gelb Cup 2025 (Jugend)", 
-      en: "Schwarz Gelb Cup 2025 (Youth)" 
-    },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { 
-      de: "Powered by Engelhorn Sports - unser traditionelles Jugendturnier", 
-      en: "Powered by Engelhorn Sports – our traditional youth tournament" 
-    },
-    type: "tournament",
-  },
-  {
-    id: "summer-camp-1-2025",
-    date: "04.08. - 08.08.2025",
-    time: { de: "09:30 - 15:30", en: "09:30 - 15:30" },
-    title: { 
-      de: "1. Sommerferiencamp in Heidelberg", 
-      en: "1st Summer Holiday Camp in Heidelberg" 
-    },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { 
-      de: "Tenniscamp für Kinder und Jugendliche in den Sommerferien", 
-      en: "Tennis camp for children and youth during summer holidays" 
-    },
-    type: "camp",
-  },
-  {
-    id: "summer-camp-2-2025",
-    date: "08.09. - 12.09.2025",
-    time: { de: "09:30 - 15:30", en: "09:30 - 15:30" },
-    title: { 
-      de: "2. Sommerferiencamp in Heidelberg", 
-      en: "2nd Summer Holiday Camp in Heidelberg" 
-    },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { 
-      de: "Zweites Tenniscamp für Kinder und Jugendliche", 
-      en: "Second tennis camp for children and youth" 
-    },
-    type: "camp",
-  },
-  {
-    id: "hall-setup-2025",
-    date: "07.09. - 15.09.2025",
-    time: { de: "ganztägig", en: "All day" },
-    title: { 
-      de: "Traglufthallenaufbau", 
-      en: "Inflatable Hall Setup" 
-    },
-    location: { de: "Plätze 7 & 8", en: "Courts 7 & 8" },
-    description: { 
-      de: "Aufbau der Traglufthalle für die Wintersaison", 
-      en: "Setup of the inflatable hall for the winter season" 
-    },
-    type: "infrastructure",
-  },
-  {
-    id: "winter-training-2025",
-    date: "22.09.2025",
-    time: { de: "ganztägig", en: "All day" },
-    title: { 
-      de: "Beginn Wintertraining", 
-      en: "Start of Winter Training" 
-    },
-    location: { de: "Traglufthalle", en: "Inflatable Hall" },
-    description: { 
-      de: "Start des Trainingsbetriebs in der Traglufthalle", 
-      en: "Start of training operations in the inflatable hall" 
-    },
-    type: "training",
-  },
-  {
-    id: "season-closing-2025",
-    date: "07.10.2025",
-    time: { de: "14:00", en: "14:00" },
-    title: { 
-      de: "Saisonabschluss mit Doppel-Turnier", 
-      en: "Season Closing with Doubles Tournament" 
-    },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { 
-      de: "Traditioneller Saisonabschluss mit Doppel-Turnier", 
-      en: "Traditional season closing with doubles tournament" 
-    },
-    type: "tournament",
   },
 ];
 

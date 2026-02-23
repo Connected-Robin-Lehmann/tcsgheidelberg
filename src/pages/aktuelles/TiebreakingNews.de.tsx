@@ -158,18 +158,6 @@ const TiebreakingNewsDE = () => {
                   <div className="space-y-4">
                     <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
                       <h5 className="font-bold text-tennis-black mb-1">
-                        22.02. & 01.03. – Putzete
-                      </h5>
-                      <p className="text-gray-700 text-sm">
-                        Zur Erinnerung: Die letzte Mitgliederversammlung hat
-                        beschlossen, dass alle Mitglieder Arbeitsstunden leisten
-                        oder alternativ eine Pauschale zu entrichten haben.
-                        Weitere Projekte mit Arbeitseinsätzen werden im Laufe
-                        der Saison folgen.
-                      </p>
-                    </div>
-                    <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
-                      <h5 className="font-bold text-tennis-black mb-1">
                         07.04. – 10.04. – Osterferien Tenniscamp
                       </h5>
                       <p className="text-gray-700 text-sm">
