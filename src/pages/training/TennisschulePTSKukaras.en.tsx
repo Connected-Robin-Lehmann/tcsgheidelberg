@@ -83,11 +83,11 @@ const TennisschulePTSKukarasEN = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tennis-black mb-6">
-              PTS Kukaras Tennis School
+              Kukaras Tennis School
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Kukaras Professional Tennis Services – Youth development at the
+              Kukaras Tennis Services GmbH – Youth development at the
               highest level
             </p>
           </div>
@@ -307,9 +307,11 @@ const TennisschulePTSKukarasEN = () => {
                 School sets up the inflatable tennis hall over courts 7 & 8.
               </p>
               <p className="leading-relaxed mb-6">
-                This allows members to enjoy clay court play during the winter
-                season from September to April without adaptation issues from
-                outdoor to indoor courts.
+                The inflatable hall is owned by the Kukaras Tennis School and
+                offers the advantage of two clay courts for winter training,
+                reducing adaptation issues when switching from outdoor to indoor
+                courts. Club members can also use the hall for free play without
+                a coach, subject to availability and a fee.
               </p>
             </div>
 
