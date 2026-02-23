@@ -11,6 +11,9 @@ const VeranstaltungenDE = () => {
   
   // Get upcoming social/food events
   const socialEvents = upcomingEvents.filter(e => e.type === "food" || e.type === "party");
+
+  // Season events (camps, tournaments, etc.)
+  const seasonEvents = upcomingEvents.filter(e => e.type === "camp" || e.type === "tournament");
   
   // Group by team
   const damen1 = matchEvents.filter(e => e.id.includes("damen1"));
@@ -64,6 +67,45 @@ const VeranstaltungenDE = () => {
                         </div>
                         
                         {/* Event Details */}
+                        <div className="lg:text-right space-y-3 lg:min-w-[280px]">
+                          <div className="flex items-center lg:justify-end text-tennis-black">
+                            <Calendar className="h-5 w-5 mr-3 text-tennis-yellow" />
+                            <span className="font-bold text-lg">{event.date}</span>
+                          </div>
+                          <div className="flex items-center lg:justify-end text-gray-700">
+                            <Clock className="h-5 w-5 mr-3 text-tennis-yellow" />
+                            <span className="font-medium">{event.time.de}</span>
+                          </div>
+                          <div className="flex items-center lg:justify-end text-gray-600">
+                            <MapPin className="h-5 w-5 mr-3 text-tennis-yellow" />
+                            <span>{event.location.de}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Termine 2026 Section */}
+          {seasonEvents.length > 0 && (
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-tennis-black mb-8 flex items-center gap-3">
+                <span className="text-4xl">📅</span>
+                Termine 2026
+              </h2>
+              
+              <div className="space-y-6">
+                {seasonEvents.map((event) => (
+                  <Card key={event.id} className="overflow-hidden border-l-4 border-l-tennis-yellow hover:shadow-xl transition-all duration-300 bg-white">
+                    <div className="p-6 md:p-8">
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        <div className="flex-1">
+                          <h3 className="font-bold text-2xl text-tennis-black mb-3">{event.title.de}</h3>
+                          <p className="text-gray-600 leading-relaxed">{event.description.de}</p>
+                        </div>
                         <div className="lg:text-right space-y-3 lg:min-w-[280px]">
                           <div className="flex items-center lg:justify-end text-tennis-black">
                             <Calendar className="h-5 w-5 mr-3 text-tennis-yellow" />

@@ -153,17 +153,6 @@ const TiebreakingNewsEN = () => {
                   <div className="space-y-4">
                     <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
                       <h5 className="font-bold text-tennis-black mb-1">
-                        Feb 22 & Mar 1 – Clean-up Days
-                      </h5>
-                      <p className="text-gray-700 text-sm">
-                        As a reminder: The last general assembly decided that all
-                        members must contribute work hours or alternatively pay a
-                        flat fee. Further projects with work sessions will follow
-                        during the season.
-                      </p>
-                    </div>
-                    <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
-                      <h5 className="font-bold text-tennis-black mb-1">
                         Apr 7 – Apr 10 – Easter Tennis Camp
                       </h5>
                       <p className="text-gray-700 text-sm">
