@@ -83,11 +83,11 @@ const TennisschulePTSKukarasDE = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tennis-black mb-6">
-              Tennisschule PTS Kukaras
+              Tennisschule Kukaras
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Kukaras Professional Tennis Services - Nachwuchsförderung auf
+              Kukaras Tennis Services GmbH - Nachwuchsförderung auf
               höchstem Niveau
             </p>
           </div>
@@ -311,10 +311,13 @@ const TennisschulePTSKukarasDE = () => {
                 Tragluft-Tennishalle über den Plätzen 7 + 8.
               </p>
               <p className="leading-relaxed mb-6">
-                So können unsere Mitglieder auch in der Wintersaison von
-                September bis April die Vorteile des Sandplatzspieles genießen.
-                Umstellungs- und Anpassungsschwierigkeiten vom Freiplatz auf den
-                Hallenplatz gibt es damit nicht mehr.
+                Die Traglufthalle ist Eigentum der Tennisschule Kukaras und
+                bietet mit zwei Plätzen den Vorteil, dass auch im Winter auf
+                Sandplatz trainiert werden kann und es somit weniger Umstellungs-
+                und Anpassungsschwierigkeiten vom Freiplatz auf den Hallenplatz
+                gibt. Die Traglufthalle kann von unseren Mitgliedern zum freien
+                Spiel ohne Trainer nach Verfügbarkeit gegen Gebühr genutzt
+                werden.
               </p>
             </div>
 
