@@ -22,7 +22,7 @@ const FAQEN = () => {
       links: [
         {
           text: "Membership Application (PDF)",
-          url: "/downloads/Aufnahmeantrag-komplett-ab-2023.pdf",
+          url: "/downloads/Aufnahmeantrag_TC_Schwarzgelb_Heidelberg_ab_2026.pdf",
         },
         {
           text: "Fee Schedule",
