@@ -47,6 +47,7 @@ const Header = () => {
           href: "/aktuelles/tennis-info-heft",
         },
         { name: t("header.projects"), href: "/aktuelles/projekte" },
+        { name: t("header.contacts"), href: "/aktuelles/ansprechpartner" },
       ],
     },
     {
