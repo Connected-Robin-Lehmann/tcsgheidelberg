@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 import {
   MessageCircle,
   Users,
@@ -32,21 +33,27 @@ const FAQDE = () => {
     {
       icon: <MessageCircle className="h-6 w-6 text-tennis-yellow" />,
       question: "Gibt es ein Probe-/Schnuppertraining?",
-      answer:
-        "Ansprechpartner zu Schnupperstunde, Trainingskosten und der sonstigen Organisation der Trainings, Mannschaften usw. ist Alex Kukaras (tennis@kukaras.de). Zum Training & Spielen ist eine aktive Mitgliedschaft (ganzjährig) im Verein erforderlich (egal ob Kinder, Jugendliche, Erwachsener, Anfänger oder Fortgeschrittener). Gruppen- und auch Einzel-Trainings müssten dann nach dem Beitritt zum Verein direkt mit der Tennisschule vereinbart werden. Trainings werden dann direkt mit der Tennisschule abgerechnet. Die Preise für das Training können bei der Tennisschule erfragt werden.",
+      answerJsx: (
+        <p className="text-gray-700 leading-relaxed mb-6">
+          Ansprechpartner zu Schnupperstunde, Trainingskosten und der sonstigen Organisation der Trainings sind die beiden Tennisschulen{" "}
+          <Link to="/training/tennisschule-pts-kukaras" className="text-tennis-yellow font-semibold hover:underline">Kukaras</Link>
+          {" "}und{" "}
+          <Link to="/training/tennisschule-seibold" className="text-tennis-yellow font-semibold hover:underline">Seibold</Link>
+          , siehe auch{" "}
+          <Link to="/training" className="text-tennis-yellow font-semibold hover:underline">Training</Link>.
+        </p>
+      ),
     },
     {
       icon: <MapPin className="h-6 w-6 text-tennis-yellow" />,
       question:
         "Wo finde ich Informationen zu den Tennisplätzen/Spielmöglichkeiten im Sommer und Winter?",
-      answer:
-        "Im Sommer stehen dem Verein 10 Sandplätze zur Verfügung, im Winter eine Traglufthalle mit zwei Plätzen, eine Teppichhalle sowie 2 weitere Plätze beim USC.",
-      links: [
-        {
-          text: "Tennisplätze",
-          url: "/der-club/tennisplaetze",
-        },
-      ],
+      answerJsx: (
+        <p className="text-gray-700 leading-relaxed mb-6">
+          Im Sommer stehen dem Verein 10 Sandplätze zur Verfügung, davon sind fünf bei Flutlicht bis 22 Uhr bespielbar. Weitere Info, siehe{" "}
+          <Link to="/der-club/tennisplaetze" className="text-tennis-yellow font-semibold hover:underline">Tennisplätze</Link>.
+        </p>
+      ),
     },
     {
       icon: <Calendar className="h-6 w-6 text-tennis-yellow" />,
@@ -111,35 +118,6 @@ const FAQDE = () => {
             </p>
           </div>
 
-          {/* Social Media Info */}
-          <div className="bg-tennis-black rounded-2xl p-8 mb-16 text-center">
-            <Instagram className="h-8 w-8 text-tennis-yellow mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
-              Aktuelle Informationen
-            </h3>
-            <p className="text-white mb-6">
-              Zudem finden sich aktuelle Informationen auf Instagram:
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://www.instagram.com/tc_schwarzgelb_heidelberg/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-tennis-yellow text-tennis-black px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors"
-              >
-                TC SG Heidelberg
-              </a>
-              <a
-                href="https://www.instagram.com/tennisakademiekukaras/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-tennis-yellow text-tennis-black px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors"
-              >
-                Kukaras Tennisschule
-              </a>
-            </div>
-          </div>
-
           {/* FAQ Items */}
           <div className="space-y-8">
             {faqs.map((faq, index) => (
@@ -156,9 +134,11 @@ const FAQDE = () => {
                   </div>
 
                   <div className="ml-10">
-                    <p className="text-gray-700 leading-relaxed mb-6">
-                      {faq.answer}
-                    </p>
+                    {faq.answerJsx ? faq.answerJsx : (
+                      <p className="text-gray-700 leading-relaxed mb-6">
+                        {faq.answer}
+                      </p>
+                    )}
 
                     {faq.details && (
                       <div className="mb-6">
@@ -233,10 +213,47 @@ const FAQDE = () => {
                 Haben Sie weitere Fragen? Kontaktieren Sie uns gerne!
               </p>
               <a
-                href="mailto:tennis@schwarzgelb-heidelberg.de"
+                href="mailto:vorstand@schwarzgelb-heidelberg.de"
                 className="inline-block bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
               >
                 Kontakt aufnehmen
+              </a>
+            </div>
+          </div>
+
+          {/* Social Media / Instagram Section */}
+          <div className="mt-16 bg-tennis-black rounded-2xl p-8 text-center">
+            <Instagram className="h-8 w-8 text-tennis-yellow mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
+              Aktuelle Informationen
+            </h3>
+            <p className="text-white mb-6">
+              Zudem finden sich aktuelle Informationen auf Instagram:
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://www.instagram.com/tc_schwarzgelb_heidelberg/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-tennis-yellow text-tennis-black px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors"
+              >
+                TC SG Heidelberg
+              </a>
+              <a
+                href="https://www.instagram.com/tennisakademiekukaras/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-tennis-yellow text-tennis-black px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors"
+              >
+                Tennisschule Kukaras
+              </a>
+              <a
+                href="https://www.instagram.com/tennisschule_seibold/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-tennis-yellow text-tennis-black px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors"
+              >
+                Tennisschule Seibold
               </a>
             </div>
           </div>
