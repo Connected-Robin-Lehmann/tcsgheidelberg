@@ -108,6 +108,10 @@ const App = () => (
             path="/aktuelles/ansprechpartner"
             element={<Ansprechpartner />}
           />
+          <Route
+            path="/aktuelles/tiebreaking-news"
+            element={<TiebreakingNews />}
+          />
 
           {/* Mannschaften Routes */}
           <Route path="/mannschaften" element={<Mannschaften />} />
