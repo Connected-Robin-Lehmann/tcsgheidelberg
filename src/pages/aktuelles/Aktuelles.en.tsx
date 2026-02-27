@@ -14,7 +14,7 @@ const AktuellesEN = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">News 2025</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">News 2026</h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Stay up to date with all important dates and news from our club
           </p>
@@ -37,49 +37,7 @@ const AktuellesEN = () => {
           </section>
 
           {/* News Sections */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Scheine für Vereine */}
-            <Card className="card-tennis">
-              <div className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-tennis-yellow rounded-full flex items-center justify-center mr-4">
-                    <Calendar className="h-6 w-6 text-tennis-black" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-tennis-black">
-                    Vouchers for Clubs 2025
-                  </h3>
-                </div>
-
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  Thanks to your help, we collected
-                  <span className="font-bold text-tennis-black">
-                    {" "}
-                    1,679 vouchers{" "}
-                  </span>
-                  through the 'Vouchers for Clubs' collection campaign and were
-                  able to redeem them for
-                  <span className="font-bold text-tennis-black">
-                    {" "}
-                    eight new scoreboards{" "}
-                  </span>
-                  – a big thank you to everyone who diligently collected!
-                </p>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <img
-                    src="/images/aktuelles/ScheineFuerVereineAktion.jpg"
-                    alt="Vouchers for Clubs Campaign"
-                    className="w-full h-40 object-cover rounded-lg shadow-md"
-                  />
-                  <img
-                    src="/images/aktuelles/ScheineFuerVereine2025.jpg"
-                    alt="Vouchers for Clubs 2025"
-                    className="w-full h-40 object-cover rounded-lg shadow-md"
-                  />
-                </div>
-              </div>
-            </Card>
-
+          <div className="grid lg:grid-cols-1 gap-8 max-w-3xl mx-auto">
             {/* Quick Links */}
             <div className="space-y-6">
               {/* Nachrichten */}
