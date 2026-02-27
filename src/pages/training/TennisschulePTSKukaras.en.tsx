@@ -32,40 +32,25 @@ const TennisschulePTSKukarasEN = () => {
     "Stringing service",
   ];
 
-  const camps2025 = [
+  const camps2026 = [
     {
       name: "Easter Tennis Camp for Children & Juniors",
-      date: "14.04.-17.04.2025",
+      date: "07.04. - 10.04.2026",
       time: "9:30-15:30",
     },
     {
-      name: "Easter Tennis Workshop for Adults",
-      date: "14.04.-17.04.2025",
-      time: "18:00-20:00",
-    },
-    {
-      name: "2nd Easter Tennis Camp for Children & Juniors",
-      date: "22.04.-25.04.2025",
-      time: "9:30-15:30",
-    },
-    {
-      name: "2nd Easter Tennis Workshop for Adults",
-      date: "22.04.-25.04.2025",
-      time: "18:00-20:00",
-    },
-    {
-      name: "Pentecost Tennis Camp Croatia (Veli Losinj)",
-      date: "07.06.-21.06.2025",
+      name: "Pentecost Tennis Camp",
+      date: "30.05. - 06.06.2026",
       time: "All day",
     },
     {
       name: "1st Summer Tennis Camp",
-      date: "04.08.-08.08.2025",
+      date: "03.08. - 07.08.2026",
       time: "All day",
     },
     {
       name: "2nd Summer Tennis Camp",
-      date: "08.09.-12.09.2025",
+      date: "07.09. - 11.09.2026",
       time: "All day",
     },
   ];
@@ -258,14 +243,14 @@ const TennisschulePTSKukarasEN = () => {
               <div className="flex items-center justify-center">
                 <Calendar className="h-6 w-6 text-tennis-black mr-3" />
                 <h2 className="text-2xl font-bold text-tennis-black text-center">
-                  Tennis Camps 2025
+                  Tennis Camps 2026
                 </h2>
               </div>
             </div>
 
             <div className="p-8">
               <div className="space-y-4">
-                {camps2025.map((camp, index) => (
+                {camps2026.map((camp, index) => (
                   <div
                     key={index}
                     className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-tennis-yellow/50 hover:shadow-md transition-all duration-300"

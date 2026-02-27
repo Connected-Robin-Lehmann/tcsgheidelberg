@@ -32,40 +32,25 @@ const TennisschulePTSKukarasDE = () => {
     "Bespannungsservice",
   ];
 
-  const camps2025 = [
+  const camps2026 = [
     {
       name: "Osterferien Tenniscamp Kinder & Jugendliche",
-      datum: "14.04.-17.04.2025",
+      datum: "07.04. - 10.04.2026",
       zeit: "9:30-15:30",
     },
     {
-      name: "Osterferien Tennisworkshop Erwachsene",
-      datum: "14.04.-17.04.2025",
-      zeit: "18:00-20:00",
-    },
-    {
-      name: "2. Osterferien Tenniscamp Kinder & Jugendliche",
-      datum: "22.04.-25.04.2025",
-      zeit: "9:30-15:30",
-    },
-    {
-      name: "2. Osterferien Tennisworkshop Erwachsene",
-      datum: "22.04.-25.04.2025",
-      zeit: "18:00-20:00",
-    },
-    {
-      name: "Pfingstferien Tenniscamp Kroatien (Veli Losinj)",
-      datum: "07.06.-21.06.2025",
+      name: "Pfingstferien Tenniscamp",
+      datum: "30.05. - 06.06.2026",
       zeit: "Ganztägig",
     },
     {
       name: "1. Sommerferien Tenniscamp",
-      datum: "04.08.-08.08.2025",
+      datum: "03.08. - 07.08.2026",
       zeit: "Ganztägig",
     },
     {
       name: "2. Sommerferien Tenniscamp",
-      datum: "08.09.-12.09.2025",
+      datum: "07.09. - 11.09.2026",
       zeit: "Ganztägig",
     },
   ];
@@ -261,14 +246,14 @@ const TennisschulePTSKukarasDE = () => {
               <div className="flex items-center justify-center">
                 <Calendar className="h-6 w-6 text-tennis-black mr-3" />
                 <h2 className="text-2xl font-bold text-tennis-black text-center">
-                  Tenniscamps 2025
+                  Tenniscamps 2026
                 </h2>
               </div>
             </div>
 
             <div className="p-8">
               <div className="space-y-4">
-                {camps2025.map((camp, index) => (
+                {camps2026.map((camp, index) => (
                   <div
                     key={index}
                     className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-tennis-yellow/50 hover:shadow-md transition-all duration-300"
