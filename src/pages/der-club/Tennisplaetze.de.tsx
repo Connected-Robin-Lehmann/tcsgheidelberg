@@ -7,55 +7,55 @@ const TennisplaetzeDE = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const facilities = [
-    {
-      title: "Hauptanlage Schwindstrasse",
-      description:
-        'Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Club-Restaurant durch eine Hecke getrennt der zentrale Center-Court "Max BERK" anschließt. Diese 5 Sandplätze sind zudem mit Flutlicht ausgestattet und können von unseren Mitgliedern in der Saison nach Verfügbarkeit bis 22 Uhr zum Freispiel gebucht werden. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.',
-      image: "/images/Hauptanlage_Schwindstrasse.jpg",
-      features: [
-        "10 Sandplätze",
-        "Center-Court Max-BERK",
-        "Kinder- und Jugendtrainingsbereich",
-      ],
-    },
-    {
-      title: "Traglufthalle (Winter)",
-      description:
-        "Diese gehört der Tennisschule Kukaras und bietet mit zwei Plätzen den Vorteil, dass auch im Winter auf Sandplatz trainiert werden kann und es somit weniger Umstellungs- und Anpassungsschwierigkeiten vom Freiplatz auf den Hallenplatz gibt. Die Traglufthalle kann von unseren Mitgliedern zum freien Spiel ohne Trainer nach Verfügbarkeit gegen Gebühr genutzt werden. Informationen zur aktuellen Belegung wie auch zu den Preisen erhalten Sie gern von Alexandar Kukaras unter 0172-66 44 369 oder per E-Mail: kukaras@t-online.de.",
-      image: "/images/Traglufthalle.jpg",
-      features: ["2 Sandplätze", "Beheizt", "Oktober bis April"],
-    },
-    {
-      title: "Historische Tennis(teppich)halle",
-      description:
-        "Weiterhin steht uns in Absprache mit den Eigentümern die Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.\nDie Halle kann aber auch über die Eigentümer gebucht werden (siehe Schild am Eingang).",
-      image: "/images/Teppichhalle.jpg",
-      features: [
-        "Teppichboden",
-        "Ganzjährig verfügbar",
-        "Historisches Ambiente",
-      ],
-    },
-  ];
+  {
+    title: "Hauptanlage Schwindstrasse",
+    description:
+    'Unsere zentrale Tennisanlage rund um unser Clubhaus besteht aus vier nebeneinanderliegenden Plätzen Nr. 1 bis Nr. 4, an die sich in Richtung Club-Restaurant durch eine Hecke getrennt der zentrale Center-Court "Max BERK" anschließt. Diese 5 Sandplätze sind zudem mit Flutlicht ausgestattet und können von unseren Mitgliedern in der Saison nach Verfügbarkeit bis 22 Uhr zum Freispiel gebucht werden. Hinter dem Clubhaus und den Umkleideräumen befinden sich die Plätze 6-9, auf denen zumeist unsere Kinder- und Jugendtrainings stattfinden.',
+    image: "/images/Hauptanlage_Schwindstrasse.jpg",
+    features: [
+    "10 Sandplätze",
+    "Center-Court Max-BERK",
+    "Kinder- und Jugendtrainingsbereich"]
+
+  },
+  {
+    title: "Traglufthalle (Winter)",
+    description:
+    "Diese gehört der Tennisschule Kukaras und bietet mit zwei Plätzen den Vorteil, dass auch im Winter auf Sandplatz trainiert werden kann und es somit weniger Umstellungs- und Anpassungsschwierigkeiten vom Freiplatz auf den Hallenplatz gibt. Die Traglufthalle kann von unseren Mitgliedern zum freien Spiel ohne Trainer nach Verfügbarkeit gegen Gebühr genutzt werden. Informationen zur aktuellen Belegung wie auch zu den Preisen erhalten Sie gern von Alexandar Kukaras unter 0172-66 44 369 oder per E-Mail: kukaras@t-online.de.",
+    image: "/images/Traglufthalle.jpg",
+    features: ["2 Sandplätze", "Beheizt", "Oktober bis April"]
+  },
+  {
+    title: "Historische Tennis(teppich)halle",
+    description:
+    "Weiterhin steht uns in Absprache mit den Eigentümern die Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.\nDie Halle kann aber auch über die Eigentümer gebucht werden (siehe Schild am Eingang).",
+    image: "/images/Teppichhalle.jpg",
+    features: [
+    "Teppichboden",
+    "Ganzjährig verfügbar",
+    "Historisches Ambiente"]
+
+  }];
+
 
   const galleryImages = [
-    {
-      src: "/images/Hauptanlage_Schwindstrasse.jpg",
-      alt: "Hauptanlage Tennisplätze",
-    },
-    {
-      src: "/images/Max_Berk.jpg",
-      alt: "Center Court Max BERK",
-    },
-    {
-      src: "/images/Platz_10.jpg",
-      alt: "Platz 10",
-    },
-    {
-      src: "/images/Traglufthalle.jpg",
-      alt: "Traglufthalle",
-    },
-  ];
+  {
+    src: "/images/Hauptanlage_Schwindstrasse.jpg",
+    alt: "Hauptanlage Tennisplätze"
+  },
+  {
+    src: "/images/Max_Berk.jpg",
+    alt: "Center Court Max BERK"
+  },
+  {
+    src: "/images/Platz_10.jpg",
+    alt: "Platz 10"
+  },
+  {
+    src: "/images/Traglufthalle.jpg",
+    alt: "Traglufthalle"
+  }];
+
 
   const openLightbox = (index: number) => {
     setSelectedImageIndex(index);
@@ -116,22 +116,22 @@ const TennisplaetzeDE = () => {
 
           {/* Facilities */}
           <div className="space-y-16 mb-16">
-            {facilities.map((facility, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20"
-              >
+            {facilities.map((facility, index) =>
+            <div
+              key={index}
+              className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20">
+
                 <div
-                  className={`grid md:grid-cols-2 gap-0 ${
-                    index % 2 === 1 ? "md:grid-flow-col-dense" : ""
-                  }`}
-                >
+                className={`grid md:grid-cols-2 gap-0 ${
+                index % 2 === 1 ? "md:grid-flow-col-dense" : ""}`
+                }>
+
                   <div className={`${index % 2 === 1 ? "md:col-start-2" : ""}`}>
                     <img
-                      src={facility.image}
-                      alt={facility.title}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
+                    src={facility.image}
+                    alt={facility.title}
+                    className="w-full h-64 md:h-full object-cover" />
+
                   </div>
                   <div className="p-8 md:p-12 flex flex-col justify-center">
                     <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-6">
@@ -141,24 +141,24 @@ const TennisplaetzeDE = () => {
                       {facility.description}
                     </p>
                     <div className="space-y-2">
-                      {facility.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center">
+                      {facility.features.map((feature, idx) =>
+                    <div key={idx} className="flex items-center">
                           <div className="w-2 h-2 bg-tennis-yellow rounded-full mr-3"></div>
                           <span className="text-gray-600">{feature}</span>
                         </div>
-                      ))}
+                    )}
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+            )}
           </div>
 
           {/* Additional Info */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20 mb-16">
             <div className="p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-6">
-                Platz 10 - Der Besondere
+              <h3 className="text-2xl md:text-3xl font-bold text-tennis-black mb-6">Platz 10
+
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Der Platz 10 ist direkt vom Parkplatz in Schwindstraße aus
@@ -182,18 +182,18 @@ const TennisplaetzeDE = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {galleryImages.map((image, index) => (
-                <div
-                  key={index}
-                  onClick={() => openLightbox(index)}
-                  className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60"
-                >
+              {galleryImages.map((image, index) =>
+              <div
+                key={index}
+                onClick={() => openLightbox(index)}
+                className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-4 border-tennis-yellow/20 hover:border-tennis-yellow/60">
+
                   <div className="relative overflow-hidden">
                     <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
+
                     <div className="absolute inset-0 bg-tennis-black/0 group-hover:bg-tennis-black/20 transition-colors duration-300"></div>
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-tennis-black/70 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       <p className="text-white text-sm font-medium">
@@ -202,7 +202,7 @@ const TennisplaetzeDE = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -214,8 +214,8 @@ const TennisplaetzeDE = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block hover:scale-110 transition-transform duration-200"
-                title="In Google Maps öffnen"
-              >
+                title="In Google Maps öffnen">
+
                 <MapPin className="h-8 w-8 text-tennis-yellow mx-auto mb-4" />
               </a>
               <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
@@ -227,8 +227,8 @@ const TennisplaetzeDE = () => {
               </p>
               <a
                 href="/der-club/mitgliedschaft"
-                className="inline-block bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-              >
+                className="inline-block bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+
                 Mitglied werden
               </a>
             </div>
@@ -238,59 +238,59 @@ const TennisplaetzeDE = () => {
       <Footer />
 
       {/* Lightbox */}
-      {selectedImageIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
-          onClick={closeLightbox}
-        >
+      {selectedImageIndex !== null &&
+      <div
+        className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+        onClick={closeLightbox}>
+
           <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-tennis-yellow transition-colors z-10"
-          >
+          onClick={closeLightbox}
+          className="absolute top-4 right-4 text-white hover:text-tennis-yellow transition-colors z-10">
+
             <X className="h-8 w-8" />
           </button>
 
-          {selectedImageIndex > 0 && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goToPrevious();
-              }}
-              className="absolute left-4 text-white hover:text-tennis-yellow transition-colors z-10"
-            >
+          {selectedImageIndex > 0 &&
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            goToPrevious();
+          }}
+          className="absolute left-4 text-white hover:text-tennis-yellow transition-colors z-10">
+
               <ChevronLeft className="h-12 w-12" />
             </button>
-          )}
+        }
 
-          {selectedImageIndex < galleryImages.length - 1 && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goToNext();
-              }}
-              className="absolute right-4 text-white hover:text-tennis-yellow transition-colors z-10"
-            >
+          {selectedImageIndex < galleryImages.length - 1 &&
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            goToNext();
+          }}
+          className="absolute right-4 text-white hover:text-tennis-yellow transition-colors z-10">
+
               <ChevronRight className="h-12 w-12" />
             </button>
-          )}
+        }
 
           <div
-            className="max-w-7xl max-h-[90vh] flex flex-col items-center"
-            onClick={(e) => e.stopPropagation()}
-          >
+          className="max-w-7xl max-h-[90vh] flex flex-col items-center"
+          onClick={(e) => e.stopPropagation()}>
+
             <img
-              src={galleryImages[selectedImageIndex].src}
-              alt={galleryImages[selectedImageIndex].alt}
-              className="max-w-full max-h-[80vh] object-contain"
-            />
+            src={galleryImages[selectedImageIndex].src}
+            alt={galleryImages[selectedImageIndex].alt}
+            className="max-w-full max-h-[80vh] object-contain" />
+
             <p className="text-white text-lg mt-4 text-center">
               {galleryImages[selectedImageIndex].alt}
             </p>
           </div>
         </div>
-      )}
-    </div>
-  );
+      }
+    </div>);
+
 };
 
 export default TennisplaetzeDE;
