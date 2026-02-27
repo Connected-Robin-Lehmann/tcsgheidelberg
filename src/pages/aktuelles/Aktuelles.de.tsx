@@ -14,7 +14,7 @@ const AktuellesDE = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-tennis-black to-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Aktuelles 2025</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Aktuelles 2026</h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Bleiben Sie auf dem Laufenden mit allen wichtigen Terminen und Neuigkeiten unseres Vereins
           </p>
@@ -34,40 +34,7 @@ const AktuellesDE = () => {
           </section>
 
           {/* News Sections */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Scheine für Vereine */}
-            <Card className="card-tennis">
-              <div className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-tennis-yellow rounded-full flex items-center justify-center mr-4">
-                    <Calendar className="h-6 w-6 text-tennis-black" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-tennis-black">Scheine für Vereine 2025</h3>
-                </div>
-
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  Durch eure Mithilfe haben wir über die Sammelaktion ‚Scheine für Vereine'
-                  <span className="font-bold text-tennis-black"> 1.679 Scheine </span>
-                  gesammelt und konnten diese gegen
-                  <span className="font-bold text-tennis-black"> acht neue Anzeigetafeln </span>
-                  einlösen – ganz herzlichen Dank an alle, die fleißig mitgesammelt haben!
-                </p>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <img
-                    src="/images/aktuelles/ScheineFuerVereineAktion.jpg"
-                    alt="Scheine für Vereine Aktion"
-                    className="w-full h-40 object-cover rounded-lg shadow-md"
-                  />
-                  <img
-                    src="/images/aktuelles/ScheineFuerVereine2025.jpg"
-                    alt="Scheine für Vereine 2025"
-                    className="w-full h-40 object-cover rounded-lg shadow-md"
-                  />
-                </div>
-              </div>
-            </Card>
-
+          <div className="grid lg:grid-cols-1 gap-8 max-w-3xl mx-auto">
             {/* Quick Links */}
             <div className="space-y-6">
               {/* Nachrichten */}
