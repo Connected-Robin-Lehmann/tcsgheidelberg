@@ -26,7 +26,7 @@ const TennisplaetzeDE = () => {
     features: ["2 Sandplätze", "Beheizt", "Oktober bis April"]
   },
   {
-    title: "Historische Tennis(teppich)halle",
+    title: "Tennis(teppich)halle",
     description:
     "Weiterhin steht uns in Absprache mit den Eigentümern die Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.\nDie Halle kann aber auch über die Eigentümer gebucht werden (siehe Schild am Eingang).",
     image: "/images/Teppichhalle.jpg",
