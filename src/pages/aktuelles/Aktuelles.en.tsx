@@ -39,7 +39,7 @@ const AktuellesEN = () => {
               {/* News */}
               <Card className="card-tennis border-l-4 border-l-tennis-yellow">
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-tennis-black mb-3">News</h3>
+                  <h3 className="text-xl font-bold text-tennis-black mb-3">News & Press Releases</h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
                     Reports from tournaments, matches and other news from club life. Browse our news collection by month and category.
                   </p>
