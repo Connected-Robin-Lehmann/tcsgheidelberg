@@ -32,8 +32,7 @@ const TennisplaetzeDE = () => {
     image: "/images/Teppichhalle.jpg",
     features: [
     "Teppichboden",
-    "Ganzjährig verfügbar",
-    "Historisches Ambiente"]
+    "Ganzjährig verfügbar"]
 
   }];
 
@@ -162,8 +161,7 @@ const TennisplaetzeDE = () => {
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Der Platz 10 ist direkt vom Parkplatz in Schwindstraße aus
-                zugänglich. Er liegt direkt hinter der historischen Tennishalle
-                und ist über viele Jahre hinweg durch Hecken schön eingewachsen.
+                zugänglich. Er liegt direkt hinter der Tennishalle.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Für weitere Impressionen einfach rechts auf ein Bild und durch
