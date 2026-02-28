@@ -35,7 +35,6 @@ const AktuellesDE = () => {
 
           {/* News Sections */}
           <div className="grid lg:grid-cols-1 gap-8 max-w-3xl mx-auto">
-            {/* Quick Links */}
             <div className="space-y-6">
               {/* Nachrichten */}
               <Card className="card-tennis border-l-4 border-l-tennis-yellow">
@@ -48,6 +47,22 @@ const AktuellesDE = () => {
                   <Link to="/aktuelles/nachrichten">
                     <Button variant="outline" className="btn-hero-outline w-full">
                       Zu den Nachrichten
+                    </Button>
+                  </Link>
+                </div>
+              </Card>
+
+              {/* Newsletter */}
+              <Card className="card-tennis border-l-4 border-l-green-500">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-tennis-black mb-3">Tie-Break(ing)News</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                    Aktuelles rund um den Sport, aber auch geplante Veranstaltungen und neue Entwicklungen und Planungen
+                    im und rund um den Club teilen wir als Vorstand in unserem Newsletter mit.
+                  </p>
+                  <Link to="/aktuelles/tiebreaking-news">
+                    <Button variant="outline" className="btn-hero-outline w-full">
+                      Newsletter lesen
                     </Button>
                   </Link>
                 </div>
@@ -81,22 +96,6 @@ const AktuellesDE = () => {
                   <Button variant="outline" className="btn-hero-outline w-full">
                     Vereinsvorhaben ansehen
                   </Button>
-                </div>
-              </Card>
-
-              {/* Newsletter */}
-              <Card className="card-tennis border-l-4 border-l-green-500">
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-tennis-black mb-3">Tie-Break(ing)News</h3>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    Aktuelles rund um den Sport, aber auch geplante Veranstaltungen und neue Entwicklungen und Planungen
-                    im und rund um den Club teilen wir als Vorstand in unserem Newsletter mit.
-                  </p>
-                  <Link to="/aktuelles/tiebreaking-news">
-                    <Button variant="outline" className="btn-hero-outline w-full">
-                      Newsletter lesen
-                    </Button>
-                  </Link>
                 </div>
               </Card>
             </div>
