@@ -163,10 +163,6 @@ const TennisplaetzeDE = () => {
                 Der Platz 10 ist direkt vom Parkplatz in Schwindstraße aus
                 zugänglich. Er liegt direkt hinter der Tennishalle.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                Für weitere Impressionen einfach rechts auf ein Bild und durch
-                die komplette Bildergalerie klicken.
-              </p>
             </div>
           </div>
 

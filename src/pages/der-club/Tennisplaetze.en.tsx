@@ -160,9 +160,6 @@ const TennisplaetzeEN = () => {
               <p className="text-gray-700 leading-relaxed mb-6">
                 Court 10 is directly accessible from the parking lot on Schwindstrasse. It is located directly behind the tennis hall.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                For more impressions, simply click on an image on the right and browse through the complete image gallery.
-              </p>
             </div>
           </div>
 
