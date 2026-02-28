@@ -26,14 +26,13 @@ const TennisplaetzeEN = () => {
       features: ["2 Clay Courts", "Heated", "October to April"],
     },
     {
-      title: "Historic Tennis (Carpet) Hall",
+      title: "Tennis (Carpet) Hall",
       description:
         "Furthermore, the tennis hall with carpet floor directly at the parking lot in Schwindstrasse is available to us in consultation with the owners.\nThe hall can also be booked directly through the owners (see sign at the entrance).",
       image: "/images/Teppichhalle.jpg",
       features: [
         "Carpet Floor",
         "Available Year-Round",
-        "Historic Atmosphere",
       ],
     },
   ];
@@ -159,7 +158,7 @@ const TennisplaetzeEN = () => {
                 Court 10 - The Special One
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Court 10 is directly accessible from the parking lot in Schwindstrasse. It is located directly behind the historic tennis hall and has been beautifully enclosed by hedges over many years.
+                Court 10 is directly accessible from the parking lot on Schwindstrasse. It is located directly behind the tennis hall.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 For more impressions, simply click on an image on the right and browse through the complete image gallery.
