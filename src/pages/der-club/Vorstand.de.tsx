@@ -24,7 +24,7 @@ const VorstandDE = () => {
       position: "Kassenwart",
       email: "timo.schulz@schwarzgelb-heidelberg.de",
       image: "/images/vorstand/timo-schulz.jpg",
-      description: "Timo ist neu im Vorstand und fungiert als Kassenwart und hat auch die Budgetplanung übernommen."
+      description: "Timo hat mit dem Tennisspielen begonnen, als Boris das erste Mal Wimbledon gewann. Nach dem Umzug von Hamburg nach Heidelberg trat Timo 2011 in den Tennisclub Schwarz-Gelb Heidelberg ein und war von 2020 bis 2025 Mannschaftsführer der Herren-40 Mannschaft. Dieses Amt hat er nun abgegeben, um sich den Finanzen des Vereins zu widmen."
     },
     {
       name: "Ulrike Nuber",

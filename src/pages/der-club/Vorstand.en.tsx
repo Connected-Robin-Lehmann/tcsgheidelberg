@@ -24,7 +24,7 @@ const VorstandEN = () => {
       position: "Treasurer",
       email: "timo.schulz@schwarzgelb-heidelberg.de",
       image: "/images/vorstand/timo-schulz.jpg",
-      description: "Timo is new on the board and serves as treasurer, also taking on budget planning."
+      description: "Timo started playing tennis when Boris Becker won Wimbledon for the first time. After moving from Hamburg to Heidelberg, Timo joined TC Schwarz-Gelb Heidelberg in 2011 and served as team captain of the Men's 40 team from 2020 to 2025. He has now handed over that role to dedicate himself to the club's finances."
     },
     {
       name: "Ulrike Nuber",
