@@ -38,7 +38,7 @@ const VideoSection = () => {
               onPause={() => setIsPlaying(false)}
             >
               <source 
-                src="https://www.schwarzgelb-heidelberg.de/wp-content/uploads/2019/09/Video-Tennis-Club-Schwarz-Gelb-Heidelberg_003.mp4" 
+                src="https://ofywaimqzpfznwrppvmf.supabase.co/storage/v1/object/public/club-videos/club-video.mp4" 
                 type="video/mp4" 
               />
               {t('home.video.browserNotSupported')}
