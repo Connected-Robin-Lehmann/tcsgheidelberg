@@ -54,7 +54,7 @@ const StatsSection = () => {
             <Link to="/der-club/mitgliedschaft" className="btn-hero">
               {t('home.hero.joinButton')}
             </Link>
-            <Link to="/der-club/mitgliedschaft" className="btn-hero-outline">
+            <Link to="/training" className="btn-hero-outline">
               {t('home.stats.trialTraining')}
             </Link>
           </div>
