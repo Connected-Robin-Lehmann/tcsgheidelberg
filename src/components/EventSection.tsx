@@ -14,14 +14,10 @@ const EventSection = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language === 'en' ? 'en' : 'de';
   
-  // Get upcoming events: Blümchenturnier + match events
-  const blumenturnier = upcomingEvents.find(e => e.id === "season-opening-2026");
-  const matchEvents = upcomingEvents
+  // Get upcoming match events (Badenliga 2026)
+  const upcomingMatches = upcomingEvents
     .filter(e => e.type === "match")
-    .slice(0, 3);
-  const upcomingMatches = blumenturnier 
-    ? [blumenturnier, ...matchEvents] 
-    : matchEvents.slice(0, 4);
+    .slice(0, 4);
   
   return (
     <section id="news" className="py-12 md:py-20 bg-gradient-to-b from-white to-gray-50">
