@@ -345,11 +345,6 @@ const TiebreakingNewsDE = () => {
                         26.04. – Tag der offenen Tür & Saisoneröffnung
                       </h5>
                     </div>
-                    <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
-                      <h5 className="font-bold text-tennis-black mb-1">
-                        30.05. – 06.06. – Pfingstferien Tenniscamp
-                      </h5>
-                    </div>
                   </div>
                 </div>
 

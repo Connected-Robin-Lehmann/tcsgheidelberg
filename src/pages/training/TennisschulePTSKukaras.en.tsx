@@ -39,11 +39,6 @@ const TennisschulePTSKukarasEN = () => {
       time: "9:30-15:30",
     },
     {
-      name: "Pentecost Tennis Camp",
-      date: "30.05. - 06.06.2026",
-      time: "All day",
-    },
-    {
       name: "1st Summer Tennis Camp",
       date: "03.08. - 07.08.2026",
       time: "All day",

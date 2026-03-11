@@ -39,11 +39,6 @@ const TennisschulePTSKukarasDE = () => {
       zeit: "9:30-15:30",
     },
     {
-      name: "Pfingstferien Tenniscamp",
-      datum: "30.05. - 06.06.2026",
-      zeit: "Ganztägig",
-    },
-    {
       name: "1. Sommerferien Tenniscamp",
       datum: "03.08. - 07.08.2026",
       zeit: "Ganztägig",
