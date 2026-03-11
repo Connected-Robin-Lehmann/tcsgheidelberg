@@ -337,11 +337,6 @@ const TiebreakingNewsEN = () => {
                         Apr 26 – Open Day & Season Opening
                       </h5>
                     </div>
-                    <div className="bg-white rounded-xl p-4 border-l-4 border-tennis-yellow">
-                      <h5 className="font-bold text-tennis-black mb-1">
-                        May 30 – Jun 6 – Whitsun Tennis Camp
-                      </h5>
-                    </div>
                   </div>
                 </div>
 

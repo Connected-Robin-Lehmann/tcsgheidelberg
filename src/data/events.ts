@@ -142,15 +142,6 @@ export const upcomingEvents: ClubEvent[] = [
     type: "match",
   },
   {
-    id: "pfingstcamp-2026",
-    date: "30.05. - 06.06.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Pfingstferien Tenniscamp in Veli Lošinj", en: "Whitsun Tennis Camp in Veli Lošinj" },
-    location: { de: "Veli Lošinj, Kroatien", en: "Veli Lošinj, Croatia" },
-    description: { de: "Tenniscamp in Kroatien", en: "Tennis camp in Croatia" },
-    type: "camp",
-  },
-  {
     id: "badenliga-damen-2026",
     date: "28.06. - 20.07.2026",
     time: { de: "ganztägig", en: "All day" },
