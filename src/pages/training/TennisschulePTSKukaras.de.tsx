@@ -10,6 +10,8 @@ import {
   Calendar,
   Target,
   Award,
+  Download,
+  ExternalLink,
 } from "lucide-react";
 
 const TennisschulePTSKukarasDE = () => {
