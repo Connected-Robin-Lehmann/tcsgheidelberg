@@ -175,7 +175,7 @@ const MannschaftenDE = () => {
                     </div>
                     <h4 className="text-xl font-bold text-foreground">Aktive</h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Damen & Herren
+                      Damen 1-4 & Herren 1-3
                     </p>
                   </div>
                 </a>
