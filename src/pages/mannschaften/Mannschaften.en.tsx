@@ -155,7 +155,7 @@ const MannschaftenEN = () => {
                     </div>
                     <h4 className="text-xl font-bold text-foreground">Youth</h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      16 Teams
+                      14 Teams
                     </p>
                   </div>
                 </a>
