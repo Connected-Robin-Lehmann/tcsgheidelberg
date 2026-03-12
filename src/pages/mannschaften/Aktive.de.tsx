@@ -40,9 +40,9 @@ const AktiveDE = () => {
                 <strong> 2. Bundesliga</strong> und haben sich über die Badenliga und Regionalliga 
                 bis in den professionellen Bereich hochgearbeitet.
               </p>
-              <p>
-                Daneben haben wir weitere Damen-Mannschaften in verschiedenen Spielklassen, 
-                die den Mannschaftssport bei Schwarz-Gelb leben.
+              <p>Daneben haben wir weitere Damen-Mannschaften in verschiedenen Alters- und Spielklassen, die den Mannschaftssport bei Schwarz-Gelb leben.
+
+
               </p>
             </div>
           </Card>
