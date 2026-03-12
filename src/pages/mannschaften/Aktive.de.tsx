@@ -35,8 +35,8 @@ const AktiveDE = () => {
             </div>
             
             <div className="space-y-4 text-lg leading-relaxed text-foreground">
-              <p>
-                Unser Aushängeschild: Die <strong>Damen 1</strong> spielen aktuell in der 
+              <p>Unser Aushängeschild: Die Damen 1 spielen aktuell in der Badenliga, hatten sich aber zwischenzeitlich sogar in der 2. Bundesliga hochgespielt.
+                <strong>Damen 1</strong> spielen aktuell in der 
                 <strong> 2. Bundesliga</strong> und haben sich über die Badenliga und Regionalliga 
                 bis in den professionellen Bereich hochgearbeitet.
               </p>
@@ -80,21 +80,21 @@ const AktiveDE = () => {
               href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/clubTeams?club=33129"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
+              className="inline-flex items-center bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+              
               nuLiga TC Schwarz-Gelb Heidelberg
               <svg
                 className="ml-2 w-4 h-4"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
+                
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                
               </svg>
             </a>
           </div>
@@ -102,8 +102,8 @@ const AktiveDE = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default AktiveDE;
