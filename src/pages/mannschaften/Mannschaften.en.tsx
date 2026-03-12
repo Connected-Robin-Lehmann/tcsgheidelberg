@@ -187,7 +187,7 @@ const MannschaftenEN = () => {
                       Seniors
                     </h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Age Groups
+                      6 Teams
                     </p>
                   </div>
                 </a>

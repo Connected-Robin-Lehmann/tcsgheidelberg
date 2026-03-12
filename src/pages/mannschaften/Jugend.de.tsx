@@ -65,6 +65,7 @@ const JugendDE = () => {
                     bereits in jungen Jahren hat bei uns eine lange Tradition.
                     Unser Verein ist stolz darauf, junge Talente zu fördern und
                     ihnen eine solide tennissportliche Grundlage zu vermitteln.
+                    Ansprechpartnerin für alle Vereinsmitglieder bis 18 Jahre ist Karolin Kukaras (<a href="mailto:karolin.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-black underline hover:text-tennis-yellow transition-colors font-medium">karolin.kukaras@schwarzgelb-heidelberg.de</a>).
                   </p>
                 </div>
 

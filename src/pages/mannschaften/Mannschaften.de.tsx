@@ -192,7 +192,7 @@ const MannschaftenDE = () => {
                       Senioren
                     </h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Altersklassen
+                      6 Teams
                     </p>
                   </div>
                 </a>
