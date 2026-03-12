@@ -35,11 +35,7 @@ const AktiveDE = () => {
             </div>
             
             <div className="space-y-4 text-lg leading-relaxed text-foreground">
-              <p>Unser Aushängeschild: Die Damen 1 spielen aktuell in der Badenliga, hatten sich aber zwischenzeitlich sogar in der 2. Bundesliga hochgespielt.
-
-                <strong> 2. Bundesliga</strong> und haben sich über die Badenliga und Regionalliga 
-                bis in den professionellen Bereich hochgearbeitet.
-              </p>
+              <p>Unser Aushängeschild: Die Damen 1 spielen aktuell in der Badenliga, hatten sich aber zwischenzeitlich sogar bis in die <strong>2. Bundesliga</strong> hochgespielt.</p>
               <p>Daneben haben wir weitere Damen-Mannschaften in verschiedenen Alters- und Spielklassen, die den Mannschaftssport bei Schwarz-Gelb leben.</p>
               <p>
                 Ansprechpartnerin für alle Aktiven Mannschaften ist Katharina Kukaras (<a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">katharina.kukaras@schwarzgelb-heidelberg.de</a>).
