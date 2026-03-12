@@ -65,6 +65,7 @@ const JugendEN = () => {
                     early age has a long tradition at our club. We are proud to
                     nurture young talent and provide them with a solid
                     foundation in tennis.
+                    The contact person for all club members under 18 is Karolin Kukaras (<a href="mailto:karolin.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-black underline hover:text-tennis-yellow transition-colors font-medium">karolin.kukaras@schwarzgelb-heidelberg.de</a>).
                   </p>
                 </div>
 

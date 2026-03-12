@@ -160,7 +160,7 @@ const MannschaftenDE = () => {
                       Jugend
                     </h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      16 Teams
+                      14 Teams
                     </p>
                   </div>
                 </a>
@@ -175,7 +175,7 @@ const MannschaftenDE = () => {
                     </div>
                     <h4 className="text-xl font-bold text-foreground">Aktive</h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Damen & Herren
+                      Damen 1-4 & Herren 1-3
                     </p>
                   </div>
                 </a>
@@ -192,7 +192,7 @@ const MannschaftenDE = () => {
                       Senioren
                     </h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Altersklassen
+                      6 Teams
                     </p>
                   </div>
                 </a>

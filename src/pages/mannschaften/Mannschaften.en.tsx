@@ -155,7 +155,7 @@ const MannschaftenEN = () => {
                     </div>
                     <h4 className="text-xl font-bold text-foreground">Youth</h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      16 Teams
+                      14 Teams
                     </p>
                   </div>
                 </a>
@@ -170,7 +170,7 @@ const MannschaftenEN = () => {
                     </div>
                     <h4 className="text-xl font-bold text-foreground">Adults</h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Women & Men
+                      Women 1-4 & Men 1-3
                     </p>
                   </div>
                 </a>
@@ -187,7 +187,7 @@ const MannschaftenEN = () => {
                       Seniors
                     </h4>
                     <p className="text-sm text-muted-foreground mt-2">
-                      Age Groups
+                      6 Teams
                     </p>
                   </div>
                 </a>
