@@ -272,11 +272,81 @@ const TennisschulePTSKukarasDE = () => {
                 ))}
               </div>
 
+              {/* Registration Info */}
               <div className="mt-8 bg-tennis-yellow/10 rounded-xl p-6">
-                <p className="text-gray-700 font-medium text-center">
-                  Weitere Informationen u.a. zur Anmeldung stehen bald zum
-                  Download zur Verfügung.
+                <h4 className="text-lg font-bold text-tennis-black mb-4 text-center">
+                  Anmeldung über Sportision
+                </h4>
+                <p className="text-gray-700 font-medium text-center mb-6">
+                  Die Anmeldung erfolgt wieder über unser Online-Portal Sportision:
                 </p>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+                  <img
+                    src="/images/sportision-qr-code.png"
+                    alt="QR-Code Sportision Anmeldung"
+                    className="w-40 h-40"
+                  />
+                  <div className="text-center md:text-left">
+                    <p className="text-gray-700 mb-2">oder per Link:</p>
+                    <a
+                      href="https://sportision.de/club/kukaras-professional-tennis-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-tennis-black font-semibold hover:text-tennis-yellow transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      sportision.de/club/kukaras-professional-tennis-1
+                    </a>
+                  </div>
+                </div>
+                <p className="text-center font-bold text-tennis-black text-lg">
+                  Anmeldeschluss ist der 16.03.2026
+                </p>
+              </div>
+
+              {/* Flyers */}
+              <div className="mt-8">
+                <h4 className="text-lg font-bold text-tennis-black mb-4 text-center">
+                  Flyer zu den Feriencamps
+                </h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="border border-gray-200 rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/images/flyer-ostercamp-2026.jpg"
+                      alt="Flyer Ostercamp 2026"
+                      className="w-full"
+                    />
+                    <div className="p-4 text-center">
+                      <a
+                        href="/downloads/OsterTenniscamps_2026.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center bg-tennis-yellow text-tennis-black px-4 py-2 rounded-full font-bold hover:bg-yellow-400 transition-colors text-sm"
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        Ostercamp Flyer (PDF)
+                      </a>
+                    </div>
+                  </div>
+                  <div className="border border-gray-200 rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/images/flyer-sommercamp-2026.jpg"
+                      alt="Flyer Sommercamp 2026"
+                      className="w-full"
+                    />
+                    <div className="p-4 text-center">
+                      <a
+                        href="/downloads/SommerTenniscamps_2026.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center bg-tennis-yellow text-tennis-black px-4 py-2 rounded-full font-bold hover:bg-yellow-400 transition-colors text-sm"
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        Sommercamp Flyer (PDF)
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
