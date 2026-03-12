@@ -36,7 +36,7 @@ const AktiveDE = () => {
             
             <div className="space-y-4 text-lg leading-relaxed text-foreground">
               <p>Unser Aushängeschild: Die Damen 1 spielen aktuell in der Badenliga, hatten sich aber zwischenzeitlich sogar in der 2. Bundesliga hochgespielt.
-                <strong>Damen 1</strong> spielen aktuell in der 
+
                 <strong> 2. Bundesliga</strong> und haben sich über die Badenliga und Regionalliga 
                 bis in den professionellen Bereich hochgearbeitet.
               </p>
