@@ -87,6 +87,19 @@ const SeniorenEN = () => {
             </div>
           </Card>
 
+          {/* Contact Person */}
+          <Card className="p-8 border-tennis-yellow border-2 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-tennis-yellow rounded-full">
+                <Users className="w-6 h-6 text-tennis-black" />
+              </div>
+              <h2 className="text-2xl font-bold text-foreground">Contact Person</h2>
+            </div>
+            <p className="text-lg leading-relaxed text-foreground">
+              The contact person for all senior teams is also Katharina Kukaras (<a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">katharina.kukaras@schwarzgelb-heidelberg.de</a>).
+            </p>
+          </Card>
+
           {/* nuLiga Link */}
           <div className="bg-gradient-to-r from-tennis-black to-gray-800 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
