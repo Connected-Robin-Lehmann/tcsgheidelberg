@@ -209,6 +209,167 @@ const TennisschulePTSKukarasDE = () => {
               </div>
             </div>
           </div>
+          {/* Anmeldung Sommertraining 2026 */}
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 mb-12">
+            <div className="bg-tennis-yellow p-6">
+              <h2 className="text-2xl font-bold text-tennis-black text-center">
+                Anmeldung Sommertraining 2026
+              </h2>
+            </div>
+
+            <div className="p-8">
+              <div className="space-y-6 text-gray-700 leading-relaxed">
+                <p className="font-medium">Liebe Tennisfreunde,</p>
+
+                <p>
+                  das Wintertraining endet am 28.3.26. Dies bedeutet für uns, dass wir mit der Planung des Sommertrainings beginnen müssen.
+                </p>
+
+                <div className="bg-tennis-yellow/10 border-l-4 border-tennis-yellow p-6 rounded-r-lg">
+                  <p className="font-bold text-tennis-black">
+                    Hinweis: Am 15.03.2026 um 12 Uhr findet in der Traglufthalle eine Tennissichtung statt, für alle die in der Sommersaison neu mit dem Training starten möchten (Kinder und Erwachsene).
+                  </p>
+                </div>
+
+                <p className="text-lg font-bold text-tennis-black">
+                  Das Sommertraining beginnt am 13. April 2026.
+                </p>
+
+                <div className="bg-tennis-yellow/10 rounded-xl p-6">
+                  <p className="font-medium text-center mb-4">
+                    Die Anmeldung erfolgt wieder über unser Online-Portal Sportision:
+                  </p>
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4">
+                    <img
+                      src="/images/sportision-qr-code.png"
+                      alt="QR-Code Sportision Anmeldung"
+                      className="w-36 h-36"
+                    />
+                    <div className="text-center md:text-left">
+                      <a
+                        href="https://sportision.de/club/kukaras-professional-tennis-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-tennis-black font-semibold hover:text-tennis-yellow transition-colors"
+                      >
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        sportision.de/club/kukaras-professional-tennis-1
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="font-bold text-tennis-black text-lg text-center">
+                  Anmeldeschluss ist der 16.03.2026, da wir den Trainingsplan noch vor den Osterferien erstellen müssen.
+                </p>
+
+                <p>
+                  Die Anmeldung ist entweder mit einem Gastzugang oder nach vorheriger Registrierung möglich.
+                  Ich empfehle die kostenlose Registrierung, da ihr eure Angaben bis zum Anmeldeschluss jederzeit ändern könnt.
+                </p>
+
+                <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+                  <p className="font-bold text-red-800">
+                    Wichtig: Für jede Person, die am Training teilnehmen möchte, muss eine eigene Anmeldung durchgeführt werden (Ausnahme: Familientraining).
+                  </p>
+                </div>
+
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <h4 className="text-lg font-bold text-tennis-black mb-3">Ablauf der Anmeldung:</h4>
+                  <ul className="space-y-3">
+                    <li>• Mit dem Anklicken von <strong>Einschreiben</strong> meldet ihr euch verbindlich für das Training an.</li>
+                    <li>• Bitte gebt eure Trainingswünsche sowie möglichst viele mögliche Trainingszeiten und -tage an. <strong>Mindestens 6 Auswahlfelder</strong> müssen markiert werden, sonst wird die Anmeldung nicht angenommen.</li>
+                    <li>• Wer mehrmals pro Woche trainieren möchte, sollte entsprechend mehr Zeiten auswählen.</li>
+                    <li>• <strong>Wir benötigen dringend auch Trainingszeiten vor 17 Uhr.</strong></li>
+                    <li>• Ich bemühe mich, die Trainingszeiten aus dem Winter für möglichst viele Gruppen beizubehalten.</li>
+                  </ul>
+                </div>
+
+                <p>
+                  Bei Fragen stehen wir euch gerne per Mail zur Verfügung:{" "}
+                  <a href="mailto:tennis@kukaras.de" className="text-tennis-black font-semibold hover:text-tennis-yellow transition-colors">
+                    tennis@kukaras.de
+                  </a>
+                </p>
+
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <h4 className="text-lg font-bold text-tennis-black mb-3">Bambini-Training (5–8 Jahre):</h4>
+                  <p>Das Bambini-Training (Trainerinnen: Karo, Kathi u.a.) findet von Montag bis Freitag zwischen 14:00 und 17:00 Uhr statt.</p>
+                </div>
+
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <h4 className="text-lg font-bold text-tennis-black mb-3">2er-Training:</h4>
+                  <p className="mb-2">Bei der Anmeldung zu einem 2er-Training ist es sinnvoll, bereits einen Trainingspartner zu haben, da es nicht immer möglich ist, einen passenden Spieler zuzuteilen.</p>
+                  <p>Bitte gebt den gewünschten Trainingspartner im Feld <strong>Bemerkungen</strong> an. Dort können auch weitere Trainingswünsche vermerkt werden.</p>
+                </div>
+
+                <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+                  <p className="font-bold text-red-800">
+                    Wichtiger Hinweis: Auch Trainingsteilnehmer, die schon länger in festen Gruppen spielen und sich bisher nicht erneut offiziell angemeldet haben, müssen sich über das Programm anmelden, da die Gruppeneinteilung ausschließlich über Sportision erfolgt.
+                  </p>
+                </div>
+
+                <p className="font-medium">
+                  Für die Teilnahme am Training ist eine Mitgliedschaft im TC Schwarz-Gelb erforderlich.
+                </p>
+
+                {/* Preistabelle */}
+                <div className="bg-white rounded-xl border-2 border-tennis-yellow overflow-hidden">
+                  <div className="bg-tennis-black p-4">
+                    <h4 className="text-lg font-bold text-tennis-yellow text-center">
+                      Preise Sommertraining (16.04. bis 25.07.26)
+                    </h4>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="bg-tennis-yellow/20">
+                          <th className="text-left p-4 font-bold text-tennis-black">Trainingsgruppe</th>
+                          <th className="text-right p-4 font-bold text-tennis-black">Preis pro Person</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-4">4er Gruppe 60 Minuten</td>
+                          <td className="p-4 text-right font-semibold">250,00 €</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-4">4er Bambini 60 Minuten (5-7 Jahre)</td>
+                          <td className="p-4 text-right font-semibold">235,00 €</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-4">3er Gruppe 60 Minuten</td>
+                          <td className="p-4 text-right font-semibold">335,00 €</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-4">2er Gruppe 60 Minuten</td>
+                          <td className="p-4 text-right font-semibold">500,00 €</td>
+                        </tr>
+                        <tr className="hover:bg-gray-50">
+                          <td className="p-4">Einzeltraining / Familientraining</td>
+                          <td className="p-4 text-right font-semibold">980,00 €</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <p className="font-bold text-tennis-black text-center">
+                  Anmeldeschluss für das Sommertraining ist der 16.03.2026.<br />
+                  Bei späterer Anmeldung kann ich keinen Trainingsplatz garantieren.
+                </p>
+
+                <p className="text-center text-lg">
+                  Mein Trainerteam und ich freuen uns auf eine schöne, gesellige und hoffentlich erfolgreiche Sommersaison mit euch!
+                </p>
+
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 text-sm">
+                  <p className="mb-1">✅ An Feiertagen (während Schulbetrieb) findet das Training statt!</p>
+                  <p>❌ In den Schulferien (Oster-, Pfingst-, Sommerferien) findet <strong>kein</strong> Training statt.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Services */}
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 mb-12">
