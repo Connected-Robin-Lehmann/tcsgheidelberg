@@ -105,10 +105,6 @@ const App = () => (
             element={<TennisInfoHeft />}
           />
           <Route
-            path="/aktuelles/ansprechpartner"
-            element={<Ansprechpartner />}
-          />
-          <Route
             path="/aktuelles/tiebreaking-news"
             element={<TiebreakingNews />}
           />
