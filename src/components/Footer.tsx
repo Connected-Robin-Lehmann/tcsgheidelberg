@@ -6,7 +6,7 @@ import {
   Facebook,
   Twitter,
   Instagram,
-  X,
+} from "lucide-react";
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
