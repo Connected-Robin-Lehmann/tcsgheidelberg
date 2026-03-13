@@ -87,8 +87,8 @@ const AktiveEN = () => {
               </svg>
             </a>
             <div className="mt-6 pt-6 border-t border-white/20">
-              <p className="text-white">
-                Contact for all adult teams: <a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">Katharina Kukaras</a>
+              <p className="text-xl font-bold text-white">
+                Contact for all adult teams: <a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline">Katharina Kukaras</a>
               </p>
             </div>
           </div>
