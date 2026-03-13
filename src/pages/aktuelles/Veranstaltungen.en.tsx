@@ -132,7 +132,7 @@ const VeranstaltungenEN = () => {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-tennis-black mb-8 flex items-center gap-3">
               <span className="text-4xl">🏸</span>
-              Baden League Indoor Season 2026
+              Home Match Dates Baden League Summer '26
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
