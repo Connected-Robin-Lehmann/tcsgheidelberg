@@ -6,8 +6,6 @@ import { Users, Trophy, Target, Calendar } from "lucide-react";
 const JugendEN = () => {
   const youthTeams = [
     { name: "Midcourt U10.1", category: "U10" },
-    { name: "Midcourt U10.2", category: "U10" },
-    { name: "Midcourt U10.3", category: "U10" },
     { name: "Full Court U12 Green I", category: "U12" },
     { name: "Full Court U12 Green II", category: "U12" },
     { name: "Full Court U12 Green III", category: "U12" },
@@ -73,7 +71,7 @@ const JugendEN = () => {
                 <div className="grid md:grid-cols-4 gap-6 mb-8">
                   <div className="bg-tennis-black rounded-xl p-6 text-center text-white">
                     <div className="text-3xl font-bold text-tennis-yellow mb-2">
-                      14
+                      12
                     </div>
                     <div className="text-sm font-medium">Youth Teams</div>
                   </div>
@@ -116,7 +114,7 @@ const JugendEN = () => {
 
             <div className="p-8">
               <p className="text-gray-700 text-center mb-8">
-                Here you can find an overview of all 14 youth teams of TC
+                Here you can find an overview of all 12 youth teams of TC
                 Schwarz-Gelb Heidelberg e.V. in the summer season 2026.
               </p>
 
