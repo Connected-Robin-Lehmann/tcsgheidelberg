@@ -114,7 +114,7 @@ const JugendEN = () => {
 
             <div className="p-8">
               <p className="text-gray-700 text-center mb-8">
-                Here you can find an overview of all 14 youth teams of TC
+                Here you can find an overview of all 12 youth teams of TC
                 Schwarz-Gelb Heidelberg e.V. in the summer season 2026.
               </p>
 

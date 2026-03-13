@@ -116,7 +116,7 @@ const JugendDE = () => {
 
             <div className="p-8">
               <p className="text-gray-700 text-center mb-8">
-                Hier finden Sie die aktuelle Übersicht über alle 14
+                Hier finden Sie die aktuelle Übersicht über alle 12
                 Jugendmannschaften unseres TC Schwarz-Gelb Heidelberg e.V. in
                 der Sommersaison 2026
               </p>
