@@ -26,7 +26,7 @@ import TiebreakingNews from "./pages/aktuelles/TiebreakingNews";
 import Veranstaltungen from "./pages/aktuelles/Veranstaltungen";
 import Projekte from "./pages/aktuelles/Projekte";
 import TennisInfoHeft from "./pages/aktuelles/TennisInfoHeft";
-import Ansprechpartner from "./pages/aktuelles/Ansprechpartner";
+
 
 // Mannschaften pages
 import Mannschaften from "./pages/mannschaften/Mannschaften";
@@ -103,10 +103,6 @@ const App = () => (
           <Route
             path="/aktuelles/tennis-info-heft"
             element={<TennisInfoHeft />}
-          />
-          <Route
-            path="/aktuelles/ansprechpartner"
-            element={<Ansprechpartner />}
           />
           <Route
             path="/aktuelles/tiebreaking-news"
