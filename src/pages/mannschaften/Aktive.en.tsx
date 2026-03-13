@@ -67,6 +67,15 @@ const AktiveEN = () => {
             </div>
           </Card>
 
+          {/* Contact Person */}
+          <Card className="p-8 border-tennis-yellow border-2 mb-8">
+            <div className="space-y-4 text-lg leading-relaxed text-foreground">
+              <p>
+                The contact person for all adult teams is Katharina Kukaras (<a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">katharina.kukaras@schwarzgelb-heidelberg.de</a>).
+              </p>
+            </div>
+          </Card>
+
           {/* nuLiga Link */}
           <div className="bg-gradient-to-r from-tennis-black to-gray-800 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
