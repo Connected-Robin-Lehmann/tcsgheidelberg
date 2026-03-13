@@ -37,9 +37,6 @@ const AktiveDE = () => {
             <div className="space-y-4 text-lg leading-relaxed text-foreground">
               <p>Unser Aushängeschild: Die Damen 1 spielen aktuell in der Badenliga, hatten sich aber zwischenzeitlich sogar bis in die <strong>2. Bundesliga</strong> hochgespielt.</p>
               <p>Daneben haben wir weitere Damen-Mannschaften in verschiedenen Alters- und Spielklassen, die den Mannschaftssport bei Schwarz-Gelb leben.</p>
-              <p>
-                Ansprechpartnerin für alle Aktiven Mannschaften ist Katharina Kukaras (<a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">katharina.kukaras@schwarzgelb-heidelberg.de</a>).
-              </p>
             </div>
           </Card>
 
@@ -59,6 +56,15 @@ const AktiveDE = () => {
                 Unsere Herren-Mannschaften sind in verschiedenen Spielklassen vertreten 
                 und bieten für jeden Spieler die passende Herausforderung – vom ambitionierten 
                 Wettkampftennis bis zum geselligen Mannschaftsspiel.
+              </p>
+            </div>
+          </Card>
+
+          {/* Ansprechpartnerin */}
+          <Card className="p-8 border-tennis-yellow border-2 mb-8">
+            <div className="space-y-4 text-lg leading-relaxed text-foreground">
+              <p>
+                Ansprechpartnerin für alle Aktiven Mannschaften ist Katharina Kukaras (<a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">katharina.kukaras@schwarzgelb-heidelberg.de</a>).
               </p>
             </div>
           </Card>

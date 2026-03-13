@@ -44,9 +44,6 @@ const AktiveEN = () => {
                 In addition, we have more women's teams in various divisions 
                 who embody team sports at Schwarz-Gelb.
               </p>
-              <p>
-                The contact person for all adult teams is Katharina Kukaras (<a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">katharina.kukaras@schwarzgelb-heidelberg.de</a>).
-              </p>
             </div>
           </Card>
 
@@ -66,6 +63,15 @@ const AktiveEN = () => {
                 Our men's teams are represented in various divisions and offer 
                 the right challenge for every player – from ambitious competitive 
                 tennis to social team play.
+              </p>
+            </div>
+          </Card>
+
+          {/* Contact Person */}
+          <Card className="p-8 border-tennis-yellow border-2 mb-8">
+            <div className="space-y-4 text-lg leading-relaxed text-foreground">
+              <p>
+                The contact person for all adult teams is Katharina Kukaras (<a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">katharina.kukaras@schwarzgelb-heidelberg.de</a>).
               </p>
             </div>
           </Card>
