@@ -4,9 +4,7 @@ import {
   Phone,
   Mail,
   Facebook,
-  Twitter,
   Instagram,
-} from "lucide-react";
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
