@@ -6,8 +6,6 @@ import { Users, Trophy, Target, Calendar } from "lucide-react";
 const JugendDE = () => {
   const jugendMannschaften = [
     { name: "Midcourt U10.1", kategorie: "U10" },
-    { name: "Midcourt U10.2", kategorie: "U10" },
-    { name: "Midcourt U10.3", kategorie: "U10" },
     { name: "Großfeld U12 grün I", kategorie: "U12" },
     { name: "Großfeld U12 grün II", kategorie: "U12" },
     { name: "Großfeld U12 grün III", kategorie: "U12" },
