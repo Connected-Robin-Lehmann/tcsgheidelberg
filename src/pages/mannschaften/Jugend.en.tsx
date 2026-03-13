@@ -6,19 +6,19 @@ import { Users, Trophy, Target, Calendar } from "lucide-react";
 const JugendEN = () => {
   const youthTeams = [
     { name: "Midcourt U10.1", category: "U10" },
-    { name: "Full Court U12 Green I", category: "U12" },
-    { name: "Full Court U12 Green II", category: "U12" },
-    { name: "Full Court U12 Green III", category: "U12" },
-    { name: "Girls U12", category: "U12" },
+    { name: "Full Court U12 Green", category: "U12" },
     { name: "Boys U12", category: "U12" },
     { name: "Girls U15.1", category: "U15" },
     { name: "Boys U15.1", category: "U15" },
     { name: "Girls U15.2", category: "U15" },
     { name: "Boys U15.2", category: "U15" },
+    { name: "Boys U15.3", category: "U15" },
+    { name: "Boys U15.4", category: "U15" },
     { name: "Girls U18.1", category: "U18" },
     { name: "Boys U18.1", category: "U18" },
     { name: "Girls U18.2", category: "U18" },
     { name: "Boys U18.2", category: "U18" },
+    { name: "Girls U18.3", category: "U18" },
   ];
 
   const categories = {
@@ -71,7 +71,7 @@ const JugendEN = () => {
                 <div className="grid md:grid-cols-4 gap-6 mb-8">
                   <div className="bg-tennis-black rounded-xl p-6 text-center text-white">
                     <div className="text-3xl font-bold text-tennis-yellow mb-2">
-                      12
+                      14
                     </div>
                     <div className="text-sm font-medium">Youth Teams</div>
                   </div>
@@ -114,7 +114,7 @@ const JugendEN = () => {
 
             <div className="p-8">
               <p className="text-gray-700 text-center mb-8">
-                Here you can find an overview of all 12 youth teams of TC
+                Here you can find an overview of all 14 youth teams of TC
                 Schwarz-Gelb Heidelberg e.V. in the summer season 2026.
               </p>
 

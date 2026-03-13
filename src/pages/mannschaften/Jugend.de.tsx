@@ -6,19 +6,19 @@ import { Users, Trophy, Target, Calendar } from "lucide-react";
 const JugendDE = () => {
   const jugendMannschaften = [
     { name: "Midcourt U10.1", kategorie: "U10" },
-    { name: "Großfeld U12 grün I", kategorie: "U12" },
-    { name: "Großfeld U12 grün II", kategorie: "U12" },
-    { name: "Großfeld U12 grün III", kategorie: "U12" },
-    { name: "Juniorinnen U12w", kategorie: "U12" },
+    { name: "Großfeld U12 grün", kategorie: "U12" },
     { name: "Junioren U12m", kategorie: "U12" },
     { name: "Juniorinnen U15.1w", kategorie: "U15" },
     { name: "Junioren U15.1m", kategorie: "U15" },
     { name: "Juniorinnen U15.2w", kategorie: "U15" },
     { name: "Junioren U15.2m", kategorie: "U15" },
+    { name: "Junioren U15.3m", kategorie: "U15" },
+    { name: "Junioren U15.4m", kategorie: "U15" },
     { name: "Juniorinnen U18.1w", kategorie: "U18" },
     { name: "Junioren U18.1m", kategorie: "U18" },
     { name: "Juniorinnen U18.2w", kategorie: "U18" },
     { name: "Junioren U18.2m", kategorie: "U18" },
+    { name: "Juniorinnen U18.3w", kategorie: "U18" },
   ];
 
   const kategorien = {
@@ -71,7 +71,7 @@ const JugendDE = () => {
                 <div className="grid md:grid-cols-4 gap-6 mb-8">
                   <div className="bg-tennis-black rounded-xl p-6 text-center text-white">
                     <div className="text-3xl font-bold text-tennis-yellow mb-2">
-                      12
+                      14
                     </div>
                     <div className="text-sm font-medium">
                       Jugendmannschaften
@@ -116,7 +116,7 @@ const JugendDE = () => {
 
             <div className="p-8">
               <p className="text-gray-700 text-center mb-8">
-                Hier finden Sie die aktuelle Übersicht über alle 12
+                Hier finden Sie die aktuelle Übersicht über alle 14
                 Jugendmannschaften unseres TC Schwarz-Gelb Heidelberg e.V. in
                 der Sommersaison 2026
               </p>
