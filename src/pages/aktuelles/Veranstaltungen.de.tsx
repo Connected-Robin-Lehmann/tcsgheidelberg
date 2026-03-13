@@ -132,7 +132,7 @@ const VeranstaltungenDE = () => {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-tennis-black mb-8 flex items-center gap-3">
               <span className="text-4xl">🏸</span>
-              Heimspieltermine Badenliga Sommer '26
+              Heimspieltermine Badenliga Sommer 2026
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
