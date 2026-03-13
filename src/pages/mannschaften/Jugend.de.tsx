@@ -6,19 +6,19 @@ import { Users, Trophy, Target, Calendar } from "lucide-react";
 const JugendDE = () => {
   const jugendMannschaften = [
     { name: "Midcourt U10.1", kategorie: "U10" },
-    { name: "Großfeld U12 grün I", kategorie: "U12" },
-    { name: "Großfeld U12 grün II", kategorie: "U12" },
-    { name: "Großfeld U12 grün III", kategorie: "U12" },
-    { name: "Juniorinnen U12w", kategorie: "U12" },
+    { name: "Großfeld U12 grün", kategorie: "U12" },
     { name: "Junioren U12m", kategorie: "U12" },
     { name: "Juniorinnen U15.1w", kategorie: "U15" },
     { name: "Junioren U15.1m", kategorie: "U15" },
     { name: "Juniorinnen U15.2w", kategorie: "U15" },
     { name: "Junioren U15.2m", kategorie: "U15" },
+    { name: "Junioren U15.3m", kategorie: "U15" },
+    { name: "Junioren U15.4m", kategorie: "U15" },
     { name: "Juniorinnen U18.1w", kategorie: "U18" },
     { name: "Junioren U18.1m", kategorie: "U18" },
     { name: "Juniorinnen U18.2w", kategorie: "U18" },
     { name: "Junioren U18.2m", kategorie: "U18" },
+    { name: "Juniorinnen U18.3w", kategorie: "U18" },
   ];
 
   const kategorien = {
