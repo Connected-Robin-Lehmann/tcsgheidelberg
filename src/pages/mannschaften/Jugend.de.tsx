@@ -71,7 +71,7 @@ const JugendDE = () => {
                 <div className="grid md:grid-cols-4 gap-6 mb-8">
                   <div className="bg-tennis-black rounded-xl p-6 text-center text-white">
                     <div className="text-3xl font-bold text-tennis-yellow mb-2">
-                      12
+                      14
                     </div>
                     <div className="text-sm font-medium">
                       Jugendmannschaften
