@@ -1,21 +1,11 @@
-
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import TurniereDE from "./Turniere.de";
+import TurniereEN from "./Turniere.en";
 
 const Turniere = () => {
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <main className="flex items-center justify-center min-h-[50vh] bg-gray-50">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800">Turniere</h1>
-          <p className="mt-4 text-gray-600">Placeholder für Turniere Seite</p>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+  const { i18n } = useTranslation();
+  return i18n.language === "en" ? <TurniereEN /> : <TurniereDE />;
 };
 
 export default Turniere;
