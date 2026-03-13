@@ -6,19 +6,19 @@ import { Users, Trophy, Target, Calendar } from "lucide-react";
 const JugendEN = () => {
   const youthTeams = [
     { name: "Midcourt U10.1", category: "U10" },
-    { name: "Full Court U12 Green I", category: "U12" },
-    { name: "Full Court U12 Green II", category: "U12" },
-    { name: "Full Court U12 Green III", category: "U12" },
-    { name: "Girls U12", category: "U12" },
+    { name: "Full Court U12 Green", category: "U12" },
     { name: "Boys U12", category: "U12" },
     { name: "Girls U15.1", category: "U15" },
     { name: "Boys U15.1", category: "U15" },
     { name: "Girls U15.2", category: "U15" },
     { name: "Boys U15.2", category: "U15" },
+    { name: "Boys U15.3", category: "U15" },
+    { name: "Boys U15.4", category: "U15" },
     { name: "Girls U18.1", category: "U18" },
     { name: "Boys U18.1", category: "U18" },
     { name: "Girls U18.2", category: "U18" },
     { name: "Boys U18.2", category: "U18" },
+    { name: "Girls U18.3", category: "U18" },
   ];
 
   const categories = {
