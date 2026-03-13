@@ -107,7 +107,7 @@ const SeniorenEN = () => {
               </svg>
             </a>
             <div className="mt-6 pt-6 border-t border-white/20">
-              <p className="text-gray-300 text-sm">
+              <p className="text-white">
                 Contact for all senior teams: <a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">Katharina Kukaras</a>
               </p>
             </div>
