@@ -7,7 +7,7 @@ import { upcomingEvents } from "@/data/events";
 
 const TurniereEN = () => {
   const tournamentEvents = upcomingEvents.filter(
-    (e) => e.type === "tournament" && e.id !== "season-opening-2026"
+    (e) => e.type === "tournament" && e.id !== "season-opening-2026" && e.id !== "doppelturnier-saisonabschluss-2026"
   );
 
   return (
