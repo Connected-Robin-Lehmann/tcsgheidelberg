@@ -88,19 +88,6 @@ const SeniorenDE = () => {
             </div>
           </Card>
 
-          {/* Ansprechpartnerin */}
-          <Card className="p-8 border-tennis-yellow border-2 mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-tennis-yellow rounded-full">
-                <Users className="w-6 h-6 text-tennis-black" />
-              </div>
-              <h2 className="text-2xl font-bold text-foreground">Ansprechpartnerin</h2>
-            </div>
-            <p className="text-lg leading-relaxed text-foreground">
-              Ansprechpartnerin für alle Seniorenmannschaften ist ebenfalls Katharina Kukaras (<a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">katharina.kukaras@schwarzgelb-heidelberg.de</a>).
-            </p>
-          </Card>
-
           {/* nuLiga Link */}
           <div className="bg-gradient-to-r from-tennis-black to-gray-800 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-tennis-yellow mb-4">
@@ -114,23 +101,17 @@ const SeniorenDE = () => {
               href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/clubTeams?club=33129"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
+              className="inline-flex items-center bg-tennis-yellow text-tennis-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               nuLiga TC Schwarz-Gelb Heidelberg
-              <svg
-                className="ml-2 w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
+              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
+            <div className="mt-6 pt-6 border-t border-white/20">
+              <p className="text-gray-300 text-sm">
+                Ansprechpartnerin für alle Senioren-Mannschaften: <a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="text-tennis-yellow hover:underline font-semibold">Katharina Kukaras</a>
+              </p>
+            </div>
           </div>
 
         </div>
