@@ -491,16 +491,14 @@ export default function Nachrichten() {
                   <div className="space-y-4">
                     <h4 className="font-semibold text-lg">Bilder und Dateien</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {(() => {
-                        let imageCounter = 0;
-                        return newsMedia[selectedNews.id].map((media) => {
+                      {newsMedia[selectedNews.id].map((media) => {
                         if (media.file_type.startsWith('image/')) {
-                          const imgIndex = imageCounter++;
+                          const mediaSrc = getMediaUrl(media.file_path);
                           return (
                             <div
                               key={media.id}
                               className="rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center min-h-[200px] cursor-pointer hover:opacity-90 transition-opacity"
-                              onClick={() => openLightbox(imgIndex)}
+                              onClick={() => openLightbox(mediaSrc)}
                             >
                               <img
                                 src={getMediaUrl(media.file_path)}
