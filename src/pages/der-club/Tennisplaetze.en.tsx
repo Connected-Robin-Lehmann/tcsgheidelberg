@@ -28,7 +28,7 @@ const TennisplaetzeEN = () => {
     {
       title: "Tennis (Carpet) Hall",
       description:
-        "Furthermore, the tennis hall with carpet floor directly at the parking lot in Schwindstrasse is available to us in consultation with the owners.\nThe hall can also be booked directly through the owners (see sign at the entrance).",
+        "Furthermore, the tennis hall with carpet floor directly at the parking lot in Schwindstrasse is available to us in consultation with the owners.\n\nThe hall can also be booked directly through the owners (see sign at the entrance).",
       image: "/images/Teppichhalle.jpg",
       features: [
         "Carpet Floor",

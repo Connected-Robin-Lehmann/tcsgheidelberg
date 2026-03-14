@@ -28,7 +28,7 @@ const TennisplaetzeDE = () => {
   {
     title: "Tennis(teppich)halle",
     description:
-    "Weiterhin steht uns in Absprache mit den Eigentümern die Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.\nDie Halle kann aber auch über die Eigentümer gebucht werden (siehe Schild am Eingang).",
+    "Weiterhin steht uns in Absprache mit den Eigentümern die Tennishalle mit Teppichboden direkt am Parkplatz in der Schwindstraße zur Verfügung.\n\nDie Halle kann aber auch über die Eigentümer gebucht werden (siehe Schild am Eingang).",
     image: "/images/Teppichhalle.jpg",
     features: [
     "Teppichboden",
