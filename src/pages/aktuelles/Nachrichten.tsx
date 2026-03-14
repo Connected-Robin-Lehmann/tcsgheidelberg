@@ -524,6 +524,14 @@ export default function Nachrichten() {
         </DialogContent>
       </Dialog>
 
+      <ImageLightbox
+        images={selectedNewsImages}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNavigate={setLightboxIndex}
+      />
+
       <Footer />
     </div>
   );
