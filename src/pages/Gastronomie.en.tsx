@@ -203,7 +203,7 @@ const GastronomieEN = () => {
                     April 2026
                   </p>
                   <p className="text-sm text-gray-600 text-center mt-2">
-                    Full Italian restaurant with extensive menu
+                    Italian restaurant with extensive menu
                   </p>
                 </div>
               </Card>
