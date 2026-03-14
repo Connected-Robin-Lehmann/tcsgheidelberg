@@ -163,7 +163,20 @@ export default function Nachrichten() {
   const openNewsDialog = (item: NewsItem) => {
     setSelectedNews(item);
     setIsDialogOpen(true);
+    setLightboxOpen(false);
   };
+
+  const selectedNewsImages = useMemo(() => {
+    if (!selectedNews || !newsMedia[selectedNews.id]) return [];
+    return newsMedia[selectedNews.id]
+      .filter(m => m.file_type.startsWith('image/'))
+      .map(m => ({ src: getMediaUrl(m.file_path), alt: selectedNews.title }));
+  }, [selectedNews, newsMedia]);
+
+  const openLightbox = useCallback((mediaIndex: number) => {
+    setLightboxIndex(mediaIndex);
+    setLightboxOpen(true);
+  }, []);
 
   const getFileIcon = (fileType: string) => {
     if (fileType.includes('pdf')) return FileText;
