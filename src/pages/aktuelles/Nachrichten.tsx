@@ -513,7 +513,8 @@ export default function Nachrichten() {
                             </a>
                           );
                         }
-                      })}
+                      });
+                      })()}
                     </div>
                   </div>
                 )}
