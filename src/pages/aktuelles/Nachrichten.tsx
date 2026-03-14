@@ -430,7 +430,7 @@ export default function Nachrichten() {
         </div>
       </section>
 
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+      <Dialog open={isDialogOpen} onOpenChange={(open) => { if (!lightboxOpen) setIsDialogOpen(open); }}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           {selectedNews && (
             <>
