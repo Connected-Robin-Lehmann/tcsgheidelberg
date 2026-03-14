@@ -168,22 +168,10 @@ export default function Nachrichten() {
 
   const selectedNewsImages = useMemo(() => {
     if (!selectedNews) return [];
-    const images: { src: string; alt: string }[] = [];
-
-    // Extract images from HTML content
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(selectedNews.content, 'text/html');
-    doc.querySelectorAll('img').forEach((img) => {
-      if (img.src) images.push({ src: img.src, alt: img.alt || selectedNews.title });
-    });
-
-    // Add media images
     const media = newsMedia[selectedNews.id] || [];
-    media.filter(m => m.file_type.startsWith('image/')).forEach(m => {
-      images.push({ src: getMediaUrl(m.file_path), alt: selectedNews.title });
-    });
-
-    return images;
+    return media
+      .filter(m => m.file_type.startsWith('image/'))
+      .map(m => ({ src: getMediaUrl(m.file_path), alt: selectedNews.title }));
   }, [selectedNews, newsMedia]);
 
   const openLightbox = useCallback((imgSrc: string) => {
@@ -191,14 +179,6 @@ export default function Nachrichten() {
     setLightboxIndex(idx >= 0 ? idx : 0);
     setLightboxOpen(true);
   }, [selectedNewsImages]);
-
-  const handleContentClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLElement;
-    if (target.tagName === 'IMG') {
-      const imgEl = target as HTMLImageElement;
-      openLightbox(imgEl.src);
-    }
-  }, [openLightbox]);
 
   const getFileIcon = (fileType: string) => {
     if (fileType.includes('pdf')) return FileText;
@@ -450,7 +430,7 @@ export default function Nachrichten() {
         </div>
       </section>
 
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+      <Dialog open={isDialogOpen} onOpenChange={(open) => { if (!lightboxOpen) setIsDialogOpen(open); }}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           {selectedNews && (
             <>
@@ -480,8 +460,7 @@ export default function Nachrichten() {
 
               <div className="mt-6 space-y-6">
                 <div 
-                  className="prose prose-sm max-w-none text-foreground leading-relaxed [&_img]:cursor-pointer [&_img]:hover:opacity-90 [&_img]:transition-opacity"
-                  onClick={handleContentClick}
+                  className="prose prose-sm max-w-none text-foreground leading-relaxed"
                   dangerouslySetInnerHTML={{ 
                     __html: DOMPurify.sanitize(selectedNews.content) 
                   }}
