@@ -1,5 +1,6 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { Calendar, Trophy, Newspaper, Users, Filter, FileText, File, Download, LayoutGrid, LayoutList } from "lucide-react";
+import ImageLightbox from "@/components/ImageLightbox";
 import { Button } from "@/components/ui/button";
 import DOMPurify from "dompurify";
 import {
