@@ -17,15 +17,17 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
   onNavigate,
 }) => {
   const handlePrev = useCallback(() => {
+    if (images.length === 0) return;
     onNavigate(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
   }, [currentIndex, images.length, onNavigate]);
 
   const handleNext = useCallback(() => {
+    if (images.length === 0) return;
     onNavigate(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
   }, [currentIndex, images.length, onNavigate]);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || images.length === 0) return;
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowLeft") handlePrev();
@@ -37,12 +39,13 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKey);
     };
-  }, [isOpen, onClose, handlePrev, handleNext]);
+  }, [isOpen, images.length, onClose, handlePrev, handleNext]);
 
-  if (!isOpen) return null;
+  if (!isOpen || images.length === 0) return null;
 
-  const current = images[currentIndex];
-  const isLogo = current?.alt.toLowerCase().includes("logo");
+  const safeIndex = ((currentIndex % images.length) + images.length) % images.length;
+  const current = images[safeIndex];
+  const isLogo = current.alt.toLowerCase().includes("logo");
 
   return (
     <div
@@ -51,7 +54,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
     >
       {/* Close */}
       <button
-        onClick={onClose}
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
         className="absolute top-4 right-4 z-50 text-white hover:text-tennis-yellow transition-colors"
         aria-label="Close"
       >
