@@ -54,7 +54,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
     >
       {/* Close */}
       <button
-        onClick={onClose}
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
         className="absolute top-4 right-4 z-50 text-white hover:text-tennis-yellow transition-colors"
         aria-label="Close"
       >
