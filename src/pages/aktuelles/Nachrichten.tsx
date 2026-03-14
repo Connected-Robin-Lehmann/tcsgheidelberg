@@ -1,5 +1,6 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { Calendar, Trophy, Newspaper, Users, Filter, FileText, File, Download, LayoutGrid, LayoutList } from "lucide-react";
+import ImageLightbox from "@/components/ImageLightbox";
 import { Button } from "@/components/ui/button";
 import DOMPurify from "dompurify";
 import {
@@ -68,6 +69,8 @@ export default function Nachrichten() {
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -160,7 +163,20 @@ export default function Nachrichten() {
   const openNewsDialog = (item: NewsItem) => {
     setSelectedNews(item);
     setIsDialogOpen(true);
+    setLightboxOpen(false);
   };
+
+  const selectedNewsImages = useMemo(() => {
+    if (!selectedNews || !newsMedia[selectedNews.id]) return [];
+    return newsMedia[selectedNews.id]
+      .filter(m => m.file_type.startsWith('image/'))
+      .map(m => ({ src: getMediaUrl(m.file_path), alt: selectedNews.title }));
+  }, [selectedNews, newsMedia]);
+
+  const openLightbox = useCallback((mediaIndex: number) => {
+    setLightboxIndex(mediaIndex);
+    setLightboxOpen(true);
+  }, []);
 
   const getFileIcon = (fileType: string) => {
     if (fileType.includes('pdf')) return FileText;
@@ -452,10 +468,17 @@ export default function Nachrichten() {
                   <div className="space-y-4">
                     <h4 className="font-semibold text-lg">Bilder und Dateien</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {newsMedia[selectedNews.id].map((media) => {
+                      {(() => {
+                        let imageCounter = 0;
+                        return newsMedia[selectedNews.id].map((media) => {
                         if (media.file_type.startsWith('image/')) {
+                          const imgIndex = imageCounter++;
                           return (
-                            <div key={media.id} className="rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center min-h-[200px]">
+                            <div
+                              key={media.id}
+                              className="rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center min-h-[200px] cursor-pointer hover:opacity-90 transition-opacity"
+                              onClick={() => openLightbox(imgIndex)}
+                            >
                               <img
                                 src={getMediaUrl(media.file_path)}
                                 alt="News media"
@@ -490,7 +513,8 @@ export default function Nachrichten() {
                             </a>
                           );
                         }
-                      })}
+                      });
+                      })()}
                     </div>
                   </div>
                 )}
@@ -499,6 +523,14 @@ export default function Nachrichten() {
           )}
         </DialogContent>
       </Dialog>
+
+      <ImageLightbox
+        images={selectedNewsImages}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNavigate={setLightboxIndex}
+      />
 
       <Footer />
     </div>
