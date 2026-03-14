@@ -1,7 +1,8 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { FileText } from "lucide-react";
+import { FileText, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const SpielberichtsbogenDE = () => {
   return (
@@ -20,17 +21,26 @@ const SpielberichtsbogenDE = () => {
               Spielberichtsbogen
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Hier finden Sie die Vorlage für den Spielberichtsbogen zum Download.
+            </p>
           </div>
 
-          {/* Placeholder */}
-          <div className="bg-tennis-yellow/10 rounded-3xl p-12 text-center border-2 border-tennis-yellow/30">
+          {/* Download Card */}
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100 text-center max-w-xl mx-auto">
             <FileText className="h-16 w-16 text-tennis-yellow mx-auto mb-6" />
             <h2 className="text-2xl font-bold text-tennis-black mb-4">
-              Seite in Bearbeitung
+              Spielbericht-Vorlage
             </h2>
-            <p className="text-gray-600 max-w-md mx-auto">
-              Diese Seite wird derzeit überarbeitet. Bitte schauen Sie später wieder vorbei.
+            <p className="text-gray-600 mb-8">
+              PDF-Vorlage zum Ausdrucken und Ausfüllen für Mannschaftsführer.
             </p>
+            <a href="/downloads/Spielbericht-Vorlage.pdf" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-tennis-yellow hover:bg-tennis-yellow/90 text-tennis-black font-bold px-8 py-3 text-lg">
+                <Download className="h-5 w-5 mr-2" />
+                PDF herunterladen
+              </Button>
+            </a>
           </div>
         </div>
       </main>
