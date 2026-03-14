@@ -202,7 +202,7 @@ const GastronomieDE = () => {
                     April 2026
                   </p>
                   <p className="text-sm text-gray-600 text-center mt-2">
-                    Vollständiges italienisches Restaurant mit umfangreichem Speisenangebot
+                    Italienisches Restaurant mit umfangreichem Speisenangebot
                   </p>
                 </div>
               </Card>
