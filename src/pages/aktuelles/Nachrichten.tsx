@@ -480,7 +480,8 @@ export default function Nachrichten() {
 
               <div className="mt-6 space-y-6">
                 <div 
-                  className="prose prose-sm max-w-none text-foreground leading-relaxed"
+                  className="prose prose-sm max-w-none text-foreground leading-relaxed [&_img]:cursor-pointer [&_img]:hover:opacity-90 [&_img]:transition-opacity"
+                  onClick={handleContentClick}
                   dangerouslySetInnerHTML={{ 
                     __html: DOMPurify.sanitize(selectedNews.content) 
                   }}
