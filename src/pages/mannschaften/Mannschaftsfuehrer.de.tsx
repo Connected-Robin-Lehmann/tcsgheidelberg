@@ -205,8 +205,8 @@ const MannschaftsfuehrerDE = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">E-Mail</p>
-                    <a href="mailto:Sportwart@schwarz-gelb.de" className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors">
-                      Sportwart@schwarz-gelb.de
+                    <a href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de" className="font-bold text-tennis-black hover:text-tennis-yellow transition-colors">
+                      katharina.kukaras@schwarzgelb-heidelberg.de
                     </a>
                   </div>
                 </div>
