@@ -167,16 +167,38 @@ export default function Nachrichten() {
   };
 
   const selectedNewsImages = useMemo(() => {
-    if (!selectedNews || !newsMedia[selectedNews.id]) return [];
-    return newsMedia[selectedNews.id]
-      .filter(m => m.file_type.startsWith('image/'))
-      .map(m => ({ src: getMediaUrl(m.file_path), alt: selectedNews.title }));
+    if (!selectedNews) return [];
+    const images: { src: string; alt: string }[] = [];
+
+    // Extract images from HTML content
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(selectedNews.content, 'text/html');
+    doc.querySelectorAll('img').forEach((img) => {
+      if (img.src) images.push({ src: img.src, alt: img.alt || selectedNews.title });
+    });
+
+    // Add media images
+    const media = newsMedia[selectedNews.id] || [];
+    media.filter(m => m.file_type.startsWith('image/')).forEach(m => {
+      images.push({ src: getMediaUrl(m.file_path), alt: selectedNews.title });
+    });
+
+    return images;
   }, [selectedNews, newsMedia]);
 
-  const openLightbox = useCallback((mediaIndex: number) => {
-    setLightboxIndex(mediaIndex);
+  const openLightbox = useCallback((imgSrc: string) => {
+    const idx = selectedNewsImages.findIndex(img => img.src === imgSrc);
+    setLightboxIndex(idx >= 0 ? idx : 0);
     setLightboxOpen(true);
-  }, []);
+  }, [selectedNewsImages]);
+
+  const handleContentClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'IMG') {
+      const imgEl = target as HTMLImageElement;
+      openLightbox(imgEl.src);
+    }
+  }, [openLightbox]);
 
   const getFileIcon = (fileType: string) => {
     if (fileType.includes('pdf')) return FileText;
