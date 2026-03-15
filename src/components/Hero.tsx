@@ -23,7 +23,7 @@ const Hero = () => {
       const {
         data,
         error
-      } = await supabase.from("news_items").select("*").order("created_at", {
+      } = await supabase.from("news_items").select("*").order("date", {
         ascending: false
       }).limit(1).maybeSingle();
       if (data && !error) {
