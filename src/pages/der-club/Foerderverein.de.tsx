@@ -264,9 +264,12 @@ const FoerdervereinDE = () => {
                 <div className="flex items-center">
                   <CreditCard className="h-5 w-5 text-tennis-yellow mr-3" />
                   <div>
-                    <div>Heidelberg Volksbank</div>
+                    <div>Volksbank Heidelberg-Neckartal eG</div>
                     <div className="font-mono">
-                      DE 84 6729 0000 0149 6109 01
+                      DE26 6729 1000 0149 6109 01
+                    </div>
+                    <div className="font-mono text-sm text-gray-300 mt-1">
+                      BIC: GENODE61NGD
                     </div>
                   </div>
                 </div>
