@@ -3,33 +3,32 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Euro, AlertTriangle, Mail } from "lucide-react";
+import { Euro, AlertTriangle, Mail, Download } from "lucide-react";
 
 const BeitragsordnungDE = () => {
   const mitgliedsbeitraege = [
-    { type: "Ehepaar / Lebensgemeinschaft (2 Erwachsene mit gleicher Adresse)", annual: "632 €", halfYear: "435 €" },
-    { type: "Einzelmitglied Erwachsener über 18 Jahre", annual: "406 €", halfYear: "265 €" },
-    { type: "Einzelmitglied Erwachsener in Ausbildung 18-25 Jahre (Nachweispflicht)", annual: "197 €", halfYear: "135 €" },
-    { type: "Einzelmitglied Kind unter 14 Jahre", annual: "155 €", halfYear: "110 €" },
-    { type: "Einzelmitglied Jugendliche/r 14-18 Jahre", annual: "167 €", halfYear: "115 €" },
-    { type: "Trainingsmitgliedschaft (nur Training ohne Platzbuchungsberechtigung)", annual: "135 €", halfYear: "135 €" },
-    { type: "Fördermitglied (passive Mitgliedschaft ohne Trainings-/Spielberechtigung)", annual: "75 €", halfYear: "75 €" },
+    { type: "Ehepaar / Lebensgemeinschaft (2 Erwachsene mit gleicher Adresse)", annual: "632,00 €", halfYear: "435,00 €" },
+    { type: 'Erwachsener "Einzelmitglied" (>18)', annual: "406,00 €", halfYear: "265,00 €" },
+    { type: 'Erwachsener "Einzelmitglied in Ausbildung" (>18-28 Jahre), Nachweispflicht', annual: "197,00 €", halfYear: "135,00 €" },
+    { type: 'Kind "Einzelmitglied" (unter 14 Jahre)', annual: "155,00 €", halfYear: "110,00 €" },
+    { type: 'Jugendliche/r "Einzelmitglied" (14 bis 18 Jahre)', annual: "167,00 €", halfYear: "110,00 €" },
+    { type: "Fördermitglied (passives Mitglied ohne Spielberechtigung)", annual: "75,00 €", halfYear: "75,00 €" },
   ];
 
   const kinderZusatzbeitraege = [
-    { type: "Zuschlag für 1. Kind bis 18 Jahre", annual: "48 €", halfYear: "35 €" },
-    { type: "Zuschlag für 2. Kind bis 18 Jahre", annual: "24 €", halfYear: "15 €" },
-    { type: "Zuschlag ab 3. Kind bis 18 Jahre", annual: "0 €", halfYear: "0 €" },
-    { type: "Zuschlag für 1. erwachsenes Kind 18-25 Jahre und in Ausbildung (Nachweispflicht)", annual: "95 €", halfYear: "70 €" },
-    { type: "Zuschlag für 2. erwachsenes Kind in Ausbildung (Nachweispflicht)", annual: "48 €", halfYear: "35 €" },
-    { type: "Zuschlag ab 3. erwachsenes Kind 18-25 Jahre und in Ausbildung (Nachweispflicht)", annual: "0 €", halfYear: "0 €" },
+    { type: "Zuschlag für 1. erwachsenes Kind (18-28 J. und in Ausbildung), Nachweispflicht", annual: "95,00 €", halfYear: "70,00 €" },
+    { type: "Zuschlag für 2. erwachsenes Kind (18-28 J. und in Ausbildung), Nachweispflicht", annual: "48,00 €", halfYear: "30,00 €" },
+    { type: "Zuschlag ab 3. erwachsenes Kind (18-28 J. und in Ausbildung), Nachweispflicht", annual: "–", halfYear: "–" },
+    { type: "Zuschlag für 1. Kind/Jugendliche/r bis 18 Jahre", annual: "48,00 €", halfYear: "35,00 €" },
+    { type: "Zuschlag für 2. Kind/Jugendliche/r bis 18 Jahre", annual: "24,00 €", halfYear: "15,00 €" },
+    { type: "Zuschlag ab 3. Kind/Jugendliche/r bis 18 Jahre", annual: "–", halfYear: "–" },
   ];
 
   const aufnahmegebuehren = [
-    { type: "Aufnahmeantrag in eine aktive Mitgliedschaft, über 25 Jahre", fee: "100 €" },
-    { type: "Aufnahmeantrag in eine aktive Mitgliedschaft, unter 25 Jahre", fee: "50 €" },
-    { type: "Aufnahmeantrag oder Wechsel zum Fördermitglied", fee: "0 €" },
-    { type: "Wiederaufnahme (nach einem Austritt)", fee: "100 €" },
+    { type: 'Aufnahmeantrag in eine "aktive Mitgliedschaft" >25 Jahre alt', fee: "100,00 €" },
+    { type: 'Aufnahmeantrag in eine "aktive Mitgliedschaft" <25 Jahre alt', fee: "50,00 €" },
+    { type: "Aufnahmeantrag oder Wechsel zum Fördermitglied", fee: "–" },
+    { type: '"Wieder"-Aufnahme (nach einem Austritt)', fee: "100,00 €" },
   ];
 
   return (
@@ -63,7 +62,7 @@ const BeitragsordnungDE = () => {
                 </h2>
               </div>
 
-              {/* Mitgliedsbeiträge Tabelle */}
+              {/* Sockelbeträge */}
               <div className="mb-10">
                 <h3 className="text-xl font-bold text-tennis-black mb-4 flex items-center">
                   <span className="bg-tennis-yellow text-tennis-black px-3 py-1 rounded-full text-sm mr-3">Sockelbetrag</span>
@@ -75,7 +74,7 @@ const BeitragsordnungDE = () => {
                       <tr className="bg-tennis-yellow">
                         <th className="text-left p-4 font-bold text-tennis-black">Mitgliedsart</th>
                         <th className="text-right p-4 font-bold text-tennis-black">Jahresbeitrag</th>
-                        <th className="text-right p-4 font-bold text-tennis-black">bei Eintritt nach 15.07.</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">bei Eintritt ab 15.07.</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -94,7 +93,7 @@ const BeitragsordnungDE = () => {
               {/* Kinder Zusatzbeiträge */}
               <div className="mb-10">
                 <h3 className="text-xl font-bold text-tennis-black mb-4">
-                  Kinder Zusatzbeiträge zum Sockelbetrag für Erwachsene, Ehepaare und Lebensgemeinschaften
+                  Zuschläge für Kinder zusätzlich zum Sockelbetrag für Erwachsene, Ehepaare und Lebensgemeinschaften
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse">
@@ -102,7 +101,7 @@ const BeitragsordnungDE = () => {
                       <tr className="bg-tennis-yellow">
                         <th className="text-left p-4 font-bold text-tennis-black">Zusatzbeitrag</th>
                         <th className="text-right p-4 font-bold text-tennis-black">Jahresbeitrag</th>
-                        <th className="text-right p-4 font-bold text-tennis-black">bei Eintritt nach 15.07.</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">bei Eintritt ab 15.07.</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -122,9 +121,11 @@ const BeitragsordnungDE = () => {
               <div className="mb-10">
                 <h3 className="text-xl font-bold text-tennis-black mb-4 flex items-center">
                   <span className="bg-tennis-black text-tennis-yellow px-3 py-1 rounded-full text-sm mr-3">Einmalig</span>
-                  Aufnahmegebühr bei Eintritt in den TC Schwarz-Gelb Heidelberg e.V.
+                  Eintrittsgebühr
                 </h3>
-                <p className="text-gray-600 mb-4 text-sm">Gebühr je Antrag, unabhängig von der Personenanzahl</p>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Fällt bei Eintritt einmalig je Aufnahmevorgang (bzw. Aufnahmeantrag) unabhängig von der Zahl der aufgenommenen Personen an.
+                </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse">
                     <thead>
@@ -147,9 +148,9 @@ const BeitragsordnungDE = () => {
 
               {/* Fußnoten */}
               <div className="bg-gray-100 rounded-xl p-6 mb-8 text-sm text-gray-600">
-                <p className="mb-2">1) Die genannten Preise gelten für ein Kalenderjahr und Beitragszahlung im SEPA Lastschriftverfahren</p>
-                <p className="mb-2">2) Bei Zahlung des Beitrags ohne SEPA Lastschriftverfahren wird jedes Jahr zusätzlich eine Bearbeitungsgebühr von 25 € erhoben</p>
-                <p>3) Arbeitseinsatz: Mitglieder von 16 bis 65 Jahre, 2 Std. / Jahr. Bei nicht Erbringung werden zum Ende des Kalenderjahres 15 €/ Std. fällig</p>
+                <p className="mb-2">Die genannten Preise gelten für ein Kalenderjahr und Beitragszahlung mittels SEPA Lastschriftverfahren.</p>
+                <p className="mb-2">Bei Zahlung des Beitrages ohne SEPA Lastschriftverfahren (per Stichtag 01.01. eines neuen Jahres) wird jedes Jahr zusätzlich eine Bearbeitungsgebühr i. H. v. 25,- € erhoben.</p>
+                <p>Ab 2026 Arbeitseinsatz (jährlich) von 2 Stunden für Mitglieder ab 16 bis 65 Jahre, bei Nichterbringung werden zum Ende des Kalenderjahres 15,00 €/h fällig.</p>
               </div>
 
               {/* Important Notes */}
@@ -189,6 +190,17 @@ const BeitragsordnungDE = () => {
                     Vergünstigungen werden keine gewährt.
                   </p>
                 </div>
+              </div>
+
+              {/* Download */}
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
+                  onClick={() => window.open("/downloads/Beitragsordnung-2026.pdf", "_blank")}
+                >
+                  <Download className="h-5 w-5 mr-2" />
+                  Beitragsordnung 2026 (PDF)
+                </Button>
               </div>
             </div>
           </div>
