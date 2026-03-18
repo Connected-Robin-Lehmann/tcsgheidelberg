@@ -13,7 +13,7 @@ import Tradition from "./pages/der-club/Tradition";
 import Foerderverein from "./pages/der-club/Foerderverein";
 import Tennisplaetze from "./pages/der-club/Tennisplaetze";
 import Mitgliedschaft from "./pages/der-club/Mitgliedschaft";
-import Beitragsordnung from "./pages/der-club/Beitragsordnung";
+
 import Satzung from "./pages/der-club/Satzung";
 import Platzordnung from "./pages/der-club/Platzordnung";
 import Sponsoring from "./pages/der-club/Sponsoring";
