@@ -3,33 +3,32 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Euro, AlertTriangle, Mail } from "lucide-react";
+import { Euro, AlertTriangle, Mail, Download } from "lucide-react";
 
 const BeitragsordnungEN = () => {
   const membershipFees = [
-    { type: "Couple / Partnership (2 adults at same address)", annual: "632 €", halfYear: "435 €" },
-    { type: "Individual adult member over 18 years", annual: "406 €", halfYear: "265 €" },
-    { type: "Individual adult in education 18-25 years (proof required)", annual: "197 €", halfYear: "135 €" },
-    { type: "Individual child under 14 years", annual: "155 €", halfYear: "110 €" },
-    { type: "Individual youth 14-18 years", annual: "167 €", halfYear: "115 €" },
-    { type: "Training membership (training only, no court booking rights)", annual: "135 €", halfYear: "135 €" },
-    { type: "Supporting member (passive membership without training/playing rights)", annual: "75 €", halfYear: "75 €" },
+    { type: "Couple / Partnership (2 adults at same address)", annual: "€632.00", halfYear: "€435.00" },
+    { type: "Individual adult member (>18)", annual: "€406.00", halfYear: "€265.00" },
+    { type: "Individual adult in education (>18-28 years), proof required", annual: "€197.00", halfYear: "€135.00" },
+    { type: "Individual child (under 14 years)", annual: "€155.00", halfYear: "€110.00" },
+    { type: "Individual youth (14 to 18 years)", annual: "€167.00", halfYear: "€110.00" },
+    { type: "Supporting member (passive membership without playing rights)", annual: "€75.00", halfYear: "€75.00" },
   ];
 
   const childrenSurcharges = [
-    { type: "Surcharge for 1st child up to 18 years", annual: "48 €", halfYear: "35 €" },
-    { type: "Surcharge for 2nd child up to 18 years", annual: "24 €", halfYear: "15 €" },
-    { type: "Surcharge from 3rd child up to 18 years", annual: "0 €", halfYear: "0 €" },
-    { type: "Surcharge for 1st adult child 18-25 years in education (proof required)", annual: "95 €", halfYear: "70 €" },
-    { type: "Surcharge for 2nd adult child in education (proof required)", annual: "48 €", halfYear: "35 €" },
-    { type: "Surcharge from 3rd adult child 18-25 years in education (proof required)", annual: "0 €", halfYear: "0 €" },
+    { type: "Surcharge for 1st adult child (18-28 yrs, in education), proof required", annual: "€95.00", halfYear: "€70.00" },
+    { type: "Surcharge for 2nd adult child (18-28 yrs, in education), proof required", annual: "€48.00", halfYear: "€30.00" },
+    { type: "Surcharge from 3rd adult child (18-28 yrs, in education), proof required", annual: "–", halfYear: "–" },
+    { type: "Surcharge for 1st child/youth up to 18 years", annual: "€48.00", halfYear: "€35.00" },
+    { type: "Surcharge for 2nd child/youth up to 18 years", annual: "€24.00", halfYear: "€15.00" },
+    { type: "Surcharge from 3rd child/youth up to 18 years", annual: "–", halfYear: "–" },
   ];
 
   const admissionFees = [
-    { type: "Application for active membership, over 25 years", fee: "100 €" },
-    { type: "Application for active membership, under 25 years", fee: "50 €" },
-    { type: "Application or change to supporting membership", fee: "0 €" },
-    { type: "Readmission (after leaving)", fee: "100 €" },
+    { type: 'Application for "active membership" >25 years old', fee: "€100.00" },
+    { type: 'Application for "active membership" <25 years old', fee: "€50.00" },
+    { type: "Application or switch to supporting membership", fee: "–" },
+    { type: "Re-admission (after leaving)", fee: "€100.00" },
   ];
 
   return (
@@ -63,7 +62,7 @@ const BeitragsordnungEN = () => {
                 </h2>
               </div>
 
-              {/* Membership Fees Table */}
+              {/* Base Fees */}
               <div className="mb-10">
                 <h3 className="text-xl font-bold text-tennis-black mb-4 flex items-center">
                   <span className="bg-tennis-yellow text-tennis-black px-3 py-1 rounded-full text-sm mr-3">Base Fee</span>
@@ -75,7 +74,7 @@ const BeitragsordnungEN = () => {
                       <tr className="bg-tennis-yellow">
                         <th className="text-left p-4 font-bold text-tennis-black">Membership Type</th>
                         <th className="text-right p-4 font-bold text-tennis-black">Annual Fee</th>
-                        <th className="text-right p-4 font-bold text-tennis-black">Entry after July 15</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">Entry from July 15</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -94,7 +93,7 @@ const BeitragsordnungEN = () => {
               {/* Children Surcharges */}
               <div className="mb-10">
                 <h3 className="text-xl font-bold text-tennis-black mb-4">
-                  Children Surcharges to the Base Fee for Adults, Couples and Partnerships
+                  Children Surcharges in Addition to Base Fee for Adults, Couples and Partnerships
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse">
@@ -102,7 +101,7 @@ const BeitragsordnungEN = () => {
                       <tr className="bg-tennis-yellow">
                         <th className="text-left p-4 font-bold text-tennis-black">Surcharge</th>
                         <th className="text-right p-4 font-bold text-tennis-black">Annual Fee</th>
-                        <th className="text-right p-4 font-bold text-tennis-black">Entry after July 15</th>
+                        <th className="text-right p-4 font-bold text-tennis-black">Entry from July 15</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -122,9 +121,11 @@ const BeitragsordnungEN = () => {
               <div className="mb-10">
                 <h3 className="text-xl font-bold text-tennis-black mb-4 flex items-center">
                   <span className="bg-tennis-black text-tennis-yellow px-3 py-1 rounded-full text-sm mr-3">One-time</span>
-                  Admission Fee for Joining TC Schwarz-Gelb Heidelberg e.V.
+                  Admission Fee
                 </h3>
-                <p className="text-gray-600 mb-4 text-sm">Fee per application, regardless of number of persons</p>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Due once per application process, regardless of the number of persons admitted.
+                </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse">
                     <thead>
@@ -147,9 +148,9 @@ const BeitragsordnungEN = () => {
 
               {/* Footnotes */}
               <div className="bg-gray-100 rounded-xl p-6 mb-8 text-sm text-gray-600">
-                <p className="mb-2">1) The listed prices apply for one calendar year and payment via SEPA direct debit</p>
-                <p className="mb-2">2) For payments without SEPA direct debit, an additional processing fee of €25 will be charged each year</p>
-                <p>3) Work assignment: Members aged 16-65, 2 hours/year. If not completed, €15/hour will be charged at the end of the calendar year</p>
+                <p className="mb-2">The listed prices apply for one calendar year and payment via SEPA direct debit.</p>
+                <p className="mb-2">For payments without SEPA direct debit (as of January 1st of a new year), an additional processing fee of €25 will be charged each year.</p>
+                <p>From 2026: Annual work assignment of 2 hours for members aged 16 to 65. If not completed, €15.00/hour will be charged at the end of the calendar year.</p>
               </div>
 
               {/* Important Notes */}
@@ -189,6 +190,17 @@ const BeitragsordnungEN = () => {
                     granted.
                   </p>
                 </div>
+              </div>
+
+              {/* Download */}
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
+                  onClick={() => window.open("/downloads/Beitragsordnung-2026.pdf", "_blank")}
+                >
+                  <Download className="h-5 w-5 mr-2" />
+                  Fee Regulations 2026 (PDF)
+                </Button>
               </div>
             </div>
           </div>

@@ -18,7 +18,7 @@ const Header = () => {
         { name: t("header.tradition"), href: "/der-club/tradition" },
         { name: t("header.tennisCourts"), href: "/der-club/tennisplaetze" },
         { name: t("header.membership"), href: "/der-club/mitgliedschaft" },
-        
+        { name: t("header.membershipFees"), href: "/der-club/beitragsordnung" },
         { name: t("header.statute"), href: "/der-club/satzung" },
         { name: t("header.sponsors"), href: "/der-club/sponsoring" },
         {
