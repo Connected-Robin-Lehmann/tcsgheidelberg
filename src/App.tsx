@@ -13,7 +13,7 @@ import Tradition from "./pages/der-club/Tradition";
 import Foerderverein from "./pages/der-club/Foerderverein";
 import Tennisplaetze from "./pages/der-club/Tennisplaetze";
 import Mitgliedschaft from "./pages/der-club/Mitgliedschaft";
-import Beitragsordnung from "./pages/der-club/Beitragsordnung";
+
 import Satzung from "./pages/der-club/Satzung";
 import Platzordnung from "./pages/der-club/Platzordnung";
 import Sponsoring from "./pages/der-club/Sponsoring";
@@ -79,10 +79,6 @@ const App = () => (
           <Route path="/der-club/tradition" element={<Tradition />} />
           <Route path="/der-club/tennisplaetze" element={<Tennisplaetze />} />
           <Route path="/der-club/mitgliedschaft" element={<Mitgliedschaft />} />
-          <Route
-            path="/der-club/beitragsordnung"
-            element={<Beitragsordnung />}
-          />
           <Route path="/der-club/satzung" element={<Satzung />} />
           <Route path="/der-club/sponsoring" element={<Sponsoring />} />
           <Route path="/der-club/foerderverein" element={<Foerderverein />} />

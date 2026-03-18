@@ -24,10 +24,6 @@ const FAQDE = () => {
           text: "Mitgliedsantrag (PDF)",
           url: "/downloads/Aufnahmeantrag_TC_Schwarzgelb_Heidelberg_ab_2026.pdf",
         },
-        {
-          text: "Beitragsordnung",
-          url: "/der-club/beitragsordnung",
-        },
       ],
     },
     {
