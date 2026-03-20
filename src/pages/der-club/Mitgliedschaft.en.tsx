@@ -100,18 +100,6 @@ const MitgliedschaftEN = () => {
                 </ul>
               </div>
 
-              {/* Payment Info */}
-              <div className="bg-gray-50 rounded-2xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-tennis-black mb-6">Payment Modalities</h3>
-                <p className="text-gray-700 mb-4">
-                  We recommend setting up a SEPA direct debit mandate. Otherwise, an additional processing
-                  fee of EUR 25 will be charged for manual transfer according to the fee regulations.
-                </p>
-                <p className="text-gray-700 font-semibold">
-                  All membership fees must always be paid in full. No exceptions or other discounts outside
-                  the official fee structure will be granted.
-                </p>
-              </div>
 
               {/* Work Hours Notice */}
               <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
