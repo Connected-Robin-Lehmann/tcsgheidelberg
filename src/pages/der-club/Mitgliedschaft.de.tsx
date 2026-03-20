@@ -101,18 +101,6 @@ const MitgliedschaftDE = () => {
                 </ul>
               </div>
 
-              {/* Payment Info */}
-              <div className="bg-gray-50 rounded-2xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-tennis-black mb-6">Zahlungsmodalitäten</h3>
-                <p className="text-gray-700 mb-4">
-                  Wir empfehlen die Erteilung eines SEPA-Mandats zum Bankeinzug. Andernfalls werden bei
-                  Selbstüberweisung gemäß Beitragsordnung zusätzlich EUR 25,- als Bearbeitungsgebühr fällig.
-                </p>
-                <p className="text-gray-700 font-semibold">
-                  Alle Beiträge sind stets in voller Höhe zu entrichten. Ausnahmen von der geltenden
-                  Beitragsordnung oder sonstige Vergünstigungen werden keine gewährt.
-                </p>
-              </div>
 
               {/* Work Hours Notice */}
               <div className="bg-tennis-black rounded-2xl p-8 text-white mb-8">
