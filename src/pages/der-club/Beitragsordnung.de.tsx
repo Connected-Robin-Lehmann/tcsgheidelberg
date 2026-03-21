@@ -149,7 +149,7 @@ const BeitragsordnungDE = () => {
               {/* Fußnoten */}
               <div className="bg-gray-100 rounded-xl p-6 mb-8 text-sm text-gray-600">
                 <p className="mb-2">Die genannten Preise gelten für ein Kalenderjahr und Beitragszahlung mittels SEPA Lastschriftverfahren.</p>
-                <p className="mb-2">Bei Zahlung des Beitrages ohne SEPA Lastschriftverfahren (per Stichtag 01.01. eines neuen Jahres) wird jedes Jahr zusätzlich eine Bearbeitungsgebühr i. H. v. 25,- € erhoben.</p>
+                
                 <p>Ab 2026 Arbeitseinsatz (jährlich) von 2 Stunden für Mitglieder ab 16 bis 65 Jahre, bei Nichterbringung werden zum Ende des Kalenderjahres 15,00 €/h fällig.</p>
               </div>
 
