@@ -114,20 +114,22 @@ const MitgliedschaftEN = () => {
 
               {/* Downloads */}
               <div className="flex flex-wrap gap-4 mb-4">
-                <Button
-                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
-                  onClick={() => window.open("/downloads/Aufnahmeantrag_TC_Schwarzgelb_Heidelberg_ab_2026.pdf", "_blank")}
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Membership Application
-                </Button>
-                <Button
-                  className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
-                  onClick={() => window.open("/downloads/Beitragsordnung-2026.pdf", "_blank")}
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Fee Regulations 2026
-                </Button>
+                <a href="/downloads/Aufnahmeantrag_TC_Schwarzgelb_Heidelberg_ab_2026.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
+                  >
+                    <Download className="h-5 w-5 mr-2" />
+                    Membership Application
+                  </Button>
+                </a>
+                <a href="/downloads/Beitragsordnung-2026.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    className="bg-tennis-yellow text-tennis-black hover:bg-tennis-black hover:text-tennis-yellow border-2 border-tennis-yellow font-semibold p-6 h-auto"
+                  >
+                    <Download className="h-5 w-5 mr-2" />
+                    Fee Regulations 2026
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
