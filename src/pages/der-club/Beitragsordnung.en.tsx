@@ -149,7 +149,7 @@ const BeitragsordnungEN = () => {
               {/* Footnotes */}
               <div className="bg-gray-100 rounded-xl p-6 mb-8 text-sm text-gray-600">
                 <p className="mb-2">The listed prices apply for one calendar year and payment via SEPA direct debit.</p>
-                <p className="mb-2">For payments without SEPA direct debit (as of January 1st of a new year), an additional processing fee of €25 will be charged each year.</p>
+                
                 <p>From 2026: Annual work assignment of 2 hours for members aged 16 to 65. If not completed, €15.00/hour will be charged at the end of the calendar year.</p>
               </div>
 
