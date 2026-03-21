@@ -172,25 +172,6 @@ const BeitragsordnungEN = () => {
                 </div>
               </div>
 
-              {/* Payment Information */}
-              <div className="bg-gray-50 rounded-2xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-tennis-black mb-6">
-                  Payment Modalities
-                </h3>
-                <div className="space-y-4 text-gray-700">
-                  <p>
-                    We recommend granting a SEPA direct debit mandate.
-                    Otherwise, an additional <strong>EUR 25</strong> processing
-                    fee will be charged for manual transfers in accordance with
-                    the fee regulations.
-                  </p>
-                  <p className="font-semibold">
-                    All fees must always be paid in full. No exceptions or other
-                    discounts outside the official fee regulations will be
-                    granted.
-                  </p>
-                </div>
-              </div>
 
               {/* Download */}
               <div className="flex flex-wrap gap-4">

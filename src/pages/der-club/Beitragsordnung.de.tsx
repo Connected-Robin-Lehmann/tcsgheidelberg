@@ -172,25 +172,6 @@ const BeitragsordnungDE = () => {
                 </div>
               </div>
 
-              {/* Payment Information */}
-              <div className="bg-gray-50 rounded-2xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-tennis-black mb-6">
-                  Zahlungsmodalitäten
-                </h3>
-                <div className="space-y-4 text-gray-700">
-                  <p>
-                    Wir empfehlen die Erteilung eines SEPA-Mandats zum
-                    Bankeinzug. Andernfalls werden bei Selbstüberweisung gemäß
-                    Beitragsordnung zusätzlich <strong>EUR 25,-</strong> als
-                    Bearbeitungsgebühr fällig.
-                  </p>
-                  <p className="font-semibold">
-                    Alle Beiträge sind stets in voller Höhe zu entrichten.
-                    Ausnahmen von der geltenden Beitragsordnung oder sonstige
-                    Vergünstigungen werden keine gewährt.
-                  </p>
-                </div>
-              </div>
 
               {/* Download */}
               <div className="flex flex-wrap gap-4">
