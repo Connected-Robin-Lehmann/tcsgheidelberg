@@ -46,7 +46,7 @@ const ImpressumEN = () => {
                     <div className="mt-6 space-y-2 text-gray-700">
                       <p><strong>Represented by the Board:</strong></p>
                       <p>Aleksandar Kukaras, Chairman</p>
-                      <p>Dr. Frank Schöneborn, Vice Chairman and Treasurer</p>
+                      <p>Marc Homsy, Vice Chairman</p>
                       <p>Phone: +49 6221-4337096</p>
                       <p>Email: vorstand@schwarzgelb-heidelberg.de</p>
                       <p>Website: <a href="http://www.schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">http://www.schwarzgelb-heidelberg.de</a></p>

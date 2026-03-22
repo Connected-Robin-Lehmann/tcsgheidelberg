@@ -45,7 +45,7 @@ const ImpressumDE = () => {
                     <div className="mt-6 space-y-2 text-gray-700">
                       <p><strong>Vertreten durch Vorstand:</strong></p>
                       <p>Aleksandar Kukaras, 1.Vorsitzender</p>
-                      <p>Dr. Frank Schöneborn, 2. Vorsitzender und Schatzmeister</p>
+                      <p>Marc Homsy, 2. Vorsitzender</p>
                       <p>Tel. 06221-4337096</p>
                       <p>E-Mail: vorstand@schwarzgelb-heidelberg.de</p>
                       <p>Internet: <a href="http://www.schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">http://www.schwarzgelb-heidelberg.de</a></p>
