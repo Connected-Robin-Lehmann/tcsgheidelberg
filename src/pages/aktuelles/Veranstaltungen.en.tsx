@@ -5,6 +5,18 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { upcomingEvents } from "@/data/events";
 
+const renderTextWithEmailLinks = (text: string) => {
+  const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+  const parts = text.split(emailRegex);
+  return parts.map((part, i) =>
+    emailRegex.test(part) ? (
+      <a key={i} href={`mailto:${part}`} className="text-tennis-black font-medium underline hover:text-tennis-yellow transition-colors">{part}</a>
+    ) : (
+      <React.Fragment key={i}>{part}</React.Fragment>
+    )
+  );
+};
+
 const VeranstaltungenEN = () => {
   // Filter match events for 2026
   const matchEvents = upcomingEvents.filter(e => e.type === "match");
@@ -58,7 +70,7 @@ const VeranstaltungenEN = () => {
                         {/* Event Info */}
                         <div className="flex-1">
                           <h3 className="font-bold text-2xl text-tennis-black mb-3">{event.title.en}</h3>
-                          <p className="text-gray-600 leading-relaxed">{event.description.en}</p>
+                          <p className="text-gray-600 leading-relaxed">{renderTextWithEmailLinks(event.description.en)}</p>
                           {event.contact && (
                             <p className="text-sm text-gray-500 mt-4">
                               Contact: <a href={`mailto:${event.contact}`} className="text-tennis-black font-medium hover:text-tennis-yellow transition-colors">{event.contact}</a>
@@ -125,7 +137,7 @@ const VeranstaltungenEN = () => {
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         <div className="flex-1">
                           <h3 className="font-bold text-2xl text-tennis-black mb-3">{event.title.en}</h3>
-                          <p className="text-gray-600 leading-relaxed">{event.description.en}</p>
+                          <p className="text-gray-600 leading-relaxed">{renderTextWithEmailLinks(event.description.en)}</p>
                         </div>
                         <div className="lg:text-right space-y-3 lg:min-w-[280px]">
                           <div className="flex items-center lg:justify-end text-tennis-black">
