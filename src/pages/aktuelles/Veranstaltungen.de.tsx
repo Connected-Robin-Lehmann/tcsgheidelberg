@@ -5,6 +5,18 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { upcomingEvents } from "@/data/events";
 
+const renderTextWithEmailLinks = (text: string) => {
+  const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+  const parts = text.split(emailRegex);
+  return parts.map((part, i) =>
+    emailRegex.test(part) ? (
+      <a key={i} href={`mailto:${part}`} className="text-tennis-black font-medium underline hover:text-tennis-yellow transition-colors">{part}</a>
+    ) : (
+      <React.Fragment key={i}>{part}</React.Fragment>
+    )
+  );
+};
+
 const VeranstaltungenDE = () => {
   // Filter match events for 2026
   const matchEvents = upcomingEvents.filter(e => e.type === "match");
