@@ -34,15 +34,6 @@ export interface ClubEvent {
 
 export const upcomingEvents: ClubEvent[] = [
   {
-    id: "sommertraining-beginn-2026",
-    date: "13.04.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Beginn des Sommertrainings", en: "Start of Summer Training" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Start des regulären Sommertrainings", en: "Start of regular summer training" },
-    type: "training",
-  },
-  {
     id: "lk-turnier-apr-2",
     date: "18.04. / 19.04.2026",
     time: { de: "ganztägig", en: "All day" },
