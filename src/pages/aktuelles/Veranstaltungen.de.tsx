@@ -70,7 +70,7 @@ const VeranstaltungenDE = () => {
                         {/* Event Info */}
                         <div className="flex-1">
                           <h3 className="font-bold text-2xl text-tennis-black mb-3">{event.title.de}</h3>
-                          <p className="text-gray-600 leading-relaxed">{event.description.de}</p>
+                          <p className="text-gray-600 leading-relaxed">{renderTextWithEmailLinks(event.description.de)}</p>
                           {event.contact && (
                             <p className="text-sm text-gray-500 mt-4">
                               Kontakt: <a href={`mailto:${event.contact}`} className="text-tennis-black font-medium hover:text-tennis-yellow transition-colors">{event.contact}</a>
@@ -137,7 +137,7 @@ const VeranstaltungenDE = () => {
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         <div className="flex-1">
                           <h3 className="font-bold text-2xl text-tennis-black mb-3">{event.title.de}</h3>
-                          <p className="text-gray-600 leading-relaxed">{event.description.de}</p>
+                          <p className="text-gray-600 leading-relaxed">{renderTextWithEmailLinks(event.description.de)}</p>
                         </div>
                         <div className="lg:text-right space-y-3 lg:min-w-[280px]">
                           <div className="flex items-center lg:justify-end text-tennis-black">
