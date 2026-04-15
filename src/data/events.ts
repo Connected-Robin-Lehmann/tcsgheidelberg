@@ -126,10 +126,10 @@ export const upcomingEvents: ClubEvent[] = [
   {
     id: "season-opening-2026",
     date: "26.04.2026",
-    time: { de: "ganztägig", en: "All day" },
+    time: { de: "ab 12 Uhr", en: "From 12 PM" },
     title: { de: "Tag der offenen Tür & Saisoneröffnung mit Blümchenturnier", en: "Open Day & Season Opening with Flower Tournament" },
     location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Saisoneröffnung mit Blümchenturnier", en: "Season opening with flower tournament" },
+    description: { de: "Tag der offenen Tür: 12–14 Uhr. Blümchenturnier: ab 14 Uhr. Anmeldung zum Blümchenturnier bei terezie.zuna-homsy@schwarzgelb-heidelberg.de", en: "Open Day: 12–2 PM. Flower Tournament: from 2 PM. Registration for the Flower Tournament at terezie.zuna-homsy@schwarzgelb-heidelberg.de" },
     type: "tournament",
   },
   {
