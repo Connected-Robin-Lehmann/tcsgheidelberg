@@ -27,7 +27,7 @@ const TurniereEN = () => {
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              All club tournaments at a glance – from LK tournaments to the
+              All club tournaments at a glance – centered around the
               Schwarz-Gelb Cup
             </p>
           </div>
