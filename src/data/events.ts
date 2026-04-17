@@ -34,24 +34,6 @@ export interface ClubEvent {
 
 export const upcomingEvents: ClubEvent[] = [
   {
-    id: "lk-turnier-apr-2",
-    date: "18.04. / 19.04.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "LK Turnier", en: "LK Tournament" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "LK Turnier, organisiert vom Förderverein", en: "LK Tournament, organized by the supporting association" },
-    type: "tournament",
-  },
-  {
-    id: "lk-turnier-apr-3",
-    date: "25.04.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "LK Turnier", en: "LK Tournament" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "LK Turnier, organisiert vom Förderverein", en: "LK Tournament, organized by the supporting association" },
-    type: "tournament",
-  },
-  {
     id: "season-opening-2026",
     date: "26.04.2026",
     time: { de: "ab 12 Uhr", en: "From 12 PM" },

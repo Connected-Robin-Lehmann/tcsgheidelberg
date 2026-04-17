@@ -27,8 +27,8 @@ const TurniereDE = () => {
             </h1>
             <div className="w-24 h-1 bg-tennis-yellow mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Alle Turniere unseres Vereins in der Übersicht – von LK-Turnieren
-              bis zum Schwarz-Gelb-Cup
+              Alle Turniere unseres Vereins in der Übersicht – rund um den
+              Schwarz-Gelb-Cup
             </p>
           </div>
 
