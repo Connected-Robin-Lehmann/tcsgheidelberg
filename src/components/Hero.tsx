@@ -8,7 +8,7 @@ const Hero = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language === 'en' ? 'en' : 'de';
 
-  const blumchenEvent = upcomingEvents.find(e => e.id === "season-opening-2026");
+  const blumchenEvent = upcomingEvents.find(e => e.id === "sommerfest-2026");
 
   return (
     <section id="home" className="relative min-h-[50vh] md:min-h-[70vh] flex flex-col bg-gradient-to-br from-tennis-black via-gray-900 to-tennis-court overflow-hidden">
