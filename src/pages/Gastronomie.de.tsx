@@ -119,12 +119,22 @@ const GastronomieDE = () => {
               </Card>
 
 
-              {/* Restaurant Image */}
-              <div className="mt-8">
-                <img 
-                  src="/images/gastronomie/Metin-Gastronomie-Geburtstagsfeier-2.jpg" 
-                  alt="Restaurant Innenbereich bei einer Geburtstagsfeier" 
-                  className="w-full rounded-lg shadow-lg"
+              {/* Additional Restaurant Images */}
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <img
+                  src="/images/gastronomie/la-trattoria-dining.jpg"
+                  alt="Speisesaal La Trattoria"
+                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                />
+                <img
+                  src="/images/gastronomie/la-trattoria-bar.jpg"
+                  alt="Bar- und Tresenbereich La Trattoria"
+                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                />
+                <img
+                  src="/images/gastronomie/la-trattoria-aperol.jpg"
+                  alt="Italienisches Ambiente mit Aperol"
+                  className="w-full h-64 object-cover rounded-lg shadow-lg sm:col-span-2"
                 />
               </div>
             </div>
