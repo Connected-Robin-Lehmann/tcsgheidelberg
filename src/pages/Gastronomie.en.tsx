@@ -16,7 +16,7 @@ const GastronomieEN = () => {
             Club Gastronomy <em>"La Trattoria"</em>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Italian Flair with Beer Garden - Opening April 2026
+            Italian Flair with Beer Garden – open since April 28
           </p>
         </div>
       </section>
@@ -222,14 +222,14 @@ const GastronomieEN = () => {
               <Card className="card-tennis border-l-4 border-l-red-500">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <Calendar className="h-6 w-6 text-red-500 mr-3" />
+                    <Calendar className="h-6 w-6 text-green-600 mr-3" />
                     <h3 className="text-lg font-bold text-tennis-black">
-                      Official Opening
+                      Now Open
                     </h3>
                   </div>
-                  
-                  <p className="text-red-600 font-bold text-center text-lg">
-                    April 2026
+
+                  <p className="text-green-600 font-bold text-center text-lg">
+                    Since April 28
                   </p>
                   <p className="text-sm text-gray-600 text-center mt-2">
                     Italian restaurant with extensive menu
