@@ -124,17 +124,22 @@ const GastronomieDE = () => {
                 <img
                   src="/images/gastronomie/la-trattoria-dining.jpg"
                   alt="Speisesaal La Trattoria"
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
                 />
                 <img
                   src="/images/gastronomie/la-trattoria-bar.jpg"
                   alt="Bar- und Tresenbereich La Trattoria"
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
                 />
                 <img
                   src="/images/gastronomie/la-trattoria-aperol.jpg"
                   alt="Italienisches Ambiente mit Aperol"
-                  className="w-full h-64 object-cover rounded-lg shadow-lg sm:col-span-2"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
+                />
+                <img
+                  src="/images/gastronomie/la-trattoria-biergarten.jpg"
+                  alt="Biergarten mit Stehtisch und Antipasto-Tafel"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
                 />
               </div>
             </div>
