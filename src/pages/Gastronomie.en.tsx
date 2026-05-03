@@ -35,17 +35,34 @@ const GastronomieEN = () => {
                     Club Gastronomy <em>"La Trattoria"</em> with Beer Garden
                   </h2>
                   
-                  <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <div className="space-y-4 text-gray-700 leading-relaxed">
+                    <p>Dear members and guests,</p>
                     <p>
-                      In April 2026, the new <em>"La Trattoria"</em> will open its doors at the tennis club. 
-                      Look forward to authentic Italian cuisine, exquisite wines, a lovingly redesigned 
-                      restaurant with a cozy beer garden, and warm hospitality. Events and celebrations 
-                      can also be booked in this special atmosphere in the future.
+                      with great joy we are opening our <em>"La Trattoria"</em> and we are proud
+                      that something new has been created here – a place to enjoy and feel good.
                     </p>
-                    
+                    <p>
+                      Look forward to fresh, traditional Italian cuisine, selected Italian wines
+                      and a cozy atmosphere that brings a little piece of Italy into this tennis club.
+                    </p>
+                    <p>
+                      Whether a relaxed evening or private celebrations in a special setting –
+                      you are warmly welcome with us, with us anything is possible!
+                    </p>
+                    <p>We look forward to seeing you!</p>
+                    <p className="font-semibold text-tennis-black">Pasquale and Team</p>
                     <p className="font-semibold text-tennis-black">
-                      Pasquale Dimauro and his team look forward to welcoming you for 
-                      delightful hours.
+                      A warm welcome and Benvenuti to <em>"La Trattoria"</em>! 🍝🍷
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.la-trattoria-hd.de"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-tennis-yellow font-semibold hover:underline"
+                      >
+                        www.la-trattoria-hd.de
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -55,8 +72,17 @@ const GastronomieEN = () => {
               <Card className="card-tennis mb-8 overflow-hidden">
                 <img 
                   src="/images/la-trattoria-banner.png" 
-                  alt="La Trattoria - Coming Soon April 2026" 
+                  alt="La Trattoria - Cucina Italiana, Pizza & Vinothek, Biergarten" 
                   className="w-full h-auto object-contain"
+                />
+              </Card>
+
+              {/* Restaurant Interior Image */}
+              <Card className="card-tennis mb-8 overflow-hidden">
+                <img
+                  src="/images/gastronomie/la-trattoria-interior.jpg"
+                  alt="La Trattoria interior"
+                  className="w-full h-auto object-cover"
                 />
               </Card>
 
@@ -128,18 +154,13 @@ const GastronomieEN = () => {
                   
                   <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
                     <p className="font-bold italic">
-                      "Starting April 2026, my team and I will take over the gastronomy of the Schwarz-Gelb tennis club."
+                      "Since April 28, my team and I have officially taken over the gastronomy of the Schwarz-Gelb tennis club."
                     </p>
                     
                     <p className="font-bold italic">
                       "My name is Pasquale Dimauro. I am an experienced restaurateur with passion and tradition.
                       I look forward to pampering you with 30 years of successful work in gastronomy, 
                       in the future with Italian warmth and cuisine."
-                    </p>
-                    
-                    <p className="font-bold italic">
-                      "I will officially bring my many years of experience, my culinary 
-                      know-how and my sense of hospitality to the club starting April 2026."
                     </p>
                     
                     <p className="font-bold italic">
