@@ -16,7 +16,7 @@ const GastronomieDE = () => {
             Clubgastronomie <em>„La Trattoria"</em>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Italienisches Flair mit Biergarten - Eröffnung April 2026
+            Italienisches Flair mit Biergarten – eröffnet seit 28. April
           </p>
         </div>
       </section>
@@ -222,14 +222,14 @@ const GastronomieDE = () => {
               <Card className="card-tennis border-l-4 border-l-red-500">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <Calendar className="h-6 w-6 text-red-500 mr-3" />
+                    <Calendar className="h-6 w-6 text-green-600 mr-3" />
                     <h3 className="text-lg font-bold text-tennis-black">
-                      Offizielle Eröffnung
+                      Bereits eröffnet
                     </h3>
                   </div>
-                  
-                  <p className="text-red-600 font-bold text-center text-lg">
-                    April 2026
+
+                  <p className="text-green-600 font-bold text-center text-lg">
+                    Seit 28. April
                   </p>
                   <p className="text-sm text-gray-600 text-center mt-2">
                     Italienisches Restaurant mit umfangreichem Speisenangebot
