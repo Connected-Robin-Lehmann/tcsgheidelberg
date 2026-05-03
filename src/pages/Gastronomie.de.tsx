@@ -38,7 +38,7 @@ const GastronomieDE = () => {
                   <div className="space-y-4 text-gray-700 leading-relaxed">
                     <p>Liebe Mitglieder und Gäste,</p>
                     <p>
-                      mit großer Freude eröffnen wir unsere <em>„La Trattoria"</em> und sind stolz,
+                       mit großer Freude haben wir unsere <em>„La Trattoria"</em> eröffnet und sind stolz,
                       dass hier etwas Neues entstanden ist – ein Ort zum Genießen und Wohlfühlen.
                     </p>
                     <p>
