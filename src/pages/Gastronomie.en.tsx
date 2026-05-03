@@ -38,7 +38,7 @@ const GastronomieEN = () => {
                   <div className="space-y-4 text-gray-700 leading-relaxed">
                     <p>Dear members and guests,</p>
                     <p>
-                      with great joy we are opening our <em>"La Trattoria"</em> and we are proud
+                       with great joy we have opened our <em>"La Trattoria"</em> and we are proud
                       that something new has been created here – a place to enjoy and feel good.
                     </p>
                     <p>
