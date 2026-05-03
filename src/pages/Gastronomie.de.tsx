@@ -35,17 +35,35 @@ const GastronomieDE = () => {
                     Clubgastronomie <em>„La Trattoria"</em> mit Biergarten
                   </h2>
                   
-                  <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <div className="space-y-4 text-gray-700 leading-relaxed">
+                    <p>Liebe Mitglieder und Gäste,</p>
                     <p>
-                      Im April 2026 eröffnet die neue <em>„La Trattoria"</em> im Tennisclub ihre Türen. 
-                      Freut Euch auf authentische italienische Küche, erlesene Weine, ein liebevoll 
-                      neu gestaltetes Restaurant mit gemütlichem Biergarten und herzliche Gastfreundschaft. 
-                      Auch Events und Feiern können künftig in besonderem Ambiente gebucht werden.
+                      mit großer Freude eröffnen wir unsere <em>„La Trattoria"</em> und sind stolz,
+                      dass hier etwas Neues entstanden ist – ein Ort zum Genießen und Wohlfühlen.
                     </p>
-                    
+                    <p>
+                      Freuen Sie sich auf frische italienische, traditionelle Küche, ausgewählte
+                      italienische Weine und eine gemütliche Atmosphäre, die ein kleines Stück
+                      Italien in diesen Tennisclub bringt.
+                    </p>
+                    <p>
+                      Ob ein entspannter Abend oder private Feiern in besonderem Rahmen – bei uns
+                      sind Sie herzlich willkommen, bei uns ist alles möglich!
+                    </p>
+                    <p>Wir freuen uns auf Sie!</p>
+                    <p className="font-semibold text-tennis-black">Pasquale und Team</p>
                     <p className="font-semibold text-tennis-black">
-                      Pasquale Dimauro und sein Team freuen sich darauf, Euch zu genussvollen 
-                      Stunden willkommen zu heißen.
+                      Herzlich willkommen und Benvenuti in der <em>„La Trattoria"</em>! 🍝🍷
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.la-trattoria-hd.de"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-tennis-yellow font-semibold hover:underline"
+                      >
+                        www.la-trattoria-hd.de
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -55,8 +73,17 @@ const GastronomieDE = () => {
               <Card className="card-tennis mb-8 overflow-hidden">
                 <img 
                   src="/images/la-trattoria-banner.png" 
-                  alt="La Trattoria - Coming Soon April 2026" 
+                  alt="La Trattoria - Cucina Italiana, Pizza & Vinothek, Biergarten" 
                   className="w-full h-auto object-contain"
+                />
+              </Card>
+
+              {/* Restaurant Interior Image */}
+              <Card className="card-tennis mb-8 overflow-hidden">
+                <img
+                  src="/images/gastronomie/la-trattoria-interior.jpg"
+                  alt="La Trattoria Innenbereich"
+                  className="w-full h-auto object-cover"
                 />
               </Card>
 
@@ -128,18 +155,13 @@ const GastronomieDE = () => {
                   
                   <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
                     <p className="font-bold italic">
-                      „Ab April 2026 übernimmt mein Team und ich die Gastronomie des Tennisclubs Schwarz-Gelb."
+                      „Seit dem 28. April haben mein Team und ich die Gastronomie des Tennisclubs Schwarz-Gelb offiziell übernommen."
                     </p>
                     
                     <p className="font-bold italic">
                       „Mein Name ist Pasquale Dimauro. Ich bin ein erfahrener Gastronom mit Leidenschaft und Tradition.
                       Ich freue mich, Sie mit 30 Jahren erfolgreicher Tätigkeit in der Gastronomie, 
                       zukünftig mit italienischer Herzlichkeit und Küche zu verwöhnen."
-                    </p>
-                    
-                    <p className="font-bold italic">
-                      „Ich werde offiziell ab April 2026 meine langjährige Erfahrung, mein kulinarisches 
-                      Know-how und mein Gespür für Gastfreundschaft mit in den Club bringen."
                     </p>
                     
                     <p className="font-bold italic">
