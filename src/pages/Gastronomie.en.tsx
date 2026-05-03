@@ -118,28 +118,21 @@ const GastronomieEN = () => {
               </Card>
 
 
-              {/* Additional Restaurant Images */}
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <img
-                  src="/images/gastronomie/la-trattoria-dining.jpg"
-                  alt="La Trattoria dining room"
-                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
-                />
-                <img
-                  src="/images/gastronomie/la-trattoria-bar.jpg"
-                  alt="La Trattoria bar and counter area"
-                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
-                />
-                <img
-                  src="/images/gastronomie/la-trattoria-aperol.jpg"
-                  alt="Italian ambience with Aperol"
-                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
-                />
-                <img
-                  src="/images/gastronomie/la-trattoria-biergarten.jpg"
-                  alt="Beer garden with high table and antipasto board"
-                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
-                />
+              {/* Additional Restaurant Images - masonry layout to avoid uneven rows */}
+              <div className="mt-8 sm:columns-2 gap-4 [column-fill:_balance]">
+                {[
+                  { src: "/images/gastronomie/la-trattoria-dining.jpg", alt: "La Trattoria dining room" },
+                  { src: "/images/gastronomie/la-trattoria-bar.jpg", alt: "La Trattoria bar and counter area" },
+                  { src: "/images/gastronomie/la-trattoria-aperol.jpg", alt: "Italian ambience with Aperol" },
+                  { src: "/images/gastronomie/la-trattoria-biergarten.jpg", alt: "Beer garden with high table and antipasto board" },
+                ].map((img) => (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-auto object-contain rounded-lg shadow-lg mb-4 break-inside-avoid"
+                  />
+                ))}
               </div>
             </div>
 
