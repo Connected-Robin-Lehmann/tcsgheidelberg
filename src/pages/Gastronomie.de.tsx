@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { MapPin, Clock, Calendar } from 'lucide-react';
+import GastronomieSlideshow from '@/components/GastronomieSlideshow';
 
 const GastronomieDE = () => {
   return (
@@ -239,6 +240,24 @@ const GastronomieDE = () => {
 
             </div>
           </div>
+
+          {/* Slideshow - all images */}
+          <section className="mt-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-tennis-black mb-6 text-center">
+              Eindrücke aus der „La Trattoria"
+            </h2>
+            <GastronomieSlideshow
+              images={[
+                { src: "/images/la-trattoria-banner.png", alt: "La Trattoria - Cucina Italiana, Pizza & Vinothek, Biergarten" },
+                { src: "/images/gastronomie/la-trattoria-interior.jpg", alt: "La Trattoria Innenbereich" },
+                { src: "/images/gastronomie/la-trattoria-dining.jpg", alt: "Speisesaal La Trattoria" },
+                { src: "/images/gastronomie/la-trattoria-bar.jpg", alt: "Bar- und Tresenbereich La Trattoria" },
+                { src: "/images/gastronomie/la-trattoria-aperol.jpg", alt: "Italienisches Ambiente mit Aperol" },
+                { src: "/images/gastronomie/la-trattoria-biergarten.jpg", alt: "Biergarten mit Stehtisch und Antipasto-Tafel" },
+                { src: "/images/gastronomie/Foto_Pasquale_Dimauro_kompakt.jpg", alt: "Pasquale Dimauro" },
+              ]}
+            />
+          </section>
 
         </div>
       </main>

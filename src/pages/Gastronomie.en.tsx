@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { MapPin, Clock, Calendar } from 'lucide-react';
+import GastronomieSlideshow from '@/components/GastronomieSlideshow';
 
 const GastronomieEN = () => {
   return (
@@ -239,6 +240,24 @@ const GastronomieEN = () => {
 
             </div>
           </div>
+
+          {/* Slideshow - all images */}
+          <section className="mt-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-tennis-black mb-6 text-center">
+              Impressions from "La Trattoria"
+            </h2>
+            <GastronomieSlideshow
+              images={[
+                { src: "/images/la-trattoria-banner.png", alt: "La Trattoria - Cucina Italiana, Pizza & Vinothek, Biergarten" },
+                { src: "/images/gastronomie/la-trattoria-interior.jpg", alt: "La Trattoria interior" },
+                { src: "/images/gastronomie/la-trattoria-dining.jpg", alt: "La Trattoria dining room" },
+                { src: "/images/gastronomie/la-trattoria-bar.jpg", alt: "La Trattoria bar and counter area" },
+                { src: "/images/gastronomie/la-trattoria-aperol.jpg", alt: "Italian ambience with Aperol" },
+                { src: "/images/gastronomie/la-trattoria-biergarten.jpg", alt: "Beer garden with high table and antipasto board" },
+                { src: "/images/gastronomie/Foto_Pasquale_Dimauro_kompakt.jpg", alt: "Pasquale Dimauro" },
+              ]}
+            />
+          </section>
 
         </div>
       </main>
