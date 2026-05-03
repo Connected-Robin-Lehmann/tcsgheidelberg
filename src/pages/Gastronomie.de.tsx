@@ -16,7 +16,7 @@ const GastronomieDE = () => {
             Clubgastronomie <em>„La Trattoria"</em>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Italienisches Flair mit Biergarten – eröffnet seit 28. April
+             Italienisches Flair mit Biergarten – eröffnet seit dem 28. April 2026
           </p>
         </div>
       </section>
