@@ -80,14 +80,6 @@ const GastronomieDE = () => {
               </Card>
 
               {/* Restaurant Interior Image */}
-              <Card className="card-tennis mb-8 overflow-hidden">
-                <img
-                  src="/images/gastronomie/la-trattoria-interior.jpg"
-                  alt="La Trattoria Innenbereich"
-                  className="w-full h-auto object-cover"
-                />
-              </Card>
-
               {/* Restaurant Info Card */}
               <Card className="card-tennis border-l-4 border-l-tennis-yellow">
                 <div className="p-6">
@@ -120,22 +112,6 @@ const GastronomieDE = () => {
               </Card>
 
 
-              {/* Additional Restaurant Images - masonry layout to avoid uneven rows */}
-              <div className="mt-8 sm:columns-2 gap-4 [column-fill:_balance]">
-                {[
-                  { src: "/images/gastronomie/la-trattoria-dining.jpg", alt: "Speisesaal La Trattoria" },
-                  { src: "/images/gastronomie/la-trattoria-bar.jpg", alt: "Bar- und Tresenbereich La Trattoria" },
-                  { src: "/images/gastronomie/la-trattoria-aperol.jpg", alt: "Italienisches Ambiente mit Aperol" },
-                  { src: "/images/gastronomie/la-trattoria-biergarten.jpg", alt: "Biergarten mit Stehtisch und Antipasto-Tafel" },
-                ].map((img) => (
-                  <img
-                    key={img.src}
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-auto object-contain rounded-lg shadow-lg mb-4 break-inside-avoid"
-                  />
-                ))}
-              </div>
             </div>
 
             {/* Right Column - Pasquale Info */}
@@ -248,13 +224,11 @@ const GastronomieDE = () => {
             </h2>
             <GastronomieSlideshow
               images={[
-                { src: "/images/la-trattoria-banner.png", alt: "La Trattoria - Cucina Italiana, Pizza & Vinothek, Biergarten" },
                 { src: "/images/gastronomie/la-trattoria-interior.jpg", alt: "La Trattoria Innenbereich" },
                 { src: "/images/gastronomie/la-trattoria-dining.jpg", alt: "Speisesaal La Trattoria" },
                 { src: "/images/gastronomie/la-trattoria-bar.jpg", alt: "Bar- und Tresenbereich La Trattoria" },
                 { src: "/images/gastronomie/la-trattoria-aperol.jpg", alt: "Italienisches Ambiente mit Aperol" },
                 { src: "/images/gastronomie/la-trattoria-biergarten.jpg", alt: "Biergarten mit Stehtisch und Antipasto-Tafel" },
-                { src: "/images/gastronomie/Foto_Pasquale_Dimauro_kompakt.jpg", alt: "Pasquale Dimauro" },
               ]}
             />
           </section>
