@@ -123,17 +123,22 @@ const GastronomieEN = () => {
                 <img
                   src="/images/gastronomie/la-trattoria-dining.jpg"
                   alt="La Trattoria dining room"
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
                 />
                 <img
                   src="/images/gastronomie/la-trattoria-bar.jpg"
                   alt="La Trattoria bar and counter area"
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
                 />
                 <img
                   src="/images/gastronomie/la-trattoria-aperol.jpg"
                   alt="Italian ambience with Aperol"
-                  className="w-full h-64 object-cover rounded-lg shadow-lg sm:col-span-2"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
+                />
+                <img
+                  src="/images/gastronomie/la-trattoria-biergarten.jpg"
+                  alt="Beer garden with high table and antipasto board"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg bg-gray-100"
                 />
               </div>
             </div>
