@@ -1,5 +1,5 @@
 import React from "react";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Clock } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import { upcomingEvents } from "@/data/events";
@@ -49,6 +49,12 @@ const Hero = () => {
                         <Calendar className="w-3 h-3 md:w-4 md:h-4" />
                         {blumchenEvent.date}
                       </span>
+                      {blumchenEvent.time && (
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3 md:w-4 md:h-4" />
+                          {blumchenEvent.time[lang]}
+                        </span>
+                      )}
                       <span className="flex items-center gap-1">
                         <MapPin className="w-3 h-3 md:w-4 md:h-4" />
                         {blumchenEvent.location[lang]}
