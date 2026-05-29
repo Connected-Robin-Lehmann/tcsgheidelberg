@@ -63,7 +63,7 @@ export const upcomingEvents: ClubEvent[] = [
   {
     id: "sommerfest-2026",
     date: "18.07.2026",
-    time: { de: "abends", en: "Evening" },
+    time: { de: "ab 18:30 Uhr", en: "from 6:30 PM" },
     title: { de: "Sommerfest", en: "Summer Party" },
     location: { de: "Tennisanlage", en: "Tennis Facility" },
     description: { de: "Das legendäre Sommerfest", en: "The legendary summer party" },
