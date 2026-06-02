@@ -10,7 +10,6 @@ import {
   MapPin,
   CreditCard,
 } from "lucide-react";
-import vorstandImage from "@/assets/foerderverein-vorstand-portrait.jpg.asset.json";
 import SupportCard from "@/components/SupportCard";
 
 const FoerdervereinDE = () => {
