@@ -217,7 +217,7 @@ const FoerdervereinEN = () => {
                 ))}
                 <div className="bg-gray-50 rounded-xl overflow-hidden md:col-span-2 lg:col-span-1 lg:row-span-2">
                   <img
-                    src={vorstandImage.url}
+                    src="/images/foerderverein/vorstand-portrait.jpg"
                     alt="Board of the Support Association TC Schwarz-Gelb Heidelberg"
                     className="w-full h-full object-cover"
                   />
