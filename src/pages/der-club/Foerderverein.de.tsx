@@ -10,15 +10,14 @@ import {
   MapPin,
   CreditCard,
 } from "lucide-react";
+import vorstandImage from "@/assets/foerderverein-vorstand.jpg.asset.json";
 
 const FoerdervereinDE = () => {
   const boardMembers = [
     { position: "1. Vorsitzender", name: "Matthias Slawik" },
-    { position: "2. Vorsitzender", name: "Elvis Pecenkovic" },
-    { position: "Schatzmeister", name: "Dr. Ulrike Nuber" },
+    { position: "Schatzmeister", name: "Nodir Yunuskhodjaev" },
     { position: "Beisitzer Sport", name: "Aleksandar Kukaras" },
     { position: "Beisitzer Sponsoring", name: "Katharina Kukaras" },
-    { position: "Beisitzer Talentsichtung", name: "Marvin Tawasi" },
   ];
 
   const supportOptions = [
@@ -208,7 +207,7 @@ const FoerdervereinDE = () => {
             <div className="p-8 md:p-12">
               <h3 className="text-2xl font-bold text-tennis-black mb-8 text-center">
                 Unser Förderverein – der neue Vorstand (seit der Wahl am
-                30.03.2022)
+                08.03.2026)
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {boardMembers.map((member, index) => (
@@ -222,6 +221,13 @@ const FoerdervereinDE = () => {
                     <p className="text-gray-700">{member.name}</p>
                   </div>
                 ))}
+                <div className="bg-gray-50 rounded-xl overflow-hidden md:col-span-2 lg:col-span-2">
+                  <img
+                    src={vorstandImage.url}
+                    alt="Vorstand des Fördervereins TC Schwarz-Gelb Heidelberg"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>

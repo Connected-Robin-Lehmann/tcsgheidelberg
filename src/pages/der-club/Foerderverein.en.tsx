@@ -10,15 +10,14 @@ import {
   MapPin,
   CreditCard,
 } from "lucide-react";
+import vorstandImage from "@/assets/foerderverein-vorstand.jpg.asset.json";
 
 const FoerdervereinEN = () => {
   const boardMembers = [
     { position: "1st Chairman", name: "Matthias Slawik" },
-    { position: "2nd Chairman", name: "Elvis Pecenkovic" },
-    { position: "Treasurer", name: "Dr. Ulrike Nuber" },
+    { position: "Treasurer", name: "Nodir Yunuskhodjaev" },
     { position: "Board Member Sports", name: "Aleksandar Kukaras" },
     { position: "Board Member Sponsoring", name: "Katharina Kukaras" },
-    { position: "Board Member Talent Scouting", name: "Marvin Tawasi" },
   ];
 
   const supportOptions = [
