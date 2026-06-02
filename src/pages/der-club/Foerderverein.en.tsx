@@ -10,14 +10,14 @@ import {
   MapPin,
   CreditCard,
 } from "lucide-react";
-import vorstandImage from "@/assets/foerderverein-vorstand.jpg.asset.json";
+import vorstandImage from "@/assets/foerderverein-vorstand-portrait.jpg.asset.json";
 
 const FoerdervereinEN = () => {
   const boardMembers = [
     { position: "1st Chairman", name: "Matthias Slawik" },
     { position: "Treasurer", name: "Nodir Yunuskhodjaev" },
-    { position: "Board Member Sports", name: "Aleksandar Kukaras" },
     { position: "Board Member Sponsoring", name: "Katharina Kukaras" },
+    { position: "Board Member Sports", name: "Aleksandar Kukaras" },
   ];
 
   const supportOptions = [
@@ -209,10 +209,10 @@ const FoerdervereinEN = () => {
                 08.03.2026)
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {boardMembers.map((member, index) => (
+                {boardMembers.slice(0, 2).map((member, index) => (
                   <div
                     key={index}
-                    className="bg-gray-50 rounded-xl p-6 text-center"
+                    className="bg-gray-50 rounded-xl p-6 text-center flex flex-col justify-center"
                   >
                     <h4 className="font-bold text-tennis-black mb-2">
                       {member.position}
@@ -220,13 +220,24 @@ const FoerdervereinEN = () => {
                     <p className="text-gray-700">{member.name}</p>
                   </div>
                 ))}
-                <div className="bg-gray-50 rounded-xl overflow-hidden md:col-span-2 lg:col-span-2">
+                <div className="bg-gray-50 rounded-xl overflow-hidden md:col-span-2 lg:col-span-1 lg:row-span-2">
                   <img
                     src={vorstandImage.url}
                     alt="Board of the Support Association TC Schwarz-Gelb Heidelberg"
                     className="w-full h-full object-cover"
                   />
                 </div>
+                {boardMembers.slice(2).map((member, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-50 rounded-xl p-6 text-center flex flex-col justify-center"
+                  >
+                    <h4 className="font-bold text-tennis-black mb-2">
+                      {member.position}
+                    </h4>
+                    <p className="text-gray-700">{member.name}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
