@@ -206,7 +206,7 @@ const FoerdervereinEN = () => {
             <div className="p-8 md:p-12">
               <h3 className="text-2xl font-bold text-tennis-black mb-8 text-center">
                 Our Support Association – the New Board (since the election on
-                30.03.2022)
+                08.03.2026)
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {boardMembers.map((member, index) => (
@@ -220,6 +220,13 @@ const FoerdervereinEN = () => {
                     <p className="text-gray-700">{member.name}</p>
                   </div>
                 ))}
+                <div className="bg-gray-50 rounded-xl overflow-hidden md:col-span-2 lg:col-span-2">
+                  <img
+                    src={vorstandImage.url}
+                    alt="Board of the Support Association TC Schwarz-Gelb Heidelberg"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
