@@ -27,20 +27,26 @@ const FoerdervereinEN = () => {
       description:
         "The membership fee in the support association is at least €25 per year. Higher amounts are possible and can be determined by you.",
       action: "Download membership application",
+      href: "/downloads/Foerderverein-Beitrittserklaerung-2026.pdf",
     },
     {
       icon: <Award className="h-8 w-8 text-tennis-yellow" />,
-      title: "Sponsor",
+      title: "About the Support Association",
       description:
-        "With almost 600 members, a 36% youth share and 10 of our own courts, we offer excellent opportunities to combine sports promotion with targeted public relations.",
-      action: "Schedule a personal meeting",
+        "TC Schwarz-Gelb Heidelberg is one of the most successful tennis clubs in the region. We are a large tennis family of almost 600 members (from beginners to competitive players), with a 35% youth share, 10 of our own courts, 5 of them with floodlights, and we are proud of our successful club history. With our support association, our goal is to promote tennis in Heidelberg and to advance the sporting development of our young talents. Feel free to contact us with any questions or interest.",
+      action: "About the Support Association",
+      href: "/downloads/Foerderverein-Infos-Allgemein-2026.pdf",
+      contactLabel: "Contact:",
+      contactName: "Katharina Kukaras",
+      contactEmail: "katharina.kukaras@schwarzgelb-heidelberg.de",
     },
     {
       icon: <Heart className="h-8 w-8 text-tennis-yellow" />,
-      title: "Patron (silent supporter)",
+      title: "Become a Sponsor or Patron",
       description:
-        "Support us without appearing publicly as a donor. You will receive a tax-deductible donation receipt for the contributions made.",
-      action: "Make a donation",
+        "Support us as a sponsor, as a patron or as a volunteer. Without your help we cannot secure the sporting future of our talents and continue the success of our club. Your support enables us to give young people the opportunity to develop their potential and achieve their sporting goals in a supportive community.",
+      action: "Sponsoring, advertising and support options",
+      href: "/downloads/Foerderverein-Werbung-Sponsoring-2026.pdf",
     },
   ];
 
@@ -143,19 +149,40 @@ const FoerdervereinEN = () => {
               {supportOptions.map((option, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl shadow-lg border-4 border-tennis-yellow/20 p-8 hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white rounded-2xl shadow-lg border-4 border-tennis-yellow/20 p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col"
                 >
                   <div className="flex justify-center mb-6">{option.icon}</div>
                   <h3 className="text-xl font-bold text-tennis-black mb-4 text-center">
                     {option.title}
                   </h3>
-                  <p className="text-gray-700 mb-6 leading-relaxed">
+                  <p className="text-gray-700 mb-6 leading-relaxed flex-grow">
                     {option.description}
                   </p>
-                  <div className="text-center">
-                    <button className="bg-tennis-yellow text-tennis-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition-colors">
+                  <div className="text-center mt-auto">
+                    <a
+                      href={option.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-tennis-yellow text-tennis-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition-colors"
+                    >
                       {option.action}
-                    </button>
+                    </a>
+                    {option.contactName && (
+                      <p className="text-sm text-gray-600 mt-4">
+                        {option.contactLabel}{" "}
+                        <span className="font-semibold text-tennis-black">
+                          {option.contactName}
+                        </span>{" "}
+                        (
+                        <a
+                          href={`mailto:${option.contactEmail}`}
+                          className="text-tennis-black hover:text-tennis-yellow underline"
+                        >
+                          {option.contactEmail}
+                        </a>
+                        )
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
