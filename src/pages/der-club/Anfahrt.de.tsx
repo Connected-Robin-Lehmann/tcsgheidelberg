@@ -2,6 +2,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MapPin, Car, Bike, AlertTriangle, Download, Navigation } from "lucide-react";
+import ConsentMap from "@/components/ConsentMap";
 
 const AnfahrtDE = () => {
   return (
