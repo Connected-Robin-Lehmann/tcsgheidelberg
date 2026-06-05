@@ -30,17 +30,6 @@ const FoerdervereinEN = () => {
       href: "/downloads/Foerderverein-Beitrittserklaerung-2026.pdf",
     },
     {
-      icon: <Award className="h-8 w-8 text-tennis-yellow" />,
-      title: "About the Support Association",
-      description:
-        "TC Schwarz-Gelb Heidelberg is one of the most successful tennis clubs in the region. We are a large tennis family of almost 600 members (from beginners to competitive players), with a 35% youth share, 10 of our own courts, 5 of them with floodlights, and we are proud of our successful club history. With our support association, our goal is to promote tennis in Heidelberg and to advance the sporting development of our young talents. Feel free to contact us with any questions or interest.",
-      action: "About the Support Association",
-      href: "/downloads/Foerderverein-Infos-Allgemein-2026.pdf",
-      contactLabel: "Contact:",
-      contactName: "Katharina Kukaras",
-      contactEmail: "katharina.kukaras@schwarzgelb-heidelberg.de",
-    },
-    {
       icon: <Heart className="h-8 w-8 text-tennis-yellow" />,
       title: "Become a Sponsor or Patron",
       description:

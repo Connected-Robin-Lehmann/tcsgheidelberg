@@ -30,17 +30,6 @@ const FoerdervereinDE = () => {
       href: "/downloads/Foerderverein-Beitrittserklaerung-2026.pdf",
     },
     {
-      icon: <Award className="h-8 w-8 text-tennis-yellow" />,
-      title: "Über den Förderverein",
-      description:
-        "Der TC Schwarz-Gelb Heidelberg gehört zu den erfolgreichsten Tennisvereinen der Region. Wir sind eine große Tennisfamilie aus fast 600 Mitglieder (Anfänger bis Leistungssportler), mit 35% Jugendanteil, haben 10 eigene Plätzen, 5 davon mit Flutlicht, und sind stolz auf unsere erfolgreiche Vereinsgeschichte. Mit unserem Förderverein haben wir das Ziel, den Tennissport in Heidelberg zu fördern und die sportliche Entwicklung unserer jungen Talente voranzutreiben. Sprechen Sie uns bei Fragen und Interesse gerne an.",
-      action: "Über den Förderverein",
-      href: "/downloads/Foerderverein-Infos-Allgemein-2026.pdf",
-      contactLabel: "Ansprechpartner:",
-      contactName: "Katharina Kukaras",
-      contactEmail: "katharina.kukaras@schwarzgelb-heidelberg.de",
-    },
-    {
       icon: <Heart className="h-8 w-8 text-tennis-yellow" />,
       title: "Sponsor oder Mäzen werden",
       description:
