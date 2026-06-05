@@ -154,7 +154,7 @@ const FoerdervereinEN = () => {
             <h2 className="text-3xl font-bold text-tennis-black text-center mb-12">
               YOU CAN SUPPORT US AS:
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {supportOptions.map((option, index) => (
                 <SupportCard
                   key={index}
