@@ -30,17 +30,6 @@ const FoerdervereinDE = () => {
       href: "/downloads/Foerderverein-Beitrittserklaerung-2026.pdf",
     },
     {
-      icon: <Award className="h-8 w-8 text-tennis-yellow" />,
-      title: "Über den Förderverein",
-      description:
-        "Der TC Schwarz-Gelb Heidelberg gehört zu den erfolgreichsten Tennisvereinen der Region. Wir sind eine große Tennisfamilie aus fast 600 Mitglieder (Anfänger bis Leistungssportler), mit 35% Jugendanteil, haben 10 eigene Plätzen, 5 davon mit Flutlicht, und sind stolz auf unsere erfolgreiche Vereinsgeschichte. Mit unserem Förderverein haben wir das Ziel, den Tennissport in Heidelberg zu fördern und die sportliche Entwicklung unserer jungen Talente voranzutreiben. Sprechen Sie uns bei Fragen und Interesse gerne an.",
-      action: "Über den Förderverein",
-      href: "/downloads/Foerderverein-Infos-Allgemein-2026.pdf",
-      contactLabel: "Ansprechpartner:",
-      contactName: "Katharina Kukaras",
-      contactEmail: "katharina.kukaras@schwarzgelb-heidelberg.de",
-    },
-    {
       icon: <Heart className="h-8 w-8 text-tennis-yellow" />,
       title: "Sponsor oder Mäzen werden",
       description:
@@ -139,6 +128,26 @@ const FoerdervereinDE = () => {
                   der Region die Mannschaften unseres Vereins zu verstärken.
                 </p>
               </div>
+
+              <div className="mt-8 flex flex-col items-center gap-4">
+                <a
+                  href="/downloads/Foerderverein-Infos-Allgemein-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-tennis-yellow text-tennis-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition-colors"
+                >
+                  Über den Förderverein
+                </a>
+                <p className="text-sm text-gray-600">
+                  Ansprechpartner:{" "}
+                  <a
+                    href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de"
+                    className="font-semibold text-tennis-black hover:text-tennis-yellow underline"
+                  >
+                    Katharina Kukaras
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 
@@ -147,7 +156,7 @@ const FoerdervereinDE = () => {
             <h2 className="text-3xl font-bold text-tennis-black text-center mb-12">
               UNTERSTÜTZEN KÖNNEN SIE UNS ALS:
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {supportOptions.map((option, index) => (
                 <SupportCard
                   key={index}
