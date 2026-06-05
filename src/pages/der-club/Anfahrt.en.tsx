@@ -104,17 +104,11 @@ const AnfahrtEN = () => {
           {/* Google Maps Embed */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-tennis-yellow/20 mb-12">
             <div className="p-4">
-              <iframe
+              <ConsentMap
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2601.5!2d8.6833!3d49.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797c1234567890%3A0x1234567890abcdef!2sSchwindstra%C3%9Fe+9%2C+69126+Heidelberg!5e0!3m2!1sen!2sde!4v1700000000000!5m2!1sen!2sde"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-2xl"
                 title="Location TC Schwarz-Gelb Heidelberg"
-              ></iframe>
+                lang="en"
+              />
             </div>
           </div>
 
