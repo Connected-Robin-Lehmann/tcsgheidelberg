@@ -80,9 +80,9 @@ const DatenschutzDE = () => {
                           <p>69126 Heidelberg</p>
                           <p className="mt-2">Vertreten durch den Vorstand:</p>
                           <p>Aleksandar Kukaras, 1.Vorsitzender</p>
-                          <p>Dr. Frank Schöneborn, 2. Vorsitzender und Schatzmeister</p>
-                          <p className="mt-2">Tel. 0172-6644369</p>
-                          <p>E-Mail: <a href="mailto:vorstand@schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">vorstand@schwarzgelb-heidelberg.de</a></p>
+                          <p>Marc Homsy, 2. Vorsitzender</p>
+                          <p>Dr. Frank Schöneborn, Schatzmeister</p>
+                          <p className="mt-2">E-Mail: <a href="mailto:vorstand@schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">vorstand@schwarzgelb-heidelberg.de</a></p>
                         </div>
                         <p className="mt-3">Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
                       </div>
@@ -107,12 +107,17 @@ const DatenschutzDE = () => {
                           <li>Uhrzeit der Serveranfrage</li>
                           <li>IP-Adresse</li>
                         </ul>
-                        <p className="mt-3">Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.</p>
+                        <p className="mt-3">Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden. <strong>Speicherdauer:</strong> 7 Tage, danach automatische Löschung.</p>
                       </div>
 
                       <div>
                         <h3 className="font-semibold text-tennis-black mb-3">Kontaktformular</h3>
-                        <p>Wenn Sie uns mittels der verfügbaren Kontaktformulare Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+                        <p>Wenn Sie uns mittels der verfügbaren Kontaktformulare oder per E-Mail Anfragen zukommen lassen, werden Ihre Angaben inklusive der von Ihnen angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. <strong>Speicherdauer:</strong> bis zur Erledigung Ihres Anliegens, danach maximal 6 Monate.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">SSL-/TLS-Verschlüsselung</h3>
+                        <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und am Schloss-Symbol in Ihrer Browserzeile.</p>
                       </div>
                     </div>
                   </div>
@@ -134,21 +139,87 @@ const DatenschutzDE = () => {
                   {/* Section 5 */}
                   <div>
                     <h2 className="text-2xl font-bold text-tennis-black mb-6">
-                      5. Plugins und Tools
+                      5. Hosting und externe Dienste
                     </h2>
                     
                     <div className="space-y-6 text-gray-700">
                       <div>
-                        <h3 className="font-semibold text-tennis-black mb-3">Google Web Fonts</h3>
-                        <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Web Fonts, die von Google bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts in ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.</p>
-                        <p className="mt-3">Weitere Informationen zu Google Web Fonts finden Sie unter <a href="https://developers.google.com/fonts/faq" className="text-tennis-black hover:text-tennis-yellow">https://developers.google.com/fonts/faq</a> und in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy?hl=de" className="text-tennis-black hover:text-tennis-yellow">https://policies.google.com/privacy?hl=de</a>.</p>
+                        <h3 className="font-semibold text-tennis-black mb-3">Hosting (Vercel)</h3>
+                        <p>Diese Website wird gehostet bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA. Die Auslieferung erfolgt über Server innerhalb der Europäischen Union (Region Frankfurt). Mit Vercel besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer zuverlässigen Bereitstellung der Website).</p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-tennis-black mb-3">Google Maps</h3>
-                        <p>Unsere Website nutzt über eine API den Kartendienst Google Maps. Anbieter ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
-                        <p className="mt-3">Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy?hl=de" className="text-tennis-black hover:text-tennis-yellow">https://policies.google.com/privacy?hl=de</a>.</p>
+                        <h3 className="font-semibold text-tennis-black mb-3">Backend / Datenbank (Supabase)</h3>
+                        <p>Für dynamische Inhalte (Aktuelles, Videos, Tennis-Info-Hefte) nutzen wir Supabase als Backend- und Speicherdienst. Die Daten werden auf Servern innerhalb der EU verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Es werden keine personenbezogenen Daten der Website-Besucher in der Datenbank gespeichert.</p>
                       </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">Schriftarten (lokal gehostet)</h3>
+                        <p>Wir verwenden Schriftarten („Inter" und „Playfair Display"), die <strong>lokal auf unserem Server</strong> gehostet werden. Es findet kein Verbindungsaufbau zu Google-Servern statt; eine Übertragung Ihrer IP-Adresse erfolgt nicht.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">Google Maps (mit Einwilligung)</h3>
+                        <p>Auf der Seite „Anfahrt" bieten wir eine Karte über den Dienst Google Maps an. Anbieter ist Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland. Die Karte wird <strong>erst nach Ihrer aktiven Einwilligung (Klick auf „Karte laden")</strong> geladen (Two-Click-Lösung). Erst dann werden Daten – insbesondere Ihre IP-Adresse – an Google übertragen, ggf. auch in die USA. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO. Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Browser-Daten dieser Website löschen.</p>
+                        <p className="mt-3">Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy?hl=de" className="text-tennis-black hover:text-tennis-yellow" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=de</a>.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">Sportision (Trainingsanmeldung)</h3>
+                        <p>Für die Trainingsanmeldung verlinken wir auf den externen Dienst Sportision. Beim Klick auf entsprechende Buttons werden Sie auf die Website von Sportision weitergeleitet; dort gelten ausschließlich deren Nutzungs- und Datenschutzbedingungen. Wir übermitteln selbst keine personenbezogenen Daten an Sportision.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">WhatsApp-Newskanal</h3>
+                        <p>Wir bieten einen optionalen WhatsApp-Kanal für aktuelle Vereinsnews an. Der Beitritt ist freiwillig. Anbieter ist die Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland. Bei Nutzung von WhatsApp werden Daten ggf. in die USA übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch aktiven Beitritt). Datenschutz von WhatsApp: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" className="text-tennis-black hover:text-tennis-yellow" target="_blank" rel="noopener noreferrer">whatsapp.com/legal/privacy-policy-eea</a>.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">Cookies / Local Storage</h3>
+                        <p>Diese Website verwendet ausschließlich <strong>technisch notwendige</strong> Speichermechanismen. Im Local Storage Ihres Browsers wird lediglich Ihre Auswahl zum Datenschutz-Hinweis abgelegt (Schlüssel: <code>sg-cookie-consent-v1</code>), damit dieser nicht erneut angezeigt wird. Es findet kein Tracking, keine Reichweitenmessung und keine Werbe-Profilbildung statt.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Section 6: Betroffenenrechte */}
+                  <div>
+                    <h2 className="text-2xl font-bold text-tennis-black mb-6">
+                      6. Ihre Rechte als betroffene Person
+                    </h2>
+                    <div className="space-y-4 text-gray-700">
+                      <p>Sie haben jederzeit folgende Rechte gegenüber uns:</p>
+                      <ul className="list-disc list-inside ml-4 space-y-1">
+                        <li>Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+                        <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+                        <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
+                        <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+                        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+                        <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+                        <li>Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
+                      </ul>
+                      <p>Zur Ausübung wenden Sie sich an <a href="mailto:vorstand@schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">vorstand@schwarzgelb-heidelberg.de</a>.</p>
+                      <p>Darüber hinaus steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu (Art. 77 DSGVO):</p>
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <p><strong>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg</strong></p>
+                        <p>Lautenschlagerstraße 20, 70173 Stuttgart</p>
+                        <p>Web: <a href="https://www.baden-wuerttemberg.datenschutz.de" className="text-tennis-black hover:text-tennis-yellow" target="_blank" rel="noopener noreferrer">baden-wuerttemberg.datenschutz.de</a></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Section 7: Speicherdauer */}
+                  <div>
+                    <h2 className="text-2xl font-bold text-tennis-black mb-6">
+                      7. Speicherdauer
+                    </h2>
+                    <div className="space-y-3 text-gray-700">
+                      <p>Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen Zwecke erforderlich ist:</p>
+                      <ul className="list-disc list-inside ml-4 space-y-1">
+                        <li>Server-Logs: 7 Tage</li>
+                        <li>E-Mail- und Kontaktanfragen: bis zur Erledigung + max. 6 Monate</li>
+                        <li>Mitgliedsdaten: für die Dauer der Mitgliedschaft + gesetzliche Aufbewahrungsfristen (i.d.R. 10 Jahre gem. § 147 AO / § 257 HGB)</li>
+                        <li>Einwilligungs-Speicherung im Local Storage: bis Sie diese im Browser löschen</li>
+                      </ul>
                     </div>
                   </div>
 
@@ -161,6 +232,7 @@ const DatenschutzDE = () => {
                       Bei Fragen zum Datenschutz wenden Sie sich bitte an: 
                       <strong className="text-tennis-black"> vorstand@schwarzgelb-heidelberg.de</strong>
                     </p>
+                    <p className="text-sm text-gray-500 mt-3">Stand: Juni 2026</p>
                   </div>
                 </div>
               </div>
