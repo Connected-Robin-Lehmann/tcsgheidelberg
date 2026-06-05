@@ -82,7 +82,7 @@ const DatenschutzEN = () => {
                           <p className="mt-2">Represented by the Board:</p>
                           <p>Aleksandar Kukaras, Chairman</p>
                           <p>Marc Homsy, Vice Chairman</p>
-                          <p>Dr. Frank Schöneborn, Treasurer</p>
+                          <p>Timo Schulz, Treasurer</p>
                           <p className="mt-2">Email: <a href="mailto:vorstand@schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">vorstand@schwarzgelb-heidelberg.de</a></p>
                         </div>
                         <p className="mt-3">The responsible party is the natural or legal person who alone or jointly with others determines the purposes and means of the processing of personal data (e.g. names, email addresses, etc.).</p>
