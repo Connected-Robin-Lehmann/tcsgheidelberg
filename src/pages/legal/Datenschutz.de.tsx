@@ -81,7 +81,7 @@ const DatenschutzDE = () => {
                           <p className="mt-2">Vertreten durch den Vorstand:</p>
                           <p>Aleksandar Kukaras, 1.Vorsitzender</p>
                           <p>Marc Homsy, 2. Vorsitzender</p>
-                          <p>Dr. Frank Schöneborn, Schatzmeister</p>
+                          <p>Timo Schulz, Kassenwart</p>
                           <p className="mt-2">E-Mail: <a href="mailto:vorstand@schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">vorstand@schwarzgelb-heidelberg.de</a></p>
                         </div>
                         <p className="mt-3">Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
