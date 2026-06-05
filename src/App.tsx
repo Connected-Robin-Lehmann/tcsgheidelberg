@@ -60,6 +60,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminNews from "./pages/admin/AdminNews";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -71,6 +72,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
 
