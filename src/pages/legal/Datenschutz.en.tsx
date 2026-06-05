@@ -81,9 +81,9 @@ const DatenschutzEN = () => {
                           <p>Germany</p>
                           <p className="mt-2">Represented by the Board:</p>
                           <p>Aleksandar Kukaras, Chairman</p>
-                          <p>Dr. Frank Schöneborn, Vice Chairman and Treasurer</p>
-                          <p className="mt-2">Phone: +49 172-6644369</p>
-                          <p>Email: <a href="mailto:vorstand@schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">vorstand@schwarzgelb-heidelberg.de</a></p>
+                          <p>Marc Homsy, Vice Chairman</p>
+                          <p>Dr. Frank Schöneborn, Treasurer</p>
+                          <p className="mt-2">Email: <a href="mailto:vorstand@schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">vorstand@schwarzgelb-heidelberg.de</a></p>
                         </div>
                         <p className="mt-3">The responsible party is the natural or legal person who alone or jointly with others determines the purposes and means of the processing of personal data (e.g. names, email addresses, etc.).</p>
                       </div>
@@ -108,12 +108,17 @@ const DatenschutzEN = () => {
                           <li>Time of server request</li>
                           <li>IP address</li>
                         </ul>
-                        <p className="mt-3">This data is not merged with other data sources. Data collection is based on Art. 6 para. 1 lit. f GDPR. The website operator has a legitimate interest in the technically error-free presentation and optimization of its website - for this purpose, the server log files must be recorded.</p>
+                        <p className="mt-3">This data is not merged with other data sources. Legal basis: Art. 6 para. 1 lit. f GDPR. <strong>Retention period:</strong> 7 days, then automatic deletion.</p>
                       </div>
 
                       <div>
                         <h3 className="font-semibold text-tennis-black mb-3">Contact Form</h3>
-                        <p>If you send us inquiries via the available contact forms, your details from the inquiry form, including the contact data you provided there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We do not pass on this data without your consent.</p>
+                        <p>If you send us inquiries via the available contact forms or by email, your details will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We do not pass on this data without your consent. <strong>Retention period:</strong> until your request has been completed, then a maximum of 6 months.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">SSL / TLS Encryption</h3>
+                        <p>This site uses SSL/TLS encryption for security reasons and to protect the transmission of confidential content. You can recognize an encrypted connection by the fact that the browser address bar changes from "http://" to "https://" and by the lock symbol in your browser bar.</p>
                       </div>
                     </div>
                   </div>
@@ -135,21 +140,87 @@ const DatenschutzEN = () => {
                   {/* Section 5 */}
                   <div>
                     <h2 className="text-2xl font-bold text-tennis-black mb-6">
-                      5. Plugins and Tools
+                      5. Hosting and External Services
                     </h2>
                     
                     <div className="space-y-6 text-gray-700">
                       <div>
-                        <h3 className="font-semibold text-tennis-black mb-3">Google Web Fonts</h3>
-                        <p>This site uses so-called web fonts provided by Google for the uniform display of fonts. When you access a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.</p>
-                        <p className="mt-3">For more information about Google Web Fonts, please visit <a href="https://developers.google.com/fonts/faq" className="text-tennis-black hover:text-tennis-yellow">https://developers.google.com/fonts/faq</a> and Google's privacy policy: <a href="https://policies.google.com/privacy?hl=en" className="text-tennis-black hover:text-tennis-yellow">https://policies.google.com/privacy?hl=en</a>.</p>
+                        <h3 className="font-semibold text-tennis-black mb-3">Hosting (Vercel)</h3>
+                        <p>This website is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA. Content is delivered via servers located inside the European Union (Frankfurt region). A data processing agreement (Art. 28 GDPR) is in place. Legal basis: Art. 6 para. 1 lit. f GDPR.</p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-tennis-black mb-3">Google Maps</h3>
-                        <p>Our website uses the Google Maps map service via an API. The provider is Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
-                        <p className="mt-3">More information about how user data is handled can be found in Google's privacy policy: <a href="https://policies.google.com/privacy?hl=en" className="text-tennis-black hover:text-tennis-yellow">https://policies.google.com/privacy?hl=en</a>.</p>
+                        <h3 className="font-semibold text-tennis-black mb-3">Backend / Database (Supabase)</h3>
+                        <p>For dynamic content (news, videos, magazines) we use Supabase as our backend and storage provider. Data is processed on servers within the EU. Legal basis: Art. 6 para. 1 lit. f GDPR. No personal data of website visitors is stored in the database.</p>
                       </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">Fonts (self-hosted)</h3>
+                        <p>We use fonts ("Inter" and "Playfair Display") that are <strong>hosted locally on our server</strong>. No connection to Google servers is established and your IP address is not transmitted.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">Google Maps (with consent)</h3>
+                        <p>On the "Directions" page we offer a map via Google Maps. Provider: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. The map is <strong>only loaded after your active consent</strong> (click on "Load map") — a two-click solution. Only then is data, in particular your IP address, transmitted to Google and possibly to the USA. Legal basis: Art. 6 para. 1 lit. a GDPR. You may withdraw your consent at any time by clearing this website's browser data.</p>
+                        <p className="mt-3">Google privacy policy: <a href="https://policies.google.com/privacy?hl=en" className="text-tennis-black hover:text-tennis-yellow" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=en</a>.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">Sportision (training registration)</h3>
+                        <p>For training registration we link to the external service Sportision. Clicking the corresponding buttons redirects you to the Sportision website where their own terms and privacy policy apply. We do not transmit any personal data to Sportision ourselves.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">WhatsApp news channel</h3>
+                        <p>We offer an optional WhatsApp channel for club news. Joining is voluntary. Provider: Meta Platforms Ireland Ltd., 4 Grand Canal Square, Dublin 2, Ireland. When using WhatsApp, data may be transferred to the USA. Legal basis: Art. 6 para. 1 lit. a GDPR. WhatsApp privacy policy: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" className="text-tennis-black hover:text-tennis-yellow" target="_blank" rel="noopener noreferrer">whatsapp.com/legal/privacy-policy-eea</a>.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-tennis-black mb-3">Cookies / Local Storage</h3>
+                        <p>This website only uses <strong>technically necessary</strong> storage. Your choice on the data protection notice is stored in your browser's local storage (key: <code>sg-cookie-consent-v1</code>) so it is not shown again. No tracking, analytics or ad profiling takes place.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Section 6 */}
+                  <div>
+                    <h2 className="text-2xl font-bold text-tennis-black mb-6">
+                      6. Your rights as a data subject
+                    </h2>
+                    <div className="space-y-4 text-gray-700">
+                      <p>You have the following rights at any time:</p>
+                      <ul className="list-disc list-inside ml-4 space-y-1">
+                        <li>Right of access (Art. 15 GDPR)</li>
+                        <li>Right to rectification (Art. 16 GDPR)</li>
+                        <li>Right to erasure (Art. 17 GDPR)</li>
+                        <li>Right to restriction of processing (Art. 18 GDPR)</li>
+                        <li>Right to data portability (Art. 20 GDPR)</li>
+                        <li>Right to object (Art. 21 GDPR)</li>
+                        <li>Right to withdraw consent (Art. 7(3) GDPR)</li>
+                      </ul>
+                      <p>To exercise these rights please contact <a href="mailto:vorstand@schwarzgelb-heidelberg.de" className="text-tennis-black hover:text-tennis-yellow">vorstand@schwarzgelb-heidelberg.de</a>.</p>
+                      <p>You also have the right to lodge a complaint with the competent supervisory authority (Art. 77 GDPR):</p>
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <p><strong>State Commissioner for Data Protection and Freedom of Information Baden-Württemberg</strong></p>
+                        <p>Lautenschlagerstraße 20, 70173 Stuttgart, Germany</p>
+                        <p>Web: <a href="https://www.baden-wuerttemberg.datenschutz.de" className="text-tennis-black hover:text-tennis-yellow" target="_blank" rel="noopener noreferrer">baden-wuerttemberg.datenschutz.de</a></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Section 7 */}
+                  <div>
+                    <h2 className="text-2xl font-bold text-tennis-black mb-6">
+                      7. Retention periods
+                    </h2>
+                    <div className="space-y-3 text-gray-700">
+                      <p>We only store personal data as long as necessary for the respective purposes:</p>
+                      <ul className="list-disc list-inside ml-4 space-y-1">
+                        <li>Server logs: 7 days</li>
+                        <li>Email and contact requests: until completion + max. 6 months</li>
+                        <li>Member data: for the duration of the membership + statutory retention periods (typically 10 years under § 147 AO / § 257 HGB)</li>
+                        <li>Consent stored in local storage: until you clear it in your browser</li>
+                      </ul>
                     </div>
                   </div>
 
@@ -162,6 +233,7 @@ const DatenschutzEN = () => {
                       If you have any questions about data protection, please contact: 
                       <strong className="text-tennis-black"> vorstand@schwarzgelb-heidelberg.de</strong>
                     </p>
+                    <p className="text-sm text-gray-500 mt-3">Last updated: June 2026 — This English version is provided for information purposes only; the German version is legally binding.</p>
                   </div>
                 </div>
               </div>
