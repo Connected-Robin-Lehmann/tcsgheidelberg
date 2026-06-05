@@ -128,6 +128,26 @@ const FoerdervereinDE = () => {
                   der Region die Mannschaften unseres Vereins zu verstärken.
                 </p>
               </div>
+
+              <div className="mt-8 flex flex-col items-center gap-4">
+                <a
+                  href="/downloads/Foerderverein-Infos-Allgemein-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-tennis-yellow text-tennis-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition-colors"
+                >
+                  Über den Förderverein
+                </a>
+                <p className="text-sm text-gray-600">
+                  Ansprechpartner:{" "}
+                  <a
+                    href="mailto:katharina.kukaras@schwarzgelb-heidelberg.de"
+                    className="font-semibold text-tennis-black hover:text-tennis-yellow underline"
+                  >
+                    Katharina Kukaras
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 
