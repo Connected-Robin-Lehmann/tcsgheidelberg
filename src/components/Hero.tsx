@@ -36,14 +36,30 @@ const Hero = () => {
           <div className="flex-1 flex items-center justify-center py-6 md:py-8">
             <div className="max-w-3xl w-full px-2 animate-slide-up">
               <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow/50 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-4">
-                  <div className="bg-tennis-yellow rounded-full p-2 flex-shrink-0">
-                    <Calendar className="w-4 h-4 md:w-6 md:h-6 text-tennis-black" />
-                  </div>
+                <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+                  <a
+                    href="/images/events/sommerfest-2026.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 mx-auto md:mx-0 group"
+                    aria-label={lang === 'de' ? 'Einladung Sommerfest vergrößern' : 'View Sommerfest invitation'}
+                  >
+                    <img
+                      src="/images/events/sommerfest-2026.png"
+                      alt={lang === 'de' ? 'Einladung zum Sommerfest des TC Schwarz-Gelb Heidelberg' : 'Invitation to the TC Schwarz-Gelb Heidelberg summer party'}
+                      className="w-28 md:w-44 h-auto rounded-md md:rounded-lg shadow-lg ring-2 ring-tennis-yellow/40 group-hover:ring-tennis-yellow transition-all"
+                      loading="lazy"
+                    />
+                  </a>
                   <div className="text-left flex-1">
+                    <div className="flex items-center gap-2 mb-2 md:mb-3">
+                      <div className="bg-tennis-yellow rounded-full p-1.5 md:p-2 flex-shrink-0">
+                        <Calendar className="w-3 h-3 md:w-5 md:h-5 text-tennis-black" />
+                      </div>
                     <h3 className="text-base sm:text-lg md:text-2xl font-bold text-tennis-yellow mb-1 md:mb-3">
                       {blumchenEvent.title[lang]}
                     </h3>
+                    </div>
                     <div className="flex flex-wrap gap-3 text-white/70 text-xs md:text-base mb-2 md:mb-4">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3 md:w-4 md:h-4" />
