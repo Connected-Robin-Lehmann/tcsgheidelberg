@@ -77,7 +77,24 @@ const VeranstaltungenDE = () => {
                             </p>
                           )}
                         </div>
-                        
+
+                        {event.id === "sommerfest-2026" && (
+                          <a
+                            href="/images/events/sommerfest-2026.png"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-shrink-0 mx-auto lg:mx-0 group"
+                            aria-label="Einladung Sommerfest in voller Größe ansehen"
+                          >
+                            <img
+                              src="/images/events/sommerfest-2026.png"
+                              alt="Einladung zum Sommerfest des TC Schwarz-Gelb Heidelberg am 18.07.2026"
+                              className="w-40 md:w-52 h-auto rounded-lg shadow-md ring-2 ring-tennis-yellow/30 group-hover:ring-tennis-yellow group-hover:shadow-xl transition-all"
+                              loading="lazy"
+                            />
+                          </a>
+                        )}
+
                         {/* Event Details */}
                         <div className="lg:text-right space-y-3 lg:min-w-[280px]">
                           <div className="flex items-center lg:justify-end text-tennis-black">
