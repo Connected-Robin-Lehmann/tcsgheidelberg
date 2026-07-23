@@ -1,5 +1,5 @@
 import React from "react";
-import { Calendar, MapPin, Clock } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import { upcomingEvents, ClubEvent } from "@/data/events";
