@@ -2,13 +2,28 @@ import React from "react";
 import { Calendar, MapPin, Clock } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
-import { upcomingEvents } from "@/data/events";
+import { upcomingEvents, ClubEvent } from "@/data/events";
 
 const Hero = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language === 'en' ? 'en' : 'de';
 
-  const camps = upcomingEvents.filter(e => e.id === "sommercamp-1-2026" || e.id === "sommercamp-2-2026");
+  const highlightedIds = [
+    "sommercamp-1-2026",
+    "sommercamp-2-2026",
+    "schwarz-gelb-cup-2026",
+  ];
+
+  const highlightedEvents = highlightedIds
+    .map(id => upcomingEvents.find(e => e.id === id))
+    .filter((e): e is ClubEvent => !!e);
+
+  const getEventLabel = (event: ClubEvent, index: number) => {
+    if (event.type === "camp") {
+      return lang === 'de' ? `${index + 1}. Camp` : `Camp ${index + 1}`;
+    }
+    return event.title[lang];
+  };
 
   return (
     <section id="home" className="relative min-h-[50vh] md:min-h-[70vh] flex flex-col bg-gradient-to-br from-tennis-black via-gray-900 to-tennis-court overflow-hidden">
@@ -31,10 +46,10 @@ const Hero = () => {
           </h1>
         </div>
 
-        {/* Sommer-Tenniscamps Highlight */}
-        {camps.length > 0 && (
+        {/* Sommer-Tenniscamps & Schwarz-Gelb-Cup Highlight */}
+        {highlightedEvents.length > 0 && (
           <div className="flex-1 flex items-center justify-center py-6 md:py-8">
-            <div className="max-w-3xl w-full px-2 animate-slide-up">
+            <div className="max-w-4xl w-full px-2 animate-slide-up">
               <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow/50 rounded-lg md:rounded-2xl p-3 md:p-8 hover:bg-white/15 transition-all duration-300">
                 <div className="text-left">
                   <div className="flex items-center gap-2 mb-3 md:mb-4">
@@ -42,30 +57,30 @@ const Hero = () => {
                       <Calendar className="w-3 h-3 md:w-5 md:h-5 text-tennis-black" />
                     </div>
                     <h3 className="text-base sm:text-lg md:text-2xl font-bold text-tennis-yellow">
-                      {lang === 'de' ? 'Sommerferien Tenniscamps 2026' : 'Summer Tennis Camps 2026'}
+                      {lang === 'de' ? 'Sommerferien Tenniscamps & Schwarz-Gelb-Cup 2026' : 'Summer Tennis Camps & Schwarz-Gelb Cup 2026'}
                     </h3>
                   </div>
-                  <div className="grid sm:grid-cols-2 gap-3 md:gap-4 mb-3 md:mb-4">
-                    {camps.map((camp, idx) => (
-                      <div key={camp.id} className="bg-white/5 rounded-lg p-3 md:p-4 border border-white/10">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 mb-3 md:mb-4">
+                    {highlightedEvents.map((event, idx) => (
+                      <div key={event.id} className="bg-white/5 rounded-lg p-3 md:p-4 border border-white/10">
                         <div className="text-tennis-yellow font-semibold text-sm md:text-base mb-1">
-                          {lang === 'de' ? `${idx + 1}. Camp` : `Camp ${idx + 1}`}
+                          {getEventLabel(event, idx)}
                         </div>
                         <div className="flex items-center gap-1 text-white/80 text-xs md:text-sm mb-1">
                           <Calendar className="w-3 h-3 md:w-4 md:h-4" />
-                          {camp.date}
+                          {event.date}
                         </div>
                         <div className="flex items-center gap-1 text-white/70 text-xs md:text-sm">
                           <MapPin className="w-3 h-3 md:w-4 md:h-4" />
-                          {camp.location[lang]}
+                          {event.location[lang]}
                         </div>
                       </div>
                     ))}
                   </div>
                   <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">
                     {lang === 'de'
-                      ? 'Zwei Wochen Tenniscamp in den Sommerferien in Heidelberg – Spaß, Training und neue Freundschaften.'
-                      : 'Two weeks of tennis camp during the summer holidays in Heidelberg – fun, training and new friendships.'}
+                      ? 'Tenniscamps und der Schwarz-Gelb-Cup im Sommer 2026 – Spaß, Training, Turnier und neue Freundschaften.'
+                      : 'Tennis camps and the Schwarz-Gelb Cup in summer 2026 – fun, training, tournament and new friendships.'}
                   </p>
                   <Link to="/aktuelles/veranstaltungen" className="inline-flex items-center text-tennis-yellow hover:text-yellow-300 font-semibold transition-colors text-xs md:text-base">
                     {lang === 'de' ? 'Alle Termine ansehen' : 'View all events'}
