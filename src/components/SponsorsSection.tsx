@@ -18,7 +18,7 @@ const SponsorsSection = () => {
     },
     {
       name: 'Heidelberger Volksbank',
-      logo: '/images/sponsors/Heidelberger-Volksbank.jpg',
+      logo: '/images/sponsors/Heidelberger-Volksbank.svg',
       url: 'https://www.heidelberger-volksbank.de/'
     }
   ];
