@@ -202,36 +202,29 @@ const TennisschulePTSKukarasEN = () => {
             </div>
           </div>
 
-          {/* Summer Training Registration 2026 */}
+          {/* Winter Training Registration 2026/2027 */}
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 mb-12">
             <div className="bg-tennis-yellow p-6">
               <h2 className="text-2xl font-bold text-tennis-black text-center">
-                Summer Training Registration 2026
+                Winter Training Registration 2026/2027
               </h2>
             </div>
 
             <div className="p-8">
               <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p className="font-medium">Dear Tennis Friends,</p>
+                <p className="font-medium text-lg">Dear Tennis Friends!</p>
 
                 <p>
-                  Winter training ends on 28.3.26. This means we need to start planning the summer training.
+                  A successful and sunny summer is drawing to a close. We look
+                  forward to seeing you again after the summer break and starting
+                  the winter training.
                 </p>
 
-                <div className="bg-tennis-yellow/10 border-l-4 border-tennis-yellow p-6 rounded-r-lg">
-                  <p className="font-bold text-tennis-black">
-                    Note: On 15.03.2026 at 12:00, a tennis assessment will take place in the inflatable hall for everyone who wants to start training in the summer season (children and adults).
-                  </p>
-                </div>
-
-                <p className="text-lg font-bold text-tennis-black">
-                  Summer training starts on 13 April 2026.
+                <p className="font-semibold text-tennis-black">
+                  Training registration is again via the online portal Sportision.
                 </p>
 
                 <div className="bg-tennis-yellow/10 rounded-xl p-6">
-                  <p className="font-medium text-center mb-4">
-                    Registration is again via our online portal Sportision:
-                  </p>
                   <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4">
                     <img
                       src="/images/sportision-qr-code.png"
@@ -240,7 +233,7 @@ const TennisschulePTSKukarasEN = () => {
                     />
                     <div className="text-center md:text-left">
                       <a
-                        href="https://sportision.de/club/kukaras-professional-tennis-1"
+                        href="https://www.sportision.de/club/kukaras-professional-tennis-1"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-tennis-black font-semibold hover:text-tennis-yellow transition-colors"
@@ -250,116 +243,176 @@ const TennisschulePTSKukarasEN = () => {
                       </a>
                     </div>
                   </div>
-                </div>
-
-                <p className="font-bold text-tennis-black text-lg text-center">
-                  Registration deadline is 16.03.2026, as we need to create the training schedule before the Easter holidays.
-                </p>
-
-                <p>
-                  Registration is possible either with a guest account or after prior registration.
-                  We recommend the free registration, as you can change your details at any time until the deadline.
-                </p>
-
-                <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
-                  <p className="font-bold text-red-800">
-                    Important: Each person who wants to participate in training must complete their own registration (exception: family training).
+                  <p className="text-center text-sm text-gray-600">
+                    Registration with guest access or after registration possible
                   </p>
                 </div>
 
+                <p>
+                  Registration is possible with a guest account or with a
+                  registration. I recommend a registration, so you can change your
+                  entries (until the registration deadline). Registration is free.
+                  Each training participant must submit their own registration for
+                  the training. However, this can be done via a registered person.
+                </p>
+
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h4 className="text-lg font-bold text-tennis-black mb-3">Registration Process:</h4>
+                  <h4 className="text-lg font-bold text-tennis-black mb-3">
+                    Registration Process:
+                  </h4>
                   <ul className="space-y-3">
-                    <li>• By clicking <strong>Register</strong>, you are committing to the training.</li>
-                    <li>• Please indicate your training preferences and as many possible training times and days as possible. <strong>At least 6 selection fields</strong> must be marked, otherwise the registration will not be accepted.</li>
-                    <li>• If you want to train multiple times per week, you should select more times accordingly.</li>
-                    <li>• <strong>We urgently need training times before 5 PM as well.</strong></li>
-                    <li>• I will try to keep the winter training times for as many groups as possible.</li>
+                    <li>
+                      • By clicking <strong>Register</strong>, you register for the
+                      training. Here you enter your training preferences and your
+                      desired training times and days (as many as possible!).
+                    </li>
+                    <li>
+                      • <strong>6 checkmarks are mandatory</strong>, otherwise the
+                      registration will not be accepted. For bookings of several
+                      units, please add 2 additional checkmarks per further unit
+                      (e.g. 2 units per week = 8 checkmarks).
+                    </li>
+                    <li>
+                      • The times of the checkmarks made are mandatory to observe,
+                      as we use them to create the schedule.
+                    </li>
+                    <li>
+                      • When registering for 2-person training, it is advisable to
+                      already have a partner, as it is not always possible to find a
+                      suitable player. Please note this in the comments.
+                    </li>
+                    <li>
+                      • Other training requests can also be entered in the comments.
+                    </li>
                   </ul>
                 </div>
 
                 <p>
-                  For questions, please contact us by email:{" "}
-                  <a href="mailto:tennis@kukaras.de" className="text-tennis-black font-semibold hover:text-tennis-yellow transition-colors">
+                  The portal is easy to use. If you have any questions, we are
+                  happy to help:{" "}
+                  <a
+                    href="mailto:tennis@kukaras.de"
+                    className="text-tennis-black font-semibold hover:text-tennis-yellow transition-colors"
+                  >
                     tennis@kukaras.de
                   </a>
                 </p>
 
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h4 className="text-lg font-bold text-tennis-black mb-3">Bambini Training (ages 5–8):</h4>
-                  <p>Bambini training (coaches: Karo, Kathi and others) takes place Monday to Friday between 2:00 PM and 5:00 PM.</p>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h4 className="text-lg font-bold text-tennis-black mb-3">Pairs Training:</h4>
-                  <p className="mb-2">When registering for pairs training, it is advisable to already have a training partner, as it is not always possible to assign a suitable player.</p>
-                  <p>Please indicate your preferred training partner in the <strong>Comments</strong> field. Additional training preferences can also be noted there.</p>
-                </div>
-
                 <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
                   <p className="font-bold text-red-800">
-                    Important Note: Training participants who have been playing in fixed groups for a long time and have not officially re-registered must also register via the program, as group allocation is done exclusively through Sportision.
+                    Important: Even training participants who have been playing in
+                    the same group for a long time and have partially stopped
+                    registering officially must register via this program, as group
+                    allocation is done via the program.
                   </p>
                 </div>
-
-                <p className="font-medium">
-                  Club membership at TC Schwarz-Gelb is required to participate in training.
-                </p>
 
                 {/* Price Table */}
                 <div className="bg-white rounded-xl border-2 border-tennis-yellow overflow-hidden">
                   <div className="bg-tennis-black p-4">
                     <h4 className="text-lg font-bold text-tennis-yellow text-center">
-                      Summer Training Prices (16.04. to 25.07.26)
+                      Winter Training Prices Monday–Friday (incl. hall, lighting,
+                      balls)
                     </h4>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
                         <tr className="bg-tennis-yellow/20">
-                          <th className="text-left p-4 font-bold text-tennis-black">Training Group</th>
-                          <th className="text-right p-4 font-bold text-tennis-black">Price per Person</th>
+                          <th className="text-left p-4 font-bold text-tennis-black">
+                            Training Group
+                          </th>
+                          <th className="text-right p-4 font-bold text-tennis-black">
+                            until 4 PM
+                          </th>
+                          <th className="text-right p-4 font-bold text-tennis-black">
+                            from 4 PM
+                          </th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-200">
                         <tr className="hover:bg-gray-50">
                           <td className="p-4">Group of 4, 60 minutes</td>
-                          <td className="p-4 text-right font-semibold">€250.00</td>
-                        </tr>
-                        <tr className="hover:bg-gray-50">
-                          <td className="p-4">Bambini Group of 4, 60 min (ages 5-7)</td>
-                          <td className="p-4 text-right font-semibold">€235.00</td>
+                          <td className="p-4 text-right font-semibold">€520.00</td>
+                          <td className="p-4 text-right font-semibold">€535.00</td>
                         </tr>
                         <tr className="hover:bg-gray-50">
                           <td className="p-4">Group of 3, 60 minutes</td>
-                          <td className="p-4 text-right font-semibold">€335.00</td>
+                          <td className="p-4 text-right font-semibold">€690.00</td>
+                          <td className="p-4 text-right font-semibold">€710.00</td>
                         </tr>
                         <tr className="hover:bg-gray-50">
                           <td className="p-4">Group of 2, 60 minutes</td>
-                          <td className="p-4 text-right font-semibold">€500.00</td>
+                          <td className="p-4 text-right font-semibold">€1,035.00</td>
+                          <td className="p-4 text-right font-semibold">€1,065.00</td>
                         </tr>
                         <tr className="hover:bg-gray-50">
                           <td className="p-4">Private / Family Training</td>
-                          <td className="p-4 text-right font-semibold">€980.00</td>
+                          <td className="p-4 text-right font-semibold">€1,950.00</td>
+                          <td className="p-4 text-right font-semibold">€1,990.00</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
+                  <div className="bg-gray-50 p-4 text-sm text-gray-600 text-center">
+                    Prices for training on Saturdays and Sundays correspond to the
+                    prices from 4 PM.
+                  </div>
                 </div>
 
-                <p className="font-bold text-tennis-black text-center">
-                  Registration deadline for summer training is 16.03.2026.<br />
-                  Late registration cannot guarantee a training spot.
-                </p>
-
-                <p className="text-center text-lg">
-                  My coaching team and I look forward to a wonderful, sociable and hopefully successful summer season with you!
-                </p>
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <h4 className="text-lg font-bold text-tennis-black mb-3">
+                    Training Venues & Period:
+                  </h4>
+                  <p className="mb-2">
+                    Winter training takes place in the{" "}
+                    <strong>inflatable hall</strong>, in the{" "}
+                    <strong>carpet hall (SG)</strong> and in the{" "}
+                    <strong>USC hall (Neuenheimer Feld)</strong>.
+                  </p>
+                  <p>
+                    Training starts on <strong>21.09.2026</strong> and ends on{" "}
+                    <strong>21.03.2027</strong> with the Easter holidays.
+                  </p>
+                </div>
 
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 text-sm">
-                  <p className="mb-1">✅ Training takes place on public holidays (during school term)!</p>
-                  <p>❌ <strong>No</strong> training during school holidays (Easter, Pentecost, Summer).</p>
+                  <p className="mb-1">
+                    ✅ Training takes place as usual on public holidays.
+                  </p>
+                  <p className="mb-3">
+                    ❌ <strong>No</strong> training takes place during the holidays.
+                  </p>
+                  <h5 className="font-bold text-tennis-black mb-2">
+                    Training-free periods:
+                  </h5>
+                  <ul className="space-y-1">
+                    <li>• Autumn holidays: 25.10. – 01.11.2026</li>
+                    <li>• Christmas holidays: 20.12.2026 – 10.01.2027</li>
+                    <li>• Carnival holidays: 07.02. – 14.02.2027</li>
+                  </ul>
+                  <p className="mt-3 text-xs text-gray-600">
+                    Saturday training still takes place at the beginning of the
+                    holidays. Sunday training takes place on the last Sunday after
+                    the holidays.
+                  </p>
                 </div>
+
+                <div className="bg-tennis-yellow/10 border-l-4 border-tennis-yellow p-6 rounded-r-lg">
+                  <p className="font-bold text-tennis-black text-lg">
+                    Registration deadline is 15.09.2026.
+                  </p>
+                  <p className="text-sm text-gray-700 mt-1">
+                    With a later registration I cannot guarantee a training spot, as
+                    winter training already starts on 21.09.2026.
+                  </p>
+                </div>
+
+                <p className="font-medium text-center text-lg">
+                  Best regards
+                  <br />
+                  Alex Kukaras
+                </p>
               </div>
             </div>
           </div>
