@@ -479,37 +479,6 @@ const TennisschulePTSKukarasEN = () => {
                 ))}
               </div>
 
-              {/* Registration Info */}
-              <div className="mt-8 bg-tennis-yellow/10 rounded-xl p-6">
-                <h4 className="text-lg font-bold text-tennis-black mb-4 text-center">
-                  Registration via Sportision
-                </h4>
-                <p className="text-gray-700 font-medium text-center mb-6">
-                  Registration is again via our online portal Sportision:
-                </p>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
-                  <img
-                    src="/images/sportision-qr-code.png"
-                    alt="QR Code Sportision Registration"
-                    className="w-40 h-40"
-                  />
-                  <div className="text-center md:text-left">
-                    <p className="text-gray-700 mb-2">or via link:</p>
-                    <a
-                      href="https://sportision.de/club/kukaras-professional-tennis-1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-tennis-black font-semibold hover:text-tennis-yellow transition-colors"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      sportision.de/club/kukaras-professional-tennis-1
-                    </a>
-                  </div>
-                </div>
-                <p className="text-center font-bold text-tennis-black text-lg">
-                  Registration deadline: 16.03.2026
-                </p>
-              </div>
 
               {/* Flyers */}
               <div className="mt-8">
