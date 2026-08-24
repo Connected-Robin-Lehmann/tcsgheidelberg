@@ -8,6 +8,13 @@ export interface TennisInfoHeft {
 
 export const tennisInfoHefte: TennisInfoHeft[] = [
   {
+    id: '0',
+    titleDe: 'Tennis-Infoheft 2026',
+    titleEn: 'Tennis Info Booklet 2026',
+    year: 2026,
+    fileName: 'Tennis-Infoheft-2026.pdf',
+  },
+  {
     id: '1',
     titleDe: 'Tennis-Infoheft 2024',
     titleEn: 'Tennis Info Booklet 2024',
