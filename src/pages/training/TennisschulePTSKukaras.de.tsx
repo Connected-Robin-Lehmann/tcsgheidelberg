@@ -36,11 +36,6 @@ const TennisschulePTSKukarasDE = () => {
 
   const camps2026 = [
     {
-      name: "Osterferien Tenniscamp Kinder & Jugendliche",
-      datum: "07.04. - 10.04.2026",
-      zeit: "9:30-15:30",
-    },
-    {
       name: "2. Sommerferien Tenniscamp",
       datum: "07.09. - 11.09.2026",
       zeit: "Ganztägig",
@@ -430,34 +425,7 @@ const TennisschulePTSKukarasDE = () => {
             </div>
           </div>
 
-          {/* Services */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 mb-12">
-            <div className="bg-tennis-black p-6">
-              <h2 className="text-2xl font-bold text-tennis-yellow text-center">
-                Programme und Services
-              </h2>
-            </div>
-
-            <div className="p-8">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {services.map((service, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:border-tennis-yellow/50 hover:shadow-md transition-all duration-300"
-                  >
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-tennis-yellow rounded-full mr-3"></div>
-                      <span className="text-sm font-medium text-gray-800">
-                        {service}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Camps 2025 */}
+          {/* Tenniscamps 2026 */}
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 mb-12">
             <div className="bg-tennis-yellow p-6">
               <div className="flex items-center justify-center">
@@ -492,31 +460,12 @@ const TennisschulePTSKukarasDE = () => {
                 ))}
               </div>
 
-
-              {/* Flyers */}
+              {/* Flyer */}
               <div className="mt-8">
                 <h4 className="text-lg font-bold text-tennis-black mb-4 text-center">
-                  Flyer zu den Feriencamps
+                  Flyer zum Sommerferiencamp
                 </h4>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="border border-gray-200 rounded-xl overflow-hidden shadow-md">
-                    <img
-                      src="/images/flyer-ostercamp-2026.jpg"
-                      alt="Flyer Ostercamp 2026"
-                      className="w-full"
-                    />
-                    <div className="p-4 text-center">
-                      <a
-                        href="/downloads/OsterTenniscamps_2026.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center bg-tennis-yellow text-tennis-black px-4 py-2 rounded-full font-bold hover:bg-yellow-400 transition-colors text-sm"
-                      >
-                        <Download className="h-4 w-4 mr-2" />
-                        Ostercamp Flyer (PDF)
-                      </a>
-                    </div>
-                  </div>
+                <div className="max-w-md mx-auto">
                   <div className="border border-gray-200 rounded-xl overflow-hidden shadow-md">
                     <img
                       src="/images/flyer-sommercamp-2026.jpg"
@@ -531,11 +480,38 @@ const TennisschulePTSKukarasDE = () => {
                         className="inline-flex items-center bg-tennis-yellow text-tennis-black px-4 py-2 rounded-full font-bold hover:bg-yellow-400 transition-colors text-sm"
                       >
                         <Download className="h-4 w-4 mr-2" />
-                        Sommercamp Flyer (PDF)
+                        Sommercamp Flyer
                       </a>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 mb-12">
+            <div className="bg-tennis-black p-6">
+              <h2 className="text-2xl font-bold text-tennis-yellow text-center">
+                Programme und Services
+              </h2>
+            </div>
+
+            <div className="p-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {services.map((service, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:border-tennis-yellow/50 hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-tennis-yellow rounded-full mr-3"></div>
+                      <span className="text-sm font-medium text-gray-800">
+                        {service}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
