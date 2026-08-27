@@ -22,7 +22,7 @@ const VeranstaltungenDE = () => {
   const matchEvents = upcomingEvents.filter(e => e.type === "match");
   
   // Get upcoming social/food events
-  const socialEvents = upcomingEvents.filter(e => e.type === "food" || e.type === "party" || e.id === "season-opening-2026" || e.id === "doppelturnier-saisonabschluss-2026");
+  const socialEvents = upcomingEvents.filter(e => e.type === "food" || e.type === "party" || e.type === "meeting" || e.id === "season-opening-2026" || e.id === "doppelturnier-saisonabschluss-2026");
 
   // Season events (camps, tournaments, etc.)
   const seasonEvents = upcomingEvents.filter(e => e.type === "camp" || e.type === "tournament");
