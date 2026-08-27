@@ -31,6 +31,8 @@ export interface ClubEvent {
   contact?: string;
   attachmentUrl?: string;
   attachmentLabel?: { de: string; en: string };
+  linkUrl?: string;
+  linkLabel?: { de: string; en: string };
   type: EventType;
 }
 
@@ -61,33 +63,6 @@ export const upcomingEvents: ClubEvent[] = [
     location: { de: "Verschiedene Orte", en: "Various locations" },
     description: { de: "Spielsaison Badenliga Damen", en: "Women's Baden League season" },
     type: "match",
-  },
-  {
-    id: "sommerfest-2026",
-    date: "18.07.2026",
-    time: { de: "ab 18:30 Uhr", en: "from 6:30 PM" },
-    title: { de: "Sommerfest", en: "Summer Party" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Das legendäre Sommerfest", en: "The legendary summer party" },
-    type: "party",
-  },
-  {
-    id: "schwarz-gelb-cup-2026",
-    date: "30.07. - 02.08.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Schwarz-Gelb-Cup", en: "Schwarz-Gelb Cup" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Schwarz-Gelb-Cup, organisiert vom Förderverein", en: "Schwarz-Gelb Cup, organized by the supporting association" },
-    type: "tournament",
-  },
-  {
-    id: "sommercamp-1-2026",
-    date: "03.08. - 07.08.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "1. Sommerferien Tenniscamp", en: "1st Summer Tennis Camp" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Sommerferien Tenniscamp in Heidelberg", en: "Summer tennis camp in Heidelberg" },
-    type: "camp",
   },
   {
     id: "sommercamp-2-2026",
