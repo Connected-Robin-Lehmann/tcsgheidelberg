@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Calendar, Clock, MapPin } from "lucide-react";
+import { Calendar, Clock, MapPin, Download } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { upcomingEvents } from "@/data/events";
 
@@ -75,6 +75,18 @@ const VeranstaltungenEN = () => {
                             <p className="text-sm text-gray-500 mt-4">
                               Contact: <a href={`mailto:${event.contact}`} className="text-tennis-black font-medium hover:text-tennis-yellow transition-colors">{event.contact}</a>
                             </p>
+                          )}
+                          {event.attachmentUrl && (
+                            <a
+                              href={event.attachmentUrl}
+                              download
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 mt-4 bg-tennis-black text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors"
+                            >
+                              <Download className="h-4 w-4 text-tennis-yellow" />
+                              {event.attachmentLabel?.en ?? "Download"}
+                            </a>
                           )}
                         </div>
 
