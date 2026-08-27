@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Calendar, Clock, MapPin, Download } from "lucide-react";
+import { Calendar, Clock, MapPin, Download, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { upcomingEvents } from "@/data/events";
 
@@ -25,7 +25,7 @@ const VeranstaltungenDE = () => {
   const socialEvents = upcomingEvents.filter(e => e.type === "food" || e.type === "party" || e.type === "meeting" || e.id === "season-opening-2026" || e.id === "doppelturnier-saisonabschluss-2026");
 
   // Season events (camps, tournaments, etc.)
-  const seasonEvents = upcomingEvents.filter(e => e.type === "camp" || e.type === "tournament");
+  const seasonEvents = upcomingEvents.filter(e => e.type === "camp" || e.type === "tournament" || e.type === "training");
   
   // Group by team
   const damen1 = matchEvents.filter(e => e.id.includes("damen1"));
@@ -90,22 +90,6 @@ const VeranstaltungenDE = () => {
                           )}
                         </div>
 
-                        {event.id === "sommerfest-2026" && (
-                          <a
-                            href="/images/events/sommerfest-2026.png"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-shrink-0 mx-auto lg:mx-0 group"
-                            aria-label="Einladung Sommerfest in voller Größe ansehen"
-                          >
-                            <img
-                              src="/images/events/sommerfest-2026.png"
-                              alt="Einladung zum Sommerfest des TC Schwarz-Gelb Heidelberg am 18.07.2026"
-                              className="w-40 md:w-52 h-auto rounded-lg shadow-md ring-2 ring-tennis-yellow/30 group-hover:ring-tennis-yellow group-hover:shadow-xl transition-all"
-                              loading="lazy"
-                            />
-                          </a>
-                        )}
 
                         {/* Event Details */}
                         <div className="lg:text-right space-y-3 lg:min-w-[280px]">
@@ -167,6 +151,17 @@ const VeranstaltungenDE = () => {
                         <div className="flex-1">
                           <h3 className="font-bold text-2xl text-tennis-black mb-3">{event.title.de}</h3>
                           <p className="text-gray-600 leading-relaxed">{renderTextWithEmailLinks(event.description.de)}</p>
+                          {event.linkUrl && (
+                            <a
+                              href={event.linkUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 mt-4 bg-tennis-black text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors"
+                            >
+                              <ExternalLink className="h-4 w-4 text-tennis-yellow" />
+                              {event.linkLabel?.de ?? "Mehr Info"}
+                            </a>
+                          )}
                         </div>
                         <div className="lg:text-right space-y-3 lg:min-w-[280px]">
                           <div className="flex items-center lg:justify-end text-tennis-black">

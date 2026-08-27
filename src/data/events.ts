@@ -31,6 +31,8 @@ export interface ClubEvent {
   contact?: string;
   attachmentUrl?: string;
   attachmentLabel?: { de: string; en: string };
+  linkUrl?: string;
+  linkLabel?: { de: string; en: string };
   type: EventType;
 }
 
@@ -63,33 +65,6 @@ export const upcomingEvents: ClubEvent[] = [
     type: "match",
   },
   {
-    id: "sommerfest-2026",
-    date: "18.07.2026",
-    time: { de: "ab 18:30 Uhr", en: "from 6:30 PM" },
-    title: { de: "Sommerfest", en: "Summer Party" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Das legendäre Sommerfest", en: "The legendary summer party" },
-    type: "party",
-  },
-  {
-    id: "schwarz-gelb-cup-2026",
-    date: "30.07. - 02.08.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Schwarz-Gelb-Cup", en: "Schwarz-Gelb Cup" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Schwarz-Gelb-Cup, organisiert vom Förderverein", en: "Schwarz-Gelb Cup, organized by the supporting association" },
-    type: "tournament",
-  },
-  {
-    id: "sommercamp-1-2026",
-    date: "03.08. - 07.08.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "1. Sommerferien Tenniscamp", en: "1st Summer Tennis Camp" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Sommerferien Tenniscamp in Heidelberg", en: "Summer tennis camp in Heidelberg" },
-    type: "camp",
-  },
-  {
     id: "sommercamp-2-2026",
     date: "07.09. - 11.09.2026",
     time: { de: "ganztägig", en: "All day" },
@@ -119,8 +94,19 @@ export const upcomingEvents: ClubEvent[] = [
     type: "meeting",
   },
   {
+    id: "anmeldung-wintertraining-2026",
+    date: "bis 15.09.2026",
+    time: { de: "Online-Anmeldung", en: "Online registration" },
+    title: { de: "Anmeldung zum Wintertraining 2026/2027", en: "Winter Training Registration 2026/2027" },
+    location: { de: "Sportision-Portal", en: "Sportision portal" },
+    description: { de: "Anmeldung zum Wintertraining über das Online-Portal Sportision. Anmeldeschluss ist der 15.09.2026 – bei späterer Anmeldung kann kein Trainingsplatz garantiert werden, da das Wintertraining am 21.09.2026 beginnt.", en: "Register for winter training via the Sportision online portal. Registration deadline is 15.09.2026 – later registrations cannot be guaranteed a training slot, as winter training begins on 21.09.2026." },
+    linkUrl: "https://www.sportision.de/club/kukaras-professional-tennis-1",
+    linkLabel: { de: "Zur Anmeldung auf Sportision", en: "Register on Sportision" },
+    type: "training",
+  },
+  {
     id: "wintertraining-beginn-2026",
-    date: "22.09.2026",
+    date: "21.09.2026",
     time: { de: "ganztägig", en: "All day" },
     title: { de: "Beginn des Wintertrainings", en: "Start of Winter Training" },
     location: { de: "Tennisanlage", en: "Tennis Facility" },
