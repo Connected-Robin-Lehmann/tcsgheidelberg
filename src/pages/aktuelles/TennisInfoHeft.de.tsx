@@ -38,7 +38,7 @@ const TennisInfoHeftDe = () => {
               In guter Tradition drucken wir für unsere Mitglieder, Freunde und Sponsoren alle 2 Jahre ein sehr umfangreiches Clubmagazin. Darin berichten wir in erster Linie über die sportlichen Erfolge und stellen umfassend unsere Mannschaften und Jugendarbeit vor.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-              Darüber hinaus gibt das Heft einen Einblick in alle Entwicklungen im Club und im Vorstand sowie über aktuelle Projekte etwa im Bereich der Infrastruktur. Das gedruckte Heft erhalten alle Mitglieder und Sponsoren automatisch nach Erscheinen postalisch zugeschickt. Natürlich kann das aktuelle Heft, aber auch historische Ausgaben untenstehend als PDF-Download bezogen werden.
+              Darüber hinaus gibt das Heft einen Einblick in alle Entwicklungen im Club und im Vorstand sowie über aktuelle Projekte etwa im Bereich der Infrastruktur. Das gedruckte Heft erhalten alle Sponsoren automatisch nach Erscheinen postalisch. Mitglieder können sich ein Exemplar der gedruckten TennisInfo im Verein (Garage) abholen. Natürlich kann das aktuelle Heft, aber auch historische Ausgaben untenstehend als PDF-Download bezogen werden.
             </p>
           </div>
 
