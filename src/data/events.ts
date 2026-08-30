@@ -38,33 +38,6 @@ export interface ClubEvent {
 
 export const upcomingEvents: ClubEvent[] = [
   {
-    id: "medenrunde-beginn-2026",
-    date: "06.05.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Beginn der Medenrunde", en: "Start of Meden League" },
-    location: { de: "Verschiedene Orte", en: "Various locations" },
-    description: { de: "Start der Medenrunde 2026", en: "Start of the 2026 Meden League season" },
-    type: "match",
-  },
-  {
-    id: "oberliga-herren-2026",
-    date: "10.05. - 19.07.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Oberliga Herren", en: "Men's Oberliga" },
-    location: { de: "Verschiedene Orte", en: "Various locations" },
-    description: { de: "Spielsaison Oberliga Herren", en: "Men's Oberliga season" },
-    type: "match",
-  },
-  {
-    id: "badenliga-damen-2026",
-    date: "28.06. - 20.07.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Spielsaison Badenliga Damen", en: "Women's Baden League Season" },
-    location: { de: "Verschiedene Orte", en: "Various locations" },
-    description: { de: "Spielsaison Badenliga Damen", en: "Women's Baden League season" },
-    type: "match",
-  },
-  {
     id: "sommercamp-2-2026",
     date: "07.09. - 11.09.2026",
     time: { de: "ganztägig", en: "All day" },
