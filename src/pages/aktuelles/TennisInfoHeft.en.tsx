@@ -38,7 +38,7 @@ const TennisInfoHeftEn = () => {
               Following a fine tradition, we print a comprehensive club magazine every 2 years for our members, friends, and sponsors. It primarily reports on sporting achievements and provides an extensive presentation of our teams and youth development.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-              Additionally, the booklet offers insights into all developments within the club and board, as well as current projects in areas such as infrastructure. The printed booklet is automatically sent by post to all members and sponsors upon publication. Of course, the current issue and historical editions can be downloaded as PDF below.
+              Additionally, the booklet offers insights into all developments within the club and board, as well as current projects in areas such as infrastructure. The printed booklet is automatically sent by post to all sponsors upon publication. Members can pick up a printed copy of TennisInfo at the club (garage). Of course, the current issue and historical editions can be downloaded as PDF below.
             </p>
           </div>
 
