@@ -142,9 +142,8 @@ const PlatzordnungEN = () => {
                     fully-occupied courts.
                   </p>
                   <p>
-                    Use of the system is not mandatory, and free play is still
-                    possible if courts are available. All existing reservations
-                    can be viewed in real-time at any moment.
+                    All existing reservations can be viewed in real-time at any
+                    moment.
                   </p>
                 </div>
                 <div className="mt-6 bg-tennis-yellow/20 rounded-lg p-4">
