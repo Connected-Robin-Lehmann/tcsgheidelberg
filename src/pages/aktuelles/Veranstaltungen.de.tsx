@@ -158,7 +158,6 @@ const VeranstaltungenDE = () => {
             </div>
           )}
 
-
           <div className="mt-16">
             <div className="bg-gradient-to-r from-tennis-black to-gray-800 rounded-2xl p-8 text-center">
               <Calendar className="h-8 w-8 text-tennis-yellow mx-auto mb-4" />
