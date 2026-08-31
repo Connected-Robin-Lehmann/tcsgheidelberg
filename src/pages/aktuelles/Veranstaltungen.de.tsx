@@ -123,25 +123,6 @@ const VeranstaltungenDE = () => {
               </h2>
               
               <div className="space-y-6">
-                {/* Fixed schedule dates */}
-                {[
-                  { date: "16.03.2026", title: "Anmeldeschluss Sommertraining 2026" },
-                  { date: "29.03.–09.04.2026", title: "Traglufthallenabbau" },
-                  { date: "13.04.2026", title: "Beginn Sommertraining" },
-                  { date: "06.05.2026", title: "Beginn der Medenrunde" },
-                ].map((item) => (
-                  <Card key={item.date} className="overflow-hidden border-l-4 border-l-tennis-yellow hover:shadow-xl transition-all duration-300 bg-white">
-                    <div className="p-6 md:p-8">
-                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        <h3 className="font-bold text-2xl text-tennis-black">{item.title}</h3>
-                        <div className="flex items-center text-tennis-black lg:min-w-[200px] lg:justify-end">
-                          <Calendar className="h-5 w-5 mr-3 text-tennis-yellow" />
-                          <span className="font-bold text-lg">{item.date}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                ))}
 
                 {/* Dynamic season events */}
                 {seasonEvents.map((event) => (
