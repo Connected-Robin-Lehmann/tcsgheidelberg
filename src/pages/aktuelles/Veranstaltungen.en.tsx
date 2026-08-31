@@ -18,19 +18,11 @@ const renderTextWithEmailLinks = (text: string) => {
 };
 
 const VeranstaltungenEN = () => {
-  // Filter match events for 2026
-  const matchEvents = upcomingEvents.filter(e => e.type === "match");
-  
   // Get upcoming social/food events
   const socialEvents = upcomingEvents.filter(e => e.type === "food" || e.type === "party" || e.type === "meeting" || e.id === "season-opening-2026" || e.id === "doppelturnier-saisonabschluss-2026");
 
   // Season events (camps, tournaments, etc.)
   const seasonEvents = upcomingEvents.filter(e => e.type === "camp" || e.type === "tournament" || e.type === "training");
-  
-  // Group by team
-  const damen1 = matchEvents.filter(e => e.id.includes("damen1"));
-  const damen2 = matchEvents.filter(e => e.id.includes("damen2"));
-  const herren1 = matchEvents.filter(e => e.id.includes("herren1"));
 
   return (
     <div className="min-h-screen bg-white">
