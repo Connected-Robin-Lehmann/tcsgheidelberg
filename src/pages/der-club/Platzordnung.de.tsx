@@ -152,9 +152,8 @@ const PlatzordnungDE = () => {
                     nicht spielen können bzw. warten müssen.
                   </p>
                   <p>
-                    Es besteht kein Zwang zur Nutzung und freies Spiel ist bei
-                    freien Plätzen nach wie vor möglich. Alle bestehenden
-                    Reservierungen sind jederzeit „real-time" einsehbar.
+                    Alle bestehenden Reservierungen sind jederzeit
+                    „real-time" einsehbar.
                   </p>
                 </div>
                 <div className="mt-6 bg-tennis-yellow/20 rounded-lg p-4">
