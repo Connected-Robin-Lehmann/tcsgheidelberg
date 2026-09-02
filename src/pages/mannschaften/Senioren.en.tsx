@@ -1,8 +1,6 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card } from "@/components/ui/card";
-import { Heart, Users, Trophy, Star } from "lucide-react";
 
 const SeniorenEN = () => {
   return (
