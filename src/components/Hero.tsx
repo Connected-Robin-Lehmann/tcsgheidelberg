@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { Calendar, MapPin, Clock, Trophy, Mail } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
-import { ImageLightbox } from "./ImageLightbox";
+import ImageLightbox from "./ImageLightbox";
 
 const Hero = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language === 'en' ? 'en' : 'de';
   const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const posterAlt = lang === 'de'
+    ? 'Spaß-Blümchenturnier zum Saisonabschluss am 4.10.2026'
+    : 'Fun Blümchenturnier season finale on 4.10.2026';
 
   return (
     <section id="home" className="relative min-h-[50vh] md:min-h-[70vh] flex flex-col bg-gradient-to-br from-tennis-black via-gray-900 to-tennis-court overflow-hidden">
@@ -50,7 +54,7 @@ const Hero = () => {
                 >
                   <img
                     src="/images/aktuelles/bluemchenturnier-2026.jpg"
-                    alt={lang === 'de' ? 'Spaß-Blümchenturnier zum Saisonabschluss am 4.10.2026' : 'Fun Blümchenturnier season finale on 4.10.2026'}
+                    alt={posterAlt}
                     className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
@@ -89,9 +93,9 @@ const Hero = () => {
                     </p>
                     <a
                       href="mailto:terezie.zuna-homsy@schwarzgelb-heidelberg.de"
-                      className="inline-flex items-center gap-2 text-tennis-yellow hover:text-yellow-300 text-xs md:text-sm font-medium transition-colors"
+                      className="inline-flex items-center gap-2 text-tennis-yellow hover:text-yellow-300 text-xs md:text-sm font-medium transition-colors break-all"
                     >
-                      <Mail className="w-3 h-3 md:w-4 md:h-4" />
+                      <Mail className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
                       terezie.zuna-homsy@schwarzgelb-heidelberg.de
                     </a>
                   </div>
@@ -119,10 +123,11 @@ const Hero = () => {
       </div>
 
       <ImageLightbox
-        src="/images/aktuelles/bluemchenturnier-2026.jpg"
-        alt={lang === 'de' ? 'Spaß-Blümchenturnier zum Saisonabschluss' : 'Fun Blümchenturnier season finale'}
-        open={lightboxOpen}
-        onOpenChange={setLightboxOpen}
+        images={[{ src: "/images/aktuelles/bluemchenturnier-2026.jpg", alt: posterAlt }]}
+        currentIndex={0}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNavigate={() => {}}
       />
     </section>
   );
