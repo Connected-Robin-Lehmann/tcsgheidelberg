@@ -87,12 +87,13 @@ export const upcomingEvents: ClubEvent[] = [
     type: "training",
   },
   {
-    id: "doppelturnier-saisonabschluss-2026",
+    id: "bluemchenturnier-saisonabschluss-2026",
     date: "04.10.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Doppel-Turnier & Saison-Abschluss", en: "Doubles Tournament & Season Finale" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Doppel-Turnier zum Abschluss der Saison", en: "Doubles tournament to close the season" },
+    time: { de: "13:00 Uhr", en: "1:00 PM" },
+    title: { de: "Spaß-Blümchenturnier zum Saisonabschluss", en: "Fun Blümchenturnier Season Finale" },
+    location: { de: "Clubanlage Schwarz-Gelb Heidelberg", en: "Schwarz-Gelb Heidelberg Club Facility" },
+    description: { de: "Spaß-Blümchenturnier zum Saisonabschluss mit 1-Punkt-Turnier (Beginn 16:00 Uhr). Anmeldung bei Terezie Zuna-Homsy erforderlich. Spezialpreis: Pizza von Pasquale.", en: "Fun Blümchenturnier season finale with 1-point tournament (starts 4:00 PM). Registration with Terezie Zuna-Homsy required. Special prize: pizza from Pasquale." },
+    contact: "terezie.zuna-homsy@schwarzgelb-heidelberg.de",
     type: "tournament",
   },
   {
