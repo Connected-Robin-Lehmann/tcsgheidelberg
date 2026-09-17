@@ -47,17 +47,6 @@ export const upcomingEvents: ClubEvent[] = [
     type: "infrastructure",
   },
   {
-    id: "mitgliederversammlung-2026",
-    date: "13.09.2026",
-    time: { de: "ab 17 Uhr", en: "from 5 PM" },
-    title: { de: "Ordentliche Mitgliederversammlung 2026", en: "Ordinary Members' Meeting 2026" },
-    location: { de: "Tennisanlage, Schwindstraße 9, Heidelberg", en: "Tennis Facility, Schwindstraße 9, Heidelberg" },
-    description: { de: "Einladung zur ordentlichen Mitgliederversammlung 2026 mit Tagesordnung und Wahl des Versammlungsleiters.", en: "Invitation to the ordinary members' meeting 2026 with agenda and election of the meeting chair." },
-    attachmentUrl: "/downloads/Einladung_Mitgliederversammlung_2026.pdf",
-    attachmentLabel: { de: "Einladung herunterladen", en: "Download invitation" },
-    type: "meeting",
-  },
-  {
     id: "anmeldung-wintertraining-2026",
     date: "bis 15.09.2026",
     time: { de: "Online-Anmeldung", en: "Online registration" },
