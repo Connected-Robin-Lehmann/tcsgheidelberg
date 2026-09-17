@@ -18,11 +18,16 @@ const renderTextWithEmailLinks = (text: string) => {
 };
 
 const VeranstaltungenEN = () => {
-  // Get upcoming social/food events
-  const socialEvents = upcomingEvents.filter(e => e.type === "food" || e.type === "party" || e.type === "meeting" || e.id === "season-opening-2026" || e.id === "doppelturnier-saisonabschluss-2026");
+  const bluemchenId = "bluemchenturnier-saisonabschluss-2026";
 
-  // Season events (camps, tournaments, etc.)
-  const seasonEvents = upcomingEvents.filter(e => e.type === "camp" || e.type === "tournament" || e.type === "training");
+  // Get upcoming social/food events – Blümchenturnier is highlighted first
+  const socialEvents = [
+    ...upcomingEvents.filter(e => e.id === bluemchenId),
+    ...upcomingEvents.filter(e => (e.type === "food" || e.type === "party" || e.type === "meeting") && e.id !== bluemchenId),
+  ];
+
+  // Season events (camps, tournaments, etc.) – excluding the highlighted Blümchenturnier
+  const seasonEvents = upcomingEvents.filter(e => (e.type === "camp" || e.type === "tournament" || e.type === "training") && e.id !== bluemchenId);
 
   return (
     <div className="min-h-screen bg-white">
