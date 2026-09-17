@@ -38,15 +38,6 @@ export interface ClubEvent {
 
 export const upcomingEvents: ClubEvent[] = [
   {
-    id: "sommercamp-2-2026",
-    date: "07.09. - 11.09.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "2. Sommerferien Tenniscamp", en: "2nd Summer Tennis Camp" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Sommerferien Tenniscamp in Heidelberg", en: "Summer tennis camp in Heidelberg" },
-    type: "camp",
-  },
-  {
     id: "traglufthallenaufbau-2026",
     date: "07.09. - 15.09.2026",
     time: { de: "ganztägig", en: "All day" },
