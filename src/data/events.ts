@@ -38,15 +38,6 @@ export interface ClubEvent {
 
 export const upcomingEvents: ClubEvent[] = [
   {
-    id: "sommercamp-2-2026",
-    date: "07.09. - 11.09.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "2. Sommerferien Tenniscamp", en: "2nd Summer Tennis Camp" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Sommerferien Tenniscamp in Heidelberg", en: "Summer tennis camp in Heidelberg" },
-    type: "camp",
-  },
-  {
     id: "traglufthallenaufbau-2026",
     date: "07.09. - 15.09.2026",
     time: { de: "ganztägig", en: "All day" },
@@ -54,17 +45,6 @@ export const upcomingEvents: ClubEvent[] = [
     location: { de: "Tennisanlage", en: "Tennis Facility" },
     description: { de: "Aufbau der Traglufthalle für die Wintersaison", en: "Setup of the inflatable hall for winter season" },
     type: "infrastructure",
-  },
-  {
-    id: "mitgliederversammlung-2026",
-    date: "13.09.2026",
-    time: { de: "ab 17 Uhr", en: "from 5 PM" },
-    title: { de: "Ordentliche Mitgliederversammlung 2026", en: "Ordinary Members' Meeting 2026" },
-    location: { de: "Tennisanlage, Schwindstraße 9, Heidelberg", en: "Tennis Facility, Schwindstraße 9, Heidelberg" },
-    description: { de: "Einladung zur ordentlichen Mitgliederversammlung 2026 mit Tagesordnung und Wahl des Versammlungsleiters.", en: "Invitation to the ordinary members' meeting 2026 with agenda and election of the meeting chair." },
-    attachmentUrl: "/downloads/Einladung_Mitgliederversammlung_2026.pdf",
-    attachmentLabel: { de: "Einladung herunterladen", en: "Download invitation" },
-    type: "meeting",
   },
   {
     id: "anmeldung-wintertraining-2026",
