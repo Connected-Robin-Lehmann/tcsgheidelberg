@@ -1,35 +1,28 @@
-# Bild-Upload für das Startseiten-Modal
+# Sanity als CMS für Schwarz-Gelb Heidelberg
 
-Im Admin Dashboard soll das Modal auch Bilder enthalten können. Da der Modal-Inhalt bereits als HTML gespeichert wird, fügen wir einen Bild-Upload-Button hinzu, der ein Bild in den Storage hochlädt und automatisch ein `<img>`-Tag in den Inhalt einfügt.
+## Ziel
+Der Verein verwaltet Nachrichten, das Startseiten-Pop-up und Veranstaltungen komfortabel über Sanity. Unter `/admin` öffnet sich direkt das Sanity Studio (ersetzt das bisherige Admin-Dashboard). Inhalte werden nur auf Deutsch gepflegt; die englischen Seiten zeigen denselben Text.
 
-## Umfang
+## Schritte
+1. **Sanity verbinden** – Sanity-Konnektor verknüpfen, Projekt-ID und Dataset (`production`) auslesen, CORS-Freigaben für Vorschau- und Live-Domain setzen.
+2. **Inhaltstypen anlegen**
+   - `news`: Titel, Slug, Datum, Kategorien, Text (Rich Text), Titelbild, Bildergalerie, PDF-Anhänge
+   - `modal`: Titel, Inhalt (Rich Text mit Bildern), aktiv ja/nein (nur ein Eintrag)
+   - `event`: Titel, Beschreibung, Datum, Uhrzeit, Ort, Kategorie, Link, Download-Datei, Bild/Plakat
+3. **Studio unter /admin** – Sanity Studio direkt in die Seite einbetten, Login über Sanity-Konten (Vereinsmitglieder werden in Sanity eingeladen). Altes Dashboard und Login-Seite entfernen.
+4. **Website auf Sanity umstellen** – Aktuelles/News-Seiten, News-Detail, Startseiten-Modal, Startseiten-Hero-Termin und Veranstaltungsseiten (DE + EN) lesen ihre Inhalte aus Sanity. Stil und Darstellung bleiben unverändert (Bilder `object-contain`, Lightbox für Anhänge).
+5. **Bestand übernehmen** – Einmaliges Übertragen aller bestehenden Nachrichten inkl. Bilder/PDFs, des aktuellen Modals und der Termine aus `events.ts` nach Sanity.
+6. **Aufräumen** – Alte Datenbanktabellen/Speicher bleiben vorerst als Backup bestehen, werden aber nicht mehr genutzt.
 
-**Storage**
-- Neuer öffentlicher Bucket `modal-images` (Lese-Zugriff: alle, Schreib-/Lösch-Zugriff: nur Admins via RLS auf `storage.objects`).
-
-**Admin UI (`src/pages/admin/AdminDashboard.tsx`)**
-- Neuer Bereich "Bild einfügen" über dem Inhalt-Textarea:
-  - Datei-Input (Akzeptiert: jpg, png, webp; max. 5 MB)
-  - Button "Bild hochladen & einfügen"
-  - Nach Upload wird die öffentliche URL ermittelt und ein `<img src="..." alt="" class="w-full rounded-lg my-4" />` an der Cursor-Position (oder am Ende) im Inhalt eingefügt.
-  - Toast-Bestätigung mit Hinweis "Bild eingefügt – nicht vergessen zu speichern".
-- Liste der bereits hochgeladenen Bilder mit Vorschau und "Löschen"-Button (entfernt Datei aus Storage; HTML-Referenz im Inhalt muss der Admin selbst entfernen, Hinweis im UI).
-- Vorschau-Bereich rendert weiterhin via `dangerouslySetInnerHTML` – Bilder erscheinen sofort.
-
-**Darstellung im Modal (Frontend)**
-- Bestehender Modal-Renderer nutzt bereits `dangerouslySetInnerHTML`, daher keine Änderung nötig.
-- Optional: globale CSS-Regel für `img` im Modal-Container (max-width 100%, responsive).
+## Hinweise für den Kunden
+- Sanity ist im kostenlosen Tarif für diese Nutzung ausreichend (bis 20 Benutzer).
+- Redakteure brauchen ein Sanity-Konto und eine Einladung ins Projekt.
+- Änderungen sind nach dem Veröffentlichen in Sanity sofort auf der Website sichtbar.
 
 ## Technische Details
-
-- Upload via `supabase.storage.from('modal-images').upload(path, file)` direkt aus dem Admin-Client (Admin ist eingeloggt, RLS lässt Upload zu).
-- Dateiname: `${Date.now()}-${sanitized}.{ext}` zur Vermeidung von Konflikten.
-- `getPublicUrl` liefert die URL, die ins HTML eingefügt wird.
-- RLS-Policies auf `storage.objects` für Bucket `modal-images`:
-  - SELECT: public
-  - INSERT/UPDATE/DELETE: nur wenn `has_role(auth.uid(), 'admin')`
-
-## Nicht enthalten
-
-- Kein WYSIWYG-Editor – Inhalt bleibt HTML-Textarea, Bild wird als Tag injiziert.
-- Keine Bildbearbeitung (Crop, Resize) im Browser.
+- Pakete: `sanity`, `@sanity/client`, `@sanity/image-url`, `@portabletext/react`, `styled-components`.
+- Studio als Route `/admin/*` via `<Studio config={...} basePath="/admin" />`, lazy geladen, damit die öffentliche Seite nicht größer wird.
+- Schemas in `src/sanity/schemas/`, Client + `urlFor` in `src/lib/sanity.ts`, Abfragen mit React Query (`useCdn: true`).
+- Migration per Skript: News aus `news_items`/`news_media` lesen, Dateien als Sanity-Assets hochladen (benötigt einmalig einen Sanity-Schreib-Token als Secret).
+- `events.ts` wird durch Sanity-Abfragen ersetzt; Supabase-Admin-Rollen für News entfallen.
+- Entscheidung in `AGENTS.md` festhalten: "Redaktionelle Inhalte kommen aus Sanity".
