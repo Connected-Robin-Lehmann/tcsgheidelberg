@@ -5,14 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { 
-  upcomingEvents, 
   eventTypeLabels, 
   getEventTypeColor
 } from "@/data/events";
+import { useEvents } from "@/hooks/useSanityContent";
 
 const EventSection = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language === 'en' ? 'en' : 'de';
+  const { data: upcomingEvents = [] } = useEvents();
   
   // Get upcoming match events (Badenliga 2026)
   const upcomingMatches = upcomingEvents

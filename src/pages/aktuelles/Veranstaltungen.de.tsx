@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, MapPin, Download, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { upcomingEvents } from "@/data/events";
+import { useEvents } from "@/hooks/useSanityContent";
 
 const renderTextWithEmailLinks = (text: string) => {
   const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
@@ -18,16 +18,16 @@ const renderTextWithEmailLinks = (text: string) => {
 };
 
 const VeranstaltungenDE = () => {
-  const bluemchenId = "bluemchenturnier-saisonabschluss-2026";
+  const { data: upcomingEvents = [] } = useEvents();
 
   // Get upcoming social/food events – Blümchenturnier is highlighted first
   const socialEvents = [
-    ...upcomingEvents.filter(e => e.id === bluemchenId),
-    ...upcomingEvents.filter(e => (e.type === "food" || e.type === "party" || e.type === "meeting") && e.id !== bluemchenId),
+    ...upcomingEvents.filter(e => e.featured),
+    ...upcomingEvents.filter(e => (e.type === "food" || e.type === "party" || e.type === "meeting") && !e.featured),
   ];
 
   // Season events (camps, tournaments, etc.) – excluding the highlighted Blümchenturnier
-  const seasonEvents = upcomingEvents.filter(e => (e.type === "camp" || e.type === "tournament" || e.type === "training") && e.id !== bluemchenId);
+  const seasonEvents = upcomingEvents.filter(e => (e.type === "camp" || e.type === "tournament" || e.type === "training") && !e.featured);
 
   return (
     <div className="min-h-screen bg-white">
