@@ -36,74 +36,7 @@ export interface ClubEvent {
   type: EventType;
 }
 
-export const upcomingEvents: ClubEvent[] = [
-  {
-    id: "traglufthallenaufbau-2026",
-    date: "07.09. - 15.09.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Traglufthallenaufbau", en: "Inflatable Hall Setup" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Aufbau der Traglufthalle für die Wintersaison", en: "Setup of the inflatable hall for winter season" },
-    type: "infrastructure",
-  },
-  {
-    id: "anmeldung-wintertraining-2026",
-    date: "bis 15.09.2026",
-    time: { de: "Online-Anmeldung", en: "Online registration" },
-    title: { de: "Anmeldung zum Wintertraining 2026/2027", en: "Winter Training Registration 2026/2027" },
-    location: { de: "Sportision-Portal", en: "Sportision portal" },
-    description: { de: "Anmeldung zum Wintertraining über das Online-Portal Sportision. Anmeldeschluss ist der 15.09.2026 – bei späterer Anmeldung kann kein Trainingsplatz garantiert werden, da das Wintertraining am 21.09.2026 beginnt.", en: "Register for winter training via the Sportision online portal. Registration deadline is 15.09.2026 – later registrations cannot be guaranteed a training slot, as winter training begins on 21.09.2026." },
-    linkUrl: "https://www.sportision.de/club/kukaras-professional-tennis-1",
-    linkLabel: { de: "Zur Anmeldung auf Sportision", en: "Register on Sportision" },
-    type: "training",
-  },
-  {
-    id: "wintertraining-beginn-2026",
-    date: "21.09.2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Beginn des Wintertrainings", en: "Start of Winter Training" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Start des regulären Wintertrainings", en: "Start of regular winter training" },
-    type: "training",
-  },
-  {
-    id: "bluemchenturnier-saisonabschluss-2026",
-    date: "04.10.2026",
-    time: { de: "13:00 Uhr", en: "1:00 PM" },
-    title: { de: "Spaß-Blümchenturnier zum Saisonabschluss", en: "Fun Blümchenturnier Season Finale" },
-    location: { de: "Clubanlage Schwarz-Gelb Heidelberg", en: "Schwarz-Gelb Heidelberg Club Facility" },
-    description: { de: "Spaß-Blümchenturnier zum Saisonabschluss mit 1-Punkt-Turnier (Beginn 16:00 Uhr). Anmeldung bei Terezie Zuna-Homsy erforderlich. Spezialpreis: Pizza von Pasquale.", en: "Fun Blümchenturnier season finale with 1-point tournament (starts 4:00 PM). Registration with Terezie Zuna-Homsy required. Special prize: pizza from Pasquale." },
-    contact: "terezie.zuna-homsy@schwarzgelb-heidelberg.de",
-    type: "tournament",
-  },
-  {
-    id: "putzete-herbst-2026",
-    date: "Ende Oktober 2026",
-    time: { de: "ganztägig", en: "All day" },
-    title: { de: "Putzete", en: "Autumn Cleanup" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Herbst-Putzaktion auf der Anlage", en: "Autumn cleanup at the facility" },
-    type: "infrastructure",
-  },
-  {
-    id: "weihnachtsessen-2026",
-    date: "20.11.2026",
-    time: { de: "abends", en: "Evening" },
-    title: { de: "Weihnachtsessen", en: "Christmas Dinner" },
-    location: { de: "wird bekannt gegeben", en: "To be announced" },
-    description: { de: "Gemeinsames Weihnachtsessen", en: "Joint Christmas dinner" },
-    type: "food",
-  },
-  {
-    id: "silvester-2026",
-    date: "31.12.2026",
-    time: { de: "abends", en: "Evening" },
-    title: { de: "Silvester Party", en: "New Year's Eve Party" },
-    location: { de: "Tennisanlage", en: "Tennis Facility" },
-    description: { de: "Silvester Party auf der Anlage", en: "New Year's Eve party at the facility" },
-    type: "party",
-  },
-];
+// Event content is managed in Sanity (see src/hooks/useSanityContent.ts).
 
 export const eventTypeLabels: Record<EventType, { de: string; en: string }> = {
   party: { de: "Party", en: "Party" },

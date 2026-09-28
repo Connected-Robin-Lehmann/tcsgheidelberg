@@ -14,38 +14,21 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ExternalLink } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import DOMPurify from "dompurify";
+import { useHomeModal } from "@/hooks/useSanityContent";
 
 const IndexDE = () => {
   const [showDialog, setShowDialog] = useState(false);
-  const [modalTitle, setModalTitle] = useState("");
-  const [modalContent, setModalContent] = useState("");
-  const [isModalActive, setIsModalActive] = useState(false);
+  const { data: modal } = useHomeModal();
+  const isModalActive = !!modal?.active;
+  const modalTitle = DOMPurify.sanitize(modal?.title ?? "");
+  const modalContent = DOMPurify.sanitize(modal?.content ?? "");
 
   useEffect(() => {
-    // Load modal settings from database
-    const loadModalSettings = async () => {
-      const { data, error } = await supabase
-        .from("modal_settings")
-        .select("*")
-        .limit(1)
-        .single();
-
-      if (data && !error) {
-        setModalTitle(data.title);
-        setModalContent(data.content);
-        setIsModalActive(data.is_active);
-
-        // Check if dialog has been shown in this session
-        const hasSeenDialog = sessionStorage.getItem("hasSeenMemberDialog");
-        if (!hasSeenDialog && data.is_active) {
-          setShowDialog(true);
-        }
-      }
-    };
-
-    loadModalSettings();
-  }, []);
+    if (modal?.active && !sessionStorage.getItem("hasSeenMemberDialog")) {
+      setShowDialog(true);
+    }
+  }, [modal?.active]);
 
   const handleClose = () => {
     sessionStorage.setItem("hasSeenMemberDialog", "true");

@@ -3,9 +3,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, MapPin, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { upcomingEvents } from "@/data/events";
+import { useEvents } from "@/hooks/useSanityContent";
 
 const TurniereEN = () => {
+  const { data: upcomingEvents = [] } = useEvents();
   const tournamentEvents = upcomingEvents.filter(
     (e) => e.type === "tournament" && e.id !== "season-opening-2026" && e.id !== "doppelturnier-saisonabschluss-2026"
   );

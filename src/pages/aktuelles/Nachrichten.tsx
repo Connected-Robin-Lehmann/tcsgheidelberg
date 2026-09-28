@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { Calendar, Trophy, Newspaper, Users, Filter, FileText, File, Download, LayoutGrid, LayoutList } from "lucide-react";
 import ImageLightbox from "@/components/ImageLightbox";
 import { Button } from "@/components/ui/button";
@@ -25,8 +25,7 @@ import {
 } from "@/components/ui/dialog";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { useNews } from "@/hooks/useSanityContent";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -44,6 +43,7 @@ interface NewsMedia {
   news_item_id: string;
   file_path: string;
   file_type: string;
+  file_name?: string;
 }
 
 const categoryLabels: Record<string, string> = {
@@ -63,60 +63,30 @@ const categoryIcons: Record<string, any> = {
 export default function Nachrichten() {
   const [selectedMonth, setSelectedMonth] = useState<string>("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
-  const [newsMedia, setNewsMedia] = useState<Record<string, NewsMedia[]>>({});
-  const [isLoading, setIsLoading] = useState(true);
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const { toast } = useToast();
+  const { data: sanityNews = [], isLoading } = useNews();
 
-  useEffect(() => {
-    loadNewsItems();
-  }, []);
-
-  const loadNewsItems = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('news_items')
-        .select('*')
-        .order('date', { ascending: false });
-
-      if (error) throw error;
-      setNewsItems(data || []);
-
-      // Load media for all news items
-      if (data && data.length > 0) {
-        const { data: mediaData, error: mediaError } = await supabase
-          .from('news_media')
-          .select('*')
-          .in('news_item_id', data.map(item => item.id));
-
-        if (mediaError) throw mediaError;
-
-        // Group media by news_item_id
-        const mediaByNewsItem: Record<string, NewsMedia[]> = {};
-        mediaData?.forEach((media) => {
-          if (!mediaByNewsItem[media.news_item_id]) {
-            mediaByNewsItem[media.news_item_id] = [];
-          }
-          mediaByNewsItem[media.news_item_id].push(media);
-        });
-
-        setNewsMedia(mediaByNewsItem);
-      }
-    } catch (error: any) {
-      toast({
-        title: 'Fehler beim Laden',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const newsItems: NewsItem[] = useMemo(
+    () => sanityNews.map(({ media: _m, ...n }) => ({ ...n, created_at: n.date })),
+    [sanityNews],
+  );
+  const newsMedia: Record<string, NewsMedia[]> = useMemo(() => {
+    const map: Record<string, NewsMedia[]> = {};
+    sanityNews.forEach((n) => {
+      map[n.id] = n.media.map((m) => ({
+        id: m.id,
+        news_item_id: n.id,
+        file_path: m.url,
+        file_type: m.fileType,
+        file_name: m.fileName,
+      }));
+    });
+    return map;
+  }, [sanityNews]);
 
   // Extrahiere verfügbare Monate
   const availableMonths = useMemo(() => {
@@ -155,10 +125,7 @@ export default function Nachrichten() {
     }
   };
 
-  const getMediaUrl = (filePath: string) => {
-    const { data } = supabase.storage.from('news-media').getPublicUrl(filePath);
-    return data.publicUrl;
-  };
+  const getMediaUrl = (filePath: string) => filePath;
 
   const openNewsDialog = (item: NewsItem) => {
     setSelectedNews(item);
@@ -488,7 +455,7 @@ export default function Nachrichten() {
                           );
                         } else {
                           const FileIcon = getFileIcon(media.file_type);
-                          const fileName = getFileName(media.file_path);
+                          const fileName = media.file_name || getFileName(media.file_path);
                           
                           return (
                             <a
