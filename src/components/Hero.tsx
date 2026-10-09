@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, MapPin, Clock, Wine, Phone } from "lucide-react";
+import { Calendar, MapPin, Clock, Snowflake, UtensilsCrossed, Mail } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import ImageLightbox from "./ImageLightbox";
@@ -9,10 +9,10 @@ const Hero = () => {
   const lang = i18n.language === 'en' ? 'en' : 'de';
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  const posterSrc = "/images/aktuelles/weinverkostung-2026.jpg";
+  const posterSrc = "/images/aktuelles/weihnachtsessen-2026.jpg";
   const posterAlt = lang === 'de'
-    ? 'Plakat: Kulinarisches Event mit Weinverkostung in der La Trattoria am 31.10.2026'
-    : 'Poster: Culinary event with wine tasting at La Trattoria on 31.10.2026';
+    ? 'Plakat: Weihnachtsessen des Schwarz-Gelb Heidelberg in der Trattoria am 20.11.2026'
+    : 'Poster: Schwarz-Gelb Heidelberg Christmas dinner at the Trattoria on 20.11.2026';
 
   return (
     <section id="home" className="relative min-h-[50vh] md:min-h-[70vh] flex flex-col bg-gradient-to-br from-tennis-black via-gray-900 to-tennis-court overflow-hidden">
@@ -35,14 +35,14 @@ const Hero = () => {
           </h1>
         </div>
 
-        {/* Weinverkostung Highlight */}
+        {/* Weihnachtsessen Highlight */}
         <div className="flex-1 flex items-center justify-center py-4 md:py-6">
           <div className="max-w-5xl w-full px-2 animate-slide-up">
             <div className="bg-white/10 backdrop-blur-sm border-2 border-tennis-yellow rounded-lg md:rounded-2xl p-3 md:p-6 hover:bg-white/15 transition-all duration-300">
               <div className="text-center mb-3 md:mb-4">
                 <div className="inline-flex items-center gap-2 bg-tennis-yellow text-tennis-black px-4 py-1.5 rounded-full font-bold text-xs md:text-sm uppercase tracking-wider">
-                  <Wine className="w-3 h-3 md:w-4 md:h-4" />
-                  {lang === 'de' ? 'Kulinarischer Abend 2026' : 'Culinary Evening 2026'}
+                  <Snowflake className="w-3 h-3 md:w-4 md:h-4" />
+                  {lang === 'de' ? 'Weihnachtsessen 2026' : 'Christmas Dinner 2026'}
                 </div>
               </div>
 
@@ -51,7 +51,7 @@ const Hero = () => {
                 <button
                   onClick={() => setLightboxOpen(true)}
                   className="relative group overflow-hidden rounded-lg border-2 border-white/20 bg-white cursor-pointer w-full"
-                  aria-label={lang === 'de' ? 'Plakat zur Weinverkostung vergrößern' : 'Enlarge wine tasting poster'}
+                  aria-label={lang === 'de' ? 'Plakat zum Weihnachtsessen vergrößern' : 'Enlarge Christmas dinner poster'}
                 >
                   <img
                     src={posterSrc}
@@ -64,17 +64,17 @@ const Hero = () => {
                 {/* Details */}
                 <div className="space-y-3 md:space-y-4 text-left">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
-                    {lang === 'de' ? 'Kulinarisches Event mit Weinverkostung' : 'Culinary Event with Wine Tasting'}
+                    {lang === 'de' ? 'Weihnachtsessen in der Trattoria' : 'Christmas Dinner at the Trattoria'}
                   </h2>
 
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-white/90 text-sm md:text-base">
                       <Calendar className="w-4 h-4 md:w-5 md:h-5 text-tennis-yellow flex-shrink-0" />
-                      <span className="font-semibold">{lang === 'de' ? 'Samstag, 31.10.2026' : 'Saturday, 31 Oct 2026'}</span>
+                      <span className="font-semibold">{lang === 'de' ? 'Freitag, 20.11.2026' : 'Friday, 20 Nov 2026'}</span>
                     </div>
                     <div className="flex items-center gap-2 text-white/90 text-sm md:text-base">
                       <Clock className="w-4 h-4 md:w-5 md:h-5 text-tennis-yellow flex-shrink-0" />
-                      <span>{lang === 'de' ? 'Beginn: 18.30 Uhr' : 'Start: 6:30 PM'}</span>
+                      <span>{lang === 'de' ? 'Beginn: 19.30 Uhr' : 'Start: 7:30 PM'}</span>
                     </div>
                     <div className="flex items-center gap-2 text-white/90 text-sm md:text-base">
                       <MapPin className="w-4 h-4 md:w-5 md:h-5 text-tennis-yellow flex-shrink-0" />
@@ -84,27 +84,32 @@ const Hero = () => {
 
                   <div className="bg-white/10 rounded-lg p-3 md:p-4 border border-white/20">
                     <div className="flex items-center gap-2 text-tennis-yellow font-bold text-sm md:text-base mb-2">
-                      <Wine className="w-4 h-4 md:w-5 md:h-5" />
-                      {lang === 'de' ? '59,50 € pro Person' : '€59.50 per person'}
+                      <UtensilsCrossed className="w-4 h-4 md:w-5 md:h-5" />
+                      {lang === 'de' ? 'Buffet: 39 € · Kinder bis 12 Jahre 18 €' : 'Buffet: €39 · children up to 12: €18'}
                     </div>
                     <p className="text-white/80 text-xs md:text-sm mb-2">
                       {lang === 'de'
-                        ? 'Inklusive italienischem Buffet und fünf Weinen zum Verkosten. Verbindliche Anmeldung bis 25.10.2026.'
-                        : 'Includes an Italian buffet and five wines to taste. Binding registration by 25 Oct 2026.'}
+                        ? 'Italienische Vorspeisen und Salate, Putenbraten in Weißweinsauce mit Salbei- und Roskartoffeln sowie Ravioli mit Ricotta und Spinat.'
+                        : 'Italian starters and salads, turkey roast in white wine sauce with sage and rosemary potatoes, and ravioli with ricotta and spinach.'}
+                    </p>
+                    <p className="text-white/80 text-xs md:text-sm mb-2">
+                      {lang === 'de'
+                        ? 'Verbindliche Anmeldung bis 13.11.2026 bei Terezie.'
+                        : 'Binding registration by 13 Nov 2026 with Terezie.'}
                     </p>
                     <a
-                      href="tel:+4962217152277"
-                      className="inline-flex items-center gap-2 text-tennis-yellow hover:text-yellow-300 text-xs md:text-sm font-medium transition-colors"
+                      href="mailto:Terezie.zuna-homsy@schwarzgelb-heidelberg.de"
+                      className="inline-flex items-center gap-2 text-tennis-yellow hover:text-yellow-300 text-xs md:text-sm font-medium transition-colors break-all"
                     >
-                      <Phone className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
-                      06221 7152277
+                      <Mail className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                      Terezie.zuna-homsy@schwarzgelb-heidelberg.de
                     </a>
                   </div>
 
                   <p className="text-white/80 text-xs md:text-sm">
                     {lang === 'de'
-                      ? 'Sommelier Gianni Gasbarro führt durch die Verkostung – mit den besten Weinregionen Italiens, italienischer Lebensfreude und besonderen Geschmackserlebnissen.'
-                      : 'Sommelier Gianni Gasbarro guides the tasting – featuring Italy’s finest wine regions, Italian culinary joy and special taste experiences.'}
+                      ? 'Frei nach dem Motto: „Ohne Gans und Tanz, nur Pasquale kann\'s" – wir freuen uns auf Euer Kommen!'
+                      : 'Motto: "Ohne Gans und Tanz, nur Pasquale kann\'s" (no goose, no dancing – only Pasquale can pull it off) – we look forward to seeing you!'}
                   </p>
 
                   <Link
