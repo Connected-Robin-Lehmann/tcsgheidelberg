@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, MapPin, Download, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useEvents } from "@/hooks/useSanityContent";
+import EventAttachmentPreview from "@/components/EventAttachmentPreview";
 
 const renderTextWithEmailLinks = (text: string) => {
   const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
@@ -74,16 +75,22 @@ const VeranstaltungenDE = () => {
                             </p>
                           )}
                           {event.attachmentUrl && (
-                            <a
-                              href={event.attachmentUrl}
-                              download
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 mt-4 bg-tennis-black text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors"
-                            >
-                              <Download className="h-4 w-4 text-tennis-yellow" />
-                              {event.attachmentLabel?.de ?? "Download"}
-                            </a>
+                            <div className="mt-4 flex items-center gap-4 flex-wrap">
+                              <EventAttachmentPreview
+                                url={event.attachmentUrl}
+                                label={event.attachmentLabel?.de}
+                              />
+                              <a
+                                href={event.attachmentUrl}
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-tennis-black text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors"
+                              >
+                                <Download className="h-4 w-4 text-tennis-yellow" />
+                                {event.attachmentLabel?.de ?? "Download"}
+                              </a>
+                            </div>
                           )}
                         </div>
 
